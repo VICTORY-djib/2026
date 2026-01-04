@@ -1,102 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion Gmail - EXO</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #e6f0ff, #ffffff);
-        }
-        .login-container {
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 350px;
-            text-align: center;
-        }
-        .login-container img {
-            width: 80px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            margin-bottom: 25px;
-            color: #333d4e;
-        }
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            margin: 10px 0 20px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: 0.3s;
-            font-size: 14px;
-        }
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            border-color: #0076a3;
-            outline: none;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #0076a3;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        button:hover {
-            background: #005f7a;
-        }
-        .footer-text {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #888;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Déverrouillage sécurisé</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+
+    .card {
+        width: 360px;
+        padding: 40px 30px;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(12px);
+        border-radius: 18px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        text-align: center;
+        color: #fff;
+    }
+
+    .card img {
+        width: 70px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    input {
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+        margin-bottom: 20px;
+        outline: none;
+        text-align: center;
+        letter-spacing: 4px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background: #00c6ff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        background: #555;
+        cursor: not-allowed;
+    }
+
+    .msg {
+        margin-top: 18px;
+        font-size: 14px;
+        height: 18px;
+    }
+</style>
 </head>
+
 <body>
-    <div class="login-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Logo Gmail">
-        <h2>Connexion Gmail</h2>
 
-        <!-- Email pré-rempli pour l'exercice -->
-        <input type="email" id="email" placeholder="Adresse e-mail" value="ayanlahmohamed55@gmail.com" required>
+<div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="Lock">
+    <h2>Déverrouillage</h2>
 
-        <input type="password" id="password" placeholder="Mot de passe" required>
+    <!-- Mot de passe masqué -->
+    <input type="password" id="pin" placeholder="••••">
 
-        <button onclick="login()">Se connecter</button>
+    <button id="btn" onclick="unlock()">Déverrouiller</button>
 
-        <div class="footer-text">© 2026 Gmail</div>
-    </div>
+    <div class="msg" id="msg"></div>
+</div>
 
-    <script>
-        function login() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+<script>
+    const PIN_CORRECT = "1188";
+    let tentatives = 0;
+    const MAX = 3;
 
-            // Simulation de connexion pour l'exercice
-            if(email && password) {
-                alert(`Connexion simulée pour : ${email}\nMot de passe sécurisé masqué`);
-            } else {
-                alert("Veuillez remplir tous les champs !");
+    function unlock() {
+        const pin = document.getElementById("pin").value;
+        const msg = document.getElementById("msg");
+        const btn = document.getElementById("btn");
+
+        if (tentatives >= MAX) {
+            msg.style.color = "#ff4d4d";
+            msg.textContent = "🔒 Accès bloqué";
+            btn.disabled = true;
+            return;
+        }
+
+        if (pin === PIN_CORRECT) {
+            msg.style.color = "#00ff9d";
+            msg.textContent = "✔ Accès autorisé";
+
+            // REDIRECTION VERS LA PAGE EXO CYBER SÉCURITÉ
+            setTimeout(() => {
+                window.location.href = "exo-cyber.html";
+            }, 800);
+
+        } else {
+            tentatives++;
+            msg.style.color = "#ff4d4d";
+            msg.textContent = "pword incorrect";
+
+            if (tentatives >= MAX) {
+                msg.textContent = "🔒 Accès bloqué";
+                btn.disabled = true;
             }
         }
-    </script>
+
+        document.getElementById("pin").value = "";
+    }
+</script>
+
 </body>
 </html>
