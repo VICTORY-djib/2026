@@ -45,53 +45,6 @@ ces mesures réduisent les risques de piratage et de virus.
     </div>
 </section>
 
-</body><script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-
-<script>
-  // Collez ici les identifiants que vous avez copiés à l'étape 1
-  const firebaseConfig = {
-    apiKey: "AIzaSyDes-9_eYhdjO6Wiyoduz5Swa...", // Votre clé complète ici
-    authDomain: "zaga-service.firebaseapp.com",
-    projectId: "zaga-service",
-    storageBucket: "zaga-service.appspot.com",
-    messagingSenderId: "55122211210",
-    appId: "1:55122211210:web:..."
-  };
-
-  // Initialisation
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  const auth = firebase.auth();
-
-  // Fonction pour le bouton SERVICES
-  function demanderAcces() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    
-    auth.signInWithPopup(provider).then((result) => {
-      const user = result.user;
-      const userDoc = db.collection("utilisateurs").doc(user.uid);
-
-      userDoc.get().then((doc) => {
-        if (doc.exists && doc.data().autorise === true) {
-          // L'utilisateur est déjà validé par vous
-          window.location.href = "services-info.html";
-        } else {
-          // Nouveau client ou pas encore validé
-          if (!doc.exists) {
-            userDoc.set({
-              nom: user.displayName,
-              email: user.email,
-              autorise: false // Bloqué par défaut
-            });
-          }
-          alert("Demande envoyée ! Ayanleh (l'administrateur) doit maintenant vous autoriser.");
-        }
-      });
-    });
-  }
-</script>
-
+</body>
 </html>
 
