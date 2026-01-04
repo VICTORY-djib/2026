@@ -1,139 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>EXO CYB-SECRIT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Gmail</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-  <!-- 🔹 Firebase (connexion Google) -->
-  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e6f0ff, #ffffff);
+        }
 
-  <!-- 🔹 STYLE (CSS) -->
-  <style>
-    /* ----- PAGE ----- */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f1f5f9;
-    }
+        .login-container {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
 
-    /* ----- CENTRAGE TOTAL ----- */
-    .main {
-      display: flex;
-      justify-content: center;   /* centre horizontal */
-      align-items: center;       /* centre vertical */
-      min-height: 100vh;
-    }
+        .login-container img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
 
-    /* ----- CARTE UTILISATEUR ----- */
-    .user-card {
-      width: 380px;
-      background: #ffffff;
-      padding: 30px 25px;
-      border-radius: 14px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-      text-align: center; /* centre le contenu */
-    }
+        h2 {
+            margin-bottom: 25px;
+            color: #333d4e;
+        }
 
-    /* ----- LOGO GMAIL (CENTRE) ----- */
-    .gmail-logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 15px;
-    }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
 
-    .gmail-logo img {
-      width: 55px;
-      height: 55px;
-    }
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #0076a3;
+            outline: none;
+        }
 
-    /* ----- TITRE ----- */
-    h3 {
-      margin-bottom: 20px;
-      color: #1e293b;
-    }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0076a3;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    /* ----- CHAMPS ----- */
-    .field {
-      text-align: left;
-      margin-bottom: 15px;
-    }
+        button:hover {
+            background: #005f7a;
+        }
 
-    .field label {
-      font-size: 13px;
-      color: #64748b;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .field input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      background: #f9f9f9;
-      font-size: 14px;
-    }
-
-    small {
-      color: #94a3b8;
-      font-size: 12px;
-    }
-  </style>
+        .footer-text {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="login-container">
+        <!-- Logo Gmail centré -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Logo Gmail">
 
-  <!-- 🔹 CONTENU PRINCIPAL -->
-  <main class="main">
-    <div class="user-card">
+        <h2>Connexion Gmail</h2>
 
-      <!-- ✅ LOGO GMAIL AU CENTRE -->
-      <div class="gmail-logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">
-      </div>
+        <!-- Champ utilisateur -->
+        <input type="email" placeholder="Adresse e-mail" required>
 
-      <h3>Utilisateur connecté</h3>
+        <!-- Champ mot de passe sécurisé -->
+        <input type="password" placeholder="Mot de passe" required>
 
-      <!-- Email -->
-      <div class="field">
-        <label>Email</label>
-        <input type="text" id="userEmail" readonly>
-      </div>
+        <!-- Bouton -->
+        <button>Se connecter</button>
 
-      <!-- Mot de passe (protégé) -->
-      <div class="field">
-        <label>Mot de passe</label>
-        <input type="password" value="google-auth" readonly>
-        <small>Protégé par Google</small>
-      </div>
-
+        <div class="footer-text">© 2026 Gmail</div>
     </div>
-  </main>
-
-  <!-- 🔹 SCRIPT FIREBASE -->
-  <script>
-    /* ⚠️ REMPLACE avec TES infos Firebase */
-    const firebaseConfig = {
-      apiKey: "TON_API_KEY",
-      authDomain: "TON_PROJET.firebaseapp.com",
-      projectId: "TON_PROJET",
-      appId: "TON_APP_ID"
-    };
-
-    // Initialisation Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    // Vérification connexion
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        document.getElementById("userEmail").value = user.email;
-      } else {
-        // Si pas connecté → retour accueil
-        window.location.href = "index.html";
-      }
-    });
-  </script>
-
 </body>
 </html>
