@@ -11,38 +11,63 @@
     <div class="logo">ZAGA</div>
 
     <nav>
-        <a class="active" href="#">HOME</a>
-        <a href="#">SERVICES-ACTUEL</a>
+        <a class="active" href="index.html">HOME</a>
+        <a href="services.html" id="link-service-menu">SERVICES-ACTUEL</a>
         <a href="#">CONTACT</a>
     </nav>
 </header>
 
 <section class="hero">
     <div class="hero-left">
-        
     </div>
 
     <div class="hero-right">
         <h1>PROTÉGER VOTRE ORDINATEUR</h1>
         <p>
-utilisez un antivirus à jour pour bloquer les menaces.
-mettez régulièrement à jour le système et les logiciels.
-choisissez des mots de passe forts et uniques.
-activez le pare-feu pour bloquer les accès non autorisés.
-évitez les sites et téléchargements suspects.
-faites des sauvegardes régulières de vos données.
-méfiez-vous des e-mails frauduleux et des liens inconnus.
-verrouillez votre ordinateur après utilisation.
-ces mesures réduisent les risques de piratage et de virus.
+            Utilisez un antivirus à jour pour bloquer les menaces.
+            Mettez régulièrement à jour le système et les logiciels.
+            Choisissez des mots de passe forts et uniques.
+            Activez le pare-feu pour bloquer les accès non autorisés.
+            Évitez les sites et téléchargements suspects.
+            Faites des sauvegardes régulières de vos données.
+            Méfiez-vous des e-mails frauduleux et des liens inconnus.
+            Verrouillez votre ordinateur après utilisation.
+            Ces mesures réduisent les risques de piratage et de virus.
         </p>
 
-        <button>SERVICE</button>
+        <button id="btn-service-hero">SERVICE</button>
 
         <div class="dots">
         </div>
     </div>
 </section>
 
+<script>
+    // Fonction qui demande l'email
+    function demanderConnexion(event) {
+        event.preventDefault(); // Bloque l'ouverture de la page
+        
+        const email = prompt("Connexion obligatoire : Veuillez entrer votre adresse e-mail pour accéder aux services :");
+        
+        // Vérification si le format de l'email est correct
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email && regexEmail.test(email)) {
+            // Si l'email est valide, on enregistre et on redirige
+            localStorage.setItem("userEmail", email);
+            alert("Connexion réussie !");
+            window.location.href = "services.html"; // Remplacez par votre page de services
+        } else {
+            // Si l'utilisateur annule ou se trompe
+            alert("Erreur : Une adresse e-mail valide est requise pour continuer.");
+        }
+    }
+
+    // Appliquer la fonction au lien du menu
+    document.getElementById('link-service-menu').addEventListener('click', demanderConnexion);
+
+    // Appliquer la fonction au bouton bleu
+    document.getElementById('btn-service-hero').addEventListener('click', demanderConnexion);
+</script>
 </body>
 </html>
-
