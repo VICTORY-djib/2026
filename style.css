@@ -104,3 +104,56 @@ nav a.active {
 .dots span:first-child {
     opacity: 1;
 }
+/* --- AJOUTS POUR LA CONNEXION GOOGLE --- */
+
+/* On s'assure que le bloc de gauche est bien centré */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 420px; /* Garde la même largeur que votre image d'origine */
+}
+
+/* Style pour le conteneur du bouton Google */
+#google-auth-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05); /* Un léger fond transparent */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #00b4ff;
+}
+
+#google-auth-container h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+/* Style pour le message de bienvenue après connexion */
+#welcome-message {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#welcome-message img {
+    width: 350px; /* Taille de l'image une fois connecté */
+    margin-bottom: 15px;
+}
+
+#user-name {
+    font-size: 24px;
+    color: #00b4ff;
+}
+
+/* Animation pour une transition fluide */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajustement pour la navigation */
+nav a {
+    transition: all 0.3s ease;
+}
+
