@@ -156,4 +156,28 @@ nav a.active {
 nav a {
     transition: all 0.3s ease;
 }
+.cours {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
 
+.module {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 6px solid #00c3ff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.module h2 {
+    color: #0a1f44;
+}
+
+.module h3 {
+    color: #333;
+}
+
+.module ul {
+    margin-left: 20px;
+}
