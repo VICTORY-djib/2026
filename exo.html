@@ -1,102 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Exercices - Connexion Google</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>EXO CYB-SECRIT</title>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+  <!-- 🔹 Firebase (connexion Google) -->
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+
+  <!-- 🔹 STYLE (CSS) -->
+  <style>
+    /* ----- PAGE ----- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+    }
+
+    /* ----- CENTRAGE TOTAL ----- */
+    .main {
+      display: flex;
+      justify-content: center;   /* centre horizontal */
+      align-items: center;       /* centre vertical */
+      min-height: 100vh;
+    }
+
+    /* ----- CARTE UTILISATEUR ----- */
+    .user-card {
+      width: 380px;
+      background: #ffffff;
+      padding: 30px 25px;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      text-align: center; /* centre le contenu */
+    }
+
+    /* ----- LOGO GMAIL (CENTRE) ----- */
+    .gmail-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .gmail-logo img {
+      width: 55px;
+      height: 55px;
+    }
+
+    /* ----- TITRE ----- */
+    h3 {
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    /* ----- CHAMPS ----- */
+    .field {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .field label {
+      font-size: 13px;
+      color: #64748b;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      font-size: 14px;
+    }
+
+    small {
+      color: #94a3b8;
+      font-size: 12px;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    <div class="logo">ZAGA</div>
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="cours.html">COURS</a>
-        <a class="active" href="exo.html">EXO</a>
-        <a href="test.html">TEST</a>
-    </nav>
-</header>
+  <!-- 🔹 CONTENU PRINCIPAL -->
+  <main class="main">
+    <div class="user-card">
 
-<main style="text-align:center; padding:50px;">
-    <h1>Connexion requise pour accéder aux exercices</h1>
+      <!-- ✅ LOGO GMAIL AU CENTRE -->
+      <div class="gmail-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">
+      </div>
 
-    <!-- 🔹 Bouton Gmail -->
-    <button id="login-google" style="padding:15px 30px; font-size:16px; cursor:pointer; background-color:#4285F4; color:white; border:none; border-radius:5px;">
-        Se connecter avec Gmail
-    </button>
+      <h3>Utilisateur connecté</h3>
 
-    <!-- 🔹 Informations utilisateur après connexion -->
-    <div id="user-info" style="display:none; margin-top:30px;">
-        <h2>Bienvenue, <span id="user-name"></span> !</h2>
-        <p>Vous pouvez maintenant accéder aux exercices :</p>
+      <!-- Email -->
+      <div class="field">
+        <label>Email</label>
+        <input type="text" id="userEmail" readonly>
+      </div>
 
-        <!-- Exemple d'exercices sécurisés -->
-        <ul>
-            <li><a href="exo1.html">Exercice 1</a></li>
-            <li><a href="exo2.html">Exercice 2</a></li>
-            <li><a href="exo3.html">Exercice 3</a></li>
-        </ul>
+      <!-- Mot de passe (protégé) -->
+      <div class="field">
+        <label>Mot de passe</label>
+        <input type="password" value="google-auth" readonly>
+        <small>Protégé par Google</small>
+      </div>
+
     </div>
-</main>
+  </main>
 
-<footer style="text-align:center; padding:20px;">
-    <p>© 2026 – ZAGA Cyber Security</p>
-</footer>
+  <!-- 🔹 SCRIPT FIREBASE -->
+  <script>
+    /* ⚠️ REMPLACE avec TES infos Firebase */
+    const firebaseConfig = {
+      apiKey: "TON_API_KEY",
+      authDomain: "TON_PROJET.firebaseapp.com",
+      projectId: "TON_PROJET",
+      appId: "TON_APP_ID"
+    };
 
-<script>
-  // 🔹 Configuration Firebase
-  const firebaseConfig = {
-    apiKey: "AIzaSyDes-9_eYhdjO6Wiyoduz5SwafamCikI98",
-    authDomain: "zaga-service.firebaseapp.com",
-    projectId: "zaga-service",
-    storageBucket: "zaga-service.firebasestorage.app",
-    messagingSenderId: "551000044060",
-    appId: "1:551000044060:web:2249d96c14ac7c8c82a5d9",
-    measurementId: "G-JRNWSJDJVM"
-  };
+    // Initialisation Firebase
+    firebase.initializeApp(firebaseConfig);
 
-  // 🔹 Initialisation Firebase
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
-
-  const loginBtn = document.getElementById('login-google');
-  const userInfo = document.getElementById('user-info');
-  const userName = document.getElementById('user-name');
-
-  // 🔹 Connexion Google
-  loginBtn.addEventListener('click', () => {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider)
-          .then((result) => {
-              const user = result.user;
-              userName.textContent = user.displayName;
-              loginBtn.style.display = 'none';
-              userInfo.style.display = 'block';
-
-              // 🔹 Rediriger vers exo.html après connexion (optionnel)
-              // window.location.href = "exo.html"; // pas nécessaire si déjà sur cette page
-          })
-          .catch((error) => {
-              alert('Erreur de connexion : ' + error.message);
-          });
-  });
-
-  // 🔹 Vérifier si l'utilisateur est déjà connecté
-  auth.onAuthStateChanged((user) => {
-      if(user){
-          loginBtn.style.display = 'none';
-          userInfo.style.display = 'block';
-          userName.textContent = user.displayName;
+    // Vérification connexion
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById("userEmail").value = user.email;
       } else {
-          loginBtn.style.display = 'block';
-          userInfo.style.display = 'none';
+        // Si pas connecté → retour accueil
+        window.location.href = "index.html";
       }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
