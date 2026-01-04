@@ -41,33 +41,5 @@
         </div>
     </div>
 </section>
-
-<script>
-    // Fonction qui demande l'email
-    function demanderConnexion(event) {
-        event.preventDefault(); // Bloque l'ouverture de la page
-        
-        const email = prompt("Connexion obligatoire : Veuillez entrer votre adresse e-mail pour accéder aux services :");
-        
-        // Vérification si le format de l'email est correct
-        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (email && regexEmail.test(email)) {
-            // Si l'email est valide, on enregistre et on redirige
-            localStorage.setItem("userEmail", email);
-            alert("Connexion réussie !");
-            window.location.href = "services.html"; // Remplacez par votre page de services
-        } else {
-            // Si l'utilisateur annule ou se trompe
-            alert("Erreur : Une adresse e-mail valide est requise pour continuer.");
-        }
-    }
-
-    // Appliquer la fonction au lien du menu
-    document.getElementById('link-service-menu').addEventListener('click', demanderConnexion);
-
-    // Appliquer la fonction au bouton bleu
-    document.getElementById('btn-service-hero').addEventListener('click', demanderConnexion);
-</script>
 </body>
 </html>
