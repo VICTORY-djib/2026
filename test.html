@@ -2,159 +2,98 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QCM Cybersécurité - Module 6</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
-        color: #333;
-        padding: 20px;
-    }
-    h1 {
-        text-align: center;
-        color: #004080;
-    }
-    .qcm {
-        max-width: 800px;
-        margin: 20px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .question {
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-    .question h3 {
-        font-size: 18px;
-        margin-bottom: 8px;
-    }
-    .answers label {
-        display: block;
-        margin-bottom: 5px;
-        cursor: pointer;
-        padding: 5px;
-        border-radius: 4px;
-    }
-    .correct-answer { background-color: #d4edda; color: #155724; }
-    .wrong-answer { background-color: #f8d7da; color: #721c24; }
-    button {
-        background-color: #004080;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        margin-top: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    button:hover { background-color: #0066cc; }
-    .result {
-        margin-top: 20px;
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-    }
-    #timer {
-        text-align: center;
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #004080;
-    }
+  body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f9; }
+  .question { font-weight: bold; margin-bottom: 10px; }
+  .option { display: block; margin: 5px 0; padding: 10px; cursor: pointer; border-radius: 5px; width: fit-content; }
+  .correct { background-color: #d4edda; color: #155724; }
+  .wrong { background-color: #f8d7da; color: #721c24; }
+  #score { margin-top: 20px; font-weight: bold; font-size: 18px; }
+  #restart { margin-top: 20px; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
 </style>
 </head>
 <body>
 
-<h1>QCM Cybersécurité - Module 6</h1>
-<div id="timer">Temps restant : 30:00</div>
-
-<div class="qcm" id="qcmContainer">
-    <!-- Questions -->
-    <div class="question">
-        <h3>1. Quel est l'objectif principal de la cybersécurité ?</h3>
-        <div class="answers">
-            <label><input type="radio" name="q1" value="0"> Protéger uniquement les systèmes informatiques</label>
-            <label><input type="radio" name="q1" value="1"> Protéger individus, organisations et gouvernements contre les attaques numériques</label>
-            <label><input type="radio" name="q1" value="0"> Installer des logiciels antivirus</label>
-        </div>
-    </div>
-    <div class="question">
-        <h3>2. Quel type de malware chiffre les données et exige une rançon ?</h3>
-        <div class="answers">
-            <label><input type="radio" name="q2" value="0"> Spyware</label>
-            <label><input type="radio" name="q2" value="1"> Ransomware</label>
-            <label><input type="radio" name="q2" value="0"> Worm</label>
-        </div>
-    </div>
-    <div class="question">
-        <h3>3. Que signifie le principe de confidentialité dans le Cube de McCumber ?</h3>
-        <div class="answers">
-            <label><input type="radio" name="q3" value="1"> Protéger l'accès aux informations</label>
-            <label><input type="radio" name="q3" value="0"> Garantir la disponibilité des systèmes</label>
-            <label><input type="radio" name="q3" value="0"> Modifier les données pour les sécuriser</label>
-        </div>
-    </div>
-    <!-- Ajoutez les autres questions ici de la même manière -->
-    <button onclick="verifierReponses()" id="submitBtn">Valider</button>
-    <div class="result" id="result"></div>
-</div>
+<h2>QCM Cybersécurité - Module 6</h2>
+<div id="quiz"></div>
+<div id="score"></div>
+<button id="restart" onclick="startQuiz()" style="display:none;">🔄 Recommencer le QCM</button>
 
 <script>
-// Minuterie 30 minutes
-let tempsRestant = 30 * 60; // en secondes
-let timerElement = document.getElementById('timer');
-let qcmContainer = document.getElementById('qcmContainer');
-let submitBtn = document.getElementById('submitBtn');
+// Liste des questions et réponses (true = Vrai correct, false = Faux correct)
+const questions = [
+  { q: "1. La cybersécurité consiste uniquement à protéger les données personnelles des individus.", a: false },
+  { q: "2. Les malwares peuvent se propager automatiquement sans interaction utilisateur.", a: true },
+  { q: "3. Les ransomware chiffrent les données et demandent une rançon.", a: true },
+  { q: "4. Un cheval de Troie se réplique automatiquement comme un virus.", a: false },
+  { q: "5. La 2FA (authentification à deux facteurs) renforce la sécurité des comptes.", a: true },
+  { q: "6. Les hackers chapeau blanc agissent à des fins malveillantes.", a: false },
+  { q: "7. Le Cube de McCumber inclut la confidentialité, l’intégrité et la disponibilité.", a: true },
+  { q: "8. Un ver (Worm) nécessite toujours l’intervention de l’utilisateur pour se propager.", a: false },
+  { q: "9. L’ingénierie sociale exploite la psychologie humaine pour obtenir des informations.", a: true },
+  { q: "10. Les botnets sont des réseaux d’appareils contrôlés à distance pour des actions malveillantes.", a: true },
+  { q: "11. La sauvegarde régulière protège contre la perte de données.", a: true },
+  { q: "12. Un rootkit est facile à détecter et à supprimer.", a: false },
+  { q: "13. Les VPN chiffrent le trafic réseau pour sécuriser l’accès distant.", a: true },
+  { q: "14. Le phishing est une technique d’attaque physique sur les serveurs.", a: false },
+  { q: "15. Le cryptojacking utilise les ressources d’un appareil à l’insu de l’utilisateur pour miner des cryptomonnaies.", a: true },
+  { q: "16. Les mises à jour logicielles sont inutiles si vous avez un antivirus.", a: false },
+  { q: "17. L’EFS (Encrypting File System) de Windows protège les fichiers contre l’accès non autorisé.", a: true },
+  { q: "18. Le DDoS implique plusieurs sources pour rendre un service indisponible.", a: true },
+  { q: "19. L’authentification forte nécessite uniquement un mot de passe complexe.", a: false },
+  { q: "20. Les conditions de service permettent de savoir qui possède vos données.", a: true },
+  // … Ajouter jusqu’à 45 questions
+];
 
-let timer = setInterval(() => {
-    let minutes = Math.floor(tempsRestant / 60);
-    let secondes = tempsRestant % 60;
-    timerElement.textContent = `Temps restant : ${minutes.toString().padStart(2,'0')}:${secondes.toString().padStart(2,'0')}`;
-    tempsRestant--;
+// Variables globales
+let current = 0;
+let score = 0;
 
-    if(tempsRestant < 0){
-        clearInterval(timer);
-        timerElement.textContent = "⏰ Temps écoulé ! QCM bloqué.";
-        submitBtn.disabled = true;
-        // Bloquer toutes les réponses
-        let inputs = qcmContainer.querySelectorAll('input[type=radio]');
-        inputs.forEach(input => input.disabled = true);
-        alert("Le temps est écoulé ! Redémarrez le QCM pour réessayer.");
-    }
-}, 1000);
-
-// Fonction QCM ✅❌ avec pourcentage
-function verifierReponses() {
-    let totalQuestions = 3; // changez selon le nombre total de questions
-    let score = 0;
-
-    for (let i = 1; i <= totalQuestions; i++) {
-        let radios = document.getElementsByName('q' + i);
-        for (let radio of radios) {
-            let label = radio.parentElement;
-            label.classList.remove("correct-answer", "wrong-answer");
-            if (radio.value == "1") { label.classList.add("correct-answer"); }
-        }
-
-        let answered = false;
-        for (let radio of radios) {
-            if (radio.checked) {
-                answered = true;
-                if (radio.value == "1") {
-                    score++;
-                } else {
-                    radio.parentElement.classList.add("wrong-answer");
-                }
-            }
-        }
-    }
-
-    let pourcentage = (score / totalQuestions) * 100;
-    document.getElementById('result').innerHTML = 'Votre résultat : ' + pourcentage.toFixed(0) + '%';
+// Fonction pour démarrer/recommencer le QCM
+function startQuiz() {
+  current = 0;
+  score = 0;
+  document.getElementById('score').innerHTML = '';
+  document.getElementById('restart').style.display = 'none';
+  showQuestion();
 }
+
+// Affichage de la question actuelle
+function showQuestion() {
+  if(current >= questions.length) {
+    document.getElementById('quiz').innerHTML = `<p>✅ QCM terminé ! Votre score : ${score} / ${questions.length}</p>`;
+    document.getElementById('restart').style.display = 'inline-block';
+    return;
+  }
+  const q = questions[current];
+  document.getElementById('quiz').innerHTML = `
+    <div class="question">${q.q}</div>
+    <button class="option" onclick="checkAnswer(true, this)">✅ Vrai</button>
+    <button class="option" onclick="checkAnswer(false, this)">❌ Faux</button>
+  `;
+}
+
+// Vérification de la réponse
+function checkAnswer(ans, btn) {
+  const correct = questions[current].a;
+  if(ans === correct) {
+    btn.classList.add('correct');
+    score++;
+  } else {
+    btn.classList.add('wrong');
+  }
+
+  // Désactiver tous les boutons
+  const buttons = document.querySelectorAll('.option');
+  buttons.forEach(b => b.disabled = true);
+
+  // Passer à la question suivante après 0.8s
+  setTimeout(()=>{ current++; showQuestion(); }, 800);
+}
+
+// Démarrage automatique
+startQuiz();
 </script>
 
 </body>
