@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercices - Connexion Google</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">ZAGA</div>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="cours.html">COURS CYB-SÉCURITÉ</a>
+        <a class="active" href="exo.html">EXO</a>
+        <a href="test.html">TEST</a>
+    </nav>
+</header>
+
+<main class="exo">
+    <h1>Connexion requise pour accéder aux exercices</h1>
+
+    <button id="login-google">Se connecter avec Gmail</button>
+
+    <div id="user-info" style="display:none;">
+        <h2>Bienvenue, <span id="user-name"></span> !</h2>
+        <p>Vous pouvez maintenant accéder aux exercices.</p>
+        <!-- Ici tu peux mettre les liens ou exercices -->
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 – ZAGA Cyber Security</p>
+</footer>
+
+<script>
+    // ⚡ Étape Firebase
+    const firebaseConfig = {
+        apiKey: "TA_API_KEY",
+        authDomain: "TON_PROJET.firebaseapp.com",
+        projectId: "TON_PROJET",
+        storageBucket: "TON_PROJET.appspot.com",
+        messagingSenderId: "TON_ID",
+        appId: "TON_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    const loginBtn = document.getElementById('login-google');
+    const userInfo = document.getElementById('user-info');
+    const userName = document.getElementById('user-name');
+
+    loginBtn.addEventListener('click', () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                const user = result.user;
+                userName.textContent = user.displayName;
+                loginBtn.style.display = 'none';
+                userInfo.style.display = 'block';
+            })
+            .catch((error) => {
+                alert('Erreur de connexion : ' + error.message);
+            });
+    });
+</script>
+
+</body>
+</html>
