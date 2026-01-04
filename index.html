@@ -6,28 +6,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-
-<div id="g_id_onload"
-     data-client_id="VOTRE_ID_CLIENT_ICI.apps.googleusercontent.com"
-     data-callback="handleCredentialResponse">
-</div>
-<div class="g_id_signin" data-type="standard"></div>
-
-<script>
-  function handleCredentialResponse(response) {
-     // C'est ici que vous recevez les infos de connexion
-     console.log("Encoded JWT ID token: " + response.credential);
-     alert("Connexion réussie !");
-  }
-</script>
 
 <header>
     <div class="logo">ZAGA</div>
 
     <nav>
         <a class="active" href="#">HOME</a>
-        <a href="#">info cyber</a>
         <a href="#">SERVICES</a>
         <a href="#">CLIENTS</a>
         <a href="#">CONTACT</a>
