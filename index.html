@@ -2,73 +2,52 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>ZAGA - Cyber Security</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberTech - Protect Your Computer</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<header>
-    <div class="logo">ZAGA</div>
-    <nav>
-        <a class="active" href="index.html">HOME</a>
-        <a href="#" onclick="demarrerAcces()">SERVICES-ACTUEL</a>
-        <a href="#">CONTACT</a>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">ZAGA</span> CYBERTECH
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <ul>
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">CLIENTS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="hero">
-    <div class="hero-left" id="content-area">
-        <div id="google-auth-container">
-            <h3 style="color: white; margin-bottom: 15px;">Connectez-vous pour accéder au cours</h3>
-            <div id="buttonDiv"></div>
+    <main class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="votre-image-laptop.png" alt="Cybersecurity Illustration">
+            </div>
+
+            <div class="hero-content">
+                <h1>PROTECT <span>YOUR</span> COMPUTER</h1>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed it diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat sed diam dolore aliquam lorem ipsum.</p>
+                
+                <a href="#" class="btn-read-more">READ MORE</a>
+
+                <div class="social-icons">
+                    <div class="icon-circle"><i class="fab fa-facebook-f"></i></div>
+                    <div class="icon-circle"><i class="fab fa-twitter"></i></div>
+                    <div class="icon-circle"><i class="fab fa-instagram"></i></div>
+                    <div class="icon-circle"><i class="fab fa-google-plus-g"></i></div>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <div class="hero-right">
-        <h1>PROTÉGER VOTRE ORDINATEUR</h1>
-        <p>
-            [span_0](start_span)Utilisez un antivirus à jour pour bloquer les menaces[span_0](end_span).
-            [span_1](start_span)[span_2](start_span)Mettez régulièrement à jour le système et les logiciels[span_1](end_span)[span_2](end_span).
-            [span_3](start_span)Choisissez des mots de passe forts et uniques[span_3](end_span).
-            [span_4](start_span)[span_5](start_span)Activez le pare-feu pour bloquer les accès non autorisés[span_4](end_span)[span_5](end_span).
-            [span_6](start_span)Évitez les sites et téléchargements suspects[span_6](end_span).
-            [span_7](start_span)[span_8](start_span)Faites des sauvegardes régulières de vos données[span_7](end_span)[span_8](end_span).
-        </p>
-        <button id="btn-service-hero" onclick="demarrerAcces()">ACCÉDER AU PDF</button>
-    </div>
-</section>
-
-<script>
-    [span_9](start_span)// Configuration Google OAuth[span_9](end_span)
-    function handleCredentialResponse(response) {
-        console.log("Connecté avec succès");
-        const area = document.getElementById('content-area');
-        
-        [span_10](start_span)// Remplacement du contenu par le PDF (Principe de Disponibilité)[span_10](end_span)
-        area.innerHTML = `
-            <div id="welcome-message">
-                <h3 style="color: #00b4ff; margin-bottom:10px;">Accès Autorisé</h3>
-                <iframe src="Cours-Introduction a la cybersecurité.pdf" 
-                        style="width: 450px; height: 500px; border: none; border-radius: 8px;">
-                </iframe>
-            </div>`;
-    }
-
-    window.onload = function () {
-        google.accounts.id.initialize({
-            client_id: "VOTRE_CLIENT_ID_GOOGLE.apps.googleusercontent.com",
-            callback: handleCredentialResponse
-        });
-        google.accounts.id.renderButton(
-            document.getElementById("buttonDiv"),
-            { theme: "outline", size: "large" }
-        );
-    }
-
-    function demarrerAcces() {
-        google.accounts.id.prompt(); [span_11](start_span)// Affiche la fenêtre contextuelle Google[span_11](end_span)
-    }
-</script>
 </body>
 </html>
