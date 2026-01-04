@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QCM Cybersécurité - Module 6</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #004080;
+    }
+    .qcm {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .question h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    .answers label {
+        display: block;
+        margin-bottom: 5px;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 4px;
+    }
+    .correct-answer { background-color: #d4edda; color: #155724; }
+    .wrong-answer { background-color: #f8d7da; color: #721c24; }
+    button {
+        background-color: #004080;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover { background-color: #0066cc; }
+    .result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+    }
+    #timer {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #004080;
+    }
+</style>
+</head>
+<body>
+
+<h1>QCM Cybersécurité - Module 6</h1>
+<div id="timer">Temps restant : 30:00</div>
+
+<div class="qcm" id="qcmContainer">
+    <!-- Questions -->
+    <div class="question">
+        <h3>1. Quel est l'objectif principal de la cybersécurité ?</h3>
+        <div class="answers">
+            <label><input type="radio" name="q1" value="0"> Protéger uniquement les systèmes informatiques</label>
+            <label><input type="radio" name="q1" value="1"> Protéger individus, organisations et gouvernements contre les attaques numériques</label>
+            <label><input type="radio" name="q1" value="0"> Installer des logiciels antivirus</label>
+        </div>
+    </div>
+    <div class="question">
+        <h3>2. Quel type de malware chiffre les données et exige une rançon ?</h3>
+        <div class="answers">
+            <label><input type="radio" name="q2" value="0"> Spyware</label>
+            <label><input type="radio" name="q2" value="1"> Ransomware</label>
+            <label><input type="radio" name="q2" value="0"> Worm</label>
+        </div>
+    </div>
+    <div class="question">
+        <h3>3. Que signifie le principe de confidentialité dans le Cube de McCumber ?</h3>
+        <div class="answers">
+            <label><input type="radio" name="q3" value="1"> Protéger l'accès aux informations</label>
+            <label><input type="radio" name="q3" value="0"> Garantir la disponibilité des systèmes</label>
+            <label><input type="radio" name="q3" value="0"> Modifier les données pour les sécuriser</label>
+        </div>
+    </div>
+    <!-- Ajoutez les autres questions ici de la même manière -->
+    <button onclick="verifierReponses()" id="submitBtn">Valider</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+// Minuterie 30 minutes
+let tempsRestant = 30 * 60; // en secondes
+let timerElement = document.getElementById('timer');
+let qcmContainer = document.getElementById('qcmContainer');
+let submitBtn = document.getElementById('submitBtn');
+
+let timer = setInterval(() => {
+    let minutes = Math.floor(tempsRestant / 60);
+    let secondes = tempsRestant % 60;
+    timerElement.textContent = `Temps restant : ${minutes.toString().padStart(2,'0')}:${secondes.toString().padStart(2,'0')}`;
+    tempsRestant--;
+
+    if(tempsRestant < 0){
+        clearInterval(timer);
+        timerElement.textContent = "⏰ Temps écoulé ! QCM bloqué.";
+        submitBtn.disabled = true;
+        // Bloquer toutes les réponses
+        let inputs = qcmContainer.querySelectorAll('input[type=radio]');
+        inputs.forEach(input => input.disabled = true);
+        alert("Le temps est écoulé ! Redémarrez le QCM pour réessayer.");
+    }
+}, 1000);
+
+// Fonction QCM ✅❌ avec pourcentage
+function verifierReponses() {
+    let totalQuestions = 3; // changez selon le nombre total de questions
+    let score = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let radios = document.getElementsByName('q' + i);
+        for (let radio of radios) {
+            let label = radio.parentElement;
+            label.classList.remove("correct-answer", "wrong-answer");
+            if (radio.value == "1") { label.classList.add("correct-answer"); }
+        }
+
+        let answered = false;
+        for (let radio of radios) {
+            if (radio.checked) {
+                answered = true;
+                if (radio.value == "1") {
+                    score++;
+                } else {
+                    radio.parentElement.classList.add("wrong-answer");
+                }
+            }
+        }
+    }
+
+    let pourcentage = (score / totalQuestions) * 100;
+    document.getElementById('result').innerHTML = 'Votre résultat : ' + pourcentage.toFixed(0) + '%';
+}
+</script>
+
+</body>
+</html>
