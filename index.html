@@ -1,16 +1,109 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Security</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== Style global ===== */
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: #2563eb;
+            color: white;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Hero section ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 50px;
+            gap: 30px;
+        }
+
+        .hero-left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-left .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .hero-right {
+            flex: 1;
+        }
+
+        .hero-right h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .hero-right p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .hero-right button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .hero-right button:hover {
+            background-color: #1e4bb8;
+        }
+
+        .dots {
+            margin-top: 15px;
+            height: 10px;
+            width: 60px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <div class="logo">ZAGA</div>
-
     <nav>
-        <a class="#" href="#">HOME👨🏽‍💻</a>
+        <a href="#">HOME👨🏽‍💻</a>
         <a href="cours.html">COURS CYBER-SECURIT📖</a>
         <a href="exo.html">EXAMIN CYBER-SECURIT📝</a>
         <a href="constact.html">HELP</a>
@@ -19,30 +112,30 @@
 
 <section class="hero">
     <div class="hero-left">
+        <img src="hacker.jpg" alt="Hacker illustration" class="hero-image">
     </div>
 
     <div class="hero-right">
-        <h1> INTRODUCTION CYBER-SECURITE👨🏽‍💻</h1>
-    </p>
+        <h1>INTRODUCTION CYBER-SECURITE👨🏽‍💻</h1>
+        <p>
             <strong>Définition :</strong><br>
             La cyber-sécurité est un effort continu visant à protéger
             les individus, les organisations et les gouvernements
             contre les attaques numériques.
-    </p>
+        </p>
+        <p>
             <strong>Niveaux de protection :</strong><br><br>
 
             <strong>Personnel :</strong> Identité, données, appareils.<br>
             <strong>Professionnel :</strong> Réputation, données clients,
             actifs de l’entreprise.<br>
             <strong>Gouvernemental :</strong> Sécurité nationale,
-            stabilité économique, bien-être des citoyens .
-    </p>
-
+            stabilité économique, bien-être des citoyens.
+        </p>
         
-        <button>NEXT</button></button>
+        <button>NEXT</button>
 
-        <div class="dots">
-        </div>
+        <div class="dots"></div>
     </div>
 </section>
 
