@@ -2,138 +2,91 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>QCM Cybersécurité - Module 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Déverrouillage sécurisé + QCM</title>
 
 <style>
-:root{
-  --blue:#2563eb;
-  --green:#16a34a;
-  --red:#dc2626;
-  --bg:#f1f5f9;
-}
+/* ===== Déverrouillage ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', Tahoma, sans-serif;}
+body{height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);}
 
-body{
-  margin:0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(120deg,#e0e7ff,#f8fafc);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+#lock-screen{
+    width:360px;padding:40px 30px;background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border-radius:18px;box-shadow:0 20px 40px rgba(0,0,0,0.4);text-align:center;color:#fff;
 }
+#lock-screen img{width:70px;margin-bottom:20px;}
+#lock-screen input{width:100%;padding:15px;border-radius:10px;border:none;margin-bottom:20px;font-size:16px;text-align:center;letter-spacing:4px;}
+#lock-screen button{width:100%;padding:14px;border:none;border-radius:10px;background:#00c6ff;font-weight:bold;cursor:pointer;}
+#lock-msg{margin-top:18px;height:18px;}
 
-.container{
-  background:#fff;
-  width:100%;
-  max-width:800px;
-  padding:30px;
-  border-radius:16px;
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-h1{
-  text-align:center;
-  color:var(--blue);
-  margin-bottom:10px;
-}
-
-.top-bar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.timer{
-  font-size:20px;
-  font-weight:bold;
-  color:#0f172a;
-  background:#e0e7ff;
-  padding:8px 16px;
-  border-radius:999px;
-}
-
-.progress{
-  font-weight:600;
-  color:#475569;
-}
-
-.question{
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:25px;
-  color:#020617;
-}
-
-.option{
-  display:block;
-  width:100%;
-  text-align:left;
-  padding:14px 18px;
-  margin:12px 0;
-  font-size:18px;
-  border-radius:10px;
-  border:2px solid #e5e7eb;
-  background:#f8fafc;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.option:hover{
-  border-color:var(--blue);
-  background:#eef2ff;
-}
-
-.correct{
-  background:#dcfce7 !important;
-  border-color:var(--green) !important;
-  color:#14532d;
-}
-
-.wrong{
-  background:#fee2e2 !important;
-  border-color:var(--red) !important;
-  color:#7f1d1d;
-}
-
-#result{
-  text-align:center;
-  font-size:24px;
-  font-weight:700;
-  margin-top:20px;
-}
-
-#restart{
-  display:none;
-  margin:25px auto 0;
-  padding:12px 24px;
-  font-size:18px;
-  border:none;
-  border-radius:999px;
-  background:var(--blue);
-  color:#fff;
-  cursor:pointer;
-}
+/* ===== QCM ===== */
+#quiz-screen{display:none;}
+:root{--blue:#2563eb;--green:#16a34a;--red:#dc2626;--bg:#f1f5f9;}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(120deg,#e0e7ff,#f8fafc);}
+.container{background:#fff;width:100%;max-width:800px;padding:30px;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.15);}
+h1{text-align:center;color:var(--blue);margin-bottom:10px;}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.timer{font-size:20px;font-weight:bold;color:#0f172a;background:#e0e7ff;padding:8px 16px;border-radius:999px;}
+.progress{font-weight:600;color:#475569;}
+.question{font-size:26px;font-weight:700;margin-bottom:25px;color:#020617;}
+.option{display:block;width:100%;text-align:left;padding:14px 18px;margin:12px 0;font-size:18px;border-radius:10px;border:2px solid #e5e7eb;background:#f8fafc;cursor:pointer;transition:.2s;}
+.option:hover{border-color:var(--blue);background:#eef2ff;}
+.correct{background:#dcfce7 !important;border-color:var(--green) !important;color:#14532d;}
+.wrong{background:#fee2e2 !important;border-color:var(--red) !important;color:#7f1d1d;}
+#result{text-align:center;font-size:24px;font-weight:700;margin-top:20px;}
+#restart{display:none;margin:25px auto 0;padding:12px 24px;font-size:18px;border:none;border-radius:999px;background:var(--blue);color:#fff;cursor:pointer;}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>QCM Cybersécurité – Module 6</h1>
+<!-- ÉCRAN DÉVERROUILLAGE -->
+<div id="lock-screen">
+    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="Lock">
+    <h2>Déverrouillage</h2>
+    <input type="password" id="pin" placeholder="••••">
+    <button id="btn" onclick="unlock()">Déverrouiller</button>
+    <div class="msg" id="lock-msg"></div>
+</div>
 
-  <div class="top-bar">
-    <div class="progress" id="progress"></div>
-    <div class="timer" id="timer">15:00</div>
-  </div>
-
-  <div id="quiz"></div>
-  <div id="result"></div>
-  <button id="restart" onclick="startQuiz()">🔄 Redémarrer le QCM</button>
+<!-- QCM (masqué tant que PIN incorrect) -->
+<div id="quiz-screen" class="container">
+    <h1>QCM Cybersécurité – Module 6</h1>
+    <div class="top-bar">
+        <div class="progress" id="progress"></div>
+        <div class="timer" id="timer">15:00</div>
+    </div>
+    <div id="quiz"></div>
+    <div id="result"></div>
+    <button id="restart" onclick="startQuiz()">🔄 Redémarrer le QCM</button>
 </div>
 
 <script>
-const questions = [
+/* ===== Déverrouillage ===== */
+const PIN_CORRECT="1188";
+let tentatives=0;
+function unlock(){
+    const pin=document.getElementById("pin").value;
+    const msg=document.getElementById("lock-msg");
+    const btn=document.getElementById("btn");
+    if(tentatives>=3){
+        msg.style.color="#ff4d4d"; msg.textContent="🔒 Accès bloqué"; btn.disabled=true; return;
+    }
+    if(pin===PIN_CORRECT){
+        msg.style.color="#00ff9d"; msg.textContent="✔ Accès autorisé";
+        setTimeout(()=>{
+            document.getElementById("lock-screen").style.display="none";
+            document.getElementById("quiz-screen").style.display="block";
+            startQuiz();
+        },300);
+    }else{
+        tentatives++; msg.style.color="#ff4d4d"; msg.textContent="pword incorrect";
+        if(tentatives>=3){ msg.textContent="🔒 Accès bloqué"; btn.disabled=true; }
+    }
+    document.getElementById("pin").value="";
+}
+
+/* ===== QCM ===== */
+const questions=[
  {q:"1. La cybersécurité protège uniquement les données personnelles des individus.",a:false},
  {q:"2. Les niveaux de protection incluent le personnel, le professionnel et le gouvernemental.",a:true},
  {q:"3. L'usurpation d'identité est un risque lié aux données personnelles.",a:true},
@@ -181,8 +134,7 @@ const questions = [
  {q:"45. La cybersécurité est une responsabilité partagée.",a:true}
 ];
 
-let current=0, score=0;
-let timeLeft=900, timerInterval;
+let current=0, score=0, timeLeft=900, timerInterval;
 
 function startQuiz(){
  current=0; score=0; timeLeft=900;
@@ -234,8 +186,6 @@ function endQuiz(){
    `🎯 Score final : ${score} / ${questions.length}`;
  document.getElementById("restart").style.display="block";
 }
-
-startQuiz();
 </script>
 
 </body>
