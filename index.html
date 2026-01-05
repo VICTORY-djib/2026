@@ -1,146 +1,16 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Security</title>
-<style>
-    /* ===== Global ===== */
-    body {
-        margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background-color: #0f111a;
-        color: #fff;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    /* ===== Header ===== */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 50px;
-        background-color: #1a202c;
-    }
-
-    .logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: #fff;
-    }
-
-    nav a {
-        margin-left: 20px;
-        font-weight: bold;
-        color: #fff;
-        transition: color 0.3s;
-    }
-
-    nav a:hover {
-        color: #2563eb;
-    }
-
-    /* ===== Hero section ===== */
-    .hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 90vh;
-        padding: 50px;
-        gap: 50px;
-    }
-
-    .hero-left {
-        flex: 1;
-        background-image: url('hacker.jpg'); /* chemin vers ton image hacker */
-        background-size: cover;
-        background-position: center;
-        border-radius: 10px;
-        min-height: 400px;
-    }
-
-    .hero-right {
-        flex: 1;
-    }
-
-    .hero-right h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        line-height: 1.2;
-    }
-
-    .hero-right p {
-        font-size: 16px;
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .hero-right strong {
-        color: #2563eb;
-    }
-
-    .hero-right button {
-        margin-top: 20px;
-        padding: 15px 30px;
-        background-color: #2563eb;
-        border: none;
-        border-radius: 5px;
-        font-size: 18px;
-        font-weight: bold;
-        cursor: pointer;
-        color: #fff;
-        transition: background 0.3s;
-    }
-
-    .hero-right button:hover {
-        background-color: #1e4bb8;
-    }
-
-    .dots {
-        margin-top: 15px;
-        display: flex;
-        gap: 10px;
-    }
-
-    .dots div {
-        width: 12px;
-        height: 12px;
-        background-color: #ddd;
-        border-radius: 50%;
-    }
-
-    .dots div.active {
-        background-color: #2563eb;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 900px) {
-        .hero {
-            flex-direction: column;
-            padding: 30px;
-        }
-
-        .hero-left {
-            width: 100%;
-            min-height: 250px;
-        }
-
-        .hero-right {
-            width: 100%;
-        }
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Cyber Security</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
     <div class="logo">ZAGA</div>
+
     <nav>
-        <a href="#">HOME👨🏽‍💻</a>
+        <a class="#" href="#">HOME👨🏽‍💻</a>
         <a href="cours.html">COURS CYBER-SECURIT📖</a>
         <a href="exo.html">EXAMIN CYBER-SECURIT📝</a>
         <a href="constact.html">HELP</a>
@@ -148,32 +18,30 @@
 </header>
 
 <section class="hero">
-    <div class="hero-left"></div>
+    <div class="hero-left">
+    </div>
 
     <div class="hero-right">
-        <h1>INTRODUCTION CYBER-SECURITE👨🏽‍💻</h1>
-        <p>
+        <h1> INTRODUCTION CYBER-SECURITE👨🏽‍💻</h1>
+    </p>
             <strong>Définition :</strong><br>
             La cyber-sécurité est un effort continu visant à protéger
             les individus, les organisations et les gouvernements
             contre les attaques numériques.
-        </p>
-        <p>
+    </p>
             <strong>Niveaux de protection :</strong><br><br>
 
             <strong>Personnel :</strong> Identité, données, appareils.<br>
             <strong>Professionnel :</strong> Réputation, données clients,
             actifs de l’entreprise.<br>
             <strong>Gouvernemental :</strong> Sécurité nationale,
-            stabilité économique, bien-être des citoyens.
-        </p>
+            stabilité économique, bien-être des citoyens .
+    </p>
 
-        <button>NEXT</button>
+        
+        <button>NEXT</button></button>
 
         <div class="dots">
-            <div class="active"></div>
-            <div></div>
-            <div></div>
         </div>
     </div>
 </section>
