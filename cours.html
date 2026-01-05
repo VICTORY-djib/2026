@@ -1,171 +1,285 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Module 6 – Cybersécurité</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modules Cybersécurité – ZAGA</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f7fc;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background: #2563eb;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    nav a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    nav a.active {
+        text-decoration: underline;
+    }
+    main {
+        padding: 20px 40px;
+        max-width: 1100px;
+        margin: auto;
+    }
+    h1 {
+        color: #2563eb;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .module-section {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .module-section h2 {
+        color: #1e40af;
+        margin-bottom: 15px;
+    }
+    .module-section ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    .module-section ul li {
+        margin-bottom: 10px;
+    }
+    footer {
+        background: #1e3a8a;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+    }
+    /* Scroll anchor offset for sticky header */
+    :target::before {
+        content: "";
+        display: block;
+        height: 70px;
+        margin-top: -70px;
+    }
+</style>
 </head>
 <body>
 
 <header>
     <div class="logo">ZAGA</div>
     <nav>
-        <a href="index.html">HOME</a>
-        <a class="active" href="cours.html">COURS CYBER-SÉCURITÉ</a>
-        <a href="exo.html">EXAMIN CYBER-SÉCURITÉ</a>
-        <a href="#">HELP</a>
+        <a href="#module1">Module 1</a>
+        <a href="#module2">Module 2</a>
+        <a href="#module3">Module 3</a>
+        <a href="#module4">Module 4</a>
+        <a href="#module5">Module 5</a>
+        <a href="#module6">Module 6</a>
+        <a href="#module7">Module 7</a>
+        <a href="#module8">Module 8</a>
+        <a href="#module9">Module 9</a>
+        <a href="#module10">Module 10</a>
+        <a href="#module11">Module 11</a>
+        <a href="#module12">Module 12</a>
+        <a href="#module13">Module 13</a>
+        <a href="#module14">Module 14</a>
     </nav>
 </header>
 
-<main class="cours">
+<main>
+    <h1>Modules Cybersécurité – ZAGA</h1>
 
-<h1>Module 6 : Cybersécurité</h1>
+    <!-- Module 1 -->
+    <div class="module-section" id="module1">
+        <h2>Module 1 : Introduction à la cybersécurité</h2>
+        <ul>
+            <li>Protéger individus, entreprises, gouvernements.</li>
+            <li>Niveaux : Personnel, Professionnel, Gouvernemental.</li>
+            <li>Protection des données personnelles et identité en ligne.</li>
+            <li>Données d’entreprise : transactionnelles, financières, propriété intellectuelle.</li>
+            <li>Cube de McCumber : Confidentialité, Intégrité, Disponibilité.</li>
+            <li>Types de cybercriminels : Script Kiddies, Hackers, Cybercriminels organisés.</li>
+            <li>Menaces internes et externes.</li>
+            <li>Cyberguerre : espionnage, sabotage (ex: Stuxnet).</li>
+            <li>Conséquences : financières, réputation, juridiques.</li>
+        </ul>
+    </div>
 
-<!-- MODULE 1 -->
-<section class="module">
-<h2>Module 1 : Introduction à la cybersécurité</h2>
+    <!-- Module 2 -->
+    <div class="module-section" id="module2">
+        <h2>Module 2 : Attaques, concepts et techniques</h2>
+        <ul>
+            <li>Malwares : Spyware, Adware, Backdoor, Ransomware, Rootkit, Virus, Cheval de Troie, Ver.</li>
+            <li>Symptômes : PC lent, plantages, fichiers modifiés, emails envoyés sans consentement.</li>
+            <li>Ingénierie sociale : usurpation, quid pro quo, accès non autorisé.</li>
+            <li>Attaques DoS / DDoS pour saturer les services.</li>
+            <li>Botnets : réseaux d’ordinateurs infectés.</li>
+            <li>MitM / MitMo : interception de communications.</li>
+            <li>SEO Poisoning : manipulation des moteurs de recherche.</li>
+            <li>Attaques sur mots de passe : brute force, dictionnaire, tables arc-en-ciel.</li>
+            <li>Vulnérabilités matérielles et logicielles.</li>
+            <li>Cryptojacking : utilisation non autorisée du PC pour miner.</li>
+        </ul>
+    </div>
 
-<h3>1. Qu’est-ce que la cybersécurité ?</h3>
-<ul>
-<li>Protection des individus, organisations et gouvernements</li>
-<li>Niveaux : Personnel, Professionnel, Gouvernemental</li>
-</ul>
+    <!-- Module 3 -->
+    <div class="module-section" id="module3">
+        <h2>Module 3 : Protection des données et confidentialité</h2>
+        <ul>
+            <li>Sécurisation des appareils : antivirus, pare-feu, mises à jour, mots de passe forts.</li>
+            <li>Wi-Fi sécurisé : WPA2, VPN, firmware à jour, éviter Wi-Fi public.</li>
+            <li>Chiffrement : EFS sur Windows pour protéger fichiers sensibles.</li>
+            <li>Sauvegarde et destruction sécurisée : cloud, disque externe, SDelete/Shred.</li>
+            <li>2FA et OAuth pour sécuriser comptes en ligne.</li>
+            <li>Navigation privée pour limiter tracking.</li>
+        </ul>
+    </div>
 
-<h3>2. Protection des données personnelles</h3>
-<ul>
-<li>Données personnelles : nom, adresse, photos, messages</li>
-<li>Risques : usurpation d’identité, vol bancaire, partage non contrôlé</li>
-</ul>
+    <!-- Module 4 -->
+    <div class="module-section" id="module4">
+        <h2>Module 4 : Protéger l’entreprise</h2>
+        <ul>
+            <li>Équipements : pare-feux, IDS/IPS, VPN, antimalware.</li>
+            <li>Surveillance réseau : analyse ports, flux, anomalies.</li>
+            <li>Protection avancée : Cisco AMP, SIEM, DLP, Cisco ISE.</li>
+            <li>Tests d’intrusion : planification, analyse, exploitation, maintien, rapport.</li>
+            <li>Gestion des risques : identification, évaluation, réponse, surveillance.</li>
+            <li>Réponse aux incidents : communication, analyse, prévention récidive.</li>
+        </ul>
+    </div>
 
-<h3>3. Données d’entreprise</h3>
-<ul>
-<li>Transactionnelles, financières, propriété intellectuelle</li>
-<li>IoT & Big Data : volumes élevés, risques accrus</li>
-</ul>
+    <!-- Module 5 -->
+    <div class="module-section" id="module5">
+        <h2>Module 5 : Carrière en cybersécurité</h2>
+        <ul>
+            <li>Juridique : respecter lois nationales, vie privée et cadres professionnels.</li>
+            <li>Éthique : agir légalement et de manière responsable.</li>
+            <li>Certifications : Security+, CEH, CISSP, Cisco CyberOps, etc.</li>
+            <li>Marché de l’emploi : opportunités locales et internationales, CyberSeek.</li>
+            <li>Parcours : analyste sécurité → spécialisation, formation continue.</li>
+            <li>Perspectives : forte demande, diversité de rôles, dimension internationale.</li>
+        </ul>
+    </div>
 
-<h3>4. Cube de McCumber</h3>
-<ul>
-<li>Confidentialité – Intégrité – Disponibilité</li>
-<li>Données : traitement, stockage, transmission</li>
-<li>Mesures : formation, technologies, procédures</li>
-</ul>
+    <!-- Module 6 -->
+    <div class="module-section" id="module6">
+        <h2>Module 6 : Cybersécurité avancée</h2>
+        <ul>
+            <li>Protection renforcée des données personnelles et professionnelles.</li>
+            <li>Surveillance et détection des intrusions réseau.</li>
+            <li>Cryptographie et gestion sécurisée des mots de passe.</li>
+            <li>Audit et suivi des accès sensibles.</li>
+        </ul>
+    </div>
 
-<h3>5. Types de cybercriminels</h3>
-<ul>
-<li>Script Kiddies</li>
-<li>Hackers : chapeau blanc, gris, noir</li>
-<li>Cybercriminels organisés et États</li>
-</ul>
+    <!-- Module 7 -->
+    <div class="module-section" id="module7">
+        <h2>Module 7 : Sécurité mobile et IoT</h2>
+        <ul>
+            <li>Sécuriser smartphones, tablettes et objets connectés.</li>
+            <li>VPN et chiffrement pour appareils mobiles.</li>
+            <li>Gestion des mises à jour automatiques.</li>
+            <li>Contrôle des permissions et applications tierces.</li>
+        </ul>
+    </div>
 
-<h3>6. Menaces internes et externes</h3>
-<ul>
-<li>Internes : erreurs humaines</li>
-<li>Externes : pirates, ingénierie sociale</li>
-</ul>
+    <!-- Module 8 -->
+    <div class="module-section" id="module8">
+        <h2>Module 8 : Cloud et sécurité</h2>
+        <ul>
+            <li>Comprendre les risques liés au Cloud public et privé.</li>
+            <li>Gestion des accès et authentifications multi-facteurs.</li>
+            <li>Sauvegarde et récupération après incident.</li>
+            <li>Chiffrement des données stockées et en transit.</li>
+        </ul>
+    </div>
 
-<h3>7. Cyberguerre</h3>
-<ul>
-<li>Espionnage, sabotage</li>
-<li>Exemple : Stuxnet</li>
-</ul>
+    <!-- Module 9 -->
+    <div class="module-section" id="module9">
+        <h2>Module 9 : Sécurité web et applications</h2>
+        <ul>
+            <li>Protection contre injections SQL, XSS, CSRF.</li>
+            <li>Tests de pénétration et audit régulier.</li>
+            <li>Politiques de mises à jour et correctifs.</li>
+            <li>Authentification et contrôle d’accès strict.</li>
+        </ul>
+    </div>
 
-<h3>8. Violations de données</h3>
-<ul>
-<li>Razer (2020), Equifax (2017)</li>
-<li>Conséquences : pertes financières, juridiques, réputation</li>
-</ul>
+    <!-- Module 10 -->
+    <div class="module-section" id="module10">
+        <h2>Module 10 : Sécurité réseau avancée</h2>
+        <ul>
+            <li>Segmentation réseau et VLAN.</li>
+            <li>Analyse comportementale et détection anomalies.</li>
+            <li>Protection contre DDoS et attaques ciblées.</li>
+            <li>Honeypots pour étudier les attaquants.</li>
+        </ul>
+    </div>
 
-</section>
+    <!-- Module 11 -->
+    <div class="module-section" id="module11">
+        <h2>Module 11 : Sécurité physique et sociale</h2>
+        <ul>
+            <li>Contrôle d’accès physique aux locaux.</li>
+            <li>Surveillance vidéo et alarmes.</li>
+            <li>Formation du personnel à l’ingénierie sociale.</li>
+            <li>Politiques d’usage des appareils et données.</li>
+        </ul>
+    </div>
 
-<!-- MODULE 2 -->
-<section class="module">
-<h2>Module 2 : Attaques, concepts et techniques</h2>
+    <!-- Module 12 -->
+    <div class="module-section" id="module12">
+        <h2>Module 12 : Gestion des incidents et continuité</h2>
+        <ul>
+            <li>Plan de réponse aux incidents.</li>
+            <li>Analyse médico-légale et prévention récidive.</li>
+            <li>Plan de continuité d’activité (PCA) et reprise après sinistre (DRP).</li>
+            <li>Communication interne et externe transparente.</li>
+        </ul>
+    </div>
 
-<h3>1. Malwares</h3>
-<ul>
-<li>Spyware, Adware, Backdoor</li>
-<li>Ransomware, Rootkit</li>
-<li>Virus, Cheval de Troie, Ver</li>
-</ul>
+    <!-- Module 13 -->
+    <div class="module-section" id="module13">
+        <h2>Module 13 : Gouvernance et conformité</h2>
+        <ul>
+            <li>Normes ISO, RGPD, NIST.</li>
+            <li>Politiques internes et audits réguliers.</li>
+            <li>Évaluation des risques et reporting.</li>
+            <li>Responsabilité et accountability dans l’entreprise.</li>
+        </ul>
+    </div>
 
-<h3>2. Symptômes d’infection</h3>
-<ul>
-<li>PC lent, plantages</li>
-<li>Fichiers modifiés</li>
-<li>E-mails envoyés sans autorisation</li>
-</ul>
-
-<h3>3. Ingénierie sociale</h3>
-<ul>
-<li>Usurpation</li>
-<li>Quid pro quo</li>
-<li>Accès non autorisé</li>
-</ul>
-
-<h3>4. DoS / DDoS</h3>
-<ul>
-<li>Saturation de services</li>
-<li>Botnets distribués</li>
-</ul>
-
-<h3>5. Autres attaques</h3>
-<ul>
-<li>MitM / MitMo</li>
-<li>SEO Poisoning</li>
-<li>Attaques de mots de passe</li>
-</ul>
-
-<h3>6. Vulnérabilités</h3>
-<ul>
-<li>Matérielles : Meltdown, Spectre</li>
-<li>Logicielles : buffer overflow, accès non contrôlé</li>
-</ul>
-</section>
-
-<!-- MODULE 3 -->
-<section class="module">
-<h2>Module 3 : Protection des données et confidentialité</h2>
-
-<ul>
-<li>Pare-feu, antivirus, VPN</li>
-<li>Wi-Fi sécurisé (WPA2, firmware)</li>
-<li>Mots de passe forts et phrases secrètes</li>
-<li>Chiffrement (EFS)</li>
-<li>Sauvegardes et destruction sécurisée</li>
-<li>2FA, OAuth, navigation privée</li>
-</ul>
-</section>
-
-<!-- MODULE 4 -->
-<section class="module">
-<h2>Module 4 : Protéger l’entreprise</h2>
-
-<ul>
-<li>Pare-feux, IDS/IPS, VPN</li>
-<li>SIEM, DLP, Cisco ISE</li>
-<li>Tests d’intrusion (Pentest)</li>
-<li>Gestion des risques</li>
-<li>Réponse aux incidents</li>
-</ul>
-</section>
-
-<!-- MODULE 5 -->
-<section class="module">
-<h2>Module 5 : Carrière en cybersécurité</h2>
-
-<ul>
-<li>Cadre juridique et éthique</li>
-<li>Certifications : Security+, CEH, CISSP</li>
-<li>Marché de l’emploi</li>
-<li>Évolution de carrière</li>
-<li>Perspectives d’avenir</li>
-</ul>
-</section>
+    <!-- Module 14 -->
+    <div class="module-section" id="module14">
+        <h2>Module 14 : Perspectives et avenir</h2>
+        <ul>
+            <li>Évolution rapide des menaces et technologies.</li>
+            <li>Importance de la formation continue et certifications.</li>
+            <li>Opportunités internationales et spécialisations multiples.</li>
+            <li>Éthique, respect du droit et sécurité globale.</li>
+        </ul>
+    </div>
 
 </main>
 
 <footer>
-<p>© 2026 – ZAGA Cyber Security</p>
+    <p>© 2026 – ZAGA Cyber Security</p>
 </footer>
 
 </body>
