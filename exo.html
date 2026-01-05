@@ -6,227 +6,237 @@
 <title>Déverrouillage sécurisé + QCM</title>
 
 <style>
-/* ===== Header ===== */
-body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;}
-header{background:#2563eb;color:white;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
-header .logo{font-size:24px;font-weight:bold;}
-header nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500;}
-header nav a.active{text-decoration:underline;}
+body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;height:100vh;display:flex;flex-direction:column;align-items:center;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);}
+header{background:#2563eb;color:white;padding:15px 30px;width:100%;position:sticky;top:0}
+header nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500}
+header nav a.active{text-decoration:underline}
 
-/* ===== Déverrouillage ===== */
-*{box-sizing:border-box;}
-body{height:100vh;display:flex;flex-direction:column;align-items:center;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);}
 #lock-screen{
-    width:360px;padding:40px 30px;background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border-radius:18px;box-shadow:0 20px 40px rgba(0,0,0,0.4);text-align:center;color:#fff;margin-top:40px;
-}
-#lock-screen img{width:70px;margin-bottom:20px;}
-#lock-screen input{width:100%;padding:15px;border-radius:10px;border:none;margin-bottom:20px;font-size:16px;text-align:center;letter-spacing:4px;}
-#lock-screen button{width:100%;padding:14px;border:none;border-radius:10px;background:#00c6ff;font-weight:bold;cursor:pointer;}
-#lock-msg{margin-top:18px;height:18px;}
+width:360px;padding:40px;background:rgba(255,255,255,0.12);
+backdrop-filter:blur(12px);border-radius:18px;color:white;
+text-align:center;margin-top:40px}
 
-/* ===== QCM ===== */
-#quiz-screen{display:none;}
-:root{--blue:#2563eb;--green:#16a34a;--red:#dc2626;--bg:#f1f5f9;}
-.container{background:#fff;width:100%;max-width:800px;padding:30px;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.15);margin-top:40px;}
-h1{text-align:center;color:var(--blue);margin-bottom:10px;}
-.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
-.timer{font-size:20px;font-weight:bold;color:#0f172a;background:#e0e7ff;padding:8px 16px;border-radius:999px;}
-.progress{font-weight:600;color:#475569;}
-.question{font-size:26px;font-weight:700;margin-bottom:25px;color:#020617;}
-.option{display:block;width:100%;text-align:left;padding:14px 18px;margin:12px 0;font-size:18px;border-radius:10px;border:2px solid #e5e7eb;background:#f8fafc;cursor:pointer;transition:.2s;}
-.option:hover{border-color:var(--blue);background:#eef2ff;}
-.correct{background:#dcfce7 !important;border-color:var(--green) !important;color:#14532d;}
-.wrong{background:#fee2e2 !important;border-color:var(--red) !important;color:#7f1d1d;}
-#result{text-align:center;font-size:24px;font-weight:700;margin-top:20px;}
-#restart{display:none;margin:25px auto 0;padding:12px 24px;font-size:18px;border:none;border-radius:999px;background:var(--blue);color:#fff;cursor:pointer;}
+#lock-screen input{width:100%;padding:15px;border-radius:10px;border:none;margin:20px 0;text-align:center;font-size:16px}
+#lock-screen button{width:100%;padding:14px;border:none;border-radius:10px;background:#00c6ff;font-weight:bold;cursor:pointer}
+#lock-msg{margin-top:10px}
+
+#quiz-screen{display:none}
+.container{background:white;max-width:800px;width:100%;padding:30px;border-radius:16px;margin-top:40px}
+.timer{font-weight:bold;background:#e0e7ff;padding:8px 16px;border-radius:999px}
+.option{width:100%;padding:14px;margin:10px 0;font-size:18px;border-radius:10px;border:2px solid #ddd;cursor:pointer}
+.correct{background:#dcfce7;border-color:#16a34a}
+.wrong{background:#fee2e2;border-color:#dc2626}
 </style>
 </head>
 
 <body>
 
-<!-- Header ZAGA -->
 <header>
-    <nav>
-        <a href="index.html">HOME👨🏽‍💻</a>
-        <a href="cours.html">COURS📖</a>
-        <a class="active" href="exo.html">EXAMEN📝</a>
-        <a href="constact.html">HELP</a>
-    </nav>
+<nav>
+<a href="index.html">HOME</a>
+<a href="cours.html">COURS</a>
+<a class="active" href="exo.html">EXAMEN</a>
+<a href="contact.html">HELP</a>
+</nav>
 </header>
 
-<!-- ÉCRAN DÉVERROUILLAGE -->
 <div id="lock-screen">
-    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="Lock">
-    <h2>Déverrouillage</h2>
-    <input type="password" id="pin" placeholder="••••">
-    <button id="btn" onclick="unlock()">Déverrouiller</button>
-    <div class="msg" id="lock-msg"></div>
+<h2>🔒 Déverrouillage</h2>
+<input type="password" id="pin" placeholder="••••">
+<button onclick="unlock()">Déverrouiller</button>
+<div id="lock-msg"></div>
 </div>
 
-<!-- QCM (masqué tant que PIN incorrect) -->
 <div id="quiz-screen" class="container">
-    <h1> QCM Cybersécurité </h1>
-    <div class="top-bar">
-        <div class="progress" id="progress"></div>
-        <div class="timer" id="timer">15:00</div>
-    </div>
-    <div id="quiz"></div>
-    <div id="result"></div>
-    <button id="restart" onclick="startQuiz()">🔄 Redémarrer le QCM</button>
+<h1>QCM Cybersécurité</h1>
+<div style="display:flex;justify-content:space-between">
+<div id="progress"></div>
+<div class="timer" id="timer">15:00</div>
+</div>
+<div id="quiz"></div>
+<div id="result"></div>
 </div>
 
 <script>
-/* ===== Déverrouillage ===== */
 const PIN_CORRECT="7183";
-let tentatives=0;
-function unlock(){
-    const pin=document.getElementById("pin").value;
-    const msg=document.getElementById("lock-msg");
-    const btn=document.getElementById("btn");
-    if(tentatives>=3){
-        msg.style.color="#ff4d4d"; msg.textContent="🔒 Accès bloqué"; btn.disabled=true; return;
-    }
-    if(pin===PIN_CORRECT){
-        msg.style.color="#00ff9d"; msg.textContent="✔ Accès autorisé";
-        setTimeout(()=>{
-            document.getElementById("lock-screen").style.display="none";
-            document.getElementById("quiz-screen").style.display="block";
-            startQuiz();
-        },300);
-    }else{
-        tentatives++; msg.style.color="#ff4d4d"; msg.textContent="pword incorrect";
-        if(tentatives>=3){ msg.textContent="🔒 Accès bloqué"; btn.disabled=true; }
-    }
-    document.getElementById("pin").value="";
-}
+let tentatives=0, current=0, score=0, timeLeft=900, timerInterval;
+let quizUnlocked=false;
 
-/* ===== QCM ===== */
 const questions=[
- {q:"1. La cybersécurité protège uniquement les données personnelles des individus.",a:false},
- {q:"2. Les niveaux de protection incluent le personnel, le professionnel et le gouvernemental.",a:true},
- {q:"3. L'usurpation d'identité est un risque lié aux données personnelles.",a:true},
- {q:"4. Les données IoT augmentent le risque de violations de sécurité.",a:true},
- {q:"5. Le Cube de McCumber inclut confidentialité, intégrité et disponibilité.",a:true},
- {q:"6. Les hackers chapeau noir testent la sécurité avec autorisation.",a:false},
- {q:"7. Les menaces internes peuvent provenir d'employés involontaires.",a:true},
- {q:"8. Stuxnet est un malware utilisé uniquement pour espionner les emails.",a:false},
- {q:"9. Les violations de données peuvent entraîner des pertes financières.",a:true},
- {q:"10. Un ransomware chiffre les données et exige une rançon.",a:true},
- {q:"11. Un ver nécessite l'action de l'utilisateur pour se propager.",a:false},
- {q:"12. Le rootkit est facile à détecter.",a:false},
- {q:"13. L'ingénierie sociale exploite la psychologie humaine.",a:true},
- {q:"14. Une attaque DDoS provient d'une seule machine.",a:false},
- {q:"15. Les botnets sont des réseaux d'appareils zombies.",a:true},
- {q:"16. Le cryptojacking mine des cryptomonnaies sans consentement.",a:true},
- {q:"17. Les mises à jour sont inutiles avec un antivirus.",a:false},
- {q:"18. Le chiffrement protège contre l'accès non autorisé.",a:true},
- {q:"19. Le 2FA renforce la sécurité.",a:true},
- {q:"20. OAuth évite de partager son mot de passe.",a:true},
- {q:"21. Un mot de passe fort doit être long et complexe.",a:true},
- {q:"22. La navigation privée rend totalement anonyme.",a:false},
- {q:"23. Un pare-feu filtre le trafic réseau.",a:true},
- {q:"24. IDS bloque automatiquement le trafic.",a:false},
- {q:"25. Un VPN crée un tunnel chiffré.",a:true},
- {q:"26. Les honeypots attirent les attaquants.",a:true},
- {q:"27. Les tests d'intrusion ne nécessitent pas d'autorisation.",a:false},
- {q:"28. La gestion des risques inclut identification et réponse.",a:true},
- {q:"29. La réponse aux incidents inclut la communication.",a:true},
- {q:"30. Une seule couche de sécurité suffit.",a:false},
- {q:"31. CEH concerne le hacking éthique.",a:true},
- {q:"32. CISSP exige environ 5 ans d'expérience.",a:true},
- {q:"33. Les certifications améliorent l'employabilité.",a:true},
- {q:"34. CyberSeek analyse le marché de l'emploi cyber.",a:true},
- {q:"35. L'éthique est inutile en cybersécurité.",a:false},
- {q:"36. Le Wi-Fi public sans VPN est sécurisé.",a:false},
- {q:"37. Les sauvegardes évitent les pertes de données.",a:true},
- {q:"38. Détruire physiquement un disque est sûr.",a:true},
- {q:"39. Le phishing peut se faire par email.",a:true},
- {q:"40. Les APT sont des attaques avancées.",a:true},
- {q:"41. Spyware et adware peuvent coexister.",a:true},
- {q:"42. Les pentests révèlent des failles.",a:true},
- {q:"43. Spectre/Meltdown exploitent le matériel.",a:true},
- {q:"44. EFS protège les données en transit.",a:false},
- {q:"45. La cybersécurité est une responsabilité partagée.",a:true},
- {q:"46. Un antivirus bloque tous les malwares.",a:false},
- {q:"47. Le MFA est plus sûr qu’un mot de passe seul.",a:true},
- {q:"48. Les vulnérabilités zero-day sont connues des éditeurs.",a:false},
- {q:"49. L'authentification biométrique peut remplacer les mots de passe.",a:false},
- {q:"50. Le phishing vocal s'appelle vishing.",a:true},
- {q:"51. Le spear-phishing cible des individus précis.",a:true},
- {q:"52. Les mots de passe doivent être changés régulièrement.",a:true},
- {q:"53. Le Wi-Fi WPA2 est plus sécurisé que WEP.",a:true},
- {q:"54. Les logs réseau aident à détecter les attaques.",a:true},
- {q:"55. Le Social Engineering ne concerne que les emails.",a:false},
- {q:"56. Un honeypot est un leurre pour hackers.",a:true},
- {q:"57. La conformité RGPD protège la vie privée.",a:true},
- {q:"58. La segmentation réseau limite la propagation des attaques.",a:true},
- {q:"59. Les sauvegardes cloud sont toujours cryptées.",a:false},
- {q:"60. Les IDS détectent les intrusions en temps réel.",a:true},
- {q:"61. Une attaque MITM intercepte les communications.",a:true},
- {q:"62. La cybersécurité est un investissement, pas une dépense.",a:true},
- {q:"63. Les scripts Kiddies ont peu de compétences.",a:true},
- {q:"64. Le ransomware peut chiffrer des serveurs entiers.",a:true},
- {q:"65. La sensibilisation du personnel réduit les risques.",a:true},
- {q:"66. Les VPN gratuits sont toujours sûrs.",a:false},
- {q:"67. Les certificats SSL/TLS sécurisent les sites web.",a:true},
- {q:"68. Les tests d'intrusion doivent être documentés.",a:true},
- {q:"69. Les APT peuvent rester longtemps invisibles.",a:true},
- {q:"70. La cybersécurité doit évoluer constamment.",a:true}
+ {const questions = [
+     
+/* ===== MODULE 1 : Introduction à la cybersécurité ===== */
+{q:"La cybersécurité protège uniquement les ordinateurs.", a:false},
+{q:"La cybersécurité protège les individus, les entreprises et les gouvernements.", a:true},
+{q:"La protection personnelle inclut l’identité et les appareils.", a:true},
+{q:"La sécurité gouvernementale concerne la stabilité économique.", a:true},
+{q:"La cybersécurité est une responsabilité partagée.", a:true},
+
+/* ===== MODULE 2 : Données personnelles ===== */
+{q:"Les photos personnelles sont des données personnelles.", a:true},
+{q:"L’identité en ligne correspond uniquement au nom réel.", a:false},
+{q:"Le vol de données bancaires est un risque cyber.", a:true},
+{q:"Partager des données sans consentement est sans danger.", a:false},
+{q:"L’usurpation d’identité est une menace cyber.", a:true},
+
+/* ===== MODULE 3 : Données d’entreprise & IoT ===== */
+{q:"Les données financières sont des données d’entreprise.", a:true},
+{q:"Les objets connectés réduisent les risques de sécurité.", a:false},
+{q:"L’IoT génère de grandes quantités de données.", a:true},
+{q:"Les secrets commerciaux font partie de la propriété intellectuelle.", a:true},
+{q:"Le Big Data diminue les surfaces d’attaque.", a:false},
+
+/* ===== MODULE 4 : Cube de McCumber ===== */
+{q:"La confidentialité empêche l’accès non autorisé.", a:true},
+{q:"L’intégrité garantit que les données ne sont pas modifiées.", a:true},
+{q:"La disponibilité assure l’accès aux systèmes autorisés.", a:true},
+{q:"Le Cube de McCumber possède deux dimensions.", a:false},
+{q:"Les politiques de sécurité font partie des mesures de protection.", a:true},
+
+/* ===== MODULE 5 : Cybercriminels ===== */
+{q:"Les Script Kiddies utilisent des outils prêts à l’emploi.", a:true},
+{q:"Les hackers chapeau blanc agissent sans autorisation.", a:false},
+{q:"Les hackers chapeau noir ont des intentions malveillantes.", a:true},
+{q:"Les cybercriminels organisés sont souvent bien financés.", a:true},
+{q:"Tous les hackers sont des criminels.", a:false},
+
+/* ===== MODULE 6 : Menaces internes et externes ===== */
+{q:"Un employé peut être une menace involontaire.", a:true},
+{q:"Les menaces internes sont toujours intentionnelles.", a:false},
+{q:"L’ingénierie sociale est une menace externe.", a:true},
+{q:"Brancher une clé USB inconnue est sans risque.", a:false},
+{q:"Les attaques externes exploitent des vulnérabilités.", a:true},
+
+/* ===== MODULE 7 : Cyberguerre ===== */
+{q:"La cyberguerre peut viser des infrastructures critiques.", a:true},
+{q:"Stuxnet est un malware célèbre.", a:true},
+{q:"Stuxnet servait uniquement à espionner des emails.", a:false},
+{q:"Les États peuvent être à l’origine de cyberattaques.", a:true},
+{q:"Les cyberattaques étatiques sont toujours détectées.", a:false},
+
+/* ===== MODULE 8 : Violations de données ===== */
+{q:"Une violation de données peut nuire à la réputation.", a:true},
+{q:"Equifax a subi une fuite massive de données.", a:true},
+{q:"Les violations de données n’ont aucun impact financier.", a:false},
+{q:"La perte de confiance est une conséquence possible.", a:true},
+{q:"Les violations n’entraînent jamais de poursuites juridiques.", a:false},
+
+/* ===== MODULE 9 : Malwares ===== */
+{q:"Un virus nécessite une action de l’utilisateur.", a:true},
+{q:"Un ver se propage sans intervention humaine.", a:true},
+{q:"Un ransomware chiffre les données.", a:true},
+{q:"Un spyware espionne l’utilisateur.", a:true},
+{q:"Un rootkit est facile à détecter.", a:false},
+
+/* ===== MODULE 10 : Attaques réseau ===== */
+{q:"Une attaque DDoS provient d’une seule machine.", a:false},
+{q:"Un botnet est un réseau d’appareils infectés.", a:true},
+{q:"Une attaque MitM intercepte les communications.", a:true},
+{q:"Le SEO poisoning redirige vers des sites malveillants.", a:true},
+{q:"Les attaques réseau sont toujours visibles.", a:false},
+
+/* ===== MODULE 11 : Vulnérabilités ===== */
+{q:"Les attaques par force brute testent plusieurs combinaisons.", a:true},
+{q:"Les vulnérabilités zero-day sont connues des éditeurs.", a:false},
+{q:"Meltdown et Spectre exploitent le matériel.", a:true},
+{q:"Les failles logicielles proviennent parfois d’erreurs de code.", a:true},
+{q:"Les vulnérabilités matérielles sont impossibles.", a:false},
+
+/* ===== MODULE 12 : Protection des données ===== */
+{q:"Un pare-feu filtre le trafic réseau.", a:true},
+{q:"Le chiffrement protège contre l’accès non autorisé.", a:true},
+{q:"Le Wi-Fi public est toujours sécurisé.", a:false},
+{q:"Les sauvegardes préviennent la perte de données.", a:true},
+{q:"Détruire un disque dur peut sécuriser les données.", a:true},
+
+/* ===== MODULE 13 : Sécurité en entreprise ===== */
+{q:"Un IDS détecte les intrusions.", a:true},
+{q:"Un IPS bloque activement les attaques.", a:true},
+{q:"Un honeypot est un leurre pour attaquants.", a:true},
+{q:"Les tests d’intrusion sont inutiles.", a:false},
+{q:"La gestion des risques est continue.", a:true},
+
+/* ===== MODULE 14 : Carrière & éthique ===== */
+{q:"La cybersécurité doit respecter le cadre légal.", a:true},
+{q:"L’éthique est inutile en cybersécurité.", a:false},
+{q:"Les certifications améliorent l’employabilité.", a:true},
+{q:"Le marché de la cybersécurité est en croissance.", a:true},
+{q:"La formation continue est essentielle en cybersécurité.", a:true}
+
 ];
 
-let current=0, score=0, timeLeft=900, timerInterval;
+function unlock(){
+ const pin=document.getElementById("pin").value;
+ const msg=document.getElementById("lock-msg");
+ if(tentatives>=3){msg.textContent="🔒 Accès bloqué";return;}
+
+ if(pin===PIN_CORRECT){
+   quizUnlocked=true;
+   sessionStorage.setItem("unlocked","true");
+   document.getElementById("lock-screen").style.display="none";
+   document.getElementById("quiz-screen").style.display="block";
+   startQuiz();
+ }else{
+   tentatives++;
+   msg.textContent="❌ PIN incorrect";
+ }
+ document.getElementById("pin").value="";
+}
 
 function startQuiz(){
  current=0; score=0; timeLeft=900;
- document.getElementById("result").innerHTML="";
- document.getElementById("restart").style.display="none";
- startTimer();
- showQuestion();
+ startTimer(); showQuestion();
 }
 
 function startTimer(){
- clearInterval(timerInterval);
  timerInterval=setInterval(()=>{
    let m=Math.floor(timeLeft/60);
    let s=timeLeft%60;
-   document.getElementById("timer").textContent=
-     `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+   timer.textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
    timeLeft--;
-   if(timeLeft<0){
-     clearInterval(timerInterval);
-     endQuiz();
-   }
+   if(timeLeft<0) endQuiz();
  },1000);
 }
 
 function showQuestion(){
- if(current>=questions.length){ endQuiz(); return; }
- document.getElementById("progress").textContent=
-   `Question ${current+1} / ${questions.length}`;
- document.getElementById("quiz").innerHTML=`
-   <div class="question">${questions[current].q}</div>
-   <button class="option" onclick="answer(true,this)">✅ Vrai</button>
-   <button class="option" onclick="answer(false,this)">❌ Faux</button>
- `;
+ if(current>=questions.length){endQuiz();return;}
+ progress.textContent=`Question ${current+1}/${questions.length}`;
+ quiz.innerHTML=`
+ <h3>${questions[current].q}</h3>
+ <button class="option" onclick="answer(true,this)">Vrai</button>
+ <button class="option" onclick="answer(false,this)">Faux</button>`;
 }
 
 function answer(val,btn){
- let correct=questions[current].a;
- if(val===correct){ btn.classList.add("correct"); score++; }
- else{ btn.classList.add("wrong"); }
+ if(val===questions[current].a){btn.classList.add("correct");score++}
+ else btn.classList.add("wrong");
  document.querySelectorAll(".option").forEach(b=>b.disabled=true);
- setTimeout(()=>{ current++; showQuestion(); },700);
+ setTimeout(()=>{current++;showQuestion()},600);
 }
 
 function endQuiz(){
  clearInterval(timerInterval);
- document.getElementById("quiz").innerHTML="";
- document.getElementById("progress").textContent="QCM terminé";
- document.getElementById("result").innerHTML=
-   `🎯 Score final : ${score} / ${questions.length}`;
- document.getElementById("restart").style.display="block";
-} 
-</div>
+ const note20=((score/questions.length)*20).toFixed(2);
+ quiz.innerHTML="";
+ result.innerHTML=`🎯 Score: ${score}/${questions.length}<br>📊 Note: <b>${note20}/20</b>`;
+ setTimeout(()=>relock("⏰ Temps écoulé"),3000);
+}
+
+function relock(msg){
+ quizUnlocked=false;
+ sessionStorage.clear();
+ quiz-screen.style.display="none";
+ lock-screen.style.display="block";
+ document.getElementById("lock-msg").textContent=msg;
+}
+
+window.addEventListener("beforeunload",()=>{
+ if(quizUnlocked) sessionStorage.setItem("forceLock","1");
+});
+
+if(sessionStorage.getItem("forceLock")){
+ sessionStorage.clear();
+}
 </script>
 
 </body>
