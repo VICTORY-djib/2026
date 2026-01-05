@@ -12,14 +12,33 @@
         margin: 0;
         padding: 0;
     }
+
+    /* Header commun */
     header {
         background: #2563eb;
         color: white;
         padding: 15px 30px;
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    header .logo {
         font-size: 24px;
         font-weight: bold;
     }
+    header nav a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    header nav a.active {
+        text-decoration: underline;
+    }
+
     .contact-container {
         max-width: 700px;
         margin: 50px auto;
@@ -56,8 +75,15 @@
 </head>
 <body>
 
+<!-- Header ZAGA commun -->
 <header>
-    Contactez-nous
+    <div class="logo">ZAGA</div>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="cours.html">COURS CYBER-SÉCURITÉ</a>
+        <a href="exo.html">EXAMEN CYBER-SÉCURITÉ</a>
+        <a class="active" href="help.html">HELP</a>
+    </nav>
 </header>
 
 <div class="contact-container">
