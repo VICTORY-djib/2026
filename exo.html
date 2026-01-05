@@ -7,11 +7,95 @@
 
 <style>
 /* ===== Header ===== */
-body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;}
-header{background:#2563eb;color:white;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
-header .logo{font-size:24px;font-weight:bold;}
-header nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500;}
-header nav a.active{text-decoration:underline;}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: #00b4ff;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a.active {
+    background: #00b4ff;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #020c3a;
+    margin: 40px auto;
+    width: 90%;
+    border-radius: 8px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-left img {
+    width: 420px;
+}
+
+.hero-right {
+    max-width: 500px;
+    color: white;
+}
+
+.hero-right h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.hero-right p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #cfd8ff;
+}
+
+.hero-right button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #00b4ff;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dots {
+    margin-top: 30px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #00b4ff;
+    border-radius: 50%;
+    margin-right: 8px;
+    opacity: 0.5;
+}
 
 /* ===== Déverrouillage ===== */
 *{box-sizing:border-box;}
