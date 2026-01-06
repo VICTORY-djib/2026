@@ -45,15 +45,12 @@ nav a.active {
 }
 
 /* HERO SECTION */
-.hero {
-    background: #020c3a;
-    margin: 40px auto;
-    width: 90%;
-    border-radius: 8px;
-    padding: 60px;
+.hero{
+    position: relative;
+    height: calc(100vh - 70px);
+    background: url("Hacker.png.PNG") center/cover no-repeat;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .hero{
