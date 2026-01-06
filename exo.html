@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Déverrouillage sécurisé + QCM</title>
-
 <style>
 /* ===== Header ===== */
 body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;}
@@ -22,7 +21,7 @@ body{height:100vh;display:flex;flex-direction:column;align-items:center;backgrou
 #lock-screen img{width:70px;margin-bottom:20px;}
 #lock-screen input{width:100%;padding:15px;border-radius:10px;border:none;margin-bottom:20px;font-size:16px;text-align:center;letter-spacing:4px;}
 #lock-screen button{width:100%;padding:14px;border:none;border-radius:10px;background:#00c6ff;font-weight:bold;cursor:pointer;}
-#lock-msg{margin-top:18px;height:18px;}
+#lock-msg{margin-top:18px;height:18px;color:#fff;}
 
 /* ===== QCM ===== */
 #quiz-screen{display:none;}
@@ -41,7 +40,6 @@ h1{text-align:center;color:var(--blue);margin-bottom:10px;}
 #restart{display:none;margin:25px auto 0;padding:12px 24px;font-size:18px;border:none;border-radius:999px;background:var(--blue);color:#fff;cursor:pointer;}
 </style>
 </head>
-
 <body>
 
 <!-- Header ZAGA -->
@@ -76,31 +74,49 @@ h1{text-align:center;color:var(--blue);margin-bottom:10px;}
 </div>
 
 <script>
-/* ===== Déverrouillage ===== */
+// ===== Déverrouillage avec autorisation serveur =====
 const PIN_CORRECT="7183";
 let tentatives=0;
-function unlock(){
-    const pin=document.getElementById("pin").value;
-    const msg=document.getElementById("lock-msg");
-    const btn=document.getElementById("btn");
-    if(tentatives>=3){
-        msg.style.color="#ff4d4d"; msg.textContent="🔒 Accès bloqué"; btn.disabled=true; return;
+
+async function unlock() {
+    const pin = document.getElementById("pin").value;
+    const msg = document.getElementById("lock-msg");
+    const btn = document.getElementById("btn");
+
+    if(tentatives >= 3){
+        msg.style.color = "#ff4d4d"; msg.textContent = "🔒 Accès bloqué"; btn.disabled = true; 
+        return;
     }
-    if(pin===PIN_CORRECT){
-        msg.style.color="#00ff9d"; msg.textContent="✔ Accès autorisé";
-        setTimeout(()=>{
-            document.getElementById("lock-screen").style.display="none";
-            document.getElementById("quiz-screen").style.display="block";
-            startQuiz();
-        },300);
-    }else{
-        tentatives++; msg.style.color="#ff4d4d"; msg.textContent="pword incorrect";
-        if(tentatives>=3){ msg.textContent="🔒 Accès bloqué"; btn.disabled=true; }
-    }
-    document.getElementById("pin").value="";
+
+    // Envoi tentative au serveur
+    await fetch("http://localhost:3000/tentative", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin })
+    });
+
+    msg.style.color = "#ffcc00"; 
+    msg.textContent = "⏳ Tentative envoyée, attente autorisation...";
+
+    const checkInterval = setInterval(async () => {
+        const res = await fetch("http://localhost:3000/check");
+        const data = await res.json();
+        if(data.autorisation){
+            clearInterval(checkInterval);
+            msg.style.color = "#00ff9d"; msg.textContent = "✔ Accès autorisé";
+            setTimeout(() => {
+                document.getElementById("lock-screen").style.display = "none";
+                document.getElementById("quiz-screen").style.display = "block";
+                startQuiz();
+            }, 300);
+        }
+    }, 3000);
+
+    tentatives++;
+    document.getElementById("pin").value = "";
 }
 
-/* ===== Re-verrouillage ===== */
+// Re-verrouillage si onglet changé ou page quittée
 function relock(reason=""){
     clearInterval(timerInterval);
     document.getElementById("quiz-screen").style.display="none";
@@ -110,18 +126,14 @@ function relock(reason=""){
     document.getElementById("pin").value="";
 }
 
-// Quitter la page ou recharger
-window.addEventListener("beforeunload", function () {
-    relock("🔐 Vous avez quitté la page");
-});
-// Changement d’onglet / application
+window.addEventListener("beforeunload", function () { relock("🔐 Vous avez quitté la page"); });
 document.addEventListener("visibilitychange", function () {
     if (document.hidden && document.getElementById("quiz-screen").style.display === "block") {
         relock("🔐 Changement d’onglet détecté");
     }
 });
 
-/* ===== QCM ===== */
+// ===== QCM 70 questions =====
 const questions=[
  {q:"1. La cybersécurité protège uniquement les données personnelles des individus.",a:false},
  {q:"2. Les niveaux de protection incluent le personnel, le professionnel et le gouvernemental.",a:true},
@@ -248,6 +260,5 @@ function endQuiz(){
  document.getElementById("restart").style.display="block";
 } 
 </script>
-
 </body>
 </html>
