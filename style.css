@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 *{
     margin:0;
     padding:0;
@@ -5,10 +6,10 @@
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
     height:70px;
-    background: linear-gradient(90deg,#0f172a,#020617);
+    background: linear-gradient(90deg, #0f172a, #020617);
     color:white;
     display:flex;
     justify-content:space-between;
@@ -35,11 +36,11 @@ nav a:hover{
     text-decoration:underline;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
     position:relative;
     height:calc(100vh - 70px);
-    background:url("hacker.jpg") center/cover no-repeat;
+    background: url("hacker.jpg") center/cover no-repeat;
     display:flex;
     align-items:center;
 }
@@ -47,10 +48,10 @@ nav a:hover{
 .overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(90deg,rgba(2,6,23,0.85),rgba(2,6,23,0.6));
+    background: linear-gradient(90deg, rgba(2,6,23,0.85), rgba(2,6,23,0.6));
 }
 
-/* CONTENT */
+/* ===== CONTENT ===== */
 .content{
     position:relative;
     max-width:650px;
@@ -96,24 +97,25 @@ hr{
     color:#e5e7eb;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 .next{
     margin-top:30px;
     padding:14px 40px;
     font-size:16px;
     border:none;
     border-radius:6px;
-    background:linear-gradient(180deg,#3b82f6,#1d4ed8);
+    background:linear-gradient(180deg, #3b82f6, #1d4ed8);
     color:white;
     cursor:pointer;
     box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
 }
 
 .next:hover{
     transform:translateY(-2px);
 }
 
-/* DOTS */
+/* ===== DOTS ===== */
 .dots{
     margin-top:20px;
 }
