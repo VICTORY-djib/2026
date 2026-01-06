@@ -40,7 +40,7 @@ nav a:hover{
 .hero{
     position:relative;
     height:calc(100vh - 70px);
-    background: url("hacker.jpg") center/cover no-repeat;
+    background: url("hacker.jpg.PNG") center/cover no-repeat;
     display:flex;
     align-items:center;
 }
