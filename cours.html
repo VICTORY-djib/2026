@@ -3,15 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modules Cybersécurité </title>
-
-    <!-- CSS EXTERNE -->
+    <title>Modules Cybersécurité – ZAGA</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #0a1f44;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            height: 70px;
+            background-color: #2563eb;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        header nav a.active {
+            text-decoration: underline;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: calc(100vh - 70px);
+            background: url("Hacker.png.PNG") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            color: white;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-right {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-right h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-right p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .hero-right button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero-right button:hover {
+            background-color: #0a1f44;
+        }
+
+        /* ===== COURS ===== */
+        main.cours {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        main.cours h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .module {
+            margin-bottom: 40px;
+        }
+
+        .module h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .module p {
+            line-height: 1.7;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2563eb;
+            color: white;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<!-- Header ZAGA commun -->
+<!-- HEADER -->
 <header>
     <nav>
         <a href="index.html">HOME👨🏽‍💻</a>
@@ -21,90 +135,102 @@
     </nav>
 </header>
 
-<!-- ===== CONTENU DES COURS ===== -->
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-left">
+        <!-- Tu peux ajouter une image ou laisser vide -->
+    </div>
+
+    <div class="hero-right">
+        <h1>INTRODUCTION CYBER-SECURITE👨🏽‍💻</h1>
+        <p>
+            <strong>Définition :</strong><br>
+            La cyber-sécurité est un effort continu visant à protéger
+            les individus, les organisations et les gouvernements
+            contre les attaques numériques.
+        </p>
+        <p>
+            <strong>Niveaux de protection :</strong><br>
+            <strong>Personnel :</strong> Identité, données, appareils.<br>
+            <strong>Professionnel :</strong> Réputation, données clients,
+            actifs de l’entreprise.<br>
+            <strong>Gouvernemental :</strong> Sécurité nationale,
+            stabilité économique, bien-être des citoyens.
+        </p>
+        <button id="nextBtn">NEXT</button>
+    </div>
+</section>
+
+<!-- MAIN COURS -->
 <main class="cours">
 
-    <h1 style="margin-bottom:30px;color:#0a1f44;">Cyber-Sécurité</h1>
+    <h1>Cyber-Sécurité</h1>
 
-    <!-- Module 1 -->
     <div class="module">
         <h2>Module 1 : Introduction à la cybersécurité</h2>
         <p>Ce module présente la cybersécurité et son rôle essentiel dans la protection des individus, des entreprises et des gouvernements. Il explique les différents niveaux de protection : personnel, pour protéger l'identité et les données personnelles ; professionnel, pour sécuriser les données d'entreprise et la propriété intellectuelle ; et gouvernemental, pour assurer la sécurité nationale et économique. Le Cube de McCumber est introduit pour illustrer la confidentialité, l'intégrité et la disponibilité des informations. Le module aborde également les différents types de cybercriminels, les menaces internes et externes, ainsi que des exemples de cyberattaques comme Stuxnet et leurs conséquences financières, juridiques et réputationnelles.</p>
     </div>
 
-    <!-- Module 2 -->
     <div class="module">
         <h2>Module 2 : Attaques et techniques</h2>
         <p>Ce module décrit les principales attaques et techniques utilisées par les cybercriminels. Il détaille les malwares tels que virus, vers, ransomware, spyware et rootkit, ainsi que leurs symptômes. L'ingénierie sociale est expliquée comme une méthode qui exploite la psychologie humaine pour obtenir des informations sensibles. Le module couvre également les attaques DoS/DDoS, les botnets, les interceptions MITM/MITMO, les attaques sur mots de passe et le cryptojacking, offrant une vision complète des menaces numériques actuelles.</p>
     </div>
 
-    <!-- Module 3 -->
     <div class="module">
         <h2>Module 3 : Protection des données</h2>
         <p>Ce module aborde les mesures pour protéger les données. Il explique l'utilisation d'antivirus, de pare-feu et de mises à jour régulières pour sécuriser les systèmes. L'importance de mots de passe forts est soulignée, ainsi que la sécurisation des connexions Wi-Fi et l'utilisation de VPN. Le chiffrement des données (EFS) et les sauvegardes sécurisées sont présentés pour prévenir la perte ou le vol. Enfin, l'utilisation du 2FA et des protocoles OAuth est détaillée pour renforcer la protection des comptes.</p>
     </div>
 
-    <!-- Module 4 -->
     <div class="module">
         <h2>Module 4 : Sécurité en entreprise</h2>
         <p>Ce module explore la cybersécurité en environnement professionnel. Il détaille l'utilisation des pare-feu, IDS/IPS et VPN pour sécuriser le réseau. La surveillance réseau et les solutions SIEM/DLP permettent de détecter et prévenir les incidents. Les tests d'intrusion sont expliqués pour identifier les vulnérabilités, tandis que la gestion des risques et la réponse aux incidents préparent l'entreprise à réagir efficacement aux menaces.</p>
     </div>
 
-    <!-- Module 5 -->
     <div class="module">
         <h2>Module 5 : Carrière en cybersécurité</h2>
         <p>Ce module traite des aspects professionnels de la cybersécurité. Il présente le cadre juridique et l'éthique professionnelle nécessaires. Les certifications comme CEH, CISSP et Security+ sont expliquées comme des moyens d'améliorer les compétences et l'employabilité. Le module aborde également le marché de l'emploi et les possibilités d'évolution de carrière dans ce domaine en pleine expansion.</p>
     </div>
 
-    <!-- Module 6 -->
     <div class="module">
         <h2>Module 6 : Cybersécurité avancée</h2>
         <p>Ce module approfondit les techniques de cybersécurité avancées. Il couvre la surveillance réseau approfondie, l'audit de sécurité pour identifier les vulnérabilités, la cryptographie avancée pour protéger les données, et le contrôle des accès pour limiter les privilèges des utilisateurs, assurant ainsi un niveau de sécurité renforcé.</p>
     </div>
 
-    <!-- Module 7 -->
     <div class="module">
         <h2>Module 7 : Sécurité mobile & IoT</h2>
         <p>Le module explique la sécurisation des appareils mobiles et des objets connectés. Il aborde la protection des smartphones, l'utilisation de VPN mobile, et la gestion des permissions des applications pour limiter les risques de fuite de données.</p>
     </div>
 
-    <!-- Module 8 -->
     <div class="module">
         <h2>Module 8 : Sécurité Cloud</h2>
         <p>Ce module traite de la sécurité dans le cloud, distinguant cloud public et privé. Il présente l'authentification multi-facteurs pour sécuriser l'accès, le chiffrement des données pour protéger leur confidentialité et un plan de reprise pour assurer la continuité des activités en cas d'incident.</p>
     </div>
 
-    <!-- Module 9 -->
     <div class="module">
         <h2>Module 9 : Sécurité Web</h2>
         <p>Le module explique les menaces sur le web telles que SQL Injection, XSS et CSRF. Il insiste sur l'importance des correctifs de sécurité pour maintenir les sites à jour et sur la réalisation de tests d'intrusion web pour identifier les vulnérabilités et les corriger.</p>
     </div>
 
-    <!-- Module 10 -->
     <div class="module">
         <h2>Module 10 : Sécurité réseau avancée</h2>
         <p>Ce module aborde la sécurité réseau avancée avec la segmentation VLAN, la détection comportementale pour identifier les anomalies, la protection contre les attaques DDoS, et l'utilisation de honeypots pour attirer et analyser les attaquants.</p>
     </div>
 
-    <!-- Module 11 -->
     <div class="module">
         <h2>Module 11 : Sécurité physique et humaine</h2>
         <p>Le module traite de la sécurité physique et humaine, incluant le contrôle d'accès physique, la vidéosurveillance et la sensibilisation du personnel pour réduire les erreurs et risques internes.</p>
     </div>
 
-    <!-- Module 12 -->
     <div class="module">
         <h2>Module 12 : Gestion des incidents</h2>
         <p>Ce module couvre la gestion des incidents, avec la planification d'un plan de réponse aux incidents, l'analyse forensique pour comprendre les attaques et l'utilisation de PCA/PRA pour assurer la continuité des activités en cas de problème majeur.</p>
     </div>
 
-    <!-- Module 13 -->
     <div class="module">
         <h2>Module 13 : Gouvernance et conformité</h2>
         <p>Le module détaille la gouvernance et la conformité, présentant les normes ISO 27001, RGPD et NIST, ainsi que l'importance des audits pour assurer la sécurité et le respect des réglementations en matière de protection des données.</p>
     </div>
 
-    <!-- Module 14 -->
     <div class="module">
         <h2>Module 14 : Avenir de la cybersécurité</h2>
         <p>Le dernier module se concentre sur les menaces émergentes, l'impact de l'intelligence artificielle, la nécessité de formation continue et l'éthique professionnelle pour préparer les futurs experts aux défis de cybersécurité.</p>
@@ -112,9 +238,17 @@
 
 </main>
 
-<footer style="text-align:center;padding:20px;color:white;">
+<!-- FOOTER -->
+<footer>
     © 2026 – ZAGA Cyber Security
 </footer>
+
+<!-- SCRIPT BOUTON NEXT -->
+<script>
+    document.getElementById("nextBtn").onclick = function() {
+        window.location.href = "cours.html";
+    };
+</script>
 
 </body>
 </html>
