@@ -1,6 +1,4 @@
-/* RESET ET BASE */
-* {
-    box-sizing: border-box;
+ox-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
@@ -34,24 +32,26 @@ nav a {
     color: white;
     text-decoration: none;
     margin-left: 25px;
-    font-size: 16px; /* agrandi pour plus de lisibilité */
-    font-weight: bold; /* texte plus clair */
-    transition: all 0.3s ease;
+    font-size: 14px;
 }
 
 nav a.active {
     background: #00b4ff;
-    padding: 8px 16px; /* légèrement plus grand */
+    padding: 6px 12px;
     border-radius: 4px;
 }
 
 /* HERO SECTION */
-.hero {
+.hero{
     position: relative;
     height: calc(100vh - 70px);
-    background: url("hacker.png.PNG") center/cover no-repeat;
+    background: url("Hacker.png.PNG") center/cover no-repeat;
     display: flex;
     align-items: center;
+}
+
+.hero{
+    background: url("hacker.png.PNG") center/cover no-repeat;
 }
 
 .hero-right {
@@ -60,19 +60,19 @@ nav a.active {
 }
 
 .hero-right h1 {
-    font-size: 42px; /* texte plus grand */
-    margin-bottom: 25px;
+    font-size: 34px;
+    margin-bottom: 20px;
 }
 
 .hero-right p {
-    font-size: 18px; /* texte plus lisible */
-    line-height: 1.9; /* plus clair */
+    font-size: 14px;
+    line-height: 1.7;
     color: #cfd8ff;
 }
 
 .hero-right button {
     margin-top: 25px;
-    padding: 14px 32px; /* bouton plus grand */
+    padding: 12px 28px;
     background: #00b4ff;
     border: none;
     color: white;
@@ -98,8 +98,9 @@ nav a.active {
 .dots span:first-child {
     opacity: 1;
 }
-
 /* --- AJOUTS POUR LA CONNEXION GOOGLE --- */
+
+/* On s'assure que le bloc de gauche est bien centré */
 .hero-left {
     display: flex;
     flex-direction: column;
@@ -108,9 +109,10 @@ nav a.active {
     min-width: 420px; /* Garde la même largeur que votre image d'origine */
 }
 
+/* Style pour le conteneur du bouton Google */
 #google-auth-container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05); /* Un léger fond transparent */
     padding: 30px;
     border-radius: 12px;
     border: 1px solid #00b4ff;
@@ -122,13 +124,14 @@ nav a.active {
     font-weight: normal;
 }
 
+/* Style pour le message de bienvenue après connexion */
 #welcome-message {
     text-align: center;
     animation: fadeIn 0.5s ease-in;
 }
 
 #welcome-message img {
-    width: 350px;
+    width: 350px; /* Taille de l'image une fois connecté */
     margin-bottom: 15px;
 }
 
@@ -143,70 +146,32 @@ nav a.active {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* COURS / MODULES */
+/* Ajustement pour la navigation */
+nav a {
+    transition: all 0.3s ease;
+}
 .cours {
-    padding: 40px 30px; /* un peu plus d'espace */
-    max-width: 1100px;
+    padding: 30px;
+    max-width: 1000px;
     margin: auto;
 }
 
 .module {
     background: #ffffff;
-    padding: 30px; /* un peu plus grand */
-    margin-bottom: 35px;
-    border-left: 8px solid #00c3ff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 6px solid #00c3ff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .module h2 {
     color: #0a1f44;
-    font-size: 24px; /* plus grand */
-    margin-bottom: 12px;
 }
 
 .module h3 {
     color: #333;
 }
 
-.module p, .module ul {
-    font-size: 18px; /* texte lisible */
-    line-height: 1.8;
-}
-
-.module ul {
-    margin-left: 25px;
-}
-
-/* FOOTER */
-footer {
-    background-color: #2563eb;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    font-size: 16px;
-}
-
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 15px 20px;
-    }
-
-    nav a {
-        margin: 10px 15px 0 0;
-    }
-
-    .hero-right h1 {
-        font-size: 36px;
-    }
-
-    .hero-right p, .module p, .module ul {
-        font-size: 16px;
-    }
-
-    .module h2 {
-        font-size: 22px;
-    }
+. module ul {
+    margin-left: 20px;
 }
