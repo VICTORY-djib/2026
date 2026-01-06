@@ -1,134 +1,183 @@
-/* ===== RESET ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* ===== HEADER ===== */
-header{
-    height:70px;
-    background: linear-gradient(90deg, #0f172a, #020617);
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 60px;
+body {
+    background: linear-gradient(to right, #0b6fc2, #00aaff);
+    min-height: 100vh;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    letter-spacing:2px;
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:30px;
-    font-size:14px;
-    opacity:0.9;
+.logo {
+    width: 40px;
+    height: 40px;
+    background: #00b4ff;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
 }
 
-nav a:hover{
-    opacity:1;
-    text-decoration:underline;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
 }
 
-/* ===== HERO ===== */
+nav a.active {
+    background: #00b4ff;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #020c3a;
+    margin: 40px auto;
+    width: 90%;
+    border-radius: 8px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .hero{
-    position:relative;
-    height:calc(100vh - 70px);
-    background: url("hacker.jpg.PNG") center/cover no-repeat;
-    display:flex;
-    align-items:center;
+    background: url("hacker.jpg") center/cover no-repeat;
 }
 
-.overlay{
-    position:absolute;
-    inset:0;
-    background: linear-gradient(90deg, rgba(2,6,23,0.85), rgba(2,6,23,0.6));
+.hero-right {
+    max-width: 500px;
+    color: white;
 }
 
-/* ===== CONTENT ===== */
-.content{
-    position:relative;
-    max-width:650px;
-    margin-left:auto;
-    margin-right:80px;
-    color:white;
+.hero-right h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
 }
 
-.content h1{
-    font-size:42px;
-    font-weight:700;
-    line-height:1.2;
+.hero-right p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #cfd8ff;
 }
 
-.content h1 span{
-    color:#38bdf8;
+.hero-right button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #00b4ff;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-hr{
-    margin:20px 0;
-    width:100%;
-    border:1px solid rgba(255,255,255,0.2);
+.dots {
+    margin-top: 30px;
 }
 
-.content h2{
-    margin-top:20px;
-    color:#38bdf8;
-    font-size:22px;
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #00b4ff;
+    border-radius: 50%;
+    margin-right: 8px;
+    opacity: 0.5;
 }
 
-.content p{
-    margin-top:10px;
-    line-height:1.6;
-    color:#e5e7eb;
+.dots span:first-child {
+    opacity: 1;
+}
+/* --- AJOUTS POUR LA CONNEXION GOOGLE --- */
+
+/* On s'assure que le bloc de gauche est bien centré */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 420px; /* Garde la même largeur que votre image d'origine */
 }
 
-.content ul{
-    margin-top:15px;
+/* Style pour le conteneur du bouton Google */
+#google-auth-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05); /* Un léger fond transparent */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #00b4ff;
 }
 
-.content li{
-    margin-bottom:10px;
-    color:#e5e7eb;
+#google-auth-container h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: normal;
 }
 
-/* ===== BUTTON ===== */
-.next{
-    margin-top:30px;
-    padding:14px 40px;
-    font-size:16px;
-    border:none;
-    border-radius:6px;
-    background:linear-gradient(180deg, #3b82f6, #1d4ed8);
-    color:white;
-    cursor:pointer;
-    box-shadow:0 4px 12px rgba(0,0,0,0.4);
-    transition: transform 0.2s ease;
+/* Style pour le message de bienvenue après connexion */
+#welcome-message {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
 }
 
-.next:hover{
-    transform:translateY(-2px);
+#welcome-message img {
+    width: 350px; /* Taille de l'image une fois connecté */
+    margin-bottom: 15px;
 }
 
-/* ===== DOTS ===== */
-.dots{
-    margin-top:20px;
+#user-name {
+    font-size: 24px;
+    color: #00b4ff;
 }
 
-.dots span{
-    display:inline-block;
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:#64748b;
-    margin-right:6px;
+/* Animation pour une transition fluide */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.dots .active{
-    background:white;
+/* Ajustement pour la navigation */
+nav a {
+    transition: all 0.3s ease;
+}
+.cours {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.module {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 6px solid #00c3ff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.module h2 {
+    color: #0a1f44;
+}
+
+.module h3 {
+    color: #333;
+}
+
+.module ul {
+    margin-left: 20px;
 }
