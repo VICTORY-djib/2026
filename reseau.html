@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module Réseaux</title>
-
+<title>Module Réseaux – Cours et QCM</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif;}
 body{background:#f4f6fb;color:#0a1f44;}
@@ -13,8 +12,7 @@ header nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold;}
 header nav a.active{text-decoration:underline;}
 .hero{
     height:300px;
-    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-    url("hacker.png.PNG") center/cover no-repeat;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url("hacker.png.PNG") center/cover no-repeat;
     display:flex;align-items:center;justify-content:center;
     color:white;text-align:center;
 }
@@ -28,7 +26,7 @@ main{max-width:1200px;margin:40px auto;padding:0 20px;}
     border-radius:6px;
 }
 .module h2{color:#1e3a8a;margin-bottom:15px;}
-.module p{line-height:1.9;text-align:justify;margin-bottom:15px;}
+.module p{line-height:1.8;text-align:justify;margin-bottom:15px;}
 .qcm{
     background:white;
     padding:20px;
@@ -53,7 +51,6 @@ main{max-width:1200px;margin:40px auto;padding:0 20px;}
 footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:40px;}
 </style>
 </head>
-
 <body>
 
 <header>
@@ -74,17 +71,14 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 1 -->
 <div class="module">
 <h2>1. Introduction aux réseaux</h2>
-<p>
-Un réseau informatique est un ensemble d'équipements reliés entre eux permettant l'échange d'informations. Chaque appareil, qu'il s'agisse d'un ordinateur, d'un smartphone ou d'un objet connecté, peut partager des données et accéder à des ressources partagées. Les réseaux sont essentiels pour la communication moderne, la collaboration et l'accès à Internet. Les données circulent sous forme binaire, codées en bits et octets, et sont transmises via différents supports. Les réseaux permettent également le stockage centralisé et le partage sécurisé des informations, ce qui améliore la productivité et l'efficacité.
-</p>
-<p>
-Le rôle principal d'un réseau est de connecter des hôtes pour permettre la transmission des données. Ces hôtes peuvent être des serveurs, des clients, des imprimantes ou tout autre périphérique disposant d'une interface réseau. Internet est l'exemple le plus vaste de réseau interconnecté, reliant des milliards d'appareils dans le monde entier. Les réseaux peuvent être publics, privés ou hybrides selon leur utilisation et leur niveau de sécurité. La compréhension des bases des réseaux est essentielle pour toute carrière en informatique ou cybersécurité.
-</p>
+<p>Un réseau informatique est un ensemble d’équipements interconnectés permettant l’échange de données et le partage de ressources. Ces équipements peuvent être des ordinateurs, des serveurs, des imprimantes, des smartphones ou des objets connectés. Le réseau facilite la communication rapide et fiable entre utilisateurs, que ce soit dans une maison, une entreprise ou à l’échelle mondiale via Internet.</p>
+<p>Les réseaux permettent de centraliser les données, d’optimiser les coûts et d’améliorer la collaboration. Les données circulent sous forme de paquets numériques transmis grâce à des protocoles normalisés. Comprendre les bases des réseaux est essentiel pour toute carrière en informatique.</p>
 <div class="qcm">
-<h3>Exercice : Vérifiez votre compréhension</h3>
-<p>Le rôle principal d’un réseau est :</p>
+<h3>Question :</h3>
+<p>Quel est le rôle principal d’un réseau ?</p>
 <label><input type="radio" name="q1" value="true"> Échanger des données</label>
 <label><input type="radio" name="q1" value="false"> Produire de l’électricité</label>
+<label><input type="radio" name="q1" value="false"> Décorer un bureau</label>
 <button onclick="verifier('q1','r1')">Vérifier</button>
 <div id="r1" class="result"></div>
 </div>
@@ -93,16 +87,13 @@ Le rôle principal d'un réseau est de connecter des hôtes pour permettre la tr
 <!-- MODULE 2 -->
 <div class="module">
 <h2>2. Types de réseaux</h2>
-<p>
-Les réseaux se déclinent en plusieurs types selon leur étendue et leur usage. Le LAN (Local Area Network) est un réseau local limité à un bâtiment ou un site. Le MAN (Metropolitan Area Network) couvre une ville ou un campus étendu. Le WAN (Wide Area Network) connecte plusieurs réseaux locaux sur de grandes distances, parfois dans différents pays. Internet est le WAN mondial par excellence. Les réseaux peuvent aussi être classés selon leur topologie, leurs protocoles ou leur niveau de sécurité.
-</p>
-<p>
-Les réseaux domestiques, ou SOHO (Small Office/Home Office), sont conçus pour relier quelques appareils pour un usage personnel ou professionnel limité. Les réseaux d'entreprise sont plus complexes et nécessitent des équipements spécialisés comme des routeurs, des switchs et des serveurs. Chaque type de réseau a ses avantages et contraintes : le LAN offre un haut débit mais une portée limitée, tandis que le WAN couvre de vastes zones mais avec une complexité de gestion accrue.
-</p>
+<p>Les réseaux sont classés selon leur taille et leur portée. Le LAN couvre une zone restreinte, le MAN une ville, et le WAN plusieurs régions ou pays. Internet est le plus grand WAN existant.</p>
+<p>Chaque type de réseau répond à des besoins spécifiques et possède ses avantages et contraintes. Les LAN sont simples à gérer avec un débit élevé, tandis que les WAN nécessitent des infrastructures complexes.</p>
 <div class="qcm">
 <p>Internet est un :</p>
 <label><input type="radio" name="q2" value="true"> WAN</label>
 <label><input type="radio" name="q2" value="false"> LAN</label>
+<label><input type="radio" name="q2" value="false"> MAN</label>
 <button onclick="verifier('q2','r2')">Vérifier</button>
 <div id="r2" class="result"></div>
 </div>
@@ -111,16 +102,13 @@ Les réseaux domestiques, ou SOHO (Small Office/Home Office), sont conçus pour 
 <!-- MODULE 3 -->
 <div class="module">
 <h2>3. Supports de transmission</h2>
-<p>
-Les données sur un réseau sont transmises par différents supports. Le câble en cuivre, souvent utilisé dans les réseaux LAN traditionnels, transmet les signaux électriques à travers des paires torsadées. La fibre optique, utilisant la lumière pour transmettre les informations, permet un débit très élevé sur de longues distances et est insensible aux interférences électromagnétiques. Les ondes radio et les technologies sans fil comme le Wi-Fi ou le Bluetooth permettent une mobilité et une flexibilité accrues. Chaque support a ses avantages et limites, et le choix dépend de la distance, du débit souhaité et du budget.
-</p>
-<p>
-La bande passante indique la capacité maximale de transmission d’un support, tandis que le débit réel (throughput) peut être affecté par la latence, le nombre de nœuds traversés ou le trafic réseau. La performance d’un réseau dépend donc à la fois du support choisi et de sa configuration. La fibre optique est généralement privilégiée pour les liaisons critiques ou à haut débit, tandis que le cuivre reste utilisé pour les installations locales et économiques.
-</p>
+<p>Les données circulent via différents supports : câbles en cuivre, fibre optique, et réseaux sans fil (Wi-Fi, Bluetooth). Le cuivre est économique, la fibre offre un haut débit et une grande distance, tandis que le sans fil apporte mobilité et flexibilité.</p>
+<p>Le choix dépend de la distance, du débit et du budget. Les entreprises utilisent la fibre pour les liaisons critiques et le cuivre pour les installations locales.</p>
 <div class="qcm">
-<p>Meilleur débit :</p>
+<p>Quel support offre le meilleur débit ?</p>
 <label><input type="radio" name="q3" value="true"> Fibre optique</label>
 <label><input type="radio" name="q3" value="false"> Cuivre</label>
+<label><input type="radio" name="q3" value="false"> Wi-Fi</label>
 <button onclick="verifier('q3','r3')">Vérifier</button>
 <div id="r3" class="result"></div>
 </div>
@@ -129,16 +117,13 @@ La bande passante indique la capacité maximale de transmission d’un support, 
 <!-- MODULE 4 -->
 <div class="module">
 <h2>4. Équipements réseau</h2>
-<p>
-Les équipements réseau sont essentiels pour relier les appareils et assurer la communication. Un switch connecte plusieurs hôtes sur un même réseau local et gère la transmission de trames entre eux. Un routeur relie différents réseaux et dirige les paquets vers leur destination correcte. Les points d’accès permettent aux appareils sans fil de se connecter à un réseau. Chaque équipement a un rôle précis et sa configuration influence la performance et la sécurité du réseau.
-</p>
-<p>
-Les réseaux d'entreprise utilisent souvent des firewalls, des serveurs DHCP et des commutateurs managés pour contrôler le trafic et sécuriser l’accès. Les routeurs domestiques combinent plusieurs fonctions : NAT, DHCP et passerelle par défaut. Comprendre le rôle de chaque appareil permet d’optimiser le réseau et de diagnostiquer rapidement les problèmes. L’équipement doit être choisi en fonction de la taille du réseau, du nombre d’utilisateurs et des exigences de sécurité.
-</p>
+<p>Les équipements réseau relient les appareils et assurent la communication. Le switch connecte plusieurs hôtes dans un réseau local, le routeur relie différents réseaux, et le point d’accès Wi-Fi permet une connexion sans fil.</p>
+<p>Le choix et la configuration des équipements influencent la performance et la sécurité du réseau.</p>
 <div class="qcm">
-<p>Relie plusieurs réseaux :</p>
+<p>Quel équipement relie plusieurs réseaux ?</p>
 <label><input type="radio" name="q4" value="true"> Routeur</label>
 <label><input type="radio" name="q4" value="false"> Switch</label>
+<label><input type="radio" name="q4" value="false"> Point d’accès</label>
 <button onclick="verifier('q4','r4')">Vérifier</button>
 <div id="r4" class="result"></div>
 </div>
@@ -147,16 +132,12 @@ Les réseaux d'entreprise utilisent souvent des firewalls, des serveurs DHCP et 
 <!-- MODULE 5 -->
 <div class="module">
 <h2>5. Modèles OSI & TCP/IP</h2>
-<p>
-Les modèles OSI et TCP/IP servent à comprendre comment les données circulent sur un réseau. Le modèle OSI comporte 7 couches : physique, liaison, réseau, transport, session, présentation et application. Chaque couche a une fonction précise et communique avec les couches adjacentes pour assurer une transmission correcte. Le modèle TCP/IP est plus simplifié avec 4 couches : accès réseau, Internet, transport et application. Ces modèles sont des références pour concevoir, diagnostiquer et sécuriser les réseaux.
-</p>
-<p>
-Le modèle OSI est très utile pour analyser et résoudre les problèmes réseau car il permet de localiser la source d’un dysfonctionnement dans une couche spécifique. Le modèle TCP/IP est utilisé dans la majorité des communications Internet et sert de base pour les protocoles comme HTTP, FTP, TCP ou UDP. Comprendre ces modèles est fondamental pour les administrateurs réseau, les ingénieurs et toute personne travaillant dans les technologies de l’information.
-</p>
+<p>Le modèle OSI comporte 7 couches, chacune avec un rôle spécifique. Le modèle TCP/IP, plus pratique, contient 4 couches et est utilisé sur Internet. Ces modèles aident à concevoir, diagnostiquer et sécuriser les réseaux.</p>
 <div class="qcm">
-<p>Le modèle OSI contient :</p>
-<label><input type="radio" name="q5" value="true"> 7 couches</label>
-<label><input type="radio" name="q5" value="false"> 4 couches</label>
+<p>Combien de couches comporte le modèle OSI ?</p>
+<label><input type="radio" name="q5" value="true"> 7</label>
+<label><input type="radio" name="q5" value="false"> 4</label>
+<label><input type="radio" name="q5" value="false"> 6</label>
 <button onclick="verifier('q5','r5')">Vérifier</button>
 <div id="r5" class="result"></div>
 </div>
@@ -165,14 +146,9 @@ Le modèle OSI est très utile pour analyser et résoudre les problèmes réseau
 <!-- MODULE 6 -->
 <div class="module">
 <h2>6. Adressage IP</h2>
-<p>
-L’adressage IP permet d’identifier chaque appareil sur un réseau. IPv4 utilise 32 bits et permet de créer environ 4,3 milliards d’adresses uniques. Chaque adresse est composée de quatre octets séparés par des points, par exemple 192.168.1.1. Le masque de sous-réseau permet de distinguer la partie réseau de la partie hôte. L’adressage hiérarchique simplifie le routage en évitant aux routeurs de connaître chaque hôte individuellement.
-</p>
-<p>
-Les adresses peuvent être publiques, routables sur Internet, ou privées, réservées aux réseaux internes. Les hôtes utilisant des adresses privées accèdent à Internet via NAT qui traduit ces adresses en adresse publique. L’IPv4 reste majoritairement utilisé mais l’augmentation des appareils connectés a conduit au développement d’IPv6 pour résoudre l’épuisement des adresses.
-</p>
+<p>L’IPv4 utilise 32 bits pour identifier chaque appareil. Les adresses peuvent être publiques (Internet) ou privées (réseau interne). Le masque de sous-réseau distingue la partie réseau de la partie hôte.</p>
 <div class="qcm">
-<p>IPv4 contient :</p>
+<p>IPv4 utilise :</p>
 <label><input type="radio" name="q6" value="true"> 32 bits</label>
 <label><input type="radio" name="q6" value="false"> 128 bits</label>
 <button onclick="verifier('q6','r6')">Vérifier</button>
@@ -183,12 +159,7 @@ Les adresses peuvent être publiques, routables sur Internet, ou privées, rése
 <!-- MODULE 7 -->
 <div class="module">
 <h2>7. IPv6</h2>
-<p>
-IPv6 utilise 128 bits et offre un espace d’adressage immense pour tous les appareils connectés. Il facilite la configuration automatique des adresses, améliore la sécurité et réduit le besoin de NAT. Les adresses IPv6 sont représentées en hexadécimal et regroupées en 8 segments de 16 bits (hextets). Une séquence de zéros consécutifs peut être compressée avec "::" pour simplifier l’écriture.
-</p>
-<p>
-IPv6 coexiste souvent avec IPv4 via le mécanisme de double pile ou par tunneling. Les entreprises et les fournisseurs d’accès adoptent progressivement IPv6 pour répondre à l’augmentation massive des objets connectés et des besoins d’Internet des objets (IoT). La compréhension d’IPv6 est essentielle pour les ingénieurs réseau modernes.
-</p>
+<p>IPv6 utilise 128 bits et permet un espace d’adressage immense. Il améliore la sécurité, simplifie la configuration automatique et réduit le besoin de NAT. Les adresses sont représentées en hexadécimal et regroupées en 8 segments.</p>
 <div class="qcm">
 <p>IPv6 utilise :</p>
 <label><input type="radio" name="q7" value="true"> 128 bits</label>
@@ -197,19 +168,16 @@ IPv6 coexiste souvent avec IPv4 via le mécanisme de double pile ou par tunnelin
 <div id="r7" class="result"></div>
 </div>
 </div>
- <!-- MODULE 8 -->
+
+<!-- MODULE 8 -->
 <div class="module">
-<h2>8. VPN (Virtual Private Network)</h2>
-<p>
-Un VPN est un réseau privé virtuel qui permet de sécuriser la connexion Internet en chiffrant les données échangées entre l’utilisateur et le serveur VPN. Il masque l’adresse IP réelle et protège les informations sensibles contre les interceptions, surtout sur les réseaux publics. Le VPN est très utilisé pour la confidentialité, le télétravail et l’accès à des contenus restreints géographiquement.
-</p>
-<p>
-Le VPN fonctionne en créant un tunnel sécurisé entre l’utilisateur et le serveur VPN. Les protocoles courants incluent OpenVPN, L2TP/IPSec et WireGuard. En plus de la confidentialité, un VPN peut contourner la censure et limiter la surveillance en ligne. Cependant, la vitesse de connexion peut être affectée et il est important de choisir un fournisseur fiable pour éviter la fuite de données.
-</p>
+<h2>8. VPN</h2>
+<p>Un VPN sécurise la connexion Internet en créant un tunnel chiffré entre l’utilisateur et le serveur. Il masque l’adresse IP et protège les informations sensibles, surtout sur les réseaux publics.</p>
 <div class="qcm">
 <p>Quel est le rôle principal d’un VPN ?</p>
-<label><input type="radio" name="q8" value="true"> Sécuriser et chiffrer la connexion Internet</label>
-<label><input type="radio" name="q8" value="false"> Accélérer le téléchargement des fichiers</label>
+<label><input type="radio" name="q8" value="true"> Sécuriser et chiffrer la connexion</label>
+<label><input type="radio" name="q8" value="false"> Accélérer Internet</label>
+<label><input type="radio" name="q8" value="false"> Télécharger des fichiers automatiquement</label>
 <button onclick="verifier('q8','r8')">Vérifier</button>
 <div id="r8" class="result"></div>
 </div>
@@ -218,16 +186,11 @@ Le VPN fonctionne en créant un tunnel sécurisé entre l’utilisateur et le se
 <!-- MODULE 9 -->
 <div class="module">
 <h2>9. Proxy</h2>
-<p>
-Un proxy agit comme un intermédiaire entre un utilisateur et Internet. Il reçoit les requêtes du client et les relaie au serveur cible, puis renvoie la réponse. Cela permet de masquer l’adresse IP réelle de l’utilisateur, filtrer les contenus, améliorer la performance via le cache et contrôler l’accès au réseau. Les proxies peuvent être transparents, anonymes ou hautement anonymes selon le niveau de confidentialité.
-</p>
-<p>
-Le proxy est utilisé pour sécuriser le réseau interne, bloquer les sites dangereux, contourner certaines restrictions géographiques et accélérer la navigation grâce au stockage des pages visitées fréquemment. Cependant, il ne chiffre pas toujours les données, ce qui le rend moins sûr qu’un VPN pour la confidentialité totale. Les entreprises l’utilisent souvent pour gérer le trafic Internet et protéger les utilisateurs.
-</p>
+<p>Un proxy agit comme intermédiaire entre un client et un serveur. Il filtre le trafic, améliore la performance grâce au cache et peut masquer l’adresse IP. Il ne chiffre pas forcément les données.</p>
 <div class="qcm">
 <p>Le rôle principal d’un proxy :</p>
 <label><input type="radio" name="q9" value="true"> Intermédiaire entre client et serveur</label>
-<label><input type="radio" name="q9" value="false"> Chiffrer les données automatiquement</label>
+<label><input type="radio" name="q9" value="false"> Chiffrer automatiquement les données</label>
 <button onclick="verifier('q9','r9')">Vérifier</button>
 <div id="r9" class="result"></div>
 </div>
@@ -236,16 +199,11 @@ Le proxy est utilisé pour sécuriser le réseau interne, bloquer les sites dang
 <!-- MODULE 10 -->
 <div class="module">
 <h2>10. Firewalls</h2>
-<p>
-Un firewall (pare-feu) est un dispositif qui contrôle le trafic entrant et sortant d’un réseau selon des règles définies. Il peut être matériel, logiciel ou intégré dans un routeur. Le firewall filtre les paquets pour autoriser ou bloquer certaines connexions, protégeant le réseau contre les intrusions, malwares et accès non autorisés.
-</p>
-<p>
-Les firewalls peuvent être configurés pour inspecter le trafic au niveau du réseau, du transport ou de l’application. Ils permettent également la mise en place de politiques de sécurité pour différents services (HTTP, FTP, email). La combinaison d’un firewall avec d’autres dispositifs de sécurité, comme IDS/IPS et antivirus, renforce la protection du réseau et des utilisateurs.
-</p>
+<p>Le firewall contrôle le trafic entrant et sortant selon des règles définies. Il protège le réseau contre les intrusions et malwares et peut être matériel, logiciel ou intégré à un routeur.</p>
 <div class="qcm">
 <p>Le firewall sert à :</p>
 <label><input type="radio" name="q10" value="true"> Filtrer le trafic réseau selon des règles</label>
-<label><input type="radio" name="q10" value="false"> Accélérer la connexion Internet</label>
+<label><input type="radio" name="q10" value="false"> Accélérer Internet</label>
 <button onclick="verifier('q10','r10')">Vérifier</button>
 <div id="r10" class="result"></div>
 </div>
@@ -254,12 +212,7 @@ Les firewalls peuvent être configurés pour inspecter le trafic au niveau du r�
 <!-- MODULE 11 -->
 <div class="module">
 <h2>11. IDS / IPS</h2>
-<p>
-L’IDS (Intrusion Detection System) et l’IPS (Intrusion Prevention System) sont des systèmes de détection et prévention des intrusions. L’IDS analyse le trafic réseau pour détecter des comportements suspects ou malveillants et alerte l’administrateur. L’IPS peut, en plus, bloquer automatiquement le trafic dangereux pour protéger le réseau.
-</p>
-<p>
-Ces systèmes utilisent des signatures connues d’attaques ou des méthodes comportementales pour identifier les anomalies. L’IDS/IPS est essentiel pour détecter les attaques comme les tentatives de hacking, le phishing ou les malwares. La configuration et la mise à jour régulière des signatures sont cruciales pour assurer l’efficacité de ces systèmes.
-</p>
+<p>L’IDS (Intrusion Detection System) détecte les intrusions, et l’IPS (Intrusion Prevention System) peut bloquer automatiquement le trafic dangereux. Ils utilisent des signatures et méthodes comportementales.</p>
 <div class="qcm">
 <p>L’IDS/IPS permet :</p>
 <label><input type="radio" name="q11" value="true"> Détecter et prévenir les intrusions</label>
@@ -271,13 +224,8 @@ Ces systèmes utilisent des signatures connues d’attaques ou des méthodes com
 
 <!-- MODULE 12 -->
 <div class="module">
-<h2>12. NAT (Network Address Translation)</h2>
-<p>
-Le NAT permet de traduire les adresses IP privées d’un réseau interne en une adresse IP publique pour communiquer sur Internet. Cela protège les appareils internes, conserve les adresses IPv4 et facilite la gestion du réseau. Le NAT peut être statique (une IP privée → une IP publique) ou dynamique/pool (plusieurs IP privées → une IP publique selon disponibilité). Le NAT est souvent intégré aux routeurs domestiques et aux firewalls d’entreprise.
-</p>
-<p>
-Le NAT permet également le partage d’une seule connexion Internet entre plusieurs appareils internes. Grâce à cette traduction, les hôtes internes restent invisibles depuis Internet, ce qui augmente la sécurité. Cependant, le NAT peut compliquer certains services réseau nécessitant une communication directe, comme certains jeux en ligne ou serveurs web.
-</p>
+<h2>12. NAT</h2>
+<p>Le NAT traduit les adresses IP privées en adresse publique pour accéder à Internet. Il protège les appareils internes et permet le partage d’une connexion unique.</p>
 <div class="qcm">
 <p>Le rôle principal de NAT :</p>
 <label><input type="radio" name="q12" value="true"> Traduire IP privée → publique</label>
@@ -290,12 +238,7 @@ Le NAT permet également le partage d’une seule connexion Internet entre plusi
 <!-- MODULE 13 -->
 <div class="module">
 <h2>13. DNS</h2>
-<p>
-Le DNS (Domain Name System) traduit les noms de domaine lisibles par l’homme en adresses IP que les machines peuvent utiliser. Par exemple, www.google.com devient 142.250.190.68. Les serveurs DNS sont organisés hiérarchiquement : serveurs racine, TLD (Top Level Domain), et serveurs autoritaires. Le DNS facilite la navigation et l’utilisation d’Internet sans mémoriser des adresses numériques.
-</p>
-<p>
-Un serveur DNS peut aussi mettre en cache des réponses pour accélérer les requêtes futures. Les attaques comme le DNS Spoofing peuvent manipuler les réponses DNS pour rediriger le trafic vers des sites malveillants. La sécurisation du DNS, par exemple via DNSSEC, est essentielle pour éviter les fraudes et phishing.
-</p>
+<p>Le DNS traduit les noms de domaine en adresses IP compréhensibles par les machines. Il permet la navigation sur Internet sans mémoriser les adresses numériques.</p>
 <div class="qcm">
 <p>Le DNS sert à :</p>
 <label><input type="radio" name="q13" value="true"> Traduire noms de domaine → IP</label>
@@ -308,12 +251,7 @@ Un serveur DNS peut aussi mettre en cache des réponses pour accélérer les req
 <!-- MODULE 14 -->
 <div class="module">
 <h2>14. VPN</h2>
-<p>
-Un VPN (Virtual Private Network) crée un tunnel sécurisé entre un appareil et un réseau distant. Il chiffre les données transmises et masque l’adresse IP réelle de l’utilisateur. Le VPN est utilisé pour sécuriser la navigation sur des réseaux publics, accéder à distance aux réseaux d’entreprise, et protéger la confidentialité. Les protocoles VPN populaires incluent OpenVPN, IPsec et WireGuard.
-</p>
-<p>
-Le VPN empêche l’espionnage des données par des tiers et contourne certaines restrictions géographiques. Cependant, un VPN peut ralentir la connexion selon le protocole utilisé et la distance avec le serveur VPN. Le choix du protocole, de la bande passante et de la localisation du serveur est crucial pour optimiser sécurité et performance.
-</p>
+<p>Un VPN crée un tunnel sécurisé, chiffre les données et masque l’adresse IP pour protéger la confidentialité et accéder aux réseaux distants.</p>
 <div class="qcm">
 <p>Un VPN permet :</p>
 <label><input type="radio" name="q14" value="true"> Chiffrer les communications et sécuriser</label>
@@ -326,12 +264,7 @@ Le VPN empêche l’espionnage des données par des tiers et contourne certaines
 <!-- MODULE 15 -->
 <div class="module">
 <h2>15. Sécurité réseau</h2>
-<p>
-La sécurité réseau protège les données, les équipements et les utilisateurs contre les menaces internes et externes. Elle inclut les firewalls, les antivirus, l’IDS/IPS, les VPN et les politiques de contrôle d’accès. La segmentation du réseau, la mise à jour des logiciels et la surveillance du trafic sont essentielles pour limiter les risques. La sécurité réseau vise à assurer la confidentialité, l’intégrité et la disponibilité des informations.
-</p>
-<p>
-Les attaques courantes incluent le phishing, les malwares, le spoofing, le DoS/DDoS et l’intrusion non autorisée. Les bonnes pratiques consistent à utiliser des mots de passe forts, la double authentification, le chiffrement des données et la limitation des droits d’accès. La sécurité réseau est un processus continu nécessitant vigilance et mise à jour régulière des équipements et logiciels.
-</p>
+<p>La sécurité réseau protège les données, équipements et utilisateurs contre les menaces. Elle inclut firewalls, antivirus, IDS/IPS, VPN et contrôle d’accès.</p>
 <div class="qcm">
 <p>La sécurité réseau vise :</p>
 <label><input type="radio" name="q15" value="true"> Confidentialité, intégrité, disponibilité</label>
@@ -344,12 +277,7 @@ Les attaques courantes incluent le phishing, les malwares, le spoofing, le DoS/D
 <!-- MODULE 16 -->
 <div class="module">
 <h2>16. VLAN</h2>
-<p>
-Un VLAN (Virtual LAN) segmente un réseau physique en plusieurs réseaux logiques. Chaque VLAN fonctionne comme un réseau indépendant avec ses propres adresses IP et politiques de sécurité. Cela permet de limiter le broadcast, améliorer la sécurité et faciliter la gestion des ressources. Les VLAN sont configurés sur des switches managés et identifiés par un ID unique.
-</p>
-<p>
-Les VLAN permettent de séparer le trafic de différents départements ou services (ex : finance, RH, production). Ils simplifient également la mise en place de règles de sécurité et de QoS (Quality of Service). La communication entre VLAN nécessite un routeur ou un switch de couche 3. Les VLAN sont essentiels dans les réseaux d’entreprise modernes pour optimiser performance et sécurité.
-</p>
+<p>Un VLAN segmente un réseau physique en réseaux logiques indépendants, avec leurs adresses IP et règles de sécurité. Il facilite la gestion, la sécurité et la performance.</p>
 <div class="qcm">
 <p>Un VLAN permet :</p>
 <label><input type="radio" name="q16" value="true"> Segmentation logique d’un réseau</label>
@@ -362,12 +290,7 @@ Les VLAN permettent de séparer le trafic de différents départements ou servic
 <!-- MODULE 17 -->
 <div class="module">
 <h2>17. Wi-Fi et réseaux sans fil</h2>
-<p>
-Le Wi-Fi permet aux appareils de se connecter à un réseau sans fil via des ondes radio. Les normes Wi-Fi (802.11a/b/g/n/ac/ax) définissent la vitesse, la fréquence et la portée. La sécurité sans fil utilise le chiffrement WPA2/WPA3 pour protéger les communications. Les points d’accès, répéteurs et routeurs Wi-Fi permettent de couvrir une zone étendue.
-</p>
-<p>
-Le Wi-Fi est pratique mais vulnérable aux intrusions si mal configuré. La sécurité implique des mots de passe forts, le filtrage MAC, la mise à jour des firmwares et le masquage du SSID. Les réseaux Wi-Fi professionnels utilisent souvent une authentification centralisée via RADIUS pour un contrôle renforcé. La gestion du Wi-Fi inclut aussi l’optimisation des canaux pour éviter les interférences et maximiser la qualité du signal.
-</p>
+<p>Le Wi-Fi permet de connecter des appareils via des ondes radio. Les normes Wi-Fi définissent vitesse, fréquence et portée. La sécurité utilise WPA2/WPA3.</p>
 <div class="qcm">
 <p>Wi-Fi sécurisé :</p>
 <label><input type="radio" name="q17" value="true"> WPA2/WPA3</label>
@@ -384,24 +307,20 @@ Le Wi-Fi est pratique mais vulnérable aux intrusions si mal configuré. La séc
 </footer>
 
 <script>
-function verifier(qname, rid){
+function verifier(qname,rid){
     const radios = document.getElementsByName(qname);
     let result = document.getElementById(rid);
     let correct = false;
     for(let i=0;i<radios.length;i++){
-        if(radios[i].checked){
-            correct = radios[i].value === "true";
-        }
+        if(radios[i].checked){ correct = radios[i].value==="true"; }
     }
     if(correct){
-        result.innerHTML = "Correct ✅";
-        result.className = "result correct";
+        result.innerHTML="Correct ✅"; result.className="result correct";
     }else{
-        result.innerHTML = "Incorrect ❌";
-        result.className = "result wrong";
+        result.innerHTML="Incorrect ❌"; result.className="result wrong";
     }
 }
 </script>
 
 </body>
-</html>                                                                     
+</html>
