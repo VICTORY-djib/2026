@@ -85,142 +85,105 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 </div>
 
 <script>
-const PIN_CORRECT="7183";
-let tentatives=3, maxTentatives=0;
-let essaisScores=[];
+const PIN_CORRECT = "7183";
+let tentativesActuelles = 0;  // Compteur de QCM déverrouillés
+let essaisScores = [];         // Stocke les scores
+const MAX_TENTATIVES = 4;     // Maximum de tentatives consécutives
 
-function unlock(){
-    const pin=document.getElementById("pin").value;
-    const msg=document.getElementById("lock-msg");
-    const btn=document.getElementById("btn");
-    if(pin===PIN_CORRECT){
-        msg.style.color="#00ff9d"; msg.textContent="✔ Accès autorisé";
-        setTimeout(()=>{
-            document.getElementById("lock-screen").style.display="none";
-            document.getElementById("quiz-screen").style.display="block";
+function unlock() {
+    const pin = document.getElementById("pin").value;
+    const msg = document.getElementById("lock-msg");
+    if (pin === PIN_CORRECT) {
+        msg.style.color = "#00ff9d";
+        msg.textContent = "✔ Accès autorisé";
+        tentativesActuelles++;
+        setTimeout(() => {
+            document.getElementById("lock-screen").style.display = "none";
+            document.getElementById("quiz-screen").style.display = "block";
             startQuiz();
-        },300);
+        }, 300);
     } else {
-        tentatives++;
-        msg.style.color="#ff4d4d";
-        msg.textContent=`❌PIN incorrect (${tentatives}/${maxTentatives})`;
-        if(tentatives>=maxTentatives){
-            msg.textContent="🔒 Accès bloqué – Fin des tentatives";
-            btn.disabled=true;
-            if(essaisScores.length>0){
-                let total = essaisScores.reduce((a,b)=>a+b,0);
-                let percent = ((total / (essaisScores.length*20))*100).toFixed(2);
-                alert(`Résultats totaux des ${essaisScores.length} tentatives : ${total}/100\nPourcentage : ${percent}%`);
-            }
-        }
+        msg.style.color = "#ff4d4d";
+        msg.textContent = "❌ PIN incorrect";
     }
-    document.getElementById("pin").value="";
+    document.getElementById("pin").value = "";
 }
 
-function relock(reason=""){
+function relock(reason = "") {
     clearInterval(timerInterval);
-    document.getElementById("quiz-screen").style.display="none";
-    document.getElementById("lock-screen").style.display="block";
-    document.getElementById("lock-msg").style.color="#ffcc00";
+    document.getElementById("quiz-screen").style.display = "none";
+    document.getElementById("lock-screen").style.display = "block";
+    document.getElementById("lock-msg").style.color = "#ffcc00";
     document.getElementById("lock-msg").textContent = reason || "🔐 Session verrouillée";
-    document.getElementById("pin").value="";
+    document.getElementById("pin").value = "";
 }
 
-window.addEventListener("beforeunload",()=>{ relock("🔐 Vous avez quitté la page"); });
-document.addEventListener("visibilitychange",()=>{
-    if(document.hidden && document.getElementById("quiz-screen").style.display==="block"){
+window.addEventListener("beforeunload", () => { relock("🔐 Vous avez quitté la page"); });
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden && document.getElementById("quiz-screen").style.display === "block") {
         relock("🔐 Changement d’onglet détecté");
     }
 });
 
-/* ===== 50 QUESTIONS AVEC 3 OPTIONS ===== */
+/* ===== QUESTIONS QCM 30 QUESTIONS ===== */
 const questions=[
-{q:"Quel mécanisme permet de garantir que les données n'ont pas été altérées lors d'une transmission ?", 
- o:["Chiffrement symétrique","Hashing et intégrité via HMAC","VPN"], a:1},
-
-{q:"Dans le modèle Zero Trust, quel principe est appliqué ?", 
- o:["Confiance implicite aux appareils internes","Vérification explicite de tout utilisateur et appareil","Autorisation unique"], a:1},
-
-{q:"Quelle attaque exploite une faille dans la gestion des sessions pour usurper l'identité ?", 
- o:["SQL Injection","Session Hijacking","Cross-Site Scripting (XSS)"], a:1},
-
-{q:"Quelle technique de chiffrement est asymétrique ?", 
- o:["AES-256","RSA","ChaCha20"], a:1},
-
-{q:"Quel protocole sécurise le courrier électronique avec chiffrement et signature ?", 
- o:["SMTP","SMTPS","PGP"], a:2},
-
-{q:"Dans un réseau, quelle attaque consiste à saturer la table ARP pour rediriger le trafic ?", 
- o:["ARP Spoofing","Man-in-the-Middle","DNS Poisoning"], a:0},
-
-{q:"Quel concept décrit l'exploitation d'une vulnérabilité non encore publiée ?", 
- o:["Zero-Day Exploit","Backdoor","Rootkit"], a:0},
-
-{q:"Quelle méthode permet d'authentifier un utilisateur sans transmettre de mot de passe en clair ?", 
- o:["OAuth","Kerberos","Brute Force"], a:1},
-
-{q:"Dans la cybersécurité industrielle, Stuxnet ciblait principalement ?", 
- o:["Serveurs web","Systèmes SCADA","Réseaux Wi-Fi publics"], a:1},
-
-{q:"Quel type de malware se cache dans le noyau du système pour rester indétectable ?", 
- o:["Ransomware","Rootkit","Trojan"], a:1},
-
-{q:"Quel mécanisme est utilisé pour éviter les attaques de type SQL Injection ?", 
- o:["Paramétrage des requêtes préparées","Antivirus","Cryptage AES"], a:0},
-
-{q:"Quelle attaque consiste à injecter du code malveillant dans une page web visitée par d’autres utilisateurs ?", 
- o:["XSS réfléchi","DDoS","ARP Spoofing"], a:0},
-
-{q:"Dans la sécurité des API, quel mécanisme protège contre l’usurpation de requêtes ?", 
- o:["OAuth 2.0","FTP","Telnet"], a:0},
-
-{q:"Quel standard est utilisé pour le chiffrement de bout en bout des messageries instantanées ?", 
- o:["TLS 1.2","Signal Protocol","IPSec"], a:1},
-
-{q:"Lors d’une attaque MITM sur HTTPS, quel certificat est compromis ?", 
- o:["Certificat SSL/TLS légitime","Certificat auto-signé","Certificat antivirus"], a:0},
-
-{q:"Quel mécanisme de sécurité réseau permet de détecter et prévenir les intrusions en temps réel ?", 
- o:["Firewall","IDS/IPS","Proxy HTTP"], a:1},
-
-{q:"Quelle technique est utilisée pour isoler les applications dans des conteneurs sécurisés ?", 
- o:["Sandboxing","VPN","Antivirus"], a:0},
-
-{q:"Dans le chiffrement asymétrique, la clé publique sert à ?", 
- o:["Déchiffrer les données","Chiffrer les données","Signer les emails"], a:1},
-
-{q:"Le principe de défense en profondeur repose sur ?", 
- o:["Utiliser un seul système de sécurité efficace","Multiplier les couches de sécurité","Se fier aux mots de passe longs uniquement"], a:1},
-
-{q:"Les attaques de type 'Pass-the-Hash' exploitent :", 
- o:["Mot de passe en clair","Hash de mot de passe volé","Certificat SSL"], a:1},
-
-{q:"Dans le RGPD, quel droit permet à un utilisateur de supprimer ses données personnelles ?", 
- o:["Droit à la portabilité","Droit à l'effacement (droit à l'oubli)","Droit de rectification"], a:1},
-
-{q:"Quelle attaque réseau consiste à rediriger le trafic vers un serveur malveillant via DNS ?", 
- o:["DNS Spoofing","ARP Poisoning","Phishing"], a:0},
-
-{q:"Quel protocole permet d’établir un tunnel sécurisé entre deux réseaux sur Internet ?", 
- o:["HTTP","VPN","SMTP"], a:1},
-
-{q:"Quel concept décrit la protection contre les logiciels malveillants qui se propagent automatiquement sur un réseau ?", 
- o:["Antivirus","Segmentation réseau","IDS"], a:1},
-
-{q:"Quel type d’attaque consiste à saturer la mémoire ou les ressources d’un service pour le rendre indisponible ?", 
- o:["Buffer Overflow","DDoS","Man-in-the-Middle"], a:1}
+{q:"Quel mécanisme permet de garantir que les données n'ont pas été altérées lors d'une transmission ?", o:["Chiffrement symétrique","Hashing et intégrité via HMAC","VPN"], a:1},
+{q:"Dans le modèle Zero Trust, quel principe est appliqué ?", o:["Confiance implicite aux appareils internes","Vérification explicite de tout utilisateur et appareil","Autorisation unique"], a:1},
+{q:"Quelle attaque exploite une faille dans la gestion des sessions pour usurper l'identité ?", o:["SQL Injection","Session Hijacking","Cross-Site Scripting (XSS)"], a:1},
+{q:"Quelle technique de chiffrement est asymétrique ?", o:["AES-256","RSA","ChaCha20"], a:1},
+{q:"Quel protocole sécurise le courrier électronique avec chiffrement et signature ?", o:["SMTP","SMTPS","PGP"], a:2},
+{q:"Dans un réseau, quelle attaque consiste à saturer la table ARP pour rediriger le trafic ?", o:["ARP Spoofing","Man-in-the-Middle","DNS Poisoning"], a:0},
+{q:"Quel concept décrit l'exploitation d'une vulnérabilité non encore publiée ?", o:["Zero-Day Exploit","Backdoor","Rootkit"], a:0},
+{q:"Quelle méthode permet d'authentifier un utilisateur sans transmettre de mot de passe en clair ?", o:["OAuth","Kerberos","Brute Force"], a:1},
+{q:"Dans la cybersécurité industrielle, Stuxnet ciblait principalement ?", o:["Serveurs web","Systèmes SCADA","Réseaux Wi-Fi publics"], a:1},
+{q:"Quel type de malware se cache dans le noyau du système pour rester indétectable ?", o:["Ransomware","Rootkit","Trojan"], a:1},
+{q:"Quel mécanisme est utilisé pour éviter les attaques de type SQL Injection ?", o:["Paramétrage des requêtes préparées","Antivirus","Cryptage AES"], a:0},
+{q:"Quelle attaque consiste à injecter du code malveillant dans une page web visitée par d’autres utilisateurs ?", o:["XSS réfléchi","DDoS","ARP Spoofing"], a:0},
+{q:"Dans la sécurité des API, quel mécanisme protège contre l’usurpation de requêtes ?", o:["OAuth 2.0","FTP","Telnet"], a:0},
+{q:"Quel standard est utilisé pour le chiffrement de bout en bout des messageries instantanées ?", o:["TLS 1.2","Signal Protocol","IPSec"], a:1},
+{q:"Lors d’une attaque MITM sur HTTPS, quel certificat est compromis ?", o:["Certificat SSL/TLS légitime","Certificat auto-signé","Certificat antivirus"], a:0},
+{q:"Quel mécanisme de sécurité réseau permet de détecter et prévenir les intrusions en temps réel ?", o:["Firewall","IDS/IPS","Proxy HTTP"], a:1},
+{q:"Quelle technique est utilisée pour isoler les applications dans des conteneurs sécurisés ?", o:["Sandboxing","VPN","Antivirus"], a:0},
+{q:"Dans le chiffrement asymétrique, la clé publique sert à ?", o:["Déchiffrer les données","Chiffrer les données","Signer les emails"], a:1},
+{q:"Le principe de défense en profondeur repose sur ?", o:["Utiliser un seul système de sécurité efficace","Multiplier les couches de sécurité","Se fier aux mots de passe longs uniquement"], a:1},
+{q:"Les attaques de type 'Pass-the-Hash' exploitent :", o:["Mot de passe en clair","Hash de mot de passe volé","Certificat SSL"], a:1},
+{q:"Dans le RGPD, quel droit permet à un utilisateur de supprimer ses données personnelles ?", o:["Droit à la portabilité","Droit à l'effacement (droit à l'oubli)","Droit de rectification"], a:1},
+{q:"Quelle attaque réseau consiste à rediriger le trafic vers un serveur malveillant via DNS ?", o:["DNS Spoofing","ARP Poisoning","Phishing"], a:0},
+{q:"Quel protocole permet d’établir un tunnel sécurisé entre deux réseaux sur Internet ?", o:["HTTP","VPN","SMTP"], a:1},
+{q:"Quel concept décrit la protection contre les logiciels malveillants qui se propagent automatiquement sur un réseau ?", o:["Antivirus","Segmentation réseau","IDS"], a:1},
+{q:"Quel type d’attaque consiste à saturer la mémoire ou les ressources d’un service pour le rendre indisponible ?", o:["Buffer Overflow","DDoS","Man-in-the-Middle"], a:1},
+{q:"Quel protocole est utilisé pour sécuriser les communications web ?", o:["HTTP","HTTPS","FTP"], a:1},
+{q:"Quel type de malware chiffre vos fichiers et demande une rançon ?", o:["Spyware","Ransomware","Adware"], a:1},
+{q:"Quelle attaque consiste à tromper un utilisateur pour qu’il fournisse des informations sensibles ?", o:["Phishing","Brute Force","MITM"], a:0},
+{q:"Quel outil permet de surveiller le trafic réseau pour détecter les anomalies ?", o:["Wireshark","Notepad","Photoshop"], a:0},
+{q:"Quel mécanisme protège les mots de passe stockés sur un serveur ?", o:["Hashing","Plaintext","Compression"], a:0}
 ];
+
+// Mélanger les options de chaque question
+function shuffleOptions() {
+    questions.forEach(q => {
+        let correctAnswer = q.o[q.a];
+        for (let i = q.o.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [q.o[i], q.o[j]] = [q.o[j], q.o[i]];
+        }
+        q.a = q.o.indexOf(correctAnswer);
+    });
+}
 
 let current=0, score=0, timeLeft=900, timerInterval;
 
-function shuffleQuestions(array){for(let i=array.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[array[i],array[j]]=[array[j],array[i]];}}
-
-function saveRecentScore(note){essaisScores.push(note);}
-function showRecentScores(){document.getElementById("recent-scores").textContent = essaisScores.length>0?`💾 Scores tentatives : ${essaisScores.join(" / ")}`:"💾 Pas encore de scores";}
+function shuffleQuestions(array){
+    for(let i=array.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [array[i],array[j]]=[array[j],array[i]];
+    }
+}
 
 function startQuiz(){
-    current=0; score=0; timeLeft=900;
-    shuffleQuestions(questions);
+    current = 0; score = 0; timeLeft = 900;
+    shuffleQuestions(questions);   // mélange questions
+    shuffleOptions();              // mélange réponses
     document.getElementById("result").innerHTML="";
     document.getElementById("restart").style.display="none";
     startTimer();
@@ -257,15 +220,33 @@ function answer(val,btn){
 function endQuiz(){
     clearInterval(timerInterval);
     let noteSur20 = ((score / questions.length)*20).toFixed(2);
-    saveRecentScore(Number(noteSur20));
+    essaisScores.push(Number(noteSur20));
     showRecentScores();
-    document.getElementById("quiz").innerHTML="";
-    document.getElementById("progress").textContent="QCM terminé";
-    document.getElementById("result").innerHTML=`🎯 Score : ${score}/${questions.length}<br>📊 Note : ${noteSur20}/20`;
+
+    let progressMsg = `QCM terminé (${tentativesActuelles}/${MAX_TENTATIVES})`;
+    document.getElementById("progress").textContent = progressMsg;
+    document.getElementById("quiz").innerHTML = "";
+    document.getElementById("result").innerHTML = `🎯 Score : ${score}/${questions.length}<br>📊 Note : ${noteSur20}/20`;
+
+    if (tentativesActuelles >= MAX_TENTATIVES) {
+        let total = essaisScores.reduce((a,b)=>a+b,0);
+        let percent = ((total / (MAX_TENTATIVES*20))*100).toFixed(2);
+        alert(`✅ Fin des ${MAX_TENTATIVES} tentatives !\nTotal : ${total}/80\nPourcentage : ${percent}%`);
+        tentativesActuelles = 0;
+        essaisScores = [];
+    }
+
     document.getElementById("restart").style.display="block";
 }
 
 function restartQuiz(){ relock("🔐 Veuillez entrer le PIN pour recommencer"); }
+
+function showRecentScores(){
+    document.getElementById("recent-scores").textContent =
+        essaisScores.length > 0
+            ? `💾 Scores tentatives : ${essaisScores.join(" / ")}`
+            : "💾 Pas encore de scores";
+}
 
 showRecentScores();
 </script>
