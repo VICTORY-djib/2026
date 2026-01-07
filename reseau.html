@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module Réseaux – Cours et QCM</title>
+<title>Module Réseaux – Cours avancé et QCM</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif;}
-body{background:#f4f6fb;color:#0a1f44;}
+body{background:#f4f6fb;color:#0a1f44;line-height:1.8;}
 header{background:#2563eb;height:70px;display:flex;align-items:center;justify-content:center;}
 header nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold;}
 header nav a.active{text-decoration:underline;}
@@ -26,7 +26,7 @@ main{max-width:1200px;margin:40px auto;padding:0 20px;}
     border-radius:6px;
 }
 .module h2{color:#1e3a8a;margin-bottom:15px;}
-.module p{line-height:1.8;text-align:justify;margin-bottom:15px;}
+.module p{margin-bottom:15px;text-align:justify;}
 .qcm{
     background:white;
     padding:20px;
@@ -63,240 +63,262 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 </header>
 
 <section class="hero">
-<h1>Bienvenue dans les modules réseau</h1>
+<h1>Modules Réseaux – Niveau Avancé</h1>
 </section>
 
 <main>
 
 <!-- MODULE 1 -->
 <div class="module">
-<h2>1. Introduction aux réseaux</h2>
-<p>Un réseau informatique est un ensemble d’équipements interconnectés permettant l’échange de données et le partage de ressources. Ces équipements peuvent être des ordinateurs, des serveurs, des imprimantes, des smartphones ou des objets connectés. Le réseau facilite la communication rapide et fiable entre utilisateurs, que ce soit dans une maison, une entreprise ou à l’échelle mondiale via Internet.</p>
-<p>Les réseaux permettent de centraliser les données, d’optimiser les coûts et d’améliorer la collaboration. Les données circulent sous forme de paquets numériques transmis grâce à des protocoles normalisés. Comprendre les bases des réseaux est essentiel pour toute carrière en informatique.</p>
-<div class="qcm">
-<h3>Question :</h3>
-<p>Quel est le rôle principal d’un réseau ?</p>
-<label><input type="radio" name="q1" value="true"> Échanger des données</label>
-<label><input type="radio" name="q1" value="false"> Produire de l’électricité</label>
-<label><input type="radio" name="q1" value="false"> Décorer un bureau</label>
-<button onclick="verifier('q1','r1')">Vérifier</button>
-<div id="r1" class="result"></div>
+<h2>1. Introduction aux réseaux avancés</h2>
+<p>Un réseau informatique est une architecture complexe qui permet l’échange de données entre différents dispositifs. Les réseaux modernes ne se limitent pas à la simple connexion entre ordinateurs, mais incluent des serveurs cloud, des dispositifs IoT, des systèmes industriels et des infrastructures critiques.</p>
+<p>Comprendre les principes fondamentaux tels que les protocoles, les couches OSI, et la segmentation IP est crucial pour diagnostiquer et sécuriser un réseau. La performance et la résilience des réseaux dépendent également de leur conception et de leur maintenance continue.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q1" value="true"> Quel mécanisme garantit la livraison fiable des paquets TCP ?</label>
+<label><input type="radio" name="q1" value="false"> UDP pour sa rapidité</label>
+<label><input type="radio" name="q1" value="false"> ICMP uniquement</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 2 -->
 <div class="module">
-<h2>2. Types de réseaux</h2>
-<p>Les réseaux sont classés selon leur taille et leur portée. Le LAN couvre une zone restreinte, le MAN une ville, et le WAN plusieurs régions ou pays. Internet est le plus grand WAN existant.</p>
-<p>Chaque type de réseau répond à des besoins spécifiques et possède ses avantages et contraintes. Les LAN sont simples à gérer avec un débit élevé, tandis que les WAN nécessitent des infrastructures complexes.</p>
-<div class="qcm">
-<p>Internet est un :</p>
-<label><input type="radio" name="q2" value="true"> WAN</label>
-<label><input type="radio" name="q2" value="false"> LAN</label>
-<label><input type="radio" name="q2" value="false"> MAN</label>
-<button onclick="verifier('q2','r2')">Vérifier</button>
-<div id="r2" class="result"></div>
+<h2>2. Protocoles et modèles OSI/TCP-IP</h2>
+<p>Le modèle OSI comprend 7 couches distinctes, chacune jouant un rôle précis dans la transmission des données. Le modèle TCP/IP, plus utilisé dans le monde réel, se concentre sur la couche application, transport, internet et liaison.</p>
+<p>Connaître ces modèles permet de comprendre les flux de communication et d’identifier rapidement les problèmes de performance ou de sécurité.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q2" value="true"> La couche transport TCP garantit l’intégrité des données</label>
+<label><input type="radio" name="q2" value="false"> La couche application crypte automatiquement les paquets</label>
+<label><input type="radio" name="q2" value="false"> La couche liaison est responsable du routage global</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 3 -->
 <div class="module">
-<h2>3. Supports de transmission</h2>
-<p>Les données circulent via différents supports : câbles en cuivre, fibre optique, et réseaux sans fil (Wi-Fi, Bluetooth). Le cuivre est économique, la fibre offre un haut débit et une grande distance, tandis que le sans fil apporte mobilité et flexibilité.</p>
-<p>Le choix dépend de la distance, du débit et du budget. Les entreprises utilisent la fibre pour les liaisons critiques et le cuivre pour les installations locales.</p>
-<div class="qcm">
-<p>Quel support offre le meilleur débit ?</p>
-<label><input type="radio" name="q3" value="true"> Fibre optique</label>
-<label><input type="radio" name="q3" value="false"> Cuivre</label>
-<label><input type="radio" name="q3" value="false"> Wi-Fi</label>
-<button onclick="verifier('q3','r3')">Vérifier</button>
-<div id="r3" class="result"></div>
+<h2>3. Adressage IP et sous-réseaux</h2>
+<p>L’adressage IP permet d’identifier chaque hôte sur un réseau. La compréhension des masques de sous-réseau, des plages IP et de la segmentation est essentielle pour concevoir des réseaux efficaces et sécurisés.</p>
+<p>Les administrateurs réseau doivent savoir configurer des VLANs, des plages DHCP et anticiper la croissance du réseau afin de maintenir la performance et éviter les conflits d’adresses.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q3" value="true"> Quel masque CIDR correspond à 255.255.255.0 ?</label>
+<label><input type="radio" name="q3" value="false"> /16</label>
+<label><input type="radio" name="q3" value="false"> /28</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 4 -->
 <div class="module">
-<h2>4. Équipements réseau</h2>
-<p>Les équipements réseau relient les appareils et assurent la communication. Le switch connecte plusieurs hôtes dans un réseau local, le routeur relie différents réseaux, et le point d’accès Wi-Fi permet une connexion sans fil.</p>
-<p>Le choix et la configuration des équipements influencent la performance et la sécurité du réseau.</p>
-<div class="qcm">
-<p>Quel équipement relie plusieurs réseaux ?</p>
-<label><input type="radio" name="q4" value="true"> Routeur</label>
-<label><input type="radio" name="q4" value="false"> Switch</label>
-<label><input type="radio" name="q4" value="false"> Point d’accès</label>
-<button onclick="verifier('q4','r4')">Vérifier</button>
-<div id="r4" class="result"></div>
+<h2>4. Routeurs et commutateurs avancés</h2>
+<p>Les commutateurs (switch) permettent de connecter plusieurs dispositifs sur un même réseau local, en utilisant les adresses MAC pour acheminer les trames efficacement. Les routeurs permettent la communication entre différents réseaux et sont essentiels pour la connectivité Internet.</p>
+<p>La configuration avancée inclut les ACL, le routage dynamique (OSPF, BGP), et la QoS pour gérer les priorités de trafic. Ces concepts sont cruciaux pour un réseau performant et sécurisé.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q4" value="true"> Quel protocole est utilisé pour le routage inter-domaine ?</label>
+<label><input type="radio" name="q4" value="false"> RIP uniquement</label>
+<label><input type="radio" name="q4" value="false"> ARP</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 5 -->
 <div class="module">
-<h2>5. Modèles OSI & TCP/IP</h2>
-<p>Le modèle OSI comporte 7 couches, chacune avec un rôle spécifique. Le modèle TCP/IP, plus pratique, contient 4 couches et est utilisé sur Internet. Ces modèles aident à concevoir, diagnostiquer et sécuriser les réseaux.</p>
-<div class="qcm">
-<p>Combien de couches comporte le modèle OSI ?</p>
-<label><input type="radio" name="q5" value="true"> 7</label>
-<label><input type="radio" name="q5" value="false"> 4</label>
-<label><input type="radio" name="q5" value="false"> 6</label>
-<button onclick="verifier('q5','r5')">Vérifier</button>
-<div id="r5" class="result"></div>
+<h2>5. VLAN et segmentation</h2>
+<p>Un VLAN permet de segmenter un réseau physique en plusieurs réseaux logiques indépendants, offrant isolation et sécurité. Cela réduit le broadcast et améliore la performance.</p>
+<p>La segmentation permet de créer des zones sécurisées, d’appliquer des politiques spécifiques et de gérer l’accès aux ressources sensibles.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q5" value="true"> Quel protocole transporte les informations VLAN ?</label>
+<label><input type="radio" name="q5" value="false"> OSPF uniquement</label>
+<label><input type="radio" name="q5" value="false"> ICMP</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 6 -->
 <div class="module">
-<h2>6. Adressage IP</h2>
-<p>L’IPv4 utilise 32 bits pour identifier chaque appareil. Les adresses peuvent être publiques (Internet) ou privées (réseau interne). Le masque de sous-réseau distingue la partie réseau de la partie hôte.</p>
-<div class="qcm">
-<p>IPv4 utilise :</p>
-<label><input type="radio" name="q6" value="true"> 32 bits</label>
-<label><input type="radio" name="q6" value="false"> 128 bits</label>
-<button onclick="verifier('q6','r6')">Vérifier</button>
-<div id="r6" class="result"></div>
+<h2>6. Wi-Fi et réseaux sans fil avancés</h2>
+<p>Le Wi-Fi moderne utilise les normes IEEE 802.11ac/ax, permettant des débits élevés et une gestion intelligente du spectre. Les protocoles WPA2/WPA3 assurent la sécurité de la connexion.</p>
+<p>Les points d’accès peuvent être configurés pour gérer des SSID multiples, des VLANs et des politiques d’accès, et sont essentiels pour le déploiement d’infrastructures sans fil robustes.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q6" value="true"> Quelle norme offre les meilleures performances Wi-Fi actuellement ?</label>
+<label><input type="radio" name="q6" value="false"> IEEE 802.11n</label>
+<label><input type="radio" name="q6" value="false"> IEEE 802.11g</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 7 -->
 <div class="module">
-<h2>7. IPv6</h2>
-<p>IPv6 utilise 128 bits et permet un espace d’adressage immense. Il améliore la sécurité, simplifie la configuration automatique et réduit le besoin de NAT. Les adresses sont représentées en hexadécimal et regroupées en 8 segments.</p>
-<div class="qcm">
-<p>IPv6 utilise :</p>
-<label><input type="radio" name="q7" value="true"> 128 bits</label>
-<label><input type="radio" name="q7" value="false"> 32 bits</label>
-<button onclick="verifier('q7','r7')">Vérifier</button>
-<div id="r7" class="result"></div>
+<h2>7. Protocoles de sécurité réseau</h2>
+<p>Les protocoles TLS, IPsec et SSH sont essentiels pour sécuriser les communications sur Internet et dans les entreprises. TLS assure le chiffrement des flux web, IPsec sécurise les tunnels VPN et SSH protège l’accès à distance.</p>
+<p>La compréhension de ces protocoles est indispensable pour mettre en place des infrastructures sécurisées et conformes aux normes.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q7" value="true"> Quel protocole est utilisé pour sécuriser SSH ?</label>
+<label><input type="radio" name="q7" value="false"> HTTPS</label>
+<label><input type="radio" name="q7" value="false"> SNMP</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 8 -->
 <div class="module">
-<h2>8. VPN</h2>
-<p>Un VPN sécurise la connexion Internet en créant un tunnel chiffré entre l’utilisateur et le serveur. Il masque l’adresse IP et protège les informations sensibles, surtout sur les réseaux publics.</p>
-<div class="qcm">
-<p>Quel est le rôle principal d’un VPN ?</p>
-<label><input type="radio" name="q8" value="true"> Sécuriser et chiffrer la connexion</label>
-<label><input type="radio" name="q8" value="false"> Accélérer Internet</label>
-<label><input type="radio" name="q8" value="false"> Télécharger des fichiers automatiquement</label>
-<button onclick="verifier('q8','r8')">Vérifier</button>
-<div id="r8" class="result"></div>
+<h2>8. VPN et tunnels sécurisés</h2>
+<p>Un VPN permet de créer un tunnel chiffré entre l’utilisateur et un serveur, protégeant ainsi la confidentialité des données. Il utilise des protocoles comme OpenVPN, IPSec ou WireGuard.</p>
+<p>Les VPN sont utilisés pour le télétravail, le contournement de restrictions géographiques, et la sécurisation de la connexion sur des réseaux publics.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q8" value="true"> Quel protocole VPN offre la meilleure sécurité moderne ?</label>
+<label><input type="radio" name="q8" value="false"> PPTP</label>
+<label><input type="radio" name="q8" value="false"> L2TP sans chiffrement</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 9 -->
 <div class="module">
-<h2>9. Proxy</h2>
-<p>Un proxy agit comme intermédiaire entre un client et un serveur. Il filtre le trafic, améliore la performance grâce au cache et peut masquer l’adresse IP. Il ne chiffre pas forcément les données.</p>
-<div class="qcm">
-<p>Le rôle principal d’un proxy :</p>
-<label><input type="radio" name="q9" value="true"> Intermédiaire entre client et serveur</label>
-<label><input type="radio" name="q9" value="false"> Chiffrer automatiquement les données</label>
-<button onclick="verifier('q9','r9')">Vérifier</button>
-<div id="r9" class="result"></div>
+<h2>9. Firewalls et contrôle d’accès</h2>
+<p>Les firewalls filtrent le trafic réseau selon des règles prédéfinies. Les firewalls de nouvelle génération analysent également le contenu des paquets, détectent les menaces et appliquent des politiques d’accès granulaires.</p>
+<p>Une bonne configuration inclut la gestion des ACL, la segmentation et le logging pour audits et détection d’intrusions.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q9" value="true"> Quel type de firewall analyse le contenu des paquets ?</label>
+<label><input type="radio" name="q9" value="false"> Stateless uniquement</label>
+<label><input type="radio" name="q9" value="false"> Firewall matériel simple</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 10 -->
 <div class="module">
-<h2>10. Firewalls</h2>
-<p>Le firewall contrôle le trafic entrant et sortant selon des règles définies. Il protège le réseau contre les intrusions et malwares et peut être matériel, logiciel ou intégré à un routeur.</p>
-<div class="qcm">
-<p>Le firewall sert à :</p>
-<label><input type="radio" name="q10" value="true"> Filtrer le trafic réseau selon des règles</label>
-<label><input type="radio" name="q10" value="false"> Accélérer Internet</label>
-<button onclick="verifier('q10','r10')">Vérifier</button>
-<div id="r10" class="result"></div>
+<h2>10. IDS / IPS avancés</h2>
+<p>Les systèmes IDS détectent les intrusions en analysant le trafic réseau, tandis que les IPS peuvent bloquer automatiquement les attaques. Ils utilisent des signatures, des comportements anormaux et des règles personnalisées pour protéger les infrastructures critiques.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q10" value="true"> Quelle fonction principale d’un IPS ?</label>
+<label><input type="radio" name="q10" value="false"> Configurer les VLANs</label>
+<label><input type="radio" name="q10" value="false"> Assigner des adresses IP</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
-
+    
 <!-- MODULE 11 -->
 <div class="module">
-<h2>11. IDS / IPS</h2>
-<p>L’IDS (Intrusion Detection System) détecte les intrusions, et l’IPS (Intrusion Prevention System) peut bloquer automatiquement le trafic dangereux. Ils utilisent des signatures et méthodes comportementales.</p>
-<div class="qcm">
-<p>L’IDS/IPS permet :</p>
-<label><input type="radio" name="q11" value="true"> Détecter et prévenir les intrusions</label>
-<label><input type="radio" name="q11" value="false"> Gérer les adresses IP</label>
-<button onclick="verifier('q11','r11')">Vérifier</button>
-<div id="r11" class="result"></div>
+<h2>11. NAT avancé et translation d'adresses</h2>
+<p>Le NAT (Network Address Translation) traduit les adresses IP privées des dispositifs internes en adresses publiques pour permettre la communication avec Internet. Cela protège le réseau interne et permet de réduire la consommation d’adresses IPv4.</p>
+<p>Les types de NAT incluent le NAT statique, le NAT dynamique et le PAT (Port Address Translation). Chaque type a des avantages spécifiques en termes de sécurité et de gestion du trafic.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q11" value="true"> Quel type de NAT permet de mapper plusieurs hôtes internes sur une seule IP publique ?</label>
+<label><input type="radio" name="q11" value="false"> NAT statique</label>
+<label><input type="radio" name="q11" value="false"> NAT dynamique classique</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 12 -->
 <div class="module">
-<h2>12. NAT</h2>
-<p>Le NAT traduit les adresses IP privées en adresse publique pour accéder à Internet. Il protège les appareils internes et permet le partage d’une connexion unique.</p>
-<div class="qcm">
-<p>Le rôle principal de NAT :</p>
-<label><input type="radio" name="q12" value="true"> Traduire IP privée → publique</label>
-<label><input type="radio" name="q12" value="false"> Chiffrer les données</label>
-<button onclick="verifier('q12','r12')">Vérifier</button>
-<div id="r12" class="result"></div>
+<h2>12. DNS avancé et sécurité</h2>
+<p>Le DNS (Domain Name System) traduit les noms de domaine en adresses IP. Les attaques DNS incluent le DNS Spoofing, Cache Poisoning et DDoS ciblant les serveurs DNS.</p>
+<p>Les bonnes pratiques incluent DNSSEC pour la signature cryptographique des zones DNS, la surveillance des logs DNS, et l’utilisation de serveurs résilients pour éviter la compromission et garantir la disponibilité.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q12" value="true"> Quel mécanisme protège l'intégrité des réponses DNS ?</label>
+<label><input type="radio" name="q12" value="false"> HTTP/2 uniquement</label>
+<label><input type="radio" name="q12" value="false"> VPN simple</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 13 -->
 <div class="module">
-<h2>13. DNS</h2>
-<p>Le DNS traduit les noms de domaine en adresses IP compréhensibles par les machines. Il permet la navigation sur Internet sans mémoriser les adresses numériques.</p>
-<div class="qcm">
-<p>Le DNS sert à :</p>
-<label><input type="radio" name="q13" value="true"> Traduire noms de domaine → IP</label>
-<label><input type="radio" name="q13" value="false"> Transférer des fichiers</label>
-<button onclick="verifier('q13','r13')">Vérifier</button>
-<div id="r13" class="result"></div>
+<h2>13. QoS et gestion de trafic</h2>
+<p>La QoS (Quality of Service) permet de prioriser certains types de trafic sur un réseau, garantissant ainsi la performance pour les applications critiques, telles que la VoIP, le streaming ou les systèmes industriels.</p>
+<p>La configuration QoS inclut la classification du trafic, l’allocation de bande passante, la mise en file d’attente et la limitation des flux non prioritaires.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q13" value="true"> Quelle technique permet de prioriser le trafic VoIP ?</label>
+<label><input type="radio" name="q13" value="false"> NAT uniquement</label>
+<label><input type="radio" name="q13" value="false"> VLAN simple sans marquage</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 14 -->
 <div class="module">
-<h2>14. VPN</h2>
-<p>Un VPN crée un tunnel sécurisé, chiffre les données et masque l’adresse IP pour protéger la confidentialité et accéder aux réseaux distants.</p>
-<div class="qcm">
-<p>Un VPN permet :</p>
-<label><input type="radio" name="q14" value="true"> Chiffrer les communications et sécuriser</label>
-<label><input type="radio" name="q14" value="false"> Accélérer le réseau local</label>
-<button onclick="verifier('q14','r14')">Vérifier</button>
-<div id="r14" class="result"></div>
+<h2>14. Sécurité Wi-Fi et authentification</h2>
+<p>Les réseaux Wi-Fi nécessitent une sécurité avancée, utilisant WPA3, authentification 802.1X et chiffrement AES pour protéger les données. Les attaques courantes incluent le brute-force, le rogue AP et l’usurpation de MAC.</p>
+<p>La mise en place d’un réseau Wi-Fi sécurisé inclut l’isolation des clients, la rotation des clés et l’intégration à un système de gestion centralisée des points d’accès.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q14" value="true"> Quelle méthode assure une authentification robuste pour les utilisateurs Wi-Fi ?</label>
+<label><input type="radio" name="q14" value="false"> WEP uniquement</label>
+<label><input type="radio" name="q14" value="false"> Open Wi-Fi sans clé</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 15 -->
 <div class="module">
-<h2>15. Sécurité réseau</h2>
-<p>La sécurité réseau protège les données, équipements et utilisateurs contre les menaces. Elle inclut firewalls, antivirus, IDS/IPS, VPN et contrôle d’accès.</p>
-<div class="qcm">
-<p>La sécurité réseau vise :</p>
-<label><input type="radio" name="q15" value="true"> Confidentialité, intégrité, disponibilité</label>
-<label><input type="radio" name="q15" value="false"> Augmenter le débit uniquement</label>
-<button onclick="verifier('q15','r15')">Vérifier</button>
-<div id="r15" class="result"></div>
+<h2>15. VPN avancé et WireGuard</h2>
+<p>WireGuard est un protocole VPN moderne, léger et rapide, offrant un chiffrement moderne et une configuration simple par rapport à IPSec ou OpenVPN. Il est utilisé pour sécuriser le télétravail et l’accès aux réseaux distants.</p>
+<p>Les VPN avancés incluent la gestion centralisée des clés, l’authentification à deux facteurs et la journalisation pour audits de sécurité.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q15" value="true"> Quel protocole VPN moderne est connu pour sa rapidité et sécurité ?</label>
+<label><input type="radio" name="q15" value="false"> PPTP</label>
+<label><input type="radio" name="q15" value="false"> L2TP sans chiffrement</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 16 -->
 <div class="module">
-<h2>16. VLAN</h2>
-<p>Un VLAN segmente un réseau physique en réseaux logiques indépendants, avec leurs adresses IP et règles de sécurité. Il facilite la gestion, la sécurité et la performance.</p>
-<div class="qcm">
-<p>Un VLAN permet :</p>
-<label><input type="radio" name="q16" value="true"> Segmentation logique d’un réseau</label>
-<label><input type="radio" name="q16" value="false"> Créer une adresse IP publique</label>
-<button onclick="verifier('q16','r16')">Vérifier</button>
-<div id="r16" class="result"></div>
+<h2>16. IPv6 et transition</h2>
+<p>IPv6 permet un espace d’adressage immense, supprime la nécessité du NAT pour la plupart des réseaux, et inclut des fonctionnalités de sécurité intégrées telles que IPsec. La transition IPv4→IPv6 nécessite une planification minutieuse et l’utilisation de tunnels ou dual-stack.</p>
+<p>Les réseaux hybrides doivent gérer l’adressage, la compatibilité et la configuration DNS spécifique pour IPv6, tout en garantissant la sécurité et la performance.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q16" value="true"> Quel mécanisme permet la coexistence IPv4/IPv6 ?</label>
+<label><input type="radio" name="q16" value="false"> NAT classique uniquement</label>
+<label><input type="radio" name="q16" value="false"> DHCPv4 simple</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
 <!-- MODULE 17 -->
 <div class="module">
-<h2>17. Wi-Fi et réseaux sans fil</h2>
-<p>Le Wi-Fi permet de connecter des appareils via des ondes radio. Les normes Wi-Fi définissent vitesse, fréquence et portée. La sécurité utilise WPA2/WPA3.</p>
-<div class="qcm">
-<p>Wi-Fi sécurisé :</p>
-<label><input type="radio" name="q17" value="true"> WPA2/WPA3</label>
-<label><input type="radio" name="q17" value="false"> WEP</label>
-<button onclick="verifier('q17','r17')">Vérifier</button>
-<div id="r17" class="result"></div>
+<h2>17. Monitoring et analyse réseau</h2>
+<p>Le monitoring réseau inclut la collecte et l’analyse des flux, des journaux et des alertes pour détecter les anomalies, intrusions ou défaillances. Les outils courants incluent Wireshark, Zabbix, Nagios et SNMP pour la supervision.</p>
+<p>Les administrateurs réseau doivent interpréter les métriques, identifier les goulots d’étranglement, et mettre en place des alertes pour assurer la disponibilité, performance et sécurité du réseau.</p>
+<div class="qcm" data-correct="0">
+<p>Question :</p>
+<label><input type="radio" name="q17" value="true"> Quel outil permet l’analyse détaillée des paquets réseau ?</label>
+<label><input type="radio" name="q17" value="false"> Notepad</label>
+<label><input type="radio" name="q17" value="false"> Paint</label>
+<button onclick="verifier(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 </div>
 
@@ -307,19 +329,42 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 </footer>
 
 <script>
-function verifier(qname,rid){
-    const radios = document.getElementsByName(qname);
-    let result = document.getElementById(rid);
+// Vérifie la réponse
+function verifier(btn){
+    const qcm = btn.parentElement;
+    const radios = qcm.querySelectorAll('input[type="radio"]');
+    const resultDiv = qcm.querySelector('.result');
     let correct = false;
-    for(let i=0;i<radios.length;i++){
-        if(radios[i].checked){ correct = radios[i].value==="true"; }
-    }
+    radios.forEach(radio => { if(radio.checked){ correct = radio.value==="true"; }});
     if(correct){
-        result.innerHTML="Correct ✅"; result.className="result correct";
-    }else{
-        result.innerHTML="Incorrect ❌"; result.className="result wrong";
+        resultDiv.innerHTML="Correct ✅";
+        resultDiv.className="result correct";
+    } else {
+        resultDiv.innerHTML="Incorrect ❌";
+        resultDiv.className="result wrong";
     }
 }
+
+// Fonction shuffle (Fisher-Yates)
+function shuffle(array){
+    for(let i=array.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [array[i],array[j]]=[array[j],array[i]];
+    }
+    return array;
+}
+
+// Mélange aléatoire des options pour chaque QCM
+function shuffleAllOptions(){
+    const qcms = document.querySelectorAll('.qcm');
+    qcms.forEach(qcm => {
+        const labels = Array.from(qcm.querySelectorAll('label'));
+        const shuffled = shuffle(labels.map(label => label.innerHTML));
+        labels.forEach((label,i) => { label.innerHTML = shuffled[i]; });
+    });
+}
+
+window.addEventListener('DOMContentLoaded', shuffleAllOptions);
 </script>
 
 </body>
