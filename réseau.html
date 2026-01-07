@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module Réseaux Complet (1 à 17) – ZAGA</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif;}
+body{background:#f4f6fb;color:#0a1f44;}
+header{background:#2563eb;height:70px;display:flex;align-items:center;justify-content:center;}
+header nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold;}
+.hero{
+    height:300px;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("hacker.png.PNG") center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;
+    color:white;text-align:center;
+}
+.hero h1{font-size:40px;}
+main{max-width:1200px;margin:40px auto;padding:0 20px;}
+.module{
+    background:#e0e7ff;
+    padding:30px;
+    margin-bottom:45px;
+    border-left:6px solid #2563eb;
+    border-radius:6px;
+}
+.module h2{color:#1e3a8a;margin-bottom:15px;}
+.module p{line-height:1.9;text-align:justify;margin-bottom:15px;}
+.qcm{
+    background:white;
+    padding:20px;
+    border-radius:6px;
+    border:1px solid #c7d2fe;
+}
+.qcm h3{margin-bottom:10px;}
+.qcm label{display:block;margin:8px 0;}
+.qcm button{
+    margin-top:10px;
+    padding:8px 16px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.result{margin-top:10px;font-weight:bold;}
+.correct{color:green;}
+.wrong{color:red;}
+footer{background:#2563eb;color:white;text-align:center;padding:20px;}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <a href="#">HOME</a>
+    <a href="#">RÉSEAUX</a>
+    <a href="#">EXAMEN</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>MODULE RÉSEAUX COMPLET – 1 À 17</h1>
+</section>
+
+<main>
+
+<!-- MODULE 1 -->
+<div class="module">
+<h2>1. Introduction aux réseaux</h2>
+<p>
+Un réseau informatique permet l’échange de données entre plusieurs équipements.
+Il facilite le partage des ressources, la communication et l’accès à Internet.
+</p>
+<div class="qcm">
+<h3>QCM</h3>
+<p>Le rôle principal d’un réseau est :</p>
+<label><input type="radio" name="q1" value="true"> Échanger des données</label>
+<label><input type="radio" name="q1" value="false"> Produire de l’électricité</label>
+<button onclick="verifier('q1','r1')">Vérifier</button>
+<div id="r1" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 2 -->
+<div class="module">
+<h2>2. Types de réseaux</h2>
+<p>
+LAN : réseau local – MAN : réseau urbain – WAN : réseau étendu.
+Internet est un WAN mondial.
+</p>
+<div class="qcm">
+<p>Internet est un :</p>
+<label><input type="radio" name="q2" value="true"> WAN</label>
+<label><input type="radio" name="q2" value="false"> LAN</label>
+<button onclick="verifier('q2','r2')">Vérifier</button>
+<div id="r2" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 3 -->
+<div class="module">
+<h2>3. Supports de transmission</h2>
+<p>
+Les données circulent via câble cuivre, fibre optique ou ondes radio.
+La fibre offre le meilleur débit.
+</p>
+<div class="qcm">
+<p>Meilleur débit :</p>
+<label><input type="radio" name="q3" value="true"> Fibre optique</label>
+<label><input type="radio" name="q3" value="false"> Cuivre</label>
+<button onclick="verifier('q3','r3')">Vérifier</button>
+<div id="r3" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 4 -->
+<div class="module">
+<h2>4. Équipements réseau</h2>
+<p>
+Switch : réseau local – Routeur : relie plusieurs réseaux.
+</p>
+<div class="qcm">
+<p>Relie plusieurs réseaux :</p>
+<label><input type="radio" name="q4" value="true"> Routeur</label>
+<label><input type="radio" name="q4" value="false"> Switch</label>
+<button onclick="verifier('q4','r4')">Vérifier</button>
+<div id="r4" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 5 -->
+<div class="module">
+<h2>5. Modèles OSI & TCP/IP</h2>
+<p>
+OSI = 7 couches – TCP/IP = 4 couches.
+</p>
+<div class="qcm">
+<p>Le modèle OSI contient :</p>
+<label><input type="radio" name="q5" value="true"> 7 couches</label>
+<label><input type="radio" name="q5" value="false"> 4 couches</label>
+<button onclick="verifier('q5','r5')">Vérifier</button>
+<div id="r5" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 6 -->
+<div class="module">
+<h2>6. Adressage IP</h2>
+<p>
+Une adresse IP identifie un équipement sur le réseau.
+IPv4 utilise 32 bits.
+</p>
+<div class="qcm">
+<p>IPv4 contient :</p>
+<label><input type="radio" name="q6" value="true"> 32 bits</label>
+<label><input type="radio" name="q6" value="false"> 128 bits</label>
+<button onclick="verifier('q6','r6')">Vérifier</button>
+<div id="r6" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 7 -->
+<div class="module">
+<h2>7. IPv6</h2>
+<p>
+IPv6 utilise 128 bits et résout l’épuisement des adresses IPv4.
+</p>
+<div class="qcm">
+<p>IPv6 utilise :</p>
+<label><input type="radio" name="q7" value="true"> 128 bits</label>
+<label><input type="radio" name="q7" value="false"> 32 bits</label>
+<button onclick="verifier('q7','r7')">Vérifier</button>
+<div id="r7" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 8 -->
+<div class="module">
+<h2>8. Masque & sous-réseaux</h2>
+<p>
+Le masque permet de séparer réseau et hôte.
+</p>
+<div class="qcm">
+<p>Le masque sert à :</p>
+<label><input type="radio" name="q8" value="true"> Identifier réseau/hôte</label>
+<label><input type="radio" name="q8" value="false"> Chiffrer les données</label>
+<button onclick="verifier('q8','r8')">Vérifier</button>
+<div id="r8" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 9 -->
+<div class="module">
+<h2>9. ARP</h2>
+<p>
+ARP associe une adresse IP à une adresse MAC.
+</p>
+<div class="qcm">
+<p>ARP associe :</p>
+<label><input type="radio" name="q9" value="true"> IP → MAC</label>
+<label><input type="radio" name="q9" value="false"> MAC → IP</label>
+<button onclick="verifier('q9','r9')">Vérifier</button>
+<div id="r9" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 10 -->
+<div class="module">
+<h2>10. DHCP</h2>
+<p>
+DHCP attribue automatiquement les adresses IP.
+</p>
+<div class="qcm">
+<p>DHCP sert à :</p>
+<label><input type="radio" name="q10" value="true"> Attribuer des IP</label>
+<label><input type="radio" name="q10" value="false"> Chiffrer le Wi-Fi</label>
+<button onclick="verifier('q10','r10')">Vérifier</button>
+<div id="r10" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 11 -->
+<div class="module">
+<h2>11. Routage</h2>
+<p>
+Le routage permet l’acheminement des paquets entre réseaux.
+</p>
+<div class="qcm">
+<p>Le routage permet :</p>
+<label><input type="radio" name="q11" value="true"> Communication inter-réseaux</label>
+<label><input type="radio" name="q11" value="false"> Connexion locale uniquement</label>
+<button onclick="verifier('q11','r11')">Vérifier</button>
+<div id="r11" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 12 -->
+<div class="module">
+<h2>12. NAT</h2>
+<p>
+NAT permet à plusieurs machines de partager une IP publique.
+</p>
+<div class="qcm">
+<p>NAT sert à :</p>
+<label><input type="radio" name="q12" value="true"> Partager une IP publique</label>
+<label><input type="radio" name="q12" value="false"> Bloquer Internet</label>
+<button onclick="verifier('q12','r12')">Vérifier</button>
+<div id="r12" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 13 -->
+<div class="module">
+<h2>13. TCP</h2>
+<p>
+TCP est fiable et orienté connexion.
+</p>
+<div class="qcm">
+<p>TCP est :</p>
+<label><input type="radio" name="q13" value="true"> Fiable</label>
+<label><input type="radio" name="q13" value="false"> Non fiable</label>
+<button onclick="verifier('q13','r13')">Vérifier</button>
+<div id="r13" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 14 -->
+<div class="module">
+<h2>14. UDP</h2>
+<p>
+UDP est rapide mais non fiable.
+</p>
+<div class="qcm">
+<p>UDP est :</p>
+<label><input type="radio" name="q14" value="true"> Rapide</label>
+<label><input type="radio" name="q14" value="false"> Fiable</label>
+<button onclick="verifier('q14','r14')">Vérifier</button>
+<div id="r14" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 15 -->
+<div class="module">
+<h2>15. Protocoles applicatifs</h2>
+<p>
+HTTP, HTTPS, FTP, DNS, SMTP permettent les services réseau.
+</p>
+<div class="qcm">
+<p>Protocole web sécurisé :</p>
+<label><input type="radio" name="q15" value="true"> HTTPS</label>
+<label><input type="radio" name="q15" value="false"> FTP</label>
+<button onclick="verifier('q15','r15')">Vérifier</button>
+<div id="r15" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 16 -->
+<div class="module">
+<h2>16. Sécurité réseau</h2>
+<p>
+Pare-feu, VPN, chiffrement et authentification protègent le réseau.
+</p>
+<div class="qcm">
+<p>Wi-Fi sécurisé par :</p>
+<label><input type="radio" name="q16" value="true"> WPA3</label>
+<label><input type="radio" name="q16" value="false"> HTTP</label>
+<button onclick="verifier('q16','r16')">Vérifier</button>
+<div id="r16" class="result"></div>
+</div>
+</div>
+
+<!-- MODULE 17 -->
+<div class="module">
+<h2>17. Outils de diagnostic</h2>
+<p>
+Ping, ipconfig, tracert servent à diagnostiquer les réseaux.
+</p>
+<div class="qcm">
+<p>Commande de test réseau :</p>
+<label><input type="radio" name="q17" value="true"> ping</label>
+<label><input type="radio" name="q17" value="false"> format</label>
+<button onclick="verifier('q17','r17')">Vérifier</button>
+<div id="r17" class="result"></div>
+</div>
+</div>
+
+</main>
+
+<footer>
+© 2026 – ZAGA | Module Réseaux 1 à 17
+</footer>
+
+<script>
+function verifier(q,r){
+    let radios=document.getElementsByName(q);
+    let res=document.getElementById(r);
+    let choisi=false;
+    for(let i=0;i<radios.length;i++){
+        if(radios[i].checked){
+            choisi=true;
+            if(radios[i].value==="true"){
+                res.textContent="✅ Bonne réponse";
+                res.className="result correct";
+            }else{
+                res.textContent="❌ Mauvaise réponse";
+                res.className="result wrong";
+            }
+        }
+    }
+    if(!choisi){
+        res.textContent="⚠️ Choisissez une réponse";
+        res.className="result wrong";
+    }
+}
+</script>
+
+</body>
+</html>
