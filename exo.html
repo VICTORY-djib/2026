@@ -226,7 +226,7 @@ function endQuiz(){
         document.getElementById("restart").style.display="block";
         let total = essaisScores.reduce((a,b)=>a+b,0);
         let percent = ((total / (MAX_TENTATIVES*20))*100).toFixed(2);
-        alert(`✅ Fin des ${MAX_TENTATIVES} tentatives !\nTotal : ${total}/80\nPourcentage : ${percent}%`);
+        alert(`✅ Fin des ${MAX_TENTATIVES} tentatives !\nTotal : ${total}/100\nPourcentage : ${percent}%`);
     }
 }
 
