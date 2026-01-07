@@ -58,9 +58,9 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 <header>
     <nav>
         <a href="index.html">HOME👨🏽‍💻</a>
-        <a href="cours.html">COURS📖</a>
-        <a class="active" href="#">EXAMEN📝</a>
         <a href="reseau.html">RESEAU📖</a>
+        <a href="cours.html">CYBER📖</a>
+        <a class="active" href="#">EXAMEN📝</a>
     </nav>
 </header>
 
@@ -135,56 +135,80 @@ document.addEventListener("visibilitychange",()=>{
 
 /* ===== 50 QUESTIONS AVEC 3 OPTIONS ===== */
 const questions=[
-{q:"1. La cybersécurité protège quoi principalement ?", o:["Emails uniquement","Données personnelles","Tous systèmes et données"], a:2},
-{q:"2. Les niveaux de protection incluent ?", o:["Personnel","Professionnel","Tous les précédents"], a:2},
-{q:"3. L'usurpation d'identité est ?", o:["Vol de documents","Vol d'identité","Virus"], a:1},
-{q:"4. Le Cube de McCumber inclut ?", o:["Confidentialité, intégrité et disponibilité","Phishing","Antivirus"], a:0},
-{q:"5. Un ransomware fait quoi ?", o:["Efface fichiers","Chiffre fichiers","Change mot de passe"], a:1},
-{q:"6. Stuxnet est un malware utilisé pour ?", o:["Espionnage","Destruction industrielle","Phishing"], a:1},
-{q:"7. Le phishing vise à ?", o:["Voler des informations","Augmenter vitesse internet","Bloquer un programme"], a:0},
-{q:"8. Le MFA signifie ?", o:["Multi Factor Authentication","Mainframe Access","Malware Free"], a:0},
-{q:"9. OAuth sert à ?", o:["Partager mot de passe","Authentification sécurisée","Virus"], a:1},
-{q:"10. CEH concerne ?", o:["Hacking illégal","Hacking éthique","Hacking réseau"], a:1},
-{q:"11. CISSP exige environ ?", o:["1 an expérience","5 ans expérience","10 ans expérience"], a:1},
-{q:"12. VPN crée ?", o:["Tunnel chiffré","Serveur DNS","Antivirus"], a:0},
-{q:"13. Un botnet est ?", o:["Programme antivirus","Réseau d'appareils infectés","Logiciel légal"], a:1},
-{q:"14. Une attaque DDoS provient de ?", o:["Une seule machine","Un réseau d'ordinateurs","Email"], a:1},
-{q:"15. Spyware et Adware peuvent ?", o:["Coexister","S'exclure mutuellement","Effacer fichiers"], a:0},
-{q:"16. La segmentation réseau sert à ?", o:["Limiter propagation attaques","Augmenter vitesse","Bloquer antivirus"], a:0},
-{q:"17. Les logs réseau aident à ?", o:["Éteindre serveur","Détecter attaques","Ignorer malwares"], a:1},
-{q:"18. Le cryptojacking fait quoi ?", o:["Mine cryptomonnaies sans consentement","Efface données","Spyware"], a:0},
-{q:"19. L'ingénierie sociale exploite ?", o:["Psychologie humaine","Virus","Hardware"], a:0},
-{q:"20. Une attaque MITM signifie ?", o:["Interception communication","Suppression fichiers","Création VPN"], a:0},
-{q:"21. Les mises à jour sont ?", o:["Utile","Inutiles","Dangereuses"], a:0},
-{q:"22. Un rootkit est ?", o:["Facile à détecter","Difficile à détecter","Supprime antivirus"], a:1},
-{q:"23. Le Wi-Fi public sans VPN est ?", o:["Sécurisé","Non sécurisé","Protégé par antivirus"], a:1},
-{q:"24. Le phishing vocal s'appelle ?", o:["Vishing","Spear phishing","SMS phishing"], a:0},
-{q:"25. Les certificats SSL/TLS servent à ?", o:["Sécuriser site web","Augmenter vitesse","Bloquer email"], a:0},
-{q:"26. Le 2FA signifie ?", o:["Double facteur authentification","Antivirus double","VPN sécurisé"], a:0},
-{q:"27. Les sauvegardes cloud sont ?", o:["Toujours cryptées","Parfois cryptées","Jamais cryptées"], a:1},
-{q:"28. Le Social Engineering concerne ?", o:["Emails uniquement","Toutes interactions","Réseaux sociaux seulement"], a:1},
-{q:"29. Les APT sont ?", o:["Attaques simples","Attaques avancées","Antivirus"], a:1},
-{q:"30. Les honeypots servent à ?", o:["Leurre pour hackers","Créer virus","Effacer données"], a:0},
-{q:"31. Le ransomware peut ?", o:["Chiffrer fichiers","Effacer fichiers","Augmenter vitesse"], a:0},
-{q:"32. Une attaque DDoS est ?", o:["DoS unique","Distribuée","Antivirus"], a:1},
-{q:"33. Le rootkit permet ?", o:["Contrôle système caché","Sécurité totale","Bloquer malware"], a:0},
-{q:"34. Un antivirus bloque ?", o:["Tous malwares","Certains malwares","Rien"], a:1},
-{q:"35. Les scripts kiddies ont ?", o:["Peu de compétences","Beaucoup de compétences","Aucune compétence"], a:0},
-{q:"36. La sensibilisation du personnel réduit ?", o:["Les risques","La vitesse internet","Les logs"], a:0},
-{q:"37. OAuth permet ?", o:["Sécurité mot de passe","Partager mot de passe","Bloquer virus"], a:0},
-{q:"38. CEH signifie ?", o:["Certified Ethical Hacker","Cyber Expert Hacking","Certified Enterprise Hacker"], a:0},
-{q:"39. CISSP est ?", o:["Certification cyber","Antivirus","VPN"], a:0},
-{q:"40. Le MFA est ?", o:["Plus sûr qu'un mot de passe seul","Inutile","Virus"], a:0},
-{q:"41. Les certificats SSL/TLS sécurisent ?", o:["Sites web","Emails uniquement","VPN"], a:0},
-{q:"42. Le spear-phishing cible ?", o:["Individus précis","Tout le monde","Serveurs"], a:0},
-{q:"43. La conformité RGPD protège ?", o:["Vie privée","Serveur","Emails"], a:0},
-{q:"44. L'authentification biométrique ?", o:["Peut remplacer mot de passe","Toujours sûre","Inutile"], a:0},
-{q:"45. La navigation privée rend ?", o:["Totalement anonyme","Partiellement anonyme","Aucune anonymité"], a:1},
-{q:"46. IDS détecte ?", o:["Intrusions en temps réel","Virus","Mots de passe"], a:0},
-{q:"47. La gestion des risques inclut ?", o:["Identification et réponse","Ignorer attaques","Supprimer virus"], a:0},
-{q:"48. La réponse aux incidents inclut ?", o:["Communication","Effacer données","Bloquer emails"], a:0},
-{q:"49. Une seule couche de sécurité suffit ?", o:["Oui","Non","Parfois"], a:1},
-{q:"50. La cybersécurité doit ?", o:["Évoluer constamment","Rester statique","Supprimer antivirus"], a:0}
+{q:"Quel mécanisme permet de garantir que les données n'ont pas été altérées lors d'une transmission ?", 
+ o:["Chiffrement symétrique","Hashing et intégrité via HMAC","VPN"], a:1},
+
+{q:"Dans le modèle Zero Trust, quel principe est appliqué ?", 
+ o:["Confiance implicite aux appareils internes","Vérification explicite de tout utilisateur et appareil","Autorisation unique"], a:1},
+
+{q:"Quelle attaque exploite une faille dans la gestion des sessions pour usurper l'identité ?", 
+ o:["SQL Injection","Session Hijacking","Cross-Site Scripting (XSS)"], a:1},
+
+{q:"Quelle technique de chiffrement est asymétrique ?", 
+ o:["AES-256","RSA","ChaCha20"], a:1},
+
+{q:"Quel protocole sécurise le courrier électronique avec chiffrement et signature ?", 
+ o:["SMTP","SMTPS","PGP"], a:2},
+
+{q:"Dans un réseau, quelle attaque consiste à saturer la table ARP pour rediriger le trafic ?", 
+ o:["ARP Spoofing","Man-in-the-Middle","DNS Poisoning"], a:0},
+
+{q:"Quel concept décrit l'exploitation d'une vulnérabilité non encore publiée ?", 
+ o:["Zero-Day Exploit","Backdoor","Rootkit"], a:0},
+
+{q:"Quelle méthode permet d'authentifier un utilisateur sans transmettre de mot de passe en clair ?", 
+ o:["OAuth","Kerberos","Brute Force"], a:1},
+
+{q:"Dans la cybersécurité industrielle, Stuxnet ciblait principalement ?", 
+ o:["Serveurs web","Systèmes SCADA","Réseaux Wi-Fi publics"], a:1},
+
+{q:"Quel type de malware se cache dans le noyau du système pour rester indétectable ?", 
+ o:["Ransomware","Rootkit","Trojan"], a:1},
+
+{q:"Quel mécanisme est utilisé pour éviter les attaques de type SQL Injection ?", 
+ o:["Paramétrage des requêtes préparées","Antivirus","Cryptage AES"], a:0},
+
+{q:"Quelle attaque consiste à injecter du code malveillant dans une page web visitée par d’autres utilisateurs ?", 
+ o:["XSS réfléchi","DDoS","ARP Spoofing"], a:0},
+
+{q:"Dans la sécurité des API, quel mécanisme protège contre l’usurpation de requêtes ?", 
+ o:["OAuth 2.0","FTP","Telnet"], a:0},
+
+{q:"Quel standard est utilisé pour le chiffrement de bout en bout des messageries instantanées ?", 
+ o:["TLS 1.2","Signal Protocol","IPSec"], a:1},
+
+{q:"Lors d’une attaque MITM sur HTTPS, quel certificat est compromis ?", 
+ o:["Certificat SSL/TLS légitime","Certificat auto-signé","Certificat antivirus"], a:0},
+
+{q:"Quel mécanisme de sécurité réseau permet de détecter et prévenir les intrusions en temps réel ?", 
+ o:["Firewall","IDS/IPS","Proxy HTTP"], a:1},
+
+{q:"Quelle technique est utilisée pour isoler les applications dans des conteneurs sécurisés ?", 
+ o:["Sandboxing","VPN","Antivirus"], a:0},
+
+{q:"Dans le chiffrement asymétrique, la clé publique sert à ?", 
+ o:["Déchiffrer les données","Chiffrer les données","Signer les emails"], a:1},
+
+{q:"Le principe de défense en profondeur repose sur ?", 
+ o:["Utiliser un seul système de sécurité efficace","Multiplier les couches de sécurité","Se fier aux mots de passe longs uniquement"], a:1},
+
+{q:"Les attaques de type 'Pass-the-Hash' exploitent :", 
+ o:["Mot de passe en clair","Hash de mot de passe volé","Certificat SSL"], a:1},
+
+{q:"Dans le RGPD, quel droit permet à un utilisateur de supprimer ses données personnelles ?", 
+ o:["Droit à la portabilité","Droit à l'effacement (droit à l'oubli)","Droit de rectification"], a:1},
+
+{q:"Quelle attaque réseau consiste à rediriger le trafic vers un serveur malveillant via DNS ?", 
+ o:["DNS Spoofing","ARP Poisoning","Phishing"], a:0},
+
+{q:"Quel protocole permet d’établir un tunnel sécurisé entre deux réseaux sur Internet ?", 
+ o:["HTTP","VPN","SMTP"], a:1},
+
+{q:"Quel concept décrit la protection contre les logiciels malveillants qui se propagent automatiquement sur un réseau ?", 
+ o:["Antivirus","Segmentation réseau","IDS"], a:1},
+
+{q:"Quel type d’attaque consiste à saturer la mémoire ou les ressources d’un service pour le rendre indisponible ?", 
+ o:["Buffer Overflow","DDoS","Man-in-the-Middle"], a:1}
 ];
 
 let current=0, score=0, timeLeft=900, timerInterval;
