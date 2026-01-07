@@ -75,31 +75,46 @@ h1{text-align:center;color:var(--blue);margin-bottom:10px;}
 </div>
 
 <script>
-/* ===== Déverrouillage ===== */
-const PIN_CORRECT="7183";
-let tentatives=0;
-function unlock(){
-    const pin=document.getElementById("pin").value;
-    const msg=document.getElementById("lock-msg");
-    const btn=document.getElementById("btn");
-    if(tentatives>=3){
-        msg.style.color="#ff4d4d"; msg.textContent="🔒 Accès bloqué"; btn.disabled=true; return;
+/* ===== DÉVERROUILLAGE ===== */
+const PIN_CORRECT = "7183";
+let tentatives = 0;
+const MAX_TENTATIVES = 5; // 🔑 5 tentatives avant blocage
+
+function unlock() {
+    const pin = document.getElementById("pin").value;
+    const msg = document.getElementById("lock-msg");
+    const btn = document.getElementById("btn");
+
+    if (tentatives >= MAX_TENTATIVES) {
+        msg.style.color = "#ff4d4d";
+        msg.textContent = "🔒 Accès bloqué"; 
+        btn.disabled = true;
+        return;
     }
-    if(pin===PIN_CORRECT){
-        msg.style.color="#00ff9d"; msg.textContent="✔ Accès autorisé";
-        setTimeout(()=>{
-            document.getElementById("lock-screen").style.display="none";
-            document.getElementById("quiz-screen").style.display="block";
+
+    if (pin === PIN_CORRECT) {
+        msg.style.color = "#00ff9d";
+        msg.textContent = "✔ Accès autorisé";
+        setTimeout(() => {
+            document.getElementById("lock-screen").style.display = "none";
+            document.getElementById("quiz-screen").style.display = "block";
             startQuiz();
-        },300);
-    }else{
-        tentatives++; msg.style.color="#ff4d4d"; msg.textContent="pword incorrect";
-        if(tentatives>=3){ msg.textContent="🔒 Accès bloqué"; btn.disabled=true; }
+        }, 300);
+    } else {
+        tentatives++;
+        msg.style.color = "#ff4d4d";
+        if (tentatives < MAX_TENTATIVES) {
+            msg.textContent = `Mot de passe incorrect (${tentatives}/${MAX_TENTATIVES})`;
+        } else {
+            msg.textContent = "🔒 Accès bloqué";
+            btn.disabled = true;
+        }
     }
-    document.getElementById("pin").value="";
+
+    document.getElementById("pin").value = "";
 }
 
-/* ===== Re-verrouillage ===== */
+/* ===== RE-VERROUILLAGE ===== */
 function relock(reason=""){
     clearInterval(timerInterval);
     document.getElementById("quiz-screen").style.display="none";
@@ -219,7 +234,7 @@ function showRecentScores(){
 /* ===== START QUIZ ===== */
 function startQuiz(){
     current=0; score=0; timeLeft=900;
-    shuffleQuestions(questions); // 🔀 questions aléatoires
+    shuffleQuestions(questions); 
     document.getElementById("result").innerHTML="";
     document.getElementById("restart").style.display="none";
     startTimer();
@@ -274,7 +289,6 @@ function endQuiz(){
 
 /* ===== AFFICHAGE SCORES INIT ===== */
 showRecentScores();
-
 </script>
 </body>
 </html>
