@@ -6,36 +6,36 @@
 <title>Déverrouillage sécurisé + QCM</title>
 
 <style>
-/* ===== GLOBAL ===== */
 *{box-sizing:border-box}
 body{
     margin:0;
     font-family:'Segoe UI',Tahoma,sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
 
-/* ===== HEADER ===== */
+/* ===== Header ===== */
 header{
     background:#2563eb;
     color:white;
     padding:15px 30px;
-    display:flex;
-    justify-content:center;
+    width:100%;
     position:sticky;
     top:0;
     z-index:100;
 }
 header nav a{
     color:white;
-    margin:0 15px;
+    margin-right:15px;
     text-decoration:none;
     font-weight:500;
 }
-header nav a.active{
-    text-decoration:underline;
-}
+header nav a.active{text-decoration:underline}
 
-/* ===== LOCK SCREEN ===== */
+/* ===== Déverrouillage ===== */
 #lock-screen{
     width:360px;
     padding:40px 30px;
@@ -45,9 +45,9 @@ header nav a.active{
     box-shadow:0 20px 40px rgba(0,0,0,0.4);
     text-align:center;
     color:#fff;
-    margin:40px auto;
+    margin-top:40px;
 }
-#lock-screen img{width:70px;margin-bottom:20px;}
+#lock-screen img{width:70px;margin-bottom:20px}
 #lock-screen input{
     width:100%;
     padding:15px;
@@ -67,68 +67,49 @@ header nav a.active{
     font-weight:bold;
     cursor:pointer;
 }
-#lock-msg{margin-top:15px;height:20px}
+#lock-msg{margin-top:18px;height:18px}
 
 /* ===== QCM ===== */
-:root{
-    --blue:#2563eb;
-    --green:#16a34a;
-    --red:#dc2626;
-}
-#quiz-screen{
-    display:none;
+#quiz-screen{display:none}
+.container{
     background:#fff;
-    width:90%;
+    width:100%;
     max-width:800px;
     padding:30px;
     border-radius:16px;
     box-shadow:0 15px 40px rgba(0,0,0,.15);
-    margin:40px auto;
+    margin-top:40px;
 }
-h1{text-align:center;color:var(--blue)}
-.top-bar{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:20px;
-}
+.top-bar{display:flex;justify-content:space-between;margin-bottom:20px}
 .timer{
     font-weight:bold;
     background:#e0e7ff;
-    padding:8px 16px;
+    padding:6px 14px;
     border-radius:999px;
 }
 .question{
     font-size:24px;
     font-weight:700;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 .option{
     width:100%;
     padding:14px;
-    margin:12px 0;
+    margin:10px 0;
     font-size:18px;
     border-radius:10px;
-    border:2px solid #e5e7eb;
-    background:#f8fafc;
     cursor:pointer;
 }
-.option:hover{border-color:var(--blue)}
-.correct{background:#dcfce7;border-color:var(--green)}
-.wrong{background:#fee2e2;border-color:var(--red)}
-#result{
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-    margin-top:20px;
-}
+.correct{background:#dcfce7}
+.wrong{background:#fee2e2}
+#result{text-align:center;font-size:22px;font-weight:bold;margin-top:20px}
 #restart{
     display:none;
-    margin:25px auto 0;
+    margin:20px auto 0;
     padding:12px 24px;
-    font-size:18px;
     border:none;
     border-radius:999px;
-    background:var(--blue);
+    background:#2563eb;
     color:white;
     cursor:pointer;
 }
@@ -142,46 +123,64 @@ h1{text-align:center;color:var(--blue)}
     <a href="index.html">HOME👨🏽‍💻</a>
     <a href="cours.html">COURS📖</a>
     <a class="active" href="exo.html">EXAMEN📝</a>
-    <a href="contact.html">HELP</a>
+    <a href="contact.html">contact📞</a>
 </nav>
 </header>
 
-<!-- ===== LOCK ===== -->
 <div id="lock-screen">
     <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png">
     <h2>Déverrouillage</h2>
     <input type="password" id="pin" placeholder="••••">
-    <button onclick="unlock()">Déverrouiller</button>
+    <button id="btn" onclick="unlock()">Déverrouiller</button>
     <div id="lock-msg"></div>
 </div>
 
-<!-- ===== QUIZ ===== -->
-<div id="quiz-screen">
-    <h1>QCM Cybersécurité (70 questions)</h1>
+<div id="quiz-screen" class="container">
+    <h1>QCM Cybersécurité</h1>
     <div class="top-bar">
         <div id="progress"></div>
         <div class="timer" id="timer">15:00</div>
     </div>
     <div id="quiz"></div>
     <div id="result"></div>
-    <button id="restart" onclick="startQuiz()">🔄 Recommencer</button>
+    <button id="restart" onclick="startQuiz()">🔄 Redémarrer</button>
 </div>
 
 <script>
-/* ===== DÉVERROUILLAGE ===== */
 const PIN_CORRECT="7183";
 let tentatives=0;
 
+/* ===== Questions ===== */
+const questions=[
+ {q:"La cybersécurité protège uniquement les données personnelles.",a:false},
+ {q:"Le 2FA renforce la sécurité.",a:true},
+ {q:"Un ransomware chiffre les données.",a:true},
+ {q:"Le phishing exploite la psychologie humaine.",a:true},
+ {q:"Un VPN chiffre le trafic.",a:true},
+ {q:"Un pare-feu filtre le trafic réseau.",a:true},
+ {q:"Les mises à jour sont inutiles.",a:false},
+ {q:"Les APT sont des attaques avancées.",a:true},
+ {q:"Le Wi-Fi public est toujours sûr.",a:false},
+ {q:"Les sauvegardes protègent les données.",a:true}
+];
+
+let current=0, score=0, timeLeft=900, timerInterval;
+
+/* ===== Shuffle ===== */
+function shuffleQuestions(array){
+    for(let i=array.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [array[i],array[j]]=[array[j],array[i]];
+    }
+}
+
+/* ===== Déverrouillage ===== */
 function unlock(){
     const pin=document.getElementById("pin").value;
     const msg=document.getElementById("lock-msg");
 
-    if(tentatives>=3){
-        msg.textContent="🔒 Accès bloqué";
-        return;
-    }
-
     if(pin===PIN_CORRECT){
+        msg.style.color="#00ff9d";
         msg.textContent="✔ Accès autorisé";
         setTimeout(()=>{
             document.getElementById("lock-screen").style.display="none";
@@ -189,146 +188,65 @@ function unlock(){
             startQuiz();
         },300);
     }else{
-        tentatives++;
-        msg.textContent="❌ Mot de passe incorrect";
+        msg.style.color="#ff4d4d";
+        msg.textContent="❌Mot de passe incorrect";
     }
     document.getElementById("pin").value="";
 }
 
-/* ===== 70 QUESTIONS ===== */
-const questions=[
- {q:"1. La cybersécurité protège uniquement les données personnelles des individus.",a:false},
- {q:"2. Les niveaux de protection incluent le personnel, le professionnel et le gouvernemental.",a:true},
- {q:"3. L'usurpation d'identité est un risque lié aux données personnelles.",a:true},
- {q:"4. Les données IoT augmentent le risque de violations de sécurité.",a:true},
- {q:"5. Le Cube de McCumber inclut confidentialité, intégrité et disponibilité.",a:true},
- {q:"6. Les hackers chapeau noir testent la sécurité avec autorisation.",a:false},
- {q:"7. Les menaces internes peuvent provenir d'employés involontaires.",a:true},
- {q:"8. Stuxnet est un malware utilisé uniquement pour espionner les emails.",a:false},
- {q:"9. Les violations de données peuvent entraîner des pertes financières.",a:true},
- {q:"10. Un ransomware chiffre les données et exige une rançon.",a:true},
- {q:"11. Un ver nécessite l'action de l'utilisateur pour se propager.",a:false},
- {q:"12. Le rootkit est facile à détecter.",a:false},
- {q:"13. L'ingénierie sociale exploite la psychologie humaine.",a:true},
- {q:"14. Une attaque DDoS provient d'une seule machine.",a:false},
- {q:"15. Les botnets sont des réseaux d'appareils zombies.",a:true},
- {q:"16. Le cryptojacking mine des cryptomonnaies sans consentement.",a:true},
- {q:"17. Les mises à jour sont inutiles avec un antivirus.",a:false},
- {q:"18. Le chiffrement protège contre l'accès non autorisé.",a:true},
- {q:"19. Le 2FA renforce la sécurité.",a:true},
- {q:"20. OAuth évite de partager son mot de passe.",a:true},
- {q:"21. Un mot de passe fort doit être long et complexe.",a:true},
- {q:"22. La navigation privée rend totalement anonyme.",a:false},
- {q:"23. Un pare-feu filtre le trafic réseau.",a:true},
- {q:"24. IDS bloque automatiquement le trafic.",a:false},
- {q:"25. Un VPN crée un tunnel chiffré.",a:true},
- {q:"26. Les honeypots attirent les attaquants.",a:true},
- {q:"27. Les tests d'intrusion ne nécessitent pas d'autorisation.",a:false},
- {q:"28. La gestion des risques inclut identification et réponse.",a:true},
- {q:"29. La réponse aux incidents inclut la communication.",a:true},
- {q:"30. Une seule couche de sécurité suffit.",a:false},
- {q:"31. CEH concerne le hacking éthique.",a:true},
- {q:"32. CISSP exige environ 5 ans d'expérience.",a:true},
- {q:"33. Les certifications améliorent l'employabilité.",a:true},
- {q:"34. CyberSeek analyse le marché de l'emploi cyber.",a:true},
- {q:"35. L'éthique est inutile en cybersécurité.",a:false},
- {q:"36. Le Wi-Fi public sans VPN est sécurisé.",a:false},
- {q:"37. Les sauvegardes évitent les pertes de données.",a:true},
- {q:"38. Détruire physiquement un disque est sûr.",a:true},
- {q:"39. Le phishing peut se faire par email.",a:true},
- {q:"40. Les APT sont des attaques avancées.",a:true},
- {q:"41. Spyware et adware peuvent coexister.",a:true},
- {q:"42. Les pentests révèlent des failles.",a:true},
- {q:"43. Spectre/Meltdown exploitent le matériel.",a:true},
- {q:"44. EFS protège les données en transit.",a:false},
- {q:"45. La cybersécurité est une responsabilité partagée.",a:true},
- {q:"46. Un antivirus bloque tous les malwares.",a:false},
- {q:"47. Le MFA est plus sûr qu’un mot de passe seul.",a:true},
- {q:"48. Les vulnérabilités zero-day sont connues des éditeurs.",a:false},
- {q:"49. L'authentification biométrique peut remplacer les mots de passe.",a:false},
- {q:"50. Le phishing vocal s'appelle vishing.",a:true},
- {q:"51. Le spear-phishing cible des individus précis.",a:true},
- {q:"52. Les mots de passe doivent être changés régulièrement.",a:true},
- {q:"53. Le Wi-Fi WPA2 est plus sécurisé que WEP.",a:true},
- {q:"54. Les logs réseau aident à détecter les attaques.",a:true},
- {q:"55. Le Social Engineering ne concerne que les emails.",a:false},
- {q:"56. Un honeypot est un leurre pour hackers.",a:true},
- {q:"57. La conformité RGPD protège la vie privée.",a:true},
- {q:"58. La segmentation réseau limite la propagation des attaques.",a:true},
- {q:"59. Les sauvegardes cloud sont toujours cryptées.",a:false},
- {q:"60. Les IDS détectent les intrusions en temps réel.",a:true},
- {q:"61. Une attaque MITM intercepte les communications.",a:true},
- {q:"62. La cybersécurité est un investissement, pas une dépense.",a:true},
- {q:"63. Les script kiddies ont peu de compétences.",a:true},
- {q:"64. Le ransomware peut chiffrer des serveurs entiers.",a:true},
- {q:"65. La sensibilisation du personnel réduit les risques.",a:true},
- {q:"66. Les VPN gratuits sont toujours sûrs.",a:false},
- {q:"67. Les certificats SSL/TLS sécurisent les sites web.",a:true},
- {q:"68. Les tests d'intrusion doivent être documentés.",a:true},
- {q:"69. Les APT peuvent rester longtemps invisibles.",a:true},
- {q:"70. La cybersécurité doit évoluer constamment.",a:true}
-];
-
-/* ===== MÉLANGE ===== */
-function shuffle(array){
-    for(let i=array.length-1;i>0;i--){
-        let j=Math.floor(Math.random()*(i+1));
-        [array[i],array[j]]=[array[j],array[i]];
-    }
-}
-
-/* ===== QCM LOGIC ===== */
-let current=0,score=0,timeLeft=900,timer;
-
+/* ===== QCM ===== */
 function startQuiz(){
-    shuffle(questions);
-    current=0;score=0;timeLeft=900;
-    document.getElementById("result").innerHTML="";
-    document.getElementById("restart").style.display="none";
-    startTimer();
-    showQuestion();
+ current=0;
+ score=0;
+ timeLeft=900;
+
+ shuffleQuestions(questions);
+
+ document.getElementById("result").innerHTML="";
+ document.getElementById("restart").style.display="none";
+ startTimer();
+ showQuestion();
 }
 
 function startTimer(){
-    clearInterval(timer);
-    timer=setInterval(()=>{
-        let m=Math.floor(timeLeft/60);
-        let s=timeLeft%60;
-        document.getElementById("timer").textContent=
-        `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
-        timeLeft--;
-        if(timeLeft<0) endQuiz();
-    },1000);
+ clearInterval(timerInterval);
+ timerInterval=setInterval(()=>{
+   let m=Math.floor(timeLeft/60);
+   let s=timeLeft%60;
+   document.getElementById("timer").textContent=
+     `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+   timeLeft--;
+   if(timeLeft<0){ endQuiz(); }
+ },1000);
 }
 
 function showQuestion(){
-    if(current>=questions.length){endQuiz();return;}
-    document.getElementById("progress").textContent=
-    `Question ${current+1} / ${questions.length}`;
-    document.getElementById("quiz").innerHTML=`
-    <div class="question">${questions[current].q}</div>
-    <button class="option" onclick="answer(true,this)">Vrai</button>
-    <button class="option" onclick="answer(false,this)">Faux</button>`;
+ if(current>=questions.length){ endQuiz(); return; }
+ document.getElementById("progress").textContent=
+   `Question ${current+1} / ${questions.length}`;
+ document.getElementById("quiz").innerHTML=`
+   <div class="question">${questions[current].q}</div>
+   <button class="option" onclick="answer(true,this)">Vrai</button>
+   <button class="option" onclick="answer(false,this)">Faux</button>
+ `;
 }
 
 function answer(val,btn){
-    if(val===questions[current].a){
-        btn.classList.add("correct");
-        score++;
-    }else{
-        btn.classList.add("wrong");
-    }
-    document.querySelectorAll(".option").forEach(b=>b.disabled=true);
-    setTimeout(()=>{current++;showQuestion();},600);
+ let correct=questions[current].a;
+ if(val===correct){ btn.classList.add("correct"); score++; }
+ else{ btn.classList.add("wrong"); }
+ document.querySelectorAll(".option").forEach(b=>b.disabled=true);
+ setTimeout(()=>{ current++; showQuestion(); },600);
 }
 
 function endQuiz(){
-    clearInterval(timer);
-    let note=((score/questions.length)*20).toFixed(2);
-    document.getElementById("quiz").innerHTML="";
-    document.getElementById("result").innerHTML=
-    `🎯 Score : ${score} / 70<br>📊 Note : <b>${note} / 20</b>`;
-    document.getElementById("restart").style.display="block";
+ clearInterval(timerInterval);
+ let note=((score/questions.length)*20).toFixed(2);
+ document.getElementById("quiz").innerHTML="";
+ document.getElementById("progress").textContent="QCM terminé";
+ document.getElementById("result").innerHTML=
+   `Score : ${score}/${questions.length}<br>Note : ${note}/20`;
+ document.getElementById("restart").style.display="block";
 }
 </script>
 
