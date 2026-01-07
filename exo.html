@@ -5,28 +5,190 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Déverrouillage sécurisé + QCM</title>
 <style>
-body{margin:0;font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);}
-header{background:#2563eb;color:white;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
-header nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500;}
-header nav a.active{text-decoration:underline;}
-#lock-screen{width:360px;padding:40px 30px;background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border-radius:18px;box-shadow:0 20px 40px rgba(0,0,0,0.4);text-align:center;color:#fff;margin-top:40px;}
-#lock-screen img{width:70px;margin-bottom:20px;}
-#lock-screen input{width:100%;padding:15px;border-radius:10px;border:none;margin-bottom:20px;font-size:16px;text-align:center;letter-spacing:4px;}
-#lock-screen button{width:100%;padding:14px;border:none;border-radius:10px;background:#00c6ff;font-weight:bold;cursor:pointer;}
-#lock-msg{margin-top:18px;height:18px;color:#fff;}
-#quiz-screen{display:none;max-width:800px;width:90%;margin:40px auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.15);}
-h1{text-align:center;color:#2563eb;margin-bottom:10px;}
-.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
-.timer{font-size:20px;font-weight:bold;color:#0f172a;background:#e0e7ff;padding:8px 16px;border-radius:999px;}
-.progress{font-weight:600;color:#475569;}
-.question{font-size:22px;font-weight:700;margin-bottom:25px;color:#020617;}
-.option{display:block;width:100%;text-align:left;padding:14px 18px;margin:12px 0;font-size:18px;border-radius:10px;border:2px solid #e5e7eb;background:#f8fafc;cursor:pointer;transition:.2s;}
-.option:hover{border-color:#2563eb;background:#eef2ff;}
-.correct{background:#dcfce7 !important;border-color:#16a34a !important;color:#14532d;}
-.wrong{background:#fee2e2 !important;border-color:#dc2626 !important;color:#7f1d1d;}
-#result{text-align:center;font-size:24px;font-weight:700;margin-top:20px;}
-#restart{display:none;margin:25px auto 0;padding:12px 24px;font-size:18px;border:none;border-radius:999px;background:#2563eb;color:#fff;cursor:pointer;}
-#recent-scores{margin-top:20px;font-size:16px;color:#020617;text-align:center;}
+/* ===== STYLE GLOBAL ===== */
+body{
+    margin:0;
+    font-family:'Segoe UI',Tahoma,sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+
+    /* CENTRAGE DU LOCK-SCREEN */
+    display: flex;
+    justify-content: center;  /* centre horizontalement */
+    align-items: center;      /* centre verticalement */
+    min-height: 100vh;        /* prend toute la hauteur de l’écran */
+    flex-direction: column;   /* garde header en haut si besoin */
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+header nav a{
+    color:white;
+    margin-left:15px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+header nav a.active{
+    text-decoration:underline;
+}
+
+/* ===== LOCK SCREEN ===== */
+#lock-screen{
+    width:360px;
+    padding:40px 30px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    text-align:center;
+    color:#fff;
+    margin-top:0; /* supprimé pour centrage vertical */
+}
+
+#lock-screen img{
+    width:70px;
+    margin-bottom:20px;
+}
+
+#lock-screen input{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:none;
+    margin-bottom:20px;
+    font-size:16px;
+    text-align:center;
+    letter-spacing:4px;
+}
+
+#lock-screen button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#00c6ff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#lock-msg{
+    margin-top:18px;
+    height:18px;
+    color:#fff;
+}
+
+/* ===== QUIZ SCREEN ===== */
+#quiz-screen{
+    display:none;
+    max-width:800px;
+    width:90%;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.timer{
+    font-size:20px;
+    font-weight:bold;
+    color:#0f172a;
+    background:#e0e7ff;
+    padding:8px 16px;
+    border-radius:999px;
+}
+
+.progress{
+    font-weight:600;
+    color:#475569;
+}
+
+.question{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:25px;
+    color:#020617;
+}
+
+.option{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:14px 18px;
+    margin:12px 0;
+    font-size:18px;
+    border-radius:10px;
+    border:2px solid #e5e7eb;
+    background:#f8fafc;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    border-color:#2563eb;
+    background:#eef2ff;
+}
+
+.correct{
+    background:#dcfce7 !important;
+    border-color:#16a34a !important;
+    color:#14532d;
+}
+
+.wrong{
+    background:#fee2e2 !important;
+    border-color:#dc2626 !important;
+    color:#7f1d1d;
+}
+
+#result{
+    text-align:center;
+    font-size:24px;
+    font-weight:700;
+    margin-top:20px;
+}
+
+#restart{
+    display:none;
+    margin:25px auto 0;
+    padding:12px 24px;
+    font-size:18px;
+    border:none;
+    border-radius:999px;
+    background:#2563eb;
+    color:#fff;
+    cursor:pointer;
+}
+
+#recent-scores{
+    margin-top:20px;
+    font-size:16px;
+    color:#020617;
+    text-align:center;
+}
 </style>
 </head>
 <body>
@@ -34,12 +196,13 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 <header>
     <nav>
         <a href="index.html">HOME👨🏽‍💻</a>
-        <a href="cours.html">COURS📖</a>
-        <a class="active" href="#">EXAMEN📝</a>
         <a href="reseau.html">RESEAU📖</a>
+        <a href="cours.html">cyber📖</a>
+        <a class="active" href="#">EXAMEN📝</a>
     </nav>
 </header>
 
+<!-- ===== LOCK SCREEN ===== -->
 <div id="lock-screen">
     <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="Lock">
     <h2>Déverrouillage</h2>
@@ -48,6 +211,7 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
     <div class="msg" id="lock-msg"></div>
 </div>
 
+<!-- ===== QUIZ SCREEN ===== -->
 <div id="quiz-screen">
     <h1>QCM Cybersécurité</h1>
     <div class="top-bar">
@@ -109,7 +273,7 @@ document.addEventListener("visibilitychange",()=>{
     }
 });
 
-/* ===== 50 QUESTIONS AVEC 3 OPTIONS ===== */
+/* ===== 50 QUESTIONS ===== */
 const questions=[
 {q:"1. La cybersécurité protège quoi principalement ?", o:["Emails uniquement","Données personnelles","Tous systèmes et données"], a:2},
 {q:"2. Les niveaux de protection incluent ?", o:["Personnel","Professionnel","Tous les précédents"], a:2},
@@ -154,13 +318,7 @@ const questions=[
 {q:"41. Les certificats SSL/TLS sécurisent ?", o:["Sites web","Emails uniquement","VPN"], a:0},
 {q:"42. Le spear-phishing cible ?", o:["Individus précis","Tout le monde","Serveurs"], a:0},
 {q:"43. La conformité RGPD protège ?", o:["Vie privée","Serveur","Emails"], a:0},
-{q:"44. L'authentification biométrique ?", o:["Peut remplacer mot de passe","Toujours sûre","Inutile"], a:0},
-{q:"45. La navigation privée rend ?", o:["Totalement anonyme","Partiellement anonyme","Aucune anonymité"], a:1},
-{q:"46. IDS détecte ?", o:["Intrusions en temps réel","Virus","Mots de passe"], a:0},
-{q:"47. La gestion des risques inclut ?", o:["Identification et réponse","Ignorer attaques","Supprimer virus"], a:0},
-{q:"48. La réponse aux incidents inclut ?", o:["Communication","Effacer données","Bloquer emails"], a:0},
-{q:"49. Une seule couche de sécurité suffit ?", o:["Oui","Non","Parfois"], a:1},
-{q:"50. La cybersécurité doit ?", o:["Évoluer constamment","Rester statique","Supprimer antivirus"], a:0}
+{q:"44. L'authentification biométrique ?", o:["Peut remplacer mot de passe","Toujours sûre","Inutile"], a:}
 ];
 
 let current=0, score=0, timeLeft=900, timerInterval;
