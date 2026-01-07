@@ -329,23 +329,50 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 </footer>
 
 <script>
-// Vérifie la réponse
+const tentativesMax = 4; // nombre max de tentatives
+
 function verifier(btn){
     const qcm = btn.parentElement;
     const radios = qcm.querySelectorAll('input[type="radio"]');
     const resultDiv = qcm.querySelector('.result');
+
+    // Initialisation compteur si pas encore défini
+    if(!qcm.dataset.tentatives) qcm.dataset.tentatives = 0;
+    
+    // Vérifie si limite atteinte
+    if(qcm.dataset.tentatives >= tentativesMax){
+        resultDiv.innerHTML = `Limite de ${tentativesMax} tentatives atteinte ❌`;
+        resultDiv.className = "result wrong";
+        // Désactive tous les boutons et radios
+        radios.forEach(r => r.disabled = true);
+        btn.disabled = true;
+        return;
+    }
+
     let correct = false;
     radios.forEach(radio => { if(radio.checked){ correct = radio.value==="true"; }});
+
+    qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
+
     if(correct){
-        resultDiv.innerHTML="Correct ✅";
-        resultDiv.className="result correct";
+        resultDiv.innerHTML = "Correct ✅";
+        resultDiv.className = "result correct";
+        // Désactive le QCM après réponse correcte
+        radios.forEach(r => r.disabled = true);
+        btn.disabled = true;
     } else {
-        resultDiv.innerHTML="Incorrect ❌";
-        resultDiv.className="result wrong";
+        const reste = tentativesMax - qcm.dataset.tentatives;
+        resultDiv.innerHTML = `Incorrect ❌ - Il vous reste ${reste} tentatives`;
+        resultDiv.className = "result wrong";
+        if(qcm.dataset.tentatives >= tentativesMax){
+            resultDiv.innerHTML = `Limite de ${tentativesMax} tentatives atteinte ❌`;
+            radios.forEach(r => r.disabled = true);
+            btn.disabled = true;
+        }
     }
 }
 
-// Fonction shuffle (Fisher-Yates)
+// Mélange aléatoire des options (inchangé)
 function shuffle(array){
     for(let i=array.length-1;i>0;i--){
         const j=Math.floor(Math.random()*(i+1));
@@ -354,7 +381,6 @@ function shuffle(array){
     return array;
 }
 
-// Mélange aléatoire des options pour chaque QCM
 function shuffleAllOptions(){
     const qcms = document.querySelectorAll('.qcm');
     qcms.forEach(qcm => {
