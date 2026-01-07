@@ -10,8 +10,7 @@ body{
     font-family:'Segoe UI',Tahoma,sans-serif;
     background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
-
-/* CENTRAGE DU LOCK SCREEN SEUL */
+/* CENTRAGE DU LOCK SCREEN */
 #lock-screen{
     width:360px;
     padding:40px 30px;
@@ -21,20 +20,17 @@ body{
     box-shadow:0 20px 40px rgba(0,0,0,0.4);
     text-align:center;
     color:#fff;
-
-    /* CENTRAGE VERTICAL ET HORIZONTAL */
     position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
 }
-
 #lock-screen img{width:70px;margin-bottom:20px;}
 #lock-screen input{width:100%;padding:15px;border-radius:10px;border:none;margin-bottom:20px;font-size:16px;text-align:center;letter-spacing:4px;}
 #lock-screen button{width:100%;padding:14px;border:none;border-radius:10px;background:#00c6ff;font-weight:bold;cursor:pointer;}
 #lock-msg{margin-top:18px;height:18px;color:#fff;}
 
-/* ===== AUTRES STYLES INCHANGÉS ===== */
+/* HEADER & QCM */
 header{background:#2563eb;color:white;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
 header nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500;}
 header nav a.active{text-decoration:underline;}
@@ -86,9 +82,9 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 
 <script>
 const PIN_CORRECT = "7183";
-let tentativesActuelles = 0;  // Compteur de QCM déverrouillés
-let essaisScores = [];         // Stocke les scores
-const MAX_TENTATIVES = 4;     // Maximum de tentatives consécutives
+let tentativesActuelles = 0;  // Tentatives actuelles
+let essaisScores = [];         // Scores enregistrés
+const MAX_TENTATIVES = 4;
 
 function unlock() {
     const pin = document.getElementById("pin").value;
@@ -125,41 +121,40 @@ document.addEventListener("visibilitychange", () => {
     }
 });
 
-/* ===== QUESTIONS QCM 30 QUESTIONS ===== */
+/* ===== QCM QUESTIONS ===== */
 const questions=[
-{q:"Quel mécanisme permet de garantir que les données n'ont pas été altérées lors d'une transmission ?", o:["Chiffrement symétrique","Hashing et intégrité via HMAC","VPN"], a:1},
+{q:"Quel mécanisme permet de garantir que les données n'ont pas été altérées ?", o:["Chiffrement symétrique","Hashing et intégrité via HMAC","VPN"], a:1},
 {q:"Dans le modèle Zero Trust, quel principe est appliqué ?", o:["Confiance implicite aux appareils internes","Vérification explicite de tout utilisateur et appareil","Autorisation unique"], a:1},
-{q:"Quelle attaque exploite une faille dans la gestion des sessions pour usurper l'identité ?", o:["SQL Injection","Session Hijacking","Cross-Site Scripting (XSS)"], a:1},
+{q:"Quelle attaque exploite une faille dans la gestion des sessions ?", o:["SQL Injection","Session Hijacking","XSS"], a:1},
 {q:"Quelle technique de chiffrement est asymétrique ?", o:["AES-256","RSA","ChaCha20"], a:1},
-{q:"Quel protocole sécurise le courrier électronique avec chiffrement et signature ?", o:["SMTP","SMTPS","PGP"], a:2},
-{q:"Dans un réseau, quelle attaque consiste à saturer la table ARP pour rediriger le trafic ?", o:["ARP Spoofing","Man-in-the-Middle","DNS Poisoning"], a:0},
+{q:"Quel protocole sécurise le courrier électronique ?", o:["SMTP","SMTPS","PGP"], a:2},
+{q:"Dans un réseau, quelle attaque consiste à saturer la table ARP ?", o:["ARP Spoofing","MITM","DNS Poisoning"], a:0},
 {q:"Quel concept décrit l'exploitation d'une vulnérabilité non encore publiée ?", o:["Zero-Day Exploit","Backdoor","Rootkit"], a:0},
-{q:"Quelle méthode permet d'authentifier un utilisateur sans transmettre de mot de passe en clair ?", o:["OAuth","Kerberos","Brute Force"], a:1},
-{q:"Dans la cybersécurité industrielle, Stuxnet ciblait principalement ?", o:["Serveurs web","Systèmes SCADA","Réseaux Wi-Fi publics"], a:1},
-{q:"Quel type de malware se cache dans le noyau du système pour rester indétectable ?", o:["Ransomware","Rootkit","Trojan"], a:1},
-{q:"Quel mécanisme est utilisé pour éviter les attaques de type SQL Injection ?", o:["Paramétrage des requêtes préparées","Antivirus","Cryptage AES"], a:0},
-{q:"Quelle attaque consiste à injecter du code malveillant dans une page web visitée par d’autres utilisateurs ?", o:["XSS réfléchi","DDoS","ARP Spoofing"], a:0},
-{q:"Dans la sécurité des API, quel mécanisme protège contre l’usurpation de requêtes ?", o:["OAuth 2.0","FTP","Telnet"], a:0},
-{q:"Quel standard est utilisé pour le chiffrement de bout en bout des messageries instantanées ?", o:["TLS 1.2","Signal Protocol","IPSec"], a:1},
-{q:"Lors d’une attaque MITM sur HTTPS, quel certificat est compromis ?", o:["Certificat SSL/TLS légitime","Certificat auto-signé","Certificat antivirus"], a:0},
-{q:"Quel mécanisme de sécurité réseau permet de détecter et prévenir les intrusions en temps réel ?", o:["Firewall","IDS/IPS","Proxy HTTP"], a:1},
-{q:"Quelle technique est utilisée pour isoler les applications dans des conteneurs sécurisés ?", o:["Sandboxing","VPN","Antivirus"], a:0},
-{q:"Dans le chiffrement asymétrique, la clé publique sert à ?", o:["Déchiffrer les données","Chiffrer les données","Signer les emails"], a:1},
-{q:"Le principe de défense en profondeur repose sur ?", o:["Utiliser un seul système de sécurité efficace","Multiplier les couches de sécurité","Se fier aux mots de passe longs uniquement"], a:1},
-{q:"Les attaques de type 'Pass-the-Hash' exploitent :", o:["Mot de passe en clair","Hash de mot de passe volé","Certificat SSL"], a:1},
-{q:"Dans le RGPD, quel droit permet à un utilisateur de supprimer ses données personnelles ?", o:["Droit à la portabilité","Droit à l'effacement (droit à l'oubli)","Droit de rectification"], a:1},
-{q:"Quelle attaque réseau consiste à rediriger le trafic vers un serveur malveillant via DNS ?", o:["DNS Spoofing","ARP Poisoning","Phishing"], a:0},
-{q:"Quel protocole permet d’établir un tunnel sécurisé entre deux réseaux sur Internet ?", o:["HTTP","VPN","SMTP"], a:1},
-{q:"Quel concept décrit la protection contre les logiciels malveillants qui se propagent automatiquement sur un réseau ?", o:["Antivirus","Segmentation réseau","IDS"], a:1},
-{q:"Quel type d’attaque consiste à saturer la mémoire ou les ressources d’un service pour le rendre indisponible ?", o:["Buffer Overflow","DDoS","Man-in-the-Middle"], a:1},
-{q:"Quel protocole est utilisé pour sécuriser les communications web ?", o:["HTTP","HTTPS","FTP"], a:1},
-{q:"Quel type de malware chiffre vos fichiers et demande une rançon ?", o:["Spyware","Ransomware","Adware"], a:1},
-{q:"Quelle attaque consiste à tromper un utilisateur pour qu’il fournisse des informations sensibles ?", o:["Phishing","Brute Force","MITM"], a:0},
-{q:"Quel outil permet de surveiller le trafic réseau pour détecter les anomalies ?", o:["Wireshark","Notepad","Photoshop"], a:0},
-{q:"Quel mécanisme protège les mots de passe stockés sur un serveur ?", o:["Hashing","Plaintext","Compression"], a:0}
+{q:"Quelle méthode permet d'authentifier un utilisateur sans transmettre de mot de passe ?", o:["OAuth","Kerberos","Brute Force"], a:1},
+{q:"Dans la cybersécurité industrielle, Stuxnet ciblait ?", o:["Serveurs web","Systèmes SCADA","Wi-Fi publics"], a:1},
+{q:"Quel type de malware se cache dans le noyau ?", o:["Ransomware","Rootkit","Trojan"], a:1},
+{q:"Quel mécanisme pour éviter SQL Injection ?", o:["Requêtes préparées","Antivirus","AES"], a:0},
+{q:"Quelle attaque injecte du code malveillant sur une page web ?", o:["XSS","DDoS","ARP Spoofing"], a:0},
+{q:"Sécurité des API : protection contre usurpation ?", o:["OAuth 2.0","FTP","Telnet"], a:0},
+{q:"Chiffrement bout en bout messageries ?", o:["TLS 1.2","Signal Protocol","IPSec"], a:1},
+{q:"MITM sur HTTPS, quel certificat ?", o:["SSL/TLS légitime","Certificat auto-signé","Antivirus"], a:0},
+{q:"Sécurité réseau, détection intrusions ?", o:["Firewall","IDS/IPS","Proxy"], a:1},
+{q:"Technique pour isoler applications ?", o:["Sandboxing","VPN","Antivirus"], a:0},
+{q:"Clé publique asymétrique sert à ?", o:["Déchiffrer","Chiffrer","Signer emails"], a:1},
+{q:"Défense en profondeur repose sur ?", o:["Un seul système","Multiples couches","Mots de passe longs"], a:1},
+{q:"Attaque Pass-the-Hash ?", o:["Mot de passe clair","Hash volé","Certificat SSL"], a:1},
+{q:"RGPD, droit à l'effacement ?", o:["Portabilité","Droit à l'oubli","Rectification"], a:1},
+{q:"Attaque réseau redirigeant trafic via DNS ?", o:["DNS Spoofing","ARP Poisoning","Phishing"], a:0},
+{q:"Tunnel sécurisé entre réseaux ?", o:["HTTP","VPN","SMTP"], a:1},
+{q:"Protection contre malwares propagés ?", o:["Antivirus","Segmentation","IDS"], a:1},
+{q:"Attaque saturant mémoire ou ressource ?", o:["Buffer Overflow","DDoS","MITM"], a:1},
+{q:"Protocole sécurisant communication web ?", o:["HTTP","HTTPS","FTP"], a:1},
+{q:"Malware chiffre fichiers et demande rançon ?", o:["Spyware","Ransomware","Adware"], a:1},
+{q:"Tromper utilisateur pour info sensibles ?", o:["Phishing","Brute Force","MITM"], a:0},
+{q:"Outil surveillant trafic réseau ?", o:["Wireshark","Notepad","Photoshop"], a:0},
+{q:"Protéger mots de passe sur serveur ?", o:["Hashing","Plaintext","Compression"], a:0}
 ];
 
-// Mélanger les options de chaque question
 function shuffleOptions() {
     questions.forEach(q => {
         let correctAnswer = q.o[q.a];
@@ -182,8 +177,8 @@ function shuffleQuestions(array){
 
 function startQuiz(){
     current = 0; score = 0; timeLeft = 900;
-    shuffleQuestions(questions);   // mélange questions
-    shuffleOptions();              // mélange réponses
+    shuffleQuestions(questions);
+    shuffleOptions();
     document.getElementById("result").innerHTML="";
     document.getElementById("restart").style.display="none";
     startTimer();
@@ -223,23 +218,32 @@ function endQuiz(){
     essaisScores.push(Number(noteSur20));
     showRecentScores();
 
-    let progressMsg = `QCM terminé (${tentativesActuelles}/${MAX_TENTATIVES})`;
-    document.getElementById("progress").textContent = progressMsg;
     document.getElementById("quiz").innerHTML = "";
     document.getElementById("result").innerHTML = `🎯 Score : ${score}/${questions.length}<br>📊 Note : ${noteSur20}/20`;
 
-    if (tentativesActuelles >= MAX_TENTATIVES) {
+    if(tentativesActuelles < MAX_TENTATIVES){
+        // Tentatives 1 à 3 → redémarrage automatique
+        tentativesActuelles++;
+        setTimeout(startQuiz,1500);
+        document.getElementById("restart").style.display="none";
+    } else {
+        // 4ᵉ tentative → affiche résultat et bouton redémarrer → demande PIN
+        document.getElementById("restart").style.display="block";
         let total = essaisScores.reduce((a,b)=>a+b,0);
         let percent = ((total / (MAX_TENTATIVES*20))*100).toFixed(2);
         alert(`✅ Fin des ${MAX_TENTATIVES} tentatives !\nTotal : ${total}/80\nPourcentage : ${percent}%`);
-        tentativesActuelles = 0;
-        essaisScores = [];
     }
-
-    document.getElementById("restart").style.display="block";
 }
 
-function restartQuiz(){ relock("🔐 Veuillez entrer le PIN pour recommencer"); }
+function restartQuiz(){
+    // Après 4ᵉ tentative → retour au PIN
+    document.getElementById("quiz-screen").style.display="none";
+    document.getElementById("lock-screen").style.display="block";
+    document.getElementById("lock-msg").style.color="#ffcc00";
+    document.getElementById("lock-msg").textContent="🔐 Veuillez entrer le PIN pour continuer";
+    tentativesActuelles = 0;
+    essaisScores = [];
+}
 
 function showRecentScores(){
     document.getElementById("recent-scores").textContent =
