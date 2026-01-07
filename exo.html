@@ -86,7 +86,7 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 
 <script>
 const PIN_CORRECT="7183";
-let tentatives=0, maxTentatives=1;
+let tentatives=0, maxTentatives=3;
 let essaisScores=[];
 
 function unlock(){
@@ -103,7 +103,7 @@ function unlock(){
     } else {
         tentatives++;
         msg.style.color="#ff4d4d";
-        msg.textContent=`PIN incorrect (${tentatives}/${maxTentatives})`;
+        msg.textContent=`❌PIN incorrect (${tentatives}/${maxTentatives})`;
         if(tentatives>=maxTentatives){
             msg.textContent="🔒 Accès bloqué – Fin des tentatives";
             btn.disabled=true;
