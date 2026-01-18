@@ -1040,7 +1040,7 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 </footer>
 
 <script>
-const tentativesMax = 2; // nombre max de tentatives
+const tentativesMax = 3; // nombre max de tentatives
 
 function verifierGroupe(btn){
     const group = btn.dataset.group;
@@ -1090,7 +1090,7 @@ function verifierGroupe(btn){
         }
     });
 
-    // Désactive le bouton si toutes les questions du groupe sont correctes
+    // Désactive le bouton si toutes les questions du groupe sont correctes ou tentatives max atteintes
     const allCorrect = Array.from(qcms).every(qcm => {
         return qcm.querySelector('input[value="true"]').checked || qcm.dataset.tentatives >= tentativesMax;
     });
