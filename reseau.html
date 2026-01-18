@@ -116,8 +116,7 @@ confidentialité, l’intégrité et la disponibilité des données.
 <label><input type="radio" name="m1q2" value="false"> Il chiffre les communications réseau</label>
 <label><input type="radio" name="m1q2" value="false"> Il remplace TCP/IP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 
 <p><strong>Question 3 :</strong> Quel est le principal risque d’un réseau non segmenté ?</p>
 <label><input type="radio" name="m1q3" value="true"> La propagation rapide des attaques et du trafic malveillant</label>
@@ -131,8 +130,7 @@ confidentialité, l’intégrité et la disponibilité des données.
 <label><input type="radio" name="m1q4" value="true"> Pour réduire les risques, les coûts et les failles futures</label>
 <label><input type="radio" name="m1q4" value="false"> Pour supprimer le besoin de supervision</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -184,8 +182,7 @@ est essentiel pour tout professionnel réseau et cybersécurité.
 <label><input type="radio" name="m2q2" value="false"> Il supprime le besoin de firewalls</label>
 <label><input type="radio" name="m2q2" value="false"> Il remplace le modèle TCP/IP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
     
 <p><strong>Question 3 :</strong> Quel protocole est non orienté connexion mais rapide ?</p>
 <label><input type="radio" name="m2q3" value="false"> TCP</label>
@@ -199,8 +196,7 @@ est essentiel pour tout professionnel réseau et cybersécurité.
 <label><input type="radio" name="m2q4" value="false"> TCP</label>
 <label><input type="radio" name="m2q4" value="false"> ARP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -252,9 +248,8 @@ correctement les dispositifs et assurer la sécurité et la performance du rése
 <label><input type="radio" name="m3q2" value="false"> /28</label>
 <label><input type="radio" name="m3q2" value="false"> /30</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
-    
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
+
 <p><strong>Question 3 :</strong> Quel protocole attribue automatiquement les adresses IP ?</p>
 <label><input type="radio" name="m3q3" value="true"> DHCP</label>
 <label><input type="radio" name="m3q3" value="false"> DNS</label>
@@ -267,8 +262,7 @@ correctement les dispositifs et assurer la sécurité et la performance du rése
 <label><input type="radio" name="m3q4" value="false"> ICMP Echo</label>
 <label><input type="radio" name="m3q4" value="false"> DNSSEC</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -322,8 +316,7 @@ essentielle pour les architectes réseau et les ingénieurs systèmes.
 <label><input type="radio" name="m4q2" value="false"> NAT</label>
 <label><input type="radio" name="m4q2" value="false"> DHCP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
     
 <p><strong>Question 3 :</strong> Quelle technologie permet de segmenter un réseau physique en plusieurs réseaux logiques ?</p>
 <label><input type="radio" name="m4q3" value="true"> VLAN</label>
@@ -337,8 +330,7 @@ essentielle pour les architectes réseau et les ingénieurs systèmes.
 <label><input type="radio" name="m4q4" value="false"> NAT</label>
 <label><input type="radio" name="m4q4" value="false"> ARP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -390,8 +382,7 @@ pour la performance, la sécurité et la résilience du réseau.
 <label><input type="radio" name="m5q2" value="false"> NAT</label>
 <label><input type="radio" name="m5q2" value="false"> STP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
     
 <p><strong>Question 3 :</strong> Quel équipement est nécessaire pour permettre la communication entre deux VLANs ?</p>
 <label><input type="radio" name="m5q3" value="true"> Routeur ou switch L3</label>
@@ -405,8 +396,7 @@ pour la performance, la sécurité et la résilience du réseau.
 <label><input type="radio" name="m5q4" value="false"> Suppression des ACL</label>
 <label><input type="radio" name="m5q4" value="false"> Augmentation de la latence réseau</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -457,8 +447,7 @@ sont essentiels pour maintenir performance, sécurité et fiabilité.
 <label><input type="radio" name="m6q2" value="false"> Open Wi-Fi</label>
 <label><input type="radio" name="m6q2" value="false"> WPA2 TKIP uniquement</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
     
 <p><strong>Question 3 :</strong> Quelle fonctionnalité permet de prioriser le trafic VoIP sur un réseau Wi-Fi ?</p>
 <label><input type="radio" name="m6q3" value="true"> QoS (Quality of Service)</label>
@@ -472,8 +461,7 @@ sont essentiels pour maintenir performance, sécurité et fiabilité.
 <label><input type="radio" name="m6q4" value="false"> DNSSEC</label>
 <label><input type="radio" name="m6q4" value="false"> NAT dynamique</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -523,8 +511,7 @@ la sécurité dans des environnements critiques.
 <label><input type="radio" name="m7q2" value="false"> ICMP</label>
 <label><input type="radio" name="m7q2" value="false"> DNS</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
     
 <p><strong>Question 3 :</strong> IPsec est principalement utilisé pour :</p>
 <label><input type="radio" name="m7q3" value="true"> Sécuriser les tunnels VPN entre réseaux</label>
@@ -538,8 +525,7 @@ la sécurité dans des environnements critiques.
 <label><input type="radio" name="m7q4" value="false"> DHCP automatique</label>
 <label><input type="radio" name="m7q4" value="false"> NAT dynamique</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -589,8 +575,7 @@ et l’intégration avec l’authentification à deux facteurs pour renforcer la
 <label><input type="radio" name="m8q2" value="false"> WEP</label>
 <label><input type="radio" name="m8q2" value="false"> HTTP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 
 <p><strong>Question 3 :</strong> Une bonne politique VPN inclut : </p>
 <label><input type="radio" name="m8q3" value="true"> Rotation régulière des clés et 2FA</label>
@@ -604,8 +589,7 @@ et l’intégration avec l’authentification à deux facteurs pour renforcer la
 <label><input type="radio" name="m8q4" value="false"> Prioriser le trafic VoIP</label>
 <label><input type="radio" name="m8q4" value="false"> Configurer les VLANs</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
@@ -654,8 +638,7 @@ non autorisés ou les tentatives de brute-force sur les services critiques.
 <label><input type="radio" name="m9q2" value="false"> Configurer les VLAN automatiquement</label>
 <label><input type="radio" name="m9q2" value="false"> Assigner des adresses IP dynamiques</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
     
 <p><strong>Question 3 :</strong> Quelle pratique renforce la sécurité des firewalls ?</p>
 <label><input type="radio" name="m9q3" value="true"> Surveillance des journaux et audits réguliers</label>
@@ -669,8 +652,7 @@ non autorisés ou les tentatives de brute-force sur les services critiques.
 <label><input type="radio" name="m9q4" value="false"> Priorisation automatique du trafic Internet</label>
 <label><input type="radio" name="m9q4" value="false"> Assignation automatique des VLANs</label>
 
-<button onclick="verifier(this)">Vérifier</button>
-<div class="result"></div>
+<button data-group="2" onclick="verifierGroupe(this)">Vérifier le groupe 2</button>
 </div>
 </div>
 
