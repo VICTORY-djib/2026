@@ -71,13 +71,63 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 1 -->
 <div class="module">
 <h2>1. Introduction aux réseaux avancés</h2>
-<p>Un réseau informatique est une architecture complexe qui permet l’échange de données entre différents dispositifs. Les réseaux modernes ne se limitent pas à la simple connexion entre ordinateurs, mais incluent des serveurs cloud, des dispositifs IoT, des systèmes industriels et des infrastructures critiques.</p>
-<p>Comprendre les principes fondamentaux tels que les protocoles, les couches OSI, et la segmentation IP est crucial pour diagnostiquer et sécuriser un réseau. La performance et la résilience des réseaux dépendent également de leur conception et de leur maintenance continue.</p>
+
+<p>
+Un réseau informatique avancé est une infrastructure complexe permettant l’échange
+de données entre des systèmes hétérogènes : postes clients, serveurs, équipements
+réseau, objets connectés et services cloud. Ces réseaux sont au cœur des systèmes
+d’information modernes et supportent des services critiques tels que les applications
+web, la virtualisation, le stockage distribué et les communications sécurisées.
+</p>
+
+<p>
+La conception d’un réseau repose sur des principes fondamentaux comme la
+structuration en couches (modèles OSI et TCP/IP), la gestion des flux, le routage,
+la commutation et la segmentation logique. Une mauvaise conception peut entraîner
+des problèmes de performance, de disponibilité et de sécurité.
+</p>
+
+<p>
+Dans les environnements professionnels, les réseaux sont constamment exposés
+aux menaces : interceptions, attaques par déni de service, propagation de malwares
+et accès non autorisés. C’est pourquoi la compréhension des mécanismes réseau
+est indispensable pour appliquer des stratégies de cybersécurité efficaces.
+</p>
+
+<p>
+Aujourd’hui, la sécurité réseau ne se limite plus à un simple pare-feu.
+Elle doit être intégrée dès la phase de conception afin de garantir la
+confidentialité, l’intégrité et la disponibilité des données.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q1" value="true"> Quel mécanisme garantit la livraison fiable des paquets TCP ?</label>
-<label><input type="radio" name="q1" value="false"> UDP pour sa rapidité</label>
-<label><input type="radio" name="q1" value="false"> ICMP uniquement</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel ensemble de mécanismes rend TCP fiable ?</p>
+<label><input type="radio" name="m1q1" value="false"> La diffusion en broadcast des paquets</label>
+<label><input type="radio" name="m1q1" value="true"> Numéros de séquence, accusés de réception et retransmission</label>
+<label><input type="radio" name="m1q1" value="false"> Le chiffrement automatique des données</label>
+<label><input type="radio" name="m1q1" value="false"> Le routage dynamique</label>
+
+<p><strong>Question 2 :</strong> Pourquoi le modèle OSI est-il utilisé en diagnostic réseau ?</p>
+<label><input type="radio" name="m1q2" value="false"> Il augmente la bande passante</label>
+<label><input type="radio" name="m1q2" value="true"> Il permet d’identifier les problèmes couche par couche</label>
+<label><input type="radio" name="m1q2" value="false"> Il chiffre les communications réseau</label>
+<label><input type="radio" name="m1q2" value="false"> Il remplace TCP/IP</label>
+
+<p><strong>Question 3 :</strong> Quel est le principal risque d’un réseau non segmenté ?</p>
+<label><input type="radio" name="m1q3" value="true"> La propagation rapide des attaques et du trafic malveillant</label>
+<label><input type="radio" name="m1q3" value="false"> Une meilleure isolation des ressources</label>
+<label><input type="radio" name="m1q3" value="false"> Une réduction du trafic broadcast</label>
+<label><input type="radio" name="m1q3" value="false"> Une augmentation automatique de la sécurité</label>
+
+<p><strong>Question 4 :</strong> Pourquoi intégrer la sécurité dès la conception du réseau ?</p>
+<label><input type="radio" name="m1q4" value="false"> Pour améliorer uniquement la vitesse du réseau</label>
+<label><input type="radio" name="m1q4" value="false"> Parce que les firewalls suffisent toujours</label>
+<label><input type="radio" name="m1q4" value="true"> Pour réduire les risques, les coûts et les failles futures</label>
+<label><input type="radio" name="m1q4" value="false"> Pour supprimer le besoin de supervision</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -86,13 +136,63 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 2 -->
 <div class="module">
 <h2>2. Protocoles et modèles OSI/TCP-IP</h2>
-<p>Le modèle OSI comprend 7 couches distinctes, chacune jouant un rôle précis dans la transmission des données. Le modèle TCP/IP, plus utilisé dans le monde réel, se concentre sur la couche application, transport, internet et liaison.</p>
-<p>Connaître ces modèles permet de comprendre les flux de communication et d’identifier rapidement les problèmes de performance ou de sécurité.</p>
+
+<p>
+Les protocoles réseau sont des règles standardisées permettant aux systèmes
+informatiques de communiquer de manière cohérente. Le modèle OSI définit
+7 couches distinctes : physique, liaison, réseau, transport, session, présentation
+et application. Chaque couche a un rôle précis et facilite le diagnostic, la
+maintenance et la sécurisation du réseau.
+</p>
+
+<p>
+Le modèle TCP/IP, largement utilisé dans le monde réel, regroupe ces fonctions
+en 4 couches : liaison, internet, transport et application. TCP/IP est la base
+d’Internet et des réseaux d’entreprise, garantissant la livraison fiable des
+données et la compatibilité entre systèmes hétérogènes.
+</p>
+
+<p>
+La compréhension approfondie de ces modèles permet aux administrateurs de
+résoudre rapidement les problèmes de performance, de configurer correctement
+les dispositifs réseau, de sécuriser les communications et d’anticiper les
+failles potentielles.
+</p>
+
+<p>
+Les protocoles comme TCP, UDP, ICMP, HTTP, HTTPS, DNS et DHCP jouent un rôle
+crucial dans le fonctionnement et la sécurité du réseau. Maîtriser ces protocoles
+est essentiel pour tout professionnel réseau et cybersécurité.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q2" value="true"> La couche transport TCP garantit l’intégrité des données</label>
-<label><input type="radio" name="q2" value="false"> La couche application crypte automatiquement les paquets</label>
-<label><input type="radio" name="q2" value="false"> La couche liaison est responsable du routage global</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quelle est la fonction principale de la couche transport TCP ?</p>
+<label><input type="radio" name="m2q1" value="true"> Garantir la livraison correcte et ordonnée des données</label>
+<label><input type="radio" name="m2q1" value="false"> Gérer le routage global</label>
+<label><input type="radio" name="m2q1" value="false"> Chiffrer automatiquement les données</label>
+<label><input type="radio" name="m2q1" value="false"> Convertir les adresses IP en noms de domaine</label>
+
+<p><strong>Question 2 :</strong> Pourquoi le modèle OSI est-il utile pour la sécurité réseau ?</p>
+<label><input type="radio" name="m2q2" value="true"> Il permet de définir des contrôles à chaque couche</label>
+<label><input type="radio" name="m2q2" value="false"> Il chiffre automatiquement le trafic</label>
+<label><input type="radio" name="m2q2" value="false"> Il supprime le besoin de firewalls</label>
+<label><input type="radio" name="m2q2" value="false"> Il remplace le modèle TCP/IP</label>
+
+<p><strong>Question 3 :</strong> Quel protocole est non orienté connexion mais rapide ?</p>
+<label><input type="radio" name="m2q3" value="false"> TCP</label>
+<label><input type="radio" name="m2q3" value="true"> UDP</label>
+<label><input type="radio" name="m2q3" value="false"> HTTPS</label>
+<label><input type="radio" name="m2q3" value="false"> DNSSEC</label>
+
+<p><strong>Question 4 :</strong> Quel protocole traduit les noms de domaine en adresses IP ?</p>
+<label><input type="radio" name="m2q4" value="true"> DNS</label>
+<label><input type="radio" name="m2q4" value="false"> ICMP</label>
+<label><input type="radio" name="m2q4" value="false"> TCP</label>
+<label><input type="radio" name="m2q4" value="false"> ARP</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -101,13 +201,63 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 3 -->
 <div class="module">
 <h2>3. Adressage IP et sous-réseaux</h2>
-<p>L’adressage IP permet d’identifier chaque hôte sur un réseau. La compréhension des masques de sous-réseau, des plages IP et de la segmentation est essentielle pour concevoir des réseaux efficaces et sécurisés.</p>
-<p>Les administrateurs réseau doivent savoir configurer des VLANs, des plages DHCP et anticiper la croissance du réseau afin de maintenir la performance et éviter les conflits d’adresses.</p>
+
+<p>
+L’adressage IP est la pierre angulaire de tout réseau informatique. Chaque
+hôte, serveur ou dispositif connecté doit posséder une adresse IP unique pour
+communiquer. La compréhension des adresses IPv4 et IPv6, des masques de sous-réseau
+et de la planification des plages d’adresses est cruciale pour concevoir des
+réseaux fiables et sécurisés.
+</p>
+
+<p>
+La segmentation d’un réseau en sous-réseaux (subnets) permet d’optimiser
+la performance, de limiter les broadcasts et d’améliorer la sécurité. Les
+administrateurs réseau utilisent également des VLAN pour isoler logiquement
+les segments du réseau et appliquer des politiques de sécurité spécifiques.
+</p>
+
+<p>
+La maîtrise des concepts comme DHCP, NAT et plan d’adressage IP permet
+d’anticiper la croissance du réseau et de prévenir les conflits d’adresses
+ou les problèmes de connectivité. Une bonne planification facilite la
+maintenance et la surveillance des réseaux complexes.
+</p>
+
+<p>
+Enfin, la compréhension des adresses privées, publiques, et de la notation CIDR
+(estimation du nombre d’hôtes par sous-réseau) est essentielle pour configurer
+correctement les dispositifs et assurer la sécurité et la performance du réseau.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q3" value="true"> Quel masque CIDR correspond à 255.255.255.0 ?</label>
-<label><input type="radio" name="q3" value="false"> /16</label>
-<label><input type="radio" name="q3" value="false"> /28</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quelle plage IP est réservée pour les adresses privées ?</p>
+<label><input type="radio" name="m3q1" value="true"> 192.168.0.0 – 192.168.255.255</label>
+<label><input type="radio" name="m3q1" value="false"> 8.8.8.0 – 8.8.8.255</label>
+<label><input type="radio" name="m3q1" value="false"> 172.20.0.0 – 172.20.255.255</label>
+<label><input type="radio" name="m3q1" value="false"> 1.1.1.0 – 1.1.1.255</label>
+
+<p><strong>Question 2 :</strong> Quel masque CIDR correspond à 255.255.255.0 ?</p>
+<label><input type="radio" name="m3q2" value="true"> /24</label>
+<label><input type="radio" name="m3q2" value="false"> /16</label>
+<label><input type="radio" name="m3q2" value="false"> /28</label>
+<label><input type="radio" name="m3q2" value="false"> /30</label>
+
+<p><strong>Question 3 :</strong> Quel protocole attribue automatiquement les adresses IP ?</p>
+<label><input type="radio" name="m3q3" value="true"> DHCP</label>
+<label><input type="radio" name="m3q3" value="false"> DNS</label>
+<label><input type="radio" name="m3q3" value="false"> ICMP</label>
+<label><input type="radio" name="m3q3" value="false"> FTP</label>
+
+<p><strong>Question 4 :</strong> Quel mécanisme permet de mapper plusieurs hôtes internes sur une seule IP publique ?</p>
+<label><input type="radio" name="m3q4" value="true"> PAT (Port Address Translation)</label>
+<label><input type="radio" name="m3q4" value="false"> NAT statique simple</label>
+<label><input type="radio" name="m3q4" value="false"> ICMP Echo</label>
+<label><input type="radio" name="m3q4" value="false"> DNSSEC</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -116,13 +266,65 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 4 -->
 <div class="module">
 <h2>4. Routeurs et commutateurs avancés</h2>
-<p>Les commutateurs (switch) permettent de connecter plusieurs dispositifs sur un même réseau local, en utilisant les adresses MAC pour acheminer les trames efficacement. Les routeurs permettent la communication entre différents réseaux et sont essentiels pour la connectivité Internet.</p>
-<p>La configuration avancée inclut les ACL, le routage dynamique (OSPF, BGP), et la QoS pour gérer les priorités de trafic. Ces concepts sont cruciaux pour un réseau performant et sécurisé.</p>
+
+<p>
+Les commutateurs (switches) sont au cœur des réseaux locaux (LAN). Ils acheminent
+les trames en fonction des adresses MAC, réduisent les collisions et optimisent
+la bande passante disponible. Les routeurs, quant à eux, relient différents
+réseaux et déterminent le meilleur chemin pour les paquets IP, permettant ainsi
+la communication entre LAN, WAN et Internet.
+</p>
+
+<p>
+La configuration avancée des routeurs et switches inclut les VLAN, les ACL (Access
+Control Lists), le routage statique et dynamique (OSPF, BGP), ainsi que la
+QoS (Quality of Service) pour gérer les priorités de trafic. Ces fonctions sont
+indispensables pour un réseau performant et sécurisé.
+</p>
+
+<p>
+Les administrateurs doivent également connaître la haute disponibilité (HA) et
+le protocole STP (Spanning Tree Protocol) pour éviter les boucles réseau et
+garantir la résilience du réseau. La surveillance continue des performances
+et la gestion proactive des incidents sont cruciales dans les environnements
+professionnels.
+</p>
+
+<p>
+Enfin, la maîtrise des protocoles ARP, ICMP et des mécanismes de routage
+permet de diagnostiquer rapidement les problèmes et d’assurer la sécurité
+et l’efficacité du réseau. La connaissance des équipements avancés est
+essentielle pour les architectes réseau et les ingénieurs systèmes.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q4" value="true"> Quel protocole est utilisé pour le routage inter-domaine ?</label>
-<label><input type="radio" name="q4" value="false"> RIP uniquement</label>
-<label><input type="radio" name="q4" value="false"> ARP</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel protocole est utilisé pour le routage inter-domaine ?</p>
+<label><input type="radio" name="m4q1" value="true"> BGP</label>
+<label><input type="radio" name="m4q1" value="false"> RIP uniquement</label>
+<label><input type="radio" name="m4q1" value="false"> ICMP</label>
+<label><input type="radio" name="m4q1" value="false"> ARP</label>
+
+<p><strong>Question 2 :</strong> Quel protocole évite les boucles dans un réseau Ethernet ?</p>
+<label><input type="radio" name="m4q2" value="true"> STP (Spanning Tree Protocol)</label>
+<label><input type="radio" name="m4q2" value="false"> OSPF</label>
+<label><input type="radio" name="m4q2" value="false"> NAT</label>
+<label><input type="radio" name="m4q2" value="false"> DHCP</label>
+
+<p><strong>Question 3 :</strong> Quelle technologie permet de segmenter un réseau physique en plusieurs réseaux logiques ?</p>
+<label><input type="radio" name="m4q3" value="true"> VLAN</label>
+<label><input type="radio" name="m4q3" value="false"> FTP</label>
+<label><input type="radio" name="m4q3" value="false"> ICMP</label>
+<label><input type="radio" name="m4q3" value="false"> SSH</label>
+
+<p><strong>Question 4 :</strong> Quelle fonctionnalité permet de gérer les priorités de trafic sur un réseau ?</p>
+<label><input type="radio" name="m4q4" value="true"> QoS (Quality of Service)</label>
+<label><input type="radio" name="m4q4" value="false"> DNS</label>
+<label><input type="radio" name="m4q4" value="false"> NAT</label>
+<label><input type="radio" name="m4q4" value="false"> ARP</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -131,13 +333,63 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 5 -->
 <div class="module">
 <h2>5. VLAN et segmentation</h2>
-<p>Un VLAN permet de segmenter un réseau physique en plusieurs réseaux logiques indépendants, offrant isolation et sécurité. Cela réduit le broadcast et améliore la performance.</p>
-<p>La segmentation permet de créer des zones sécurisées, d’appliquer des politiques spécifiques et de gérer l’accès aux ressources sensibles.</p>
+
+<p>
+Le VLAN (Virtual Local Area Network) permet de segmenter un réseau physique en
+plusieurs réseaux logiques indépendants. Cela offre isolation, sécurité et
+meilleure gestion du trafic. Les VLANs réduisent les broadcasts et facilitent
+l’administration des grands réseaux d’entreprise.
+</p>
+
+<p>
+La segmentation réseau permet de créer des zones sécurisées, où l’accès aux
+ressources sensibles peut être contrôlé de manière granulaire. Elle améliore
+également les performances en limitant le trafic inutile entre segments.
+Les VLANs sont configurables sur les switches managés et peuvent être liés à
+des ports, des adresses MAC ou des protocoles spécifiques.
+</p>
+
+<p>
+L’interconnexion entre VLANs nécessite un routeur ou un switch de niveau 3,
+souvent appelé "Router-on-a-Stick", qui assure la communication inter-VLAN
+tout en appliquant les politiques de sécurité et les ACL (Access Control Lists).
+</p>
+
+<p>
+La gestion efficace des VLANs inclut l’étiquetage VLAN (802.1Q), la sécurité
+des ports, la prévention des VLAN hopping, et la surveillance continue pour
+détecter toute anomalie. Une conception soignée des VLANs est essentielle
+pour la performance, la sécurité et la résilience du réseau.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q5" value="true"> Quel protocole transporte les informations VLAN ?</label>
-<label><input type="radio" name="q5" value="false"> OSPF uniquement</label>
-<label><input type="radio" name="q5" value="false"> ICMP</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel protocole permet le transport des informations VLAN entre switches ?</p>
+<label><input type="radio" name="m5q1" value="true"> IEEE 802.1Q</label>
+<label><input type="radio" name="m5q1" value="false"> OSPF</label>
+<label><input type="radio" name="m5q1" value="false"> ICMP</label>
+<label><input type="radio" name="m5q1" value="false"> DNS</label>
+
+<p><strong>Question 2 :</strong> Quelle méthode empêche un utilisateur de changer son VLAN par attaque VLAN hopping ?</p>
+<label><input type="radio" name="m5q2" value="true"> Sécurisation des ports et native VLAN isolé</label>
+<label><input type="radio" name="m5q2" value="false"> DHCP uniquement</label>
+<label><input type="radio" name="m5q2" value="false"> NAT</label>
+<label><input type="radio" name="m5q2" value="false"> STP</label>
+
+<p><strong>Question 3 :</strong> Quel équipement est nécessaire pour permettre la communication entre deux VLANs ?</p>
+<label><input type="radio" name="m5q3" value="true"> Routeur ou switch L3</label>
+<label><input type="radio" name="m5q3" value="false"> Switch L2 uniquement</label>
+<label><input type="radio" name="m5q3" value="false"> Hub</label>
+<label><input type="radio" name="m5q3" value="false"> Firewall uniquement</label>
+
+<p><strong>Question 4 :</strong> Quel avantage majeur offre la segmentation VLAN dans une grande entreprise ?</p>
+<label><input type="radio" name="m5q4" value="true"> Isolation, sécurité et optimisation du trafic</label>
+<label><input type="radio" name="m5q4" value="false"> Augmentation du broadcast</label>
+<label><input type="radio" name="m5q4" value="false"> Suppression des ACL</label>
+<label><input type="radio" name="m5q4" value="false"> Augmentation de la latence réseau</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -146,13 +398,62 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 6 -->
 <div class="module">
 <h2>6. Wi-Fi et réseaux sans fil avancés</h2>
-<p>Le Wi-Fi moderne utilise les normes IEEE 802.11ac/ax, permettant des débits élevés et une gestion intelligente du spectre. Les protocoles WPA2/WPA3 assurent la sécurité de la connexion.</p>
-<p>Les points d’accès peuvent être configurés pour gérer des SSID multiples, des VLANs et des politiques d’accès, et sont essentiels pour le déploiement d’infrastructures sans fil robustes.</p>
+
+<p>
+Le Wi-Fi moderne repose sur les normes IEEE 802.11ac et 802.11ax (Wi-Fi 5 et Wi-Fi 6),
+qui offrent des débits très élevés, une meilleure couverture et une gestion optimisée
+du spectre radio. Les protocoles WPA2 et WPA3 garantissent la confidentialité et
+l’intégrité des données échangées.
+</p>
+
+<p>
+Les points d’accès peuvent gérer plusieurs SSID, appliquer des VLANs différents,
+et offrir des politiques d’accès différenciées selon les utilisateurs ou types de
+dispositifs. La qualité de service (QoS) est utilisée pour prioriser certains flux,
+comme la VoIP ou le streaming vidéo, garantissant des performances stables.
+</p>
+
+<p>
+Les attaques contre les réseaux Wi-Fi incluent le brute-force, le rogue AP,
+l’usurpation de MAC et le WPA cracking. La sécurité repose sur le chiffrement AES,
+l’authentification 802.1X et la segmentation des réseaux invités.
+</p>
+
+<p>
+Une bonne gestion du Wi-Fi inclut la rotation régulière des clés, la surveillance
+des canaux pour éviter les interférences, et l’intégration à un contrôleur centralisé
+pour les réseaux d’entreprise. La planification et le déploiement intelligents
+sont essentiels pour maintenir performance, sécurité et fiabilité.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q6" value="true"> Quelle norme offre les meilleures performances Wi-Fi actuellement ?</label>
-<label><input type="radio" name="q6" value="false"> IEEE 802.11n</label>
-<label><input type="radio" name="q6" value="false"> IEEE 802.11g</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quelle norme Wi-Fi offre les meilleures performances et efficacité ?</p>
+<label><input type="radio" name="m6q1" value="true"> IEEE 802.11ax</label>
+<label><input type="radio" name="m6q1" value="false"> IEEE 802.11n</label>
+<label><input type="radio" name="m6q1" value="false"> IEEE 802.11g</label>
+<label><input type="radio" name="m6q1" value="false"> IEEE 802.11b</label>
+
+<p><strong>Question 2 :</strong> Quel protocole de sécurité est recommandé pour un Wi-Fi d’entreprise ?</p>
+<label><input type="radio" name="m6q2" value="true"> WPA3 avec authentification 802.1X</label>
+<label><input type="radio" name="m6q2" value="false"> WEP</label>
+<label><input type="radio" name="m6q2" value="false"> Open Wi-Fi</label>
+<label><input type="radio" name="m6q2" value="false"> WPA2 TKIP uniquement</label>
+
+<p><strong>Question 3 :</strong> Quelle fonctionnalité permet de prioriser le trafic VoIP sur un réseau Wi-Fi ?</p>
+<label><input type="radio" name="m6q3" value="true"> QoS (Quality of Service)</label>
+<label><input type="radio" name="m6q3" value="false"> VLAN simple</label>
+<label><input type="radio" name="m6q3" value="false"> DHCP uniquement</label>
+<label><input type="radio" name="m6q3" value="false"> NAT</label>
+
+<p><strong>Question 4 :</strong> Quel mécanisme protège contre l’usurpation d’adresse MAC sur un Wi-Fi d’entreprise ?</p>
+<label><input type="radio" name="m6q4" value="true"> Filtrage MAC et authentification 802.1X</label>
+<label><input type="radio" name="m6q4" value="false"> DHCP automatique</label>
+<label><input type="radio" name="m6q4" value="false"> DNSSEC</label>
+<label><input type="radio" name="m6q4" value="false"> NAT dynamique</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -161,13 +462,61 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 7 -->
 <div class="module">
 <h2>7. Protocoles de sécurité réseau</h2>
-<p>Les protocoles TLS, IPsec et SSH sont essentiels pour sécuriser les communications sur Internet et dans les entreprises. TLS assure le chiffrement des flux web, IPsec sécurise les tunnels VPN et SSH protège l’accès à distance.</p>
-<p>La compréhension de ces protocoles est indispensable pour mettre en place des infrastructures sécurisées et conformes aux normes.</p>
+
+<p>
+Les protocoles de sécurité réseau sont essentiels pour protéger les communications
+entre serveurs, postes clients et périphériques. TLS (Transport Layer Security)
+assure le chiffrement des données échangées sur le web, IPsec sécurise les tunnels VPN,
+et SSH (Secure Shell) protège l’accès à distance aux systèmes.
+</p>
+
+<p>
+Ces protocoles garantissent la confidentialité, l’intégrité et l’authenticité des
+données. La mise en œuvre correcte inclut la gestion des certificats, la configuration
+des clés, et le respect des standards pour éviter les failles comme Heartbleed,
+POODLE ou Man-in-the-Middle.
+</p>
+
+<p>
+IPsec fonctionne en mode transport ou tunnel, avec des algorithmes modernes comme AES
+et SHA-2. SSH offre un chiffrement fort et une authentification par clé publique,
+réduisant considérablement les risques liés aux mots de passe faibles.
+</p>
+
+<p>
+La surveillance et la mise à jour régulière des protocoles sont essentielles pour
+prévenir les vulnérabilités, assurer la conformité aux normes ISO/IEC et maintenir
+la sécurité dans des environnements critiques.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q7" value="true"> Quel protocole est utilisé pour sécuriser SSH ?</label>
-<label><input type="radio" name="q7" value="false"> HTTPS</label>
-<label><input type="radio" name="q7" value="false"> SNMP</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel protocole est utilisé pour sécuriser l’accès à distance aux serveurs ?</p>
+<label><input type="radio" name="m7q1" value="true"> SSH</label>
+<label><input type="radio" name="m7q1" value="false"> HTTP</label>
+<label><input type="radio" name="m7q1" value="false"> FTP</label>
+<label><input type="radio" name="m7q1" value="false"> Telnet</label>
+
+<p><strong>Question 2 :</strong> Quel protocole chiffre les communications web et garantit l’intégrité ?</p>
+<label><input type="radio" name="m7q2" value="true"> TLS</label>
+<label><input type="radio" name="m7q2" value="false"> SMTP simple</label>
+<label><input type="radio" name="m7q2" value="false"> ICMP</label>
+<label><input type="radio" name="m7q2" value="false"> DNS</label>
+
+<p><strong>Question 3 :</strong> IPsec est principalement utilisé pour :</p>
+<label><input type="radio" name="m7q3" value="true"> Sécuriser les tunnels VPN entre réseaux</label>
+<label><input type="radio" name="m7q3" value="false"> Configurer des VLANs</label>
+<label><input type="radio" name="m7q3" value="false"> Prioriser le trafic VoIP</label>
+<label><input type="radio" name="m7q3" value="false"> Assigner des adresses IP dynamiques</label>
+
+<p><strong>Question 4 :</strong> Quelle mesure réduit les risques liés aux mots de passe faibles dans SSH ?</p>
+<label><input type="radio" name="m7q4" value="true"> Authentification par clé publique</label>
+<label><input type="radio" name="m7q4" value="false"> Utilisation de WEP</label>
+<label><input type="radio" name="m7q4" value="false"> DHCP automatique</label>
+<label><input type="radio" name="m7q4" value="false"> NAT dynamique</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -176,13 +525,61 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 8 -->
 <div class="module">
 <h2>8. VPN et tunnels sécurisés</h2>
-<p>Un VPN permet de créer un tunnel chiffré entre l’utilisateur et un serveur, protégeant ainsi la confidentialité des données. Il utilise des protocoles comme OpenVPN, IPSec ou WireGuard.</p>
-<p>Les VPN sont utilisés pour le télétravail, le contournement de restrictions géographiques, et la sécurisation de la connexion sur des réseaux publics.</p>
+
+<p>
+Un VPN (Virtual Private Network) permet de créer un tunnel sécurisé et chiffré
+entre un utilisateur et un serveur, ou entre deux réseaux distants. Les VPN
+garantissent la confidentialité et l’intégrité des données sur des réseaux publics
+ou non fiables. Les protocoles les plus courants incluent OpenVPN, IPsec et WireGuard.
+</p>
+
+<p>
+La configuration d’un VPN comprend l’authentification des utilisateurs, le chiffrement
+des flux (AES-256, ChaCha20), et la mise en place de tunnels sécurisés. Les VPN
+sont utilisés pour le télétravail, l’accès distant aux ressources d’entreprise,
+et le contournement sécurisé des restrictions géographiques.
+</p>
+
+<p>
+WireGuard est un protocole moderne, léger et rapide, qui simplifie la configuration
+tout en offrant un chiffrement moderne. IPsec reste très utilisé dans les environnements
+entreprises pour sa compatibilité et sa robustesse. Les VPN doivent être surveillés
+pour détecter toute tentative d’intrusion ou fuite de données.
+</p>
+
+<p>
+Une bonne politique VPN inclut la rotation régulière des clés, la gestion centralisée,
+et l’intégration avec l’authentification à deux facteurs pour renforcer la sécurité.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q8" value="true"> Quel protocole VPN offre la meilleure sécurité moderne ?</label>
-<label><input type="radio" name="q8" value="false"> PPTP</label>
-<label><input type="radio" name="q8" value="false"> L2TP sans chiffrement</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel protocole VPN est moderne, léger et rapide ?</p>
+<label><input type="radio" name="m8q1" value="true"> WireGuard</label>
+<label><input type="radio" name="m8q1" value="false"> PPTP</label>
+<label><input type="radio" name="m8q1" value="false"> L2TP sans chiffrement</label>
+<label><input type="radio" name="m8q1" value="false"> Telnet</label>
+
+<p><strong>Question 2 :</strong> Quel algorithme est recommandé pour le chiffrement des flux VPN ?</p>
+<label><input type="radio" name="m8q2" value="true"> AES-256</label>
+<label><input type="radio" name="m8q2" value="false"> MD5 simple</label>
+<label><input type="radio" name="m8q2" value="false"> WEP</label>
+<label><input type="radio" name="m8q2" value="false"> HTTP</label>
+
+<p><strong>Question 3 :</strong> Une bonne politique VPN inclut : </p>
+<label><input type="radio" name="m8q3" value="true"> Rotation régulière des clés et 2FA</label>
+<label><input type="radio" name="m8q3" value="false"> DHCP automatique sans chiffrement</label>
+<label><input type="radio" name="m8q3" value="false"> NAT dynamique uniquement</label>
+<label><input type="radio" name="m8q3" value="false"> VLAN simple</label>
+
+<p><strong>Question 4 :</strong> VPN est principalement utilisé pour :</p>
+<label><input type="radio" name="m8q4" value="true"> Créer des tunnels sécurisés pour protéger les données</label>
+<label><input type="radio" name="m8q4" value="false"> Assigner des adresses IP dynamiques</label>
+<label><input type="radio" name="m8q4" value="false"> Prioriser le trafic VoIP</label>
+<label><input type="radio" name="m8q4" value="false"> Configurer les VLANs</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -191,13 +588,60 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 9 -->
 <div class="module">
 <h2>9. Firewalls et contrôle d’accès</h2>
-<p>Les firewalls filtrent le trafic réseau selon des règles prédéfinies. Les firewalls de nouvelle génération analysent également le contenu des paquets, détectent les menaces et appliquent des politiques d’accès granulaires.</p>
-<p>Une bonne configuration inclut la gestion des ACL, la segmentation et le logging pour audits et détection d’intrusions.</p>
+
+<p>
+Un firewall est un dispositif de sécurité réseau qui contrôle le trafic entrant et sortant
+selon des règles prédéfinies. Il peut être matériel ou logiciel, et existe sous différentes
+formes : stateless (filtrage simple), stateful (analyse des sessions) ou NGFW (Next-Generation Firewall)
+capable d’inspecter le contenu des paquets.
+</p>
+
+<p>
+Les firewalls modernes intègrent des fonctions avancées telles que la détection d’intrusions,
+l’inspection profonde des paquets (Deep Packet Inspection), et la gestion granulaire des
+politiques d’accès utilisateur. Ils permettent également de segmenter le réseau et d’appliquer
+des ACL (Access Control Lists) pour protéger les ressources sensibles.
+</p>
+
+<p>
+Pour un réseau sécurisé, il est essentiel de configurer correctement les règles de firewall,
+de surveiller les journaux pour détecter toute activité suspecte, et de tester régulièrement
+les configurations avec des audits de sécurité et des scans de vulnérabilités.
+</p>
+
+<p>
+Une mauvaise configuration peut laisser passer des attaques telles que le spoofing, les scans de ports
+non autorisés ou les tentatives de brute-force sur les services critiques.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q9" value="true"> Quel type de firewall analyse le contenu des paquets ?</label>
-<label><input type="radio" name="q9" value="false"> Stateless uniquement</label>
-<label><input type="radio" name="q9" value="false"> Firewall matériel simple</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel type de firewall analyse le contenu des paquets en profondeur ?</p>
+<label><input type="radio" name="m9q1" value="true"> Next-Generation Firewall (NGFW)</label>
+<label><input type="radio" name="m9q1" value="false"> Stateless simple</label>
+<label><input type="radio" name="m9q1" value="false"> Router classique</label>
+<label><input type="radio" name="m9q1" value="false"> Switch non manageable</label>
+
+<p><strong>Question 2 :</strong> Les ACL (Access Control Lists) servent à :</p>
+<label><input type="radio" name="m9q2" value="true"> Définir quelles ressources sont accessibles à quels utilisateurs</label>
+<label><input type="radio" name="m9q2" value="false"> Prioriser le trafic VoIP uniquement</label>
+<label><input type="radio" name="m9q2" value="false"> Configurer les VLAN automatiquement</label>
+<label><input type="radio" name="m9q2" value="false"> Assigner des adresses IP dynamiques</label>
+
+<p><strong>Question 3 :</strong> Quelle pratique renforce la sécurité des firewalls ?</p>
+<label><input type="radio" name="m9q3" value="true"> Surveillance des journaux et audits réguliers</label>
+<label><input type="radio" name="m9q3" value="false"> Activation du DHCP automatique</label>
+<label><input type="radio" name="m9q3" value="false"> Utiliser uniquement des VLANs sans firewall</label>
+<label><input type="radio" name="m9q3" value="false"> Désactiver les logs pour la performance</label>
+
+<p><strong>Question 4 :</strong> Une mauvaise configuration de firewall peut provoquer :</p>
+<label><input type="radio" name="m9q4" value="true"> Des attaques comme le spoofing ou le scan de ports non autorisé</label>
+<label><input type="radio" name="m9q4" value="false"> Une meilleure vitesse réseau garantie</label>
+<label><input type="radio" name="m9q4" value="false"> Priorisation automatique du trafic Internet</label>
+<label><input type="radio" name="m9q4" value="false"> Assignation automatique des VLANs</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -206,12 +650,61 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 10 -->
 <div class="module">
 <h2>10. IDS / IPS avancés</h2>
-<p>Les systèmes IDS détectent les intrusions en analysant le trafic réseau, tandis que les IPS peuvent bloquer automatiquement les attaques. Ils utilisent des signatures, des comportements anormaux et des règles personnalisées pour protéger les infrastructures critiques.</p>
+
+<p>
+Les systèmes IDS (Intrusion Detection System) et IPS (Intrusion Prevention System) sont
+des outils essentiels pour sécuriser les réseaux d’entreprise. Un IDS surveille le trafic
+et alerte lorsqu’une activité suspecte est détectée, tandis qu’un IPS peut bloquer automatiquement
+les attaques en temps réel.
+</p>
+
+<p>
+Ces systèmes utilisent plusieurs techniques : la détection basée sur des signatures, qui repère
+les modèles connus d’attaques ; la détection basée sur le comportement, qui identifie les
+actions anormales par rapport au trafic habituel ; et des règles personnalisées adaptées à
+l’infrastructure spécifique de l’entreprise.
+</p>
+
+<p>
+Pour être efficace, un IDS/IPS doit être correctement configuré, régulièrement mis à jour
+avec les dernières signatures, et intégré à un système de journalisation centralisée pour
+analyser les alertes et corriger rapidement les failles détectées.
+</p>
+
+<p>
+La combinaison d’IDS/IPS avec des firewalls, VPN, et solutions de monitoring permet de créer
+une architecture de sécurité en couches, limitant les risques d’intrusions et protégeant
+les données sensibles de l’entreprise.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q10" value="true"> Quelle fonction principale d’un IPS ?</label>
-<label><input type="radio" name="q10" value="false"> Configurer les VLANs</label>
-<label><input type="radio" name="q10" value="false"> Assigner des adresses IP</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel est le rôle principal d’un IDS ?</p>
+<label><input type="radio" name="m10q1" value="true"> Détecter et alerter sur les intrusions dans le réseau</label>
+<label><input type="radio" name="m10q1" value="false"> Attribuer des adresses IP automatiquement</label>
+<label><input type="radio" name="m10q1" value="false"> Prioriser le trafic VoIP</label>
+<label><input type="radio" name="m10q1" value="false"> Configurer les VLANs</label>
+
+<p><strong>Question 2 :</strong> Quelle fonction distingue un IPS d’un IDS classique ?</p>
+<label><input type="radio" name="m10q2" value="true"> Bloquer automatiquement les attaques détectées</label>
+<label><input type="radio" name="m10q2" value="false"> Surveiller uniquement les journaux</label>
+<label><input type="radio" name="m10q2" value="false"> Fournir une interface Wi-Fi sécurisée</label>
+<label><input type="radio" name="m10q2" value="false"> Créer des VLAN dynamiques</label>
+
+<p><strong>Question 3 :</strong> Quelle technique permet à un IDS/IPS de détecter des attaques inconnues ?</p>
+<label><input type="radio" name="m10q3" value="true"> Détection basée sur le comportement</label>
+<label><input type="radio" name="m10q3" value="false"> Filtrage stateless</label>
+<label><input type="radio" name="m10q3" value="false"> NAT dynamique</label>
+<label><input type="radio" name="m10q3" value="false"> DHCP automatique</label>
+
+<p><strong>Question 4 :</strong> Quelle pratique renforce l’efficacité d’un IDS/IPS ?</p>
+<label><input type="radio" name="m10q4" value="true"> Intégration avec firewalls et journalisation centralisée</label>
+<label><input type="radio" name="m10q4" value="false"> Désactivation des alertes pour éviter les notifications</label>
+<label><input type="radio" name="m10q4" value="false"> Suppression des signatures anciennes uniquement</label>
+<label><input type="radio" name="m10q4" value="false"> Utilisation de VLAN sans firewall</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -220,13 +713,61 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 11 -->
 <div class="module">
 <h2>11. NAT avancé et translation d'adresses</h2>
-<p>Le NAT (Network Address Translation) traduit les adresses IP privées des dispositifs internes en adresses publiques pour permettre la communication avec Internet. Cela protège le réseau interne et permet de réduire la consommation d’adresses IPv4.</p>
-<p>Les types de NAT incluent le NAT statique, le NAT dynamique et le PAT (Port Address Translation). Chaque type a des avantages spécifiques en termes de sécurité et de gestion du trafic.</p>
+
+<p>
+Le NAT (Network Address Translation) est une technique fondamentale pour la gestion des adresses IP
+dans les réseaux modernes. Il permet de traduire les adresses privées des dispositifs internes
+en adresses publiques, offrant à la fois connectivité Internet et sécurité en masquant la topologie interne.
+</p>
+
+<p>
+Il existe plusieurs types de NAT : le NAT statique, qui associe une adresse privée à une adresse
+publique fixe ; le NAT dynamique, qui utilise un pool d’adresses publiques pour plusieurs hôtes
+internes ; et le PAT (Port Address Translation), qui permet à plusieurs hôtes de partager une
+seule adresse publique grâce à des numéros de ports différents.
+</p>
+
+<p>
+Le NAT améliore la sécurité en empêchant les attaques directes sur les adresses internes et permet
+d’économiser des adresses IPv4 dans des réseaux de grande taille. Une configuration correcte
+doit inclure des règles précises et un suivi des sessions pour éviter les conflits et les interruptions
+de service.
+</p>
+
+<p>
+Les administrateurs réseau combinent souvent NAT avec des firewalls et des VPN pour sécuriser
+les échanges, et avec des mécanismes de journalisation pour surveiller le trafic et détecter
+des comportements anormaux.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q11" value="true"> Quel type de NAT permet de mapper plusieurs hôtes internes sur une seule IP publique ?</label>
-<label><input type="radio" name="q11" value="false"> NAT statique</label>
-<label><input type="radio" name="q11" value="false"> NAT dynamique classique</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel type de NAT permet de mapper plusieurs hôtes internes sur une seule IP publique ?</p>
+<label><input type="radio" name="m11q1" value="true"> PAT (Port Address Translation)</label>
+<label><input type="radio" name="m11q1" value="false"> NAT statique</label>
+<label><input type="radio" name="m11q1" value="false"> NAT dynamique classique</label>
+<label><input type="radio" name="m11q1" value="false"> NAT bidirectionnel</label>
+
+<p><strong>Question 2 :</strong> Quelle est la principale fonction du NAT ?</p>
+<label><input type="radio" name="m11q2" value="true"> Traduire les adresses IP internes en adresses publiques</label>
+<label><input type="radio" name="m11q2" value="false"> Crypter les paquets IP</label>
+<label><input type="radio" name="m11q2" value="false"> Prioriser le trafic VoIP</label>
+<label><input type="radio" name="m11q2" value="false"> Surveiller les intrusions</label>
+
+<p><strong>Question 3 :</strong> Quel avantage sécuritaire apporte le NAT ?</p>
+<label><input type="radio" name="m11q3" value="true"> Masquer la topologie interne et protéger les adresses privées</label>
+<label><input type="radio" name="m11q3" value="false"> Fournir un VPN automatique</label>
+<label><input type="radio" name="m11q3" value="false"> Détecter des malwares sur les hôtes</label>
+<label><input type="radio" name="m11q3" value="false"> Attribuer des VLAN dynamiques</label>
+
+<p><strong>Question 4 :</strong> Quelle pratique améliore la fiabilité d’un NAT dans un réseau d’entreprise ?</p>
+<label><input type="radio" name="m11q4" value="true"> Suivi des sessions et règles précises de translation</label>
+<label><input type="radio" name="m11q4" value="false"> Suppression des ACL</label>
+<label><input type="radio" name="m11q4" value="false"> Désactivation des journaux</label>
+<label><input type="radio" name="m11q4" value="false"> Attribution aléatoire des adresses publiques</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -235,13 +776,61 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 12 -->
 <div class="module">
 <h2>12. DNS avancé et sécurité</h2>
-<p>Le DNS (Domain Name System) traduit les noms de domaine en adresses IP. Les attaques DNS incluent le DNS Spoofing, Cache Poisoning et DDoS ciblant les serveurs DNS.</p>
-<p>Les bonnes pratiques incluent DNSSEC pour la signature cryptographique des zones DNS, la surveillance des logs DNS, et l’utilisation de serveurs résilients pour éviter la compromission et garantir la disponibilité.</p>
+
+<p>
+Le DNS (Domain Name System) est un composant critique d’Internet, permettant de traduire
+les noms de domaine en adresses IP que les machines peuvent comprendre. Une mauvaise
+configuration DNS peut rendre un réseau vulnérable à des attaques telles que le DNS Spoofing,
+le Cache Poisoning ou les DDoS ciblant les serveurs DNS.
+</p>
+
+<p>
+Pour renforcer la sécurité DNS, les entreprises utilisent DNSSEC, qui signe cryptographiquement
+les zones DNS afin de garantir l’intégrité et l’authenticité des réponses. Les serveurs DNS doivent
+être résilients, répartis géographiquement, et configurés pour limiter les tentatives de cache
+poisoning et les requêtes non autorisées.
+</p>
+
+<p>
+La surveillance des journaux DNS, la mise en place de serveurs secondaires sécurisés, et
+l’intégration avec des systèmes de détection d’intrusions (IDS/IPS) permettent de détecter
+rapidement des comportements suspects et de protéger l’infrastructure réseau.
+</p>
+
+<p>
+En environnement professionnel, le DNS sécurisé est souvent combiné avec des politiques
+de firewall, des VPN et des filtres de contenu pour garantir la disponibilité, l’intégrité
+et la confidentialité des flux de données.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q12" value="true"> Quel mécanisme protège l'intégrité des réponses DNS ?</label>
-<label><input type="radio" name="q12" value="false"> HTTP/2 uniquement</label>
-<label><input type="radio" name="q12" value="false"> VPN simple</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel mécanisme protège l'intégrité des réponses DNS ?</p>
+<label><input type="radio" name="m12q1" value="true"> DNSSEC</label>
+<label><input type="radio" name="m12q1" value="false"> HTTP/2</label>
+<label><input type="radio" name="m12q1" value="false"> VPN simple</label>
+<label><input type="radio" name="m12q1" value="false"> SSL/TLS uniquement</label>
+
+<p><strong>Question 2 :</strong> Quelle attaque DNS altère le cache des serveurs pour renvoyer de fausses adresses IP ?</p>
+<label><input type="radio" name="m12q2" value="true"> DNS Cache Poisoning</label>
+<label><input type="radio" name="m12q2" value="false"> Phishing classique</label>
+<label><input type="radio" name="m12q2" value="false"> ARP Spoofing</label>
+<label><input type="radio" name="m12q2" value="false"> Bruteforce Wi-Fi</label>
+
+<p><strong>Question 3 :</strong> Quelle pratique améliore la disponibilité des serveurs DNS ?</p>
+<label><input type="radio" name="m12q3" value="true"> Réplication de serveurs et géorépartition</label>
+<label><input type="radio" name="m12q3" value="false"> Désactivation des logs</label>
+<label><input type="radio" name="m12q3" value="false"> NAT statique uniquement</label>
+<label><input type="radio" name="m12q3" value="false"> Utilisation d’un seul serveur primaire</label>
+
+<p><strong>Question 4 :</strong> Quel outil peut détecter les requêtes DNS anormales ou malveillantes ?</p>
+<label><input type="radio" name="m12q4" value="true"> IDS/IPS intégré avec surveillance DNS</label>
+<label><input type="radio" name="m12q4" value="false"> Simple Notepad</label>
+<label><input type="radio" name="m12q4" value="false"> Paint</label>
+<label><input type="radio" name="m12q4" value="false"> FTP standard</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -250,13 +839,62 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 13 -->
 <div class="module">
 <h2>13. QoS et gestion de trafic</h2>
-<p>La QoS (Quality of Service) permet de prioriser certains types de trafic sur un réseau, garantissant ainsi la performance pour les applications critiques, telles que la VoIP, le streaming ou les systèmes industriels.</p>
-<p>La configuration QoS inclut la classification du trafic, l’allocation de bande passante, la mise en file d’attente et la limitation des flux non prioritaires.</p>
+
+<p>
+La QoS (Quality of Service) est une technique avancée utilisée pour garantir que certains types
+de trafic réseau bénéficient d’une priorité plus élevée que d’autres. Cela est crucial dans les
+environnements où la performance est critique, comme la VoIP, le streaming vidéo ou les systèmes
+industriels connectés.
+</p>
+
+<p>
+La mise en place de QoS implique la classification du trafic, l’allocation de bande passante,
+la mise en file d’attente (queuing), et l’application de politiques de limitation des flux non prioritaires.
+Une mauvaise configuration peut provoquer de la latence, de la perte de paquets et affecter
+les services critiques.
+</p>
+
+<p>
+Les techniques de marquage des paquets, comme DSCP (Differentiated Services Code Point), permettent
+aux routeurs et commutateurs de prioriser correctement le trafic sur l’ensemble du réseau.
+La QoS est souvent combinée avec le monitoring pour ajuster dynamiquement les politiques
+selon la charge réseau réelle.
+</p>
+
+<p>
+Enfin, la gestion de trafic inclut le contrôle des flux entrants et sortants, la détection des
+goulots d’étranglement, et l’optimisation des ressources réseau pour garantir la continuité
+des services et la satisfaction des utilisateurs.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q13" value="true"> Quelle technique permet de prioriser le trafic VoIP ?</label>
-<label><input type="radio" name="q13" value="false"> NAT uniquement</label>
-<label><input type="radio" name="q13" value="false"> VLAN simple sans marquage</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quelle technique permet de prioriser le trafic VoIP sur un réseau ?</p>
+<label><input type="radio" name="m13q1" value="true"> Marquage DSCP et file d’attente prioritaire</label>
+<label><input type="radio" name="m13q1" value="false"> NAT statique</label>
+<label><input type="radio" name="m13q1" value="false"> VLAN simple sans marquage</label>
+<label><input type="radio" name="m13q1" value="false"> DHCP automatique</label>
+
+<p><strong>Question 2 :</strong> Quel composant réseau applique directement la QoS sur les paquets ?</p>
+<label><input type="radio" name="m13q2" value="true"> Routeur ou commutateur avec support QoS</label>
+<label><input type="radio" name="m13q2" value="false"> Serveur DNS uniquement</label>
+<label><input type="radio" name="m13q2" value="false"> Firewall matériel simple</label>
+<label><input type="radio" name="m13q2" value="false"> Client FTP</label>
+
+<p><strong>Question 3 :</strong> Quel paramètre est essentiel pour classer le trafic QoS ?</p>
+<label><input type="radio" name="m13q3" value="true"> Type de service et port source/destination</label>
+<label><input type="radio" name="m13q3" value="false"> Adresse MAC uniquement</label>
+<label><input type="radio" name="m13q3" value="false"> Taille du paquet uniquement</label>
+<label><input type="radio" name="m13q3" value="false"> Heure locale du serveur</label>
+
+<p><strong>Question 4 :</strong> Quel risque survient si la QoS est mal configurée ?</p>
+<label><input type="radio" name="m13q4" value="true"> Latence élevée et perte de paquets sur trafic critique</label>
+<label><input type="radio" name="m13q4" value="false"> DNS résolu incorrectement</label>
+<label><input type="radio" name="m13q4" value="false"> VPN ne s’établit pas</label>
+<label><input type="radio" name="m13q4" value="false"> WEP compromis</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -265,13 +903,61 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 14 -->
 <div class="module">
 <h2>14. Sécurité Wi-Fi et authentification</h2>
-<p>Les réseaux Wi-Fi nécessitent une sécurité avancée, utilisant WPA3, authentification 802.1X et chiffrement AES pour protéger les données. Les attaques courantes incluent le brute-force, le rogue AP et l’usurpation de MAC.</p>
-<p>La mise en place d’un réseau Wi-Fi sécurisé inclut l’isolation des clients, la rotation des clés et l’intégration à un système de gestion centralisée des points d’accès.</p>
+
+<p>
+La sécurité des réseaux Wi-Fi est cruciale pour protéger les données transmises sans fil. Les réseaux
+Wi-Fi modernes utilisent des protocoles avancés comme WPA3, l’authentification 802.1X et le chiffrement
+AES pour empêcher les accès non autorisés et les attaques par interception.
+</p>
+
+<p>
+Les attaques courantes sur les réseaux Wi-Fi incluent le brute-force sur les mots de passe, les
+points d’accès malveillants (rogue AP), et l’usurpation d’adresses MAC pour contourner les restrictions.
+La mise en place d’un réseau sécurisé nécessite l’isolation des clients, la rotation régulière des
+clés, et l’intégration à un système de gestion centralisée des points d’accès.
+</p>
+
+<p>
+L’authentification 802.1X combinée à un serveur RADIUS assure que seuls les utilisateurs autorisés
+accèdent au réseau et permet d’appliquer des politiques spécifiques par utilisateur ou par groupe.
+Le suivi et la journalisation des connexions Wi-Fi permettent également de détecter des anomalies
+et d’assurer la conformité avec les normes de sécurité.
+</p>
+
+<p>
+La sécurité Wi-Fi doit être évaluée régulièrement, en testant la résistance des clés et la robustesse
+des protocoles de chiffrement, afin de prévenir les intrusions et garantir la confidentialité
+des communications sur le réseau sans fil.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q14" value="true"> Quelle méthode assure une authentification robuste pour les utilisateurs Wi-Fi ?</label>
-<label><input type="radio" name="q14" value="false"> WEP uniquement</label>
-<label><input type="radio" name="q14" value="false"> Open Wi-Fi sans clé</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quelle méthode assure une authentification robuste pour les utilisateurs Wi-Fi ?</p>
+<label><input type="radio" name="m14q1" value="true"> 802.1X avec serveur RADIUS</label>
+<label><input type="radio" name="m14q1" value="false"> WEP uniquement</label>
+<label><input type="radio" name="m14q1" value="false"> Open Wi-Fi sans clé</label>
+<label><input type="radio" name="m14q1" value="false"> DHCP simple</label>
+
+<p><strong>Question 2 :</strong> Quel protocole de chiffrement est recommandé pour WPA3 ?</p>
+<label><input type="radio" name="m14q2" value="true"> AES-GCMP</label>
+<label><input type="radio" name="m14q2" value="false"> TKIP</label>
+<label><input type="radio" name="m14q2" value="false"> DES</label>
+<label><input type="radio" name="m14q2" value="false"> WEP RC4</label>
+
+<p><strong>Question 3 :</strong> Quelle attaque Wi-Fi consiste à créer un point d’accès frauduleux pour tromper les clients ?</p>
+<label><input type="radio" name="m14q3" value="true"> Rogue AP</label>
+<label><input type="radio" name="m14q3" value="false"> Phishing par email</label>
+<label><input type="radio" name="m14q3" value="false"> DNS Spoofing</label>
+<label><input type="radio" name="m14q3" value="false"> ARP Poisoning</label>
+
+<p><strong>Question 4 :</strong> Quel mécanisme aide à détecter les connexions Wi-Fi suspectes ?</p>
+<label><input type="radio" name="m14q4" value="true"> Journalisation et monitoring centralisé des points d’accès</label>
+<label><input type="radio" name="m14q4" value="false"> VPN automatique</label>
+<label><input type="radio" name="m14q4" value="false"> NAT dynamique</label>
+<label><input type="radio" name="m14q4" value="false"> DHCP statique</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -280,13 +966,55 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 15 -->
 <div class="module">
 <h2>15. VPN avancé et WireGuard</h2>
-<p>WireGuard est un protocole VPN moderne, léger et rapide, offrant un chiffrement moderne et une configuration simple par rapport à IPSec ou OpenVPN. Il est utilisé pour sécuriser le télétravail et l’accès aux réseaux distants.</p>
-<p>Les VPN avancés incluent la gestion centralisée des clés, l’authentification à deux facteurs et la journalisation pour audits de sécurité.</p>
+
+<p>
+WireGuard est un protocole VPN moderne, léger et extrêmement rapide, qui utilise des algorithmes de chiffrement de pointe pour sécuriser les communications.
+Contrairement à IPSec ou OpenVPN, sa configuration est plus simple et sa surface d’attaque plus réduite, ce qui en fait un choix recommandé pour le télétravail et l’accès à distance.
+</p>
+
+<p>
+Les VPN avancés incluent la gestion centralisée des clés, l’authentification multi-facteurs et la journalisation pour les audits de sécurité.
+Ils permettent de créer des tunnels sécurisés entre sites ou utilisateurs, garantissant la confidentialité et l’intégrité des données, même sur des réseaux publics.
+</p>
+
+<p>
+WireGuard repose sur des clés publiques et privées pour l’authentification et chiffre toutes les communications avec des algorithmes modernes comme ChaCha20.
+Son faible overhead permet des performances supérieures et une latence minimale, idéal pour les applications critiques et la VoIP.
+</p>
+
+<p>
+L’utilisation d’un VPN doit être accompagnée d’une surveillance des connexions et de tests réguliers pour prévenir toute faille ou fuite de données,
+ainsi que pour assurer la conformité aux politiques de sécurité de l’entreprise.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q15" value="true"> Quel protocole VPN moderne est connu pour sa rapidité et sécurité ?</label>
-<label><input type="radio" name="q15" value="false"> PPTP</label>
-<label><input type="radio" name="q15" value="false"> L2TP sans chiffrement</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel protocole VPN moderne est connu pour sa rapidité et sécurité ?</p>
+<label><input type="radio" name="m15q1" value="true"> WireGuard</label>
+<label><input type="radio" name="m15q1" value="false"> PPTP</label>
+<label><input type="radio" name="m15q1" value="false"> L2TP sans chiffrement</label>
+<label><input type="radio" name="m15q1" value="false"> IPsec ancien</label>
+
+<p><strong>Question 2 :</strong> Quel algorithme de chiffrement est utilisé par WireGuard ?</p>
+<label><input type="radio" name="m15q2" value="true"> ChaCha20</label>
+<label><input type="radio" name="m15q2" value="false"> DES</label>
+<label><input type="radio" name="m15q2" value="false"> RC4</label>
+<label><input type="radio" name="m15q2" value="false"> MD5</label>
+
+<p><strong>Question 3 :</strong> Quelle fonctionnalité renforce la sécurité d’un VPN avancé en entreprise ?</p>
+<label><input type="radio" name="m15q3" value="true"> Authentification multi-facteurs</label>
+<label><input type="radio" name="m15q3" value="false"> DHCP automatique</label>
+<label><input type="radio" name="m15q3" value="false"> NAT dynamique</label>
+<label><input type="radio" name="m15q3" value="false"> ARP statique</label>
+
+<p><strong>Question 4 :</strong> Quel est un avantage principal de WireGuard comparé à OpenVPN ?</p>
+<label><input type="radio" name="m15q4" value="true"> Faible overhead et meilleure performance</label>
+<label><input type="radio" name="m15q4" value="false"> Plus de dépendances logicielles</label>
+<label><input type="radio" name="m15q4" value="false"> Chiffrement obsolète</label>
+<label><input type="radio" name="m15q4" value="false"> Nécessite un serveur dédié uniquement</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -295,13 +1023,60 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 16 -->
 <div class="module">
 <h2>16. IPv6 et transition</h2>
-<p>IPv6 permet un espace d’adressage immense, supprime la nécessité du NAT pour la plupart des réseaux, et inclut des fonctionnalités de sécurité intégrées telles que IPsec. La transition IPv4→IPv6 nécessite une planification minutieuse et l’utilisation de tunnels ou dual-stack.</p>
-<p>Les réseaux hybrides doivent gérer l’adressage, la compatibilité et la configuration DNS spécifique pour IPv6, tout en garantissant la sécurité et la performance.</p>
+
+<p>
+IPv6 est la dernière version du protocole Internet, offrant un espace d’adressage quasi illimité par
+rapport à IPv4. Il simplifie la configuration des réseaux en supprimant le besoin généralisé de NAT
+(Network Address Translation) et intègre des fonctionnalités de sécurité telles que IPsec.
+</p>
+
+<p>
+La transition de IPv4 vers IPv6 nécessite une planification minutieuse. Les stratégies incluent le
+dual-stack (où IPv4 et IPv6 coexistent sur les mêmes équipements), les tunnels pour acheminer
+le trafic IPv6 sur une infrastructure IPv4, et la traduction d’adresses pour compatibilité avec
+les anciens systèmes.
+</p>
+
+<p>
+La gestion des adresses, la configuration DNS spécifique à IPv6, et la mise en place de pare-feu
+compatibles sont essentielles pour garantir la sécurité et la performance des réseaux hybrides.
+Les administrateurs doivent également former les équipes et tester la compatibilité des applications.
+</p>
+
+<p>
+IPv6 améliore la connectivité directe entre les hôtes et favorise le déploiement d’IoT et de
+services cloud à grande échelle. Une transition réussie réduit les risques d’erreurs, de conflits
+d’adresses et de failles de sécurité.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q16" value="true"> Quel mécanisme permet la coexistence IPv4/IPv6 ?</label>
-<label><input type="radio" name="q16" value="false"> NAT classique uniquement</label>
-<label><input type="radio" name="q16" value="false"> DHCPv4 simple</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel mécanisme permet la coexistence IPv4/IPv6 ?</p>
+<label><input type="radio" name="m16q1" value="true"> Dual-stack et tunnels IPv6</label>
+<label><input type="radio" name="m16q1" value="false"> NAT classique uniquement</label>
+<label><input type="radio" name="m16q1" value="false"> DHCPv4 simple</label>
+<label><input type="radio" name="m16q1" value="false"> WEP uniquement</label>
+
+<p><strong>Question 2 :</strong> Quelle fonctionnalité intégrée IPv6 améliore la sécurité réseau ?</p>
+<label><input type="radio" name="m16q2" value="true"> IPsec obligatoire</label>
+<label><input type="radio" name="m16q2" value="false"> SMTP sécurisé</label>
+<label><input type="radio" name="m16q2" value="false"> HTTP/2</label>
+<label><input type="radio" name="m16q2" value="false"> VPN PPTP</label>
+
+<p><strong>Question 3 :</strong> Quel est un avantage principal d’IPv6 par rapport à IPv4 ?</p>
+<label><input type="radio" name="m16q3" value="true"> Espace d’adressage quasi illimité</label>
+<label><input type="radio" name="m16q3" value="false"> Chiffrement automatique WPA3</label>
+<label><input type="radio" name="m16q3" value="false"> Détection d’intrusions intégrée</label>
+<label><input type="radio" name="m16q3" value="false"> Priorisation VoIP uniquement</label>
+
+<p><strong>Question 4 :</strong> Quelle pratique est essentielle lors de la transition IPv6 ?</p>
+<label><input type="radio" name="m16q4" value="true"> Planification, tests et compatibilité des applications</label>
+<label><input type="radio" name="m16q4" value="false"> Suppression de tous les serveurs IPv4</label>
+<label><input type="radio" name="m16q4" value="false"> Attribution automatique de VLAN</label>
+<label><input type="radio" name="m16q4" value="false"> Désactivation du DNS</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -310,18 +1085,65 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 <!-- MODULE 17 -->
 <div class="module">
 <h2>17. Monitoring et analyse réseau</h2>
-<p>Le monitoring réseau inclut la collecte et l’analyse des flux, des journaux et des alertes pour détecter les anomalies, intrusions ou défaillances. Les outils courants incluent Wireshark, Zabbix, Nagios et SNMP pour la supervision.</p>
-<p>Les administrateurs réseau doivent interpréter les métriques, identifier les goulots d’étranglement, et mettre en place des alertes pour assurer la disponibilité, performance et sécurité du réseau.</p>
+
+<p>
+Le monitoring réseau consiste à collecter, analyser et interpréter les flux, journaux et alertes
+pour détecter anomalies, intrusions ou défaillances dans l’infrastructure réseau.
+Il est essentiel pour garantir la disponibilité, la performance et la sécurité des systèmes.
+</p>
+
+<p>
+Les outils de surveillance incluent Wireshark pour l’analyse détaillée des paquets,
+Nagios et Zabbix pour la supervision de serveurs et équipements, et SNMP pour récupérer
+les métriques des dispositifs réseau. Une bonne stratégie de monitoring combine plusieurs outils
+pour obtenir une vision complète et en temps réel du réseau.
+</p>
+
+<p>
+L’analyse réseau permet de détecter les goulots d’étranglement, les surcharges, et les comportements
+anormaux pouvant indiquer des attaques, comme les scans de ports, les dénis de service ou les tentatives
+d’intrusion. Les alertes doivent être configurées pour notifier immédiatement l’administrateur.
+</p>
+
+<p>
+La mise en place de dashboards, de logs centralisés et de rapports réguliers permet de prendre
+des décisions éclairées pour l’optimisation et la sécurité du réseau. La surveillance proactive
+réduit les temps d’arrêt et assure la continuité des services critiques.
+</p>
+
+<!-- QCM DIFFICILE -->
 <div class="qcm" data-correct="0">
-<p>Question :</p>
-<label><input type="radio" name="q17" value="true"> Quel outil permet l’analyse détaillée des paquets réseau ?</label>
-<label><input type="radio" name="q17" value="false"> Notepad</label>
-<label><input type="radio" name="q17" value="false"> Paint</label>
+<h3>QCM – Niveau avancé</h3>
+
+<p><strong>Question 1 :</strong> Quel outil permet l’analyse détaillée des paquets réseau ?</p>
+<label><input type="radio" name="m17q1" value="true"> Wireshark</label>
+<label><input type="radio" name="m17q1" value="false"> Notepad</label>
+<label><input type="radio" name="m17q1" value="false"> Paint</label>
+<label><input type="radio" name="m17q1" value="false"> FTP standard</label>
+
+<p><strong>Question 2 :</strong> Quel protocole permet de récupérer les métriques des équipements réseau ?</p>
+<label><input type="radio" name="m17q2" value="true"> SNMP</label>
+<label><input type="radio" name="m17q2" value="false"> HTTP</label>
+<label><input type="radio" name="m17q2" value="false"> SMTP</label>
+<label><input type="radio" name="m17q2" value="false"> DNS</label>
+
+<p><strong>Question 3 :</strong> Quel est l’avantage principal d’un monitoring réseau proactif ?</p>
+<label><input type="radio" name="m17q3" value="true"> Détection rapide des anomalies et réduction des temps d’arrêt</label>
+<label><input type="radio" name="m17q3" value="false"> Augmentation automatique de la bande passante</label>
+<label><input type="radio" name="m17q3" value="false"> Génération de clés WPA3</label>
+<label><input type="radio" name="m17q3" value="false"> Attribution d’IP dynamiques</label>
+
+<p><strong>Question 4 :</strong> Quelle pratique améliore la supervision d’un réseau complexe ?</p>
+<label><input type="radio" name="m17q4" value="true"> Dashboards, logs centralisés et rapports réguliers</label>
+<label><input type="radio" name="m17q4" value="false"> Suppression de toutes les alertes</label>
+<label><input type="radio" name="m17q4" value="false"> Changement aléatoire des adresses IP</label>
+<label><input type="radio" name="m17q4" value="false"> Désactivation des firewalls</label>
+
 <button onclick="verifier(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
-
+    
 </main>
 
 <footer>
