@@ -159,7 +159,7 @@ est essentiel pour tout professionnel réseau et cybersécurité.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm2">
+<div class="qcm" data-group="g2">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quelle est la fonction principale de la couche transport TCP ?</p>
@@ -180,7 +180,7 @@ est essentiel pour tout professionnel réseau et cybersécurité.
 <label><input type="radio" name="m2q3" value="false"> HTTPS</label>
 <label><input type="radio" name="m2q3" value="false"> DNSSEC</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -218,7 +218,7 @@ correctement les dispositifs et assurer la sécurité et la performance du rése
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm3">
+<div class="qcm" data-group="g3">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quelle plage IP est réservée pour les adresses privées ?</p>
@@ -239,7 +239,7 @@ correctement les dispositifs et assurer la sécurité et la performance du rése
 <label><input type="radio" name="m3q3" value="false"> ICMP</label>
 <label><input type="radio" name="m3q3" value="false"> FTP</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -279,7 +279,7 @@ essentielle pour les architectes réseau et les ingénieurs systèmes.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm4">
+<div class="qcm" data-group="g4">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel protocole est utilisé pour le routage inter-domaine ?</p>
@@ -300,7 +300,7 @@ essentielle pour les architectes réseau et les ingénieurs systèmes.
 <label><input type="radio" name="m4q3" value="false"> ICMP</label>
 <label><input type="radio" name="m4q3" value="false"> SSH</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -338,7 +338,7 @@ pour la performance, la sécurité et la résilience du réseau.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm5">
+<div class="qcm" data-group="g5">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel protocole permet le transport des informations VLAN entre switches ?</p>
@@ -359,7 +359,7 @@ pour la performance, la sécurité et la résilience du réseau.
 <label><input type="radio" name="m5q3" value="false"> Hub</label>
 <label><input type="radio" name="m5q3" value="false"> Firewall uniquement</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -396,7 +396,7 @@ sont essentiels pour maintenir performance, sécurité et fiabilité.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm6">
+<div class="qcm" data-group="g6">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quelle norme Wi-Fi offre les meilleures performances et efficacité ?</p>
@@ -417,7 +417,7 @@ sont essentiels pour maintenir performance, sécurité et fiabilité.
 <label><input type="radio" name="m6q3" value="false"> DHCP uniquement</label>
 <label><input type="radio" name="m6q3" value="false"> NAT</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -453,7 +453,7 @@ la sécurité dans des environnements critiques.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm7">
+<div class="qcm" data-group="g7">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel protocole est utilisé pour sécuriser l’accès à distance aux serveurs ?</p>
@@ -474,7 +474,7 @@ la sécurité dans des environnements critiques.
 <label><input type="radio" name="m7q3" value="false"> Prioriser le trafic VoIP</label>
 <label><input type="radio" name="m7q3" value="false"> Assigner des adresses IP dynamiques</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g7" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -510,7 +510,7 @@ et l’intégration avec l’authentification à deux facteurs pour renforcer la
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm8">
+<div class="qcm" data-group="g8">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel protocole VPN est moderne, léger et rapide ?</p>
@@ -531,7 +531,7 @@ et l’intégration avec l’authentification à deux facteurs pour renforcer la
 <label><input type="radio" name="m8q3" value="false"> NAT dynamique uniquement</label>
 <label><input type="radio" name="m8q3" value="false"> VLAN simple</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -566,7 +566,7 @@ non autorisés ou les tentatives de brute-force sur les services critiques.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm9">
+<div class="qcm" data-group="g9">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel type de firewall analyse le contenu des paquets en profondeur ?</p>
@@ -587,7 +587,7 @@ non autorisés ou les tentatives de brute-force sur les services critiques.
 <label><input type="radio" name="m9q3" value="false"> Utiliser uniquement des VLANs sans firewall</label>
 <label><input type="radio" name="m9q3" value="false"> Désactiver les logs pour la performance</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -623,7 +623,7 @@ les données sensibles de l’entreprise.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm10">
+<div class="qcm" data-group="g10">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel est le rôle principal d’un IDS ?</p>
@@ -644,7 +644,7 @@ les données sensibles de l’entreprise.
 <label><input type="radio" name="m10q3" value="false"> NAT dynamique</label>
 <label><input type="radio" name="m10q3" value="false"> DHCP automatique</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g10" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -680,7 +680,7 @@ des comportements anormaux.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm11">
+<div class="qcm" data-group="g11">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel type de NAT permet de mapper plusieurs hôtes internes sur une seule IP publique ?</p>
@@ -701,7 +701,7 @@ des comportements anormaux.
 <label><input type="radio" name="m11q3" value="false"> Détecter des malwares sur les hôtes</label>
 <label><input type="radio" name="m11q3" value="false"> Attribuer des VLAN dynamiques</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g11" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -737,7 +737,7 @@ et la confidentialité des flux de données.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm12">
+<div class="qcm" data-group="g12">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel mécanisme protège l'intégrité des réponses DNS ?</p>
@@ -758,7 +758,7 @@ et la confidentialité des flux de données.
 <label><input type="radio" name="m12q3" value="false"> NAT statique uniquement</label>
 <label><input type="radio" name="m12q3" value="false"> Utilisation d’un seul serveur primaire</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g12" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -795,7 +795,7 @@ des services et la satisfaction des utilisateurs.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm13">
+<div class="qcm" data-group="g13">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quelle technique permet de prioriser le trafic VoIP sur un réseau ?</p>
@@ -816,7 +816,7 @@ des services et la satisfaction des utilisateurs.
 <label><input type="radio" name="m13q4" value="false"> VPN ne s’établit pas</label>
 <label><input type="radio" name="m13q4" value="false"> WEP compromis</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g13" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -852,7 +852,7 @@ des communications sur le réseau sans fil.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm14">
+<div class="qcm" data-group="g14">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quelle méthode assure une authentification robuste pour les utilisateurs Wi-Fi ?</p>
@@ -873,7 +873,7 @@ des communications sur le réseau sans fil.
 <label><input type="radio" name="m14q4" value="false"> NAT dynamique</label>
 <label><input type="radio" name="m14q4" value="false"> DHCP statique</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g14" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -903,7 +903,7 @@ ainsi que pour assurer la conformité aux politiques de sécurité de l’entrep
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm15">
+<div class="qcm" data-group="g15">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel protocole VPN moderne est connu pour sa rapidité et sécurité ?</p>
@@ -924,7 +924,7 @@ ainsi que pour assurer la conformité aux politiques de sécurité de l’entrep
 <label><input type="radio" name="m15q3" value="false"> NAT dynamique</label>
 <label><input type="radio" name="m15q3" value="false"> ARP statique</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g15" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -959,7 +959,7 @@ d’adresses et de failles de sécurité.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm16">
+<div class="qcm" data-group="g16">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel mécanisme permet la coexistence IPv4/IPv6 ?</p>
@@ -980,7 +980,7 @@ d’adresses et de failles de sécurité.
 <label><input type="radio" name="m16q4" value="false"> Attribution automatique de VLAN</label>
 <label><input type="radio" name="m16q4" value="false"> Désactivation du DNS</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g16" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -1015,7 +1015,7 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" id="qcm17">
+<div class="qcm" data-group="g17">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel protocole permet de récupérer les métriques des équipements réseau ?</p>
@@ -1036,11 +1036,10 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <label><input type="radio" name="m17q4" value="false"> Changement aléatoire des adresses IP</label>
 <label><input type="radio" name="m17q4" value="false"> Désactivation des firewalls</label>
 
-<button onclick="verifier(this)">Vérifier</button>
+<button data-group="g17" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
-
 <script>
 const tentativesMax = 1; // nombre max de tentatives
 
@@ -1069,20 +1068,17 @@ function verifierGroupe(btn){
         if(correct){
             resultDiv.innerHTML = "Correct ✅";
             resultDiv.className = "result correct";
-
-            // Met la bonne réponse en vert
             labels.forEach(label => {
                 const radio = qcm.querySelector(`#${label.getAttribute('for')}`);
                 if(radio.value === "true") label.style.backgroundColor = "lightgreen";
             });
-
             radios.forEach(r => r.disabled = true);
         } else {
             const reste = tentativesMax - qcm.dataset.tentatives;
-            resultDiv.innerHTML = `CORRECTION - ${reste} tentatives`;
+            resultDiv.innerHTML = `Incorrect ❌ - Il vous reste ${reste} tentatives`;
             resultDiv.className = "result wrong";
 
-            // Bonne réponse en vert, mauvaise sélectionnée en rouge
+            // Bonne réponse en vert, mauvaise sélection en rouge
             labels.forEach(label => {
                 const radio = qcm.querySelector(`#${label.getAttribute('for')}`);
                 if(radio.value === "true") label.style.backgroundColor = "lightgreen";
