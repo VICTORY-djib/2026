@@ -1045,22 +1045,6 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <script>
 const tentativesMax = 1;
 
-/* 🔀 Mélange des options */
-function melangerOptions(){
-    document.querySelectorAll('.qcm').forEach(qcm => {
-        const labels = Array.from(qcm.querySelectorAll('label'));
-
-        for(let i = labels.length - 1; i > 0; i--){
-            const j = Math.floor(Math.random() * (i + 1));
-            [labels[i], labels[j]] = [labels[j], labels[i]];
-        }
-
-        const btn = qcm.querySelector('button');
-        labels.forEach(label => qcm.insertBefore(label, btn));
-    });
-}
-
-/* ✅ Vérification */
 function verifier(btn){
     const qcm = btn.parentElement;
     const radios = qcm.querySelectorAll('input[type="radio"]');
@@ -1071,16 +1055,16 @@ function verifier(btn){
     if(qcm.dataset.tentatives >= tentativesMax) return;
 
     let correct = false;
-    radios.forEach(r => {
-        if(r.checked && r.value === "true") correct = true;
+    radios.forEach(radio => {
+        if(radio.checked && radio.value === "true") correct = true;
     });
 
-    qcm.dataset.tentatives++;
+    qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
 
-    labels.forEach(l => l.style.backgroundColor = "");
+    labels.forEach(label => label.style.backgroundColor = "");
 
     if(correct){
-        resultDiv.textContent = "Correct ✅";
+        resultDiv.innerHTML = "Correct ✅";
         resultDiv.className = "result correct";
 
         labels.forEach((label, i) => {
@@ -1088,8 +1072,10 @@ function verifier(btn){
                 label.style.backgroundColor = "lightgreen";
             }
         });
+
+        radios.forEach(r => r.disabled = true);
     } else {
-        resultDiv.textContent = "Incorrect ❌";
+        resultDiv.innerHTML = "Incorrect ❌";
         resultDiv.className = "result wrong";
 
         labels.forEach((label, i) => {
@@ -1099,13 +1085,53 @@ function verifier(btn){
                 label.style.backgroundColor = "salmon";
             }
         });
-    }
 
-    radios.forEach(r => r.disabled = true);
+        radios.forEach(r => r.disabled = true);
+    }
 }
 
-/* ▶️ Mélange au chargement */
-document.addEventListener("DOMContentLoaded", melangerOptions);
+/* 🔀 Mélange des questions */
+function melangerQuestions(){
+    const container = document.querySelector('.qcm-container');
+    const questions = Array.from(container.children);
+
+    for(let i = questions.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+    questions.forEach(q => container.appendChild(q));
+}
+
+/* 🔀 Mélange des options */
+function melangerOptions(){
+    document.querySelectorAll('.qcm').forEach(qcm => {
+        const labels = Array.from(qcm.querySelectorAll('label'));
+        const btn = qcm.querySelector('button');
+
+        for(let i = labels.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [labels[i], labels[j]] = [labels[j], labels[i]];
+        }
+        labels.forEach(label => qcm.insertBefore(label, btn));
+    });
+}
+
+/* 🔢 Renumérotation Module 1 – Question X */
+function renumeroterQuestionsModule(moduleNumero = 1){
+    document.querySelectorAll('.qcm').forEach((qcm, index) => {
+        const p = qcm.querySelector('p');
+        const texte = p.textContent.replace(/Module\s*\d+\s*–\s*Question\s*\d+\s*:/i, '')
+                                   .replace(/Question\s*\d+\s*:/i, '');
+        p.textContent = `Module ${moduleNumero} – Question ${index + 1} : ${texte.trim()}`;
+    });
+}
+
+/* ▶️ Initialisation */
+document.addEventListener("DOMContentLoaded", () => {
+    melangerQuestions();
+    melangerOptions();
+    renumeroterQuestionsModule(1);
+});
 </script>
 
 </body>
