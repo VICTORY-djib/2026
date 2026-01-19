@@ -63,8 +63,11 @@ footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:
 </header>
 
 <section class="hero">
- <h1>Modules Réseaux</h1>
+    <h1>Bienvenue dans les Modules de reseau </h1>
 </section>
+
+<main class="cours">
+<h1 style="margin-bottom:30px;">réseau </h1>
 
 <main>
 
@@ -116,12 +119,7 @@ confidentialité, l’intégrité et la disponibilité des données.
 <label><input type="radio" name="m1q2" value="false"> Il chiffre les communications réseau</label>
 <label><input type="radio" name="m1q2" value="false"> Il remplace TCP/IP</label>
 
-<p><strong>Question 3 :</strong> Quel est le principal risque d’un réseau non segmenté ?</p>
-<label><input type="radio" name="m1q3" value="true"> La propagation rapide des attaques et du trafic malveillant</label>
-<label><input type="radio" name="m1q3" value="false"> Une meilleure isolation des ressources</label>
-<label><input type="radio" name="m1q3" value="false"> Une réduction du trafic broadcast</label>
-<label><input type="radio" name="m1q3" value="false"> Une augmentation automatique de la sécurité</label>
-<button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>
+<button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
 </div>
@@ -173,12 +171,6 @@ est essentiel pour tout professionnel réseau et cybersécurité.
 <label><input type="radio" name="m2q2" value="false"> Il chiffre automatiquement le trafic</label>
 <label><input type="radio" name="m2q2" value="false"> Il supprime le besoin de firewalls</label>
 <label><input type="radio" name="m2q2" value="false"> Il remplace le modèle TCP/IP</label>
-    
-<p><strong>Question 3 :</strong> Quel protocole est non orienté connexion mais rapide ?</p>
-<label><input type="radio" name="m2q3" value="false"> TCP</label>
-<label><input type="radio" name="m2q3" value="true"> UDP</label>
-<label><input type="radio" name="m2q3" value="false"> HTTPS</label>
-<label><input type="radio" name="m2q3" value="false"> DNSSEC</label>
 
 <button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -232,12 +224,6 @@ correctement les dispositifs et assurer la sécurité et la performance du rése
 <label><input type="radio" name="m3q2" value="false"> /16</label>
 <label><input type="radio" name="m3q2" value="false"> /28</label>
 <label><input type="radio" name="m3q2" value="false"> /30</label>
-
-<p><strong>Question 3 :</strong> Quel protocole attribue automatiquement les adresses IP ?</p>
-<label><input type="radio" name="m3q3" value="true"> DHCP</label>
-<label><input type="radio" name="m3q3" value="false"> DNS</label>
-<label><input type="radio" name="m3q3" value="false"> ICMP</label>
-<label><input type="radio" name="m3q3" value="false"> FTP</label>
 
 <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -293,12 +279,6 @@ essentielle pour les architectes réseau et les ingénieurs systèmes.
 <label><input type="radio" name="m4q2" value="false"> OSPF</label>
 <label><input type="radio" name="m4q2" value="false"> NAT</label>
 <label><input type="radio" name="m4q2" value="false"> DHCP</label>
-    
-<p><strong>Question 3 :</strong> Quelle technologie permet de segmenter un réseau physique en plusieurs réseaux logiques ?</p>
-<label><input type="radio" name="m4q3" value="true"> VLAN</label>
-<label><input type="radio" name="m4q3" value="false"> FTP</label>
-<label><input type="radio" name="m4q3" value="false"> ICMP</label>
-<label><input type="radio" name="m4q3" value="false"> SSH</label>
 
 <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -352,12 +332,6 @@ pour la performance, la sécurité et la résilience du réseau.
 <label><input type="radio" name="m5q2" value="false"> DHCP uniquement</label>
 <label><input type="radio" name="m5q2" value="false"> NAT</label>
 <label><input type="radio" name="m5q2" value="false"> STP</label>
-    
-<p><strong>Question 3 :</strong> Quel équipement est nécessaire pour permettre la communication entre deux VLANs ?</p>
-<label><input type="radio" name="m5q3" value="true"> Routeur ou switch L3</label>
-<label><input type="radio" name="m5q3" value="false"> Switch L2 uniquement</label>
-<label><input type="radio" name="m5q3" value="false"> Hub</label>
-<label><input type="radio" name="m5q3" value="false"> Firewall uniquement</label>
 
 <button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -410,12 +384,6 @@ sont essentiels pour maintenir performance, sécurité et fiabilité.
 <label><input type="radio" name="m6q2" value="false"> WEP</label>
 <label><input type="radio" name="m6q2" value="false"> Open Wi-Fi</label>
 <label><input type="radio" name="m6q2" value="false"> WPA2 TKIP uniquement</label>
-    
-<p><strong>Question 3 :</strong> Quelle fonctionnalité permet de prioriser le trafic VoIP sur un réseau Wi-Fi ?</p>
-<label><input type="radio" name="m6q3" value="true"> QoS (Quality of Service)</label>
-<label><input type="radio" name="m6q3" value="false"> VLAN simple</label>
-<label><input type="radio" name="m6q3" value="false"> DHCP uniquement</label>
-<label><input type="radio" name="m6q3" value="false"> NAT</label>
 
 <button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -467,12 +435,6 @@ la sécurité dans des environnements critiques.
 <label><input type="radio" name="m7q2" value="false"> SMTP simple</label>
 <label><input type="radio" name="m7q2" value="false"> ICMP</label>
 <label><input type="radio" name="m7q2" value="false"> DNS</label>
-    
-<p><strong>Question 3 :</strong> IPsec est principalement utilisé pour :</p>
-<label><input type="radio" name="m7q3" value="true"> Sécuriser les tunnels VPN entre réseaux</label>
-<label><input type="radio" name="m7q3" value="false"> Configurer des VLANs</label>
-<label><input type="radio" name="m7q3" value="false"> Prioriser le trafic VoIP</label>
-<label><input type="radio" name="m7q3" value="false"> Assigner des adresses IP dynamiques</label>
 
 <button data-group="g7" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -525,12 +487,6 @@ et l’intégration avec l’authentification à deux facteurs pour renforcer la
 <label><input type="radio" name="m8q2" value="false"> WEP</label>
 <label><input type="radio" name="m8q2" value="false"> HTTP</label>
 
-<p><strong>Question 3 :</strong> Une bonne politique VPN inclut : </p>
-<label><input type="radio" name="m8q3" value="true"> Rotation régulière des clés et 2FA</label>
-<label><input type="radio" name="m8q3" value="false"> DHCP automatique sans chiffrement</label>
-<label><input type="radio" name="m8q3" value="false"> NAT dynamique uniquement</label>
-<label><input type="radio" name="m8q3" value="false"> VLAN simple</label>
-
 <button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -580,12 +536,6 @@ non autorisés ou les tentatives de brute-force sur les services critiques.
 <label><input type="radio" name="m9q2" value="false"> Prioriser le trafic VoIP uniquement</label>
 <label><input type="radio" name="m9q2" value="false"> Configurer les VLAN automatiquement</label>
 <label><input type="radio" name="m9q2" value="false"> Assigner des adresses IP dynamiques</label>
-    
-<p><strong>Question 3 :</strong> Quelle pratique renforce la sécurité des firewalls ?</p>
-<label><input type="radio" name="m9q3" value="true"> Surveillance des journaux et audits réguliers</label>
-<label><input type="radio" name="m9q3" value="false"> Activation du DHCP automatique</label>
-<label><input type="radio" name="m9q3" value="false"> Utiliser uniquement des VLANs sans firewall</label>
-<label><input type="radio" name="m9q3" value="false"> Désactiver les logs pour la performance</label>
 
 <button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -637,12 +587,6 @@ les données sensibles de l’entreprise.
 <label><input type="radio" name="m10q2" value="false"> Surveiller uniquement les journaux</label>
 <label><input type="radio" name="m10q2" value="false"> Fournir une interface Wi-Fi sécurisée</label>
 <label><input type="radio" name="m10q2" value="false"> Créer des VLAN dynamiques</label>
-    
-<p><strong>Question 3 :</strong> Quelle technique permet à un IDS/IPS de détecter des attaques inconnues ?</p>
-<label><input type="radio" name="m10q3" value="true"> Détection basée sur le comportement</label>
-<label><input type="radio" name="m10q3" value="false"> Filtrage stateless</label>
-<label><input type="radio" name="m10q3" value="false"> NAT dynamique</label>
-<label><input type="radio" name="m10q3" value="false"> DHCP automatique</label>
 
 <button data-group="g10" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -695,12 +639,6 @@ des comportements anormaux.
 <label><input type="radio" name="m11q2" value="false"> Prioriser le trafic VoIP</label>
 <label><input type="radio" name="m11q2" value="false"> Surveiller les intrusions</label>
 
-<p><strong>Question 3 :</strong> Quel avantage sécuritaire apporte le NAT ?</p>
-<label><input type="radio" name="m11q3" value="true"> Masquer la topologie interne et protéger les adresses privées</label>
-<label><input type="radio" name="m11q3" value="false"> Fournir un VPN automatique</label>
-<label><input type="radio" name="m11q3" value="false"> Détecter des malwares sur les hôtes</label>
-<label><input type="radio" name="m11q3" value="false"> Attribuer des VLAN dynamiques</label>
-
 <button data-group="g11" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -751,12 +689,6 @@ et la confidentialité des flux de données.
 <label><input type="radio" name="m12q2" value="false"> Phishing classique</label>
 <label><input type="radio" name="m12q2" value="false"> ARP Spoofing</label>
 <label><input type="radio" name="m12q2" value="false"> Bruteforce Wi-Fi</label>
-
-<p><strong>Question 3 :</strong> Quelle pratique améliore la disponibilité des serveurs DNS ?</p>
-<label><input type="radio" name="m12q3" value="true"> Réplication de serveurs et géorépartition</label>
-<label><input type="radio" name="m12q3" value="false"> Désactivation des logs</label>
-<label><input type="radio" name="m12q3" value="false"> NAT statique uniquement</label>
-<label><input type="radio" name="m12q3" value="false"> Utilisation d’un seul serveur primaire</label>
 
 <button data-group="g12" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -810,12 +742,6 @@ des services et la satisfaction des utilisateurs.
 <label><input type="radio" name="m13q2" value="false"> Firewall matériel simple</label>
 <label><input type="radio" name="m13q2" value="false"> Client FTP</label>
 
-<p><strong>Question 3 :</strong> Quel risque survient si la QoS est mal configurée ?</p>
-<label><input type="radio" name="m13q4" value="true"> Latence élevée et perte de paquets sur trafic critique</label>
-<label><input type="radio" name="m13q4" value="false"> DNS résolu incorrectement</label>
-<label><input type="radio" name="m13q4" value="false"> VPN ne s’établit pas</label>
-<label><input type="radio" name="m13q4" value="false"> WEP compromis</label>
-
 <button data-group="g13" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -867,12 +793,6 @@ des communications sur le réseau sans fil.
 <label><input type="radio" name="m14q3" value="false"> DNS Spoofing</label>
 <label><input type="radio" name="m14q3" value="false"> ARP Poisoning</label>
 
-<p><strong>Question 3 :</strong> Quel mécanisme aide à détecter les connexions Wi-Fi suspectes ?</p>
-<label><input type="radio" name="m14q4" value="true"> Journalisation et monitoring centralisé des points d’accès</label>
-<label><input type="radio" name="m14q4" value="false"> VPN automatique</label>
-<label><input type="radio" name="m14q4" value="false"> NAT dynamique</label>
-<label><input type="radio" name="m14q4" value="false"> DHCP statique</label>
-
 <button data-group="g14" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -917,12 +837,6 @@ ainsi que pour assurer la conformité aux politiques de sécurité de l’entrep
 <label><input type="radio" name="m15q2" value="false"> DES</label>
 <label><input type="radio" name="m15q2" value="false"> RC4</label>
 <label><input type="radio" name="m15q2" value="false"> MD5</label>
-    
-<p><strong>Question 3 :</strong> Quelle fonctionnalité renforce la sécurité d’un VPN avancé en entreprise ?</p>
-<label><input type="radio" name="m15q3" value="true"> Authentification multi-facteurs</label>
-<label><input type="radio" name="m15q3" value="false"> DHCP automatique</label>
-<label><input type="radio" name="m15q3" value="false"> NAT dynamique</label>
-<label><input type="radio" name="m15q3" value="false"> ARP statique</label>
 
 <button data-group="g15" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
@@ -974,12 +888,6 @@ d’adresses et de failles de sécurité.
 <label><input type="radio" name="m16q3" value="false"> Détection d’intrusions intégrée</label>
 <label><input type="radio" name="m16q3" value="false"> Priorisation VoIP uniquement</label>
 
-<p><strong>Question 3 :</strong> Quelle pratique est essentielle lors de la transition IPv6 ?</p>
-<label><input type="radio" name="m16q4" value="true"> Planification, tests et compatibilité des applications</label>
-<label><input type="radio" name="m16q4" value="false"> Suppression de tous les serveurs IPv4</label>
-<label><input type="radio" name="m16q4" value="false"> Attribution automatique de VLAN</label>
-<label><input type="radio" name="m16q4" value="false"> Désactivation du DNS</label>
-
 <button data-group="g16" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
@@ -1026,12 +934,6 @@ et une prise de décision éclairée.
 <label><input type="radio" name="m17q3" value="false"> Augmentation automatique de la bande passante</label>
 <label><input type="radio" name="m17q3" value="false"> Génération de clés WPA3</label>
 <label><input type="radio" name="m17q3" value="false"> Attribution d’IP dynamiques</label>
-
-<p><strong>Question 3 :</strong> Quelle pratique améliore la supervision d’un réseau complexe ?</p>
-<label><input type="radio" name="m17q4" value="true"> Dashboards, logs centralisés et rapports réguliers</label>
-<label><input type="radio" name="m17q4" value="false"> Suppression de toutes les alertes</label>
-<label><input type="radio" name="m17q4" value="false"> Changement aléatoire des adresses IP</label>
-<label><input type="radio" name="m17q4" value="false"> Désactivation des firewalls</label>
 
 <!-- RESULT OBLIGATOIRE -->
 <div class="result"></div>
