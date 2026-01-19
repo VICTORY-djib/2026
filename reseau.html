@@ -1037,7 +1037,6 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <label><input type="radio" name="m17q4" value="false"> Désactivation des firewalls</label>
 
 <button data-group="g17" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
 </div>
 </div>
 <script>
@@ -1045,7 +1044,7 @@ const tentativesMax = 2;
 
 function verifierGroupe(btn){
     const group = btn.dataset.group;
-    const qcms = document.querySelectorAll(`.qcm[data-group="${group}"]`);
+    const qcms = document.querySelectorAll('.qcm[data-group="'+group+'"]');
 
     qcms.forEach(qcm => {
         const radios = qcm.querySelectorAll('input[type="radio"]');
@@ -1056,42 +1055,40 @@ function verifierGroupe(btn){
         if(qcm.dataset.tentatives >= tentativesMax) return;
 
         let correct = false;
-        radios.forEach(radio => { 
-            if(radio.checked) correct = radio.value === "true"; 
+        radios.forEach(radio => {
+            if(radio.checked) correct = radio.value === "true";
         });
 
         qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
 
-        // Réinitialiser les couleurs
         labels.forEach(label => label.style.backgroundColor = "");
 
-        // Coloration des options
         labels.forEach(label => {
-            const radio = qcm.querySelector(`#${label.getAttribute('for')}`);
-            if(radio.value === "true") label.style.backgroundColor = "lightgreen"; // bonne réponse
-            else if(radio.checked) label.style.backgroundColor = "salmon";          // mauvaise sélection
+            const radio = qcm.querySelector('#' + label.htmlFor);
+            if(radio.value === "true") label.style.backgroundColor = "lightgreen";
+            else if(radio.checked) label.style.backgroundColor = "salmon";
         });
 
-        // Message résultat
         if(correct){
-            resultDiv.innerHTML = "Correct ✅";
+            resultDiv.textContent = "Correct ✅";
             resultDiv.className = "result correct";
+            radios.forEach(r => r.disabled = true);
         } else {
             const reste = tentativesMax - qcm.dataset.tentatives;
-            resultDiv.innerHTML = `Incorrect ❌ - Il vous reste ${reste} tentatives`;
+            resultDiv.textContent = "Incorrect ❌ - Il reste " + reste + " tentatives";
             resultDiv.className = "result wrong";
-        }
 
-        // Désactiver radios si max tentatives atteintes
-        if(qcm.dataset.tentatives >= tentativesMax || correct){
-            radios.forEach(r => r.disabled = true);
+            if(qcm.dataset.tentatives >= tentativesMax){
+                radios.forEach(r => r.disabled = true);
+            }
         }
     });
 
-    // Désactiver le bouton si toutes les questions du groupe sont terminées
-    const allDone = Array.from(qcms).every(qcm => {
-        return qcm.dataset.tentatives >= tentativesMax || qcm.querySelector('input[value="true"]').checked;
-    });
+    const allDone = Array.from(qcms).every(qcm =>
+        qcm.dataset.tentatives >= tentativesMax ||
+        qcm.querySelector('input[value="true"]').checked
+    );
+
     if(allDone) btn.disabled = true;
 }
 </script>
