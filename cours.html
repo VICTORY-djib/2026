@@ -1,88 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modules Cybersécurité</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:"Segoe UI",Arial,sans-serif;
-        }
-        body{
-            background:#f9f9f9;
-            color:#0a1f44;
-        }
-        header{
-            height:70px;
-            background:#2563eb;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
-        header nav a{
-            color:white;
-            text-decoration:none;
-            margin:0 15px;
-            font-weight:bold;
-        }
-        header nav a.active{
-            border-bottom:2px solid yellow;
-        }
-        .hero{
-            height:calc(100vh - 70px);
-            background:url("hacker.png.PNG") center/cover no-repeat;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
-            color:white;
-        }
-        .hero h1{
-            font-size:48px;
-            background:rgba(0,0,0,0.5);
-            padding:20px;
-            border-radius:10px;
-        }
-        main.cours{
-            max-width:1000px;
-            margin:50px auto;
-            padding:0 20px;
-        }
-        .module{
-            margin-bottom:40px;
-            padding:20px;
-            background:#e0e7ff;
-            border-left:5px solid #2563eb;
-            border-radius:5px;
-        }
-        .module h2{
-            margin-bottom:10px;
-            color:#1e3a8a;
-        }
-        .module p{
-            line-height:1.9;
-            text-align:justify;
-        }
-        footer{
-            background:#2563eb;
-            color:white;
-            text-align:center;
-            padding:20px;
-            margin-top:50px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module Réseaux – Cours avancé et QCM</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif;}
+body{background:#f4f6fb;color:#0a1f44;line-height:1.8;}
+header{background:#2563eb;height:70px;display:flex;align-items:center;justify-content:center;}
+header nav a{color:white;text-decoration:none;margin:0 15px;font-weight:bold;}
+header nav a.active{text-decoration:underline;}
+.hero{
+    height:300px;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url("hacker.png.PNG") center/cover no-repeat;
+    display:flex;align-items:center;justify-content:center;
+    color:white;text-align:center;
+}
+.hero h1{font-size:40px;}
+main{max-width:1200px;margin:40px auto;padding:0 20px;}
+.module{
+    background:#e0e7ff;
+    padding:30px;
+    margin-bottom:45px;
+    border-left:6px solid #2563eb;
+    border-radius:6px;
+}
+.module h2{color:#1e3a8a;margin-bottom:15px;}
+.module p{margin-bottom:15px;text-align:justify;}
+.qcm{
+    background:white;
+    padding:20px;
+    border-radius:6px;
+    border:1px solid #c7d2fe;
+    margin-top:15px;
+}
+.qcm h3{margin-bottom:10px;}
+.qcm label{display:block;margin:8px 0;}
+.qcm button{
+    margin-top:10px;
+    padding:8px 16px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.result{margin-top:10px;font-weight:bold;}
+.correct{color:green;}
+.wrong{color:red;}
+footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:40px;}
+</style>
 </head>
-
 <body>
 
 <header>
-    <nav>
+<nav>
         <a href="index.html">HOME👨🏽‍💻</a>
         <a class="active" href="cours.html">CYBER📖</a>
         <a href="reseau.html">RESEAU📖</a>
@@ -160,11 +132,24 @@
     pour aborder les modules suivants de la formation.
   </p>
 
-<div class="qcm" id="qcm1">
-<h3>QCM Module 1 – 5 questions</h3>
+<div class="qcm" data-group="g1">
+<h3>QCM Module 1 </h3>
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Parmi les suivants, lequel illustre une violation de la disponibilité plutôt qu’une violation de la confidentialité ou de l’intégrité ?</p>
+    <label><input type="radio" name="m1q1" value="true"> Une attaque DDoS qui rend un service indisponible</label><br>
+    <label><input type="radio" name="m1q1" value="false"> Le vol d’un mot de passe pour accéder à des données sensibles</label><br>
+    <label><input type="radio" name="m1q1" value="false"> La modification non autorisée d’un fichier financier</label>
+  </div>
 
-
-
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle approche de sécurité suit le principe du moindre privilège ?</p>
+    <label><input type="radio" name="m1q2" value="true"> Les utilisateurs n’ont accès qu’aux ressources nécessaires à leurs fonctions</label><br>
+    <label><input type="radio" name="m1q2" value="false"> Tous les utilisateurs ont un accès complet pour simplifier la gestion</label><br>
+    <label><input type="radio" name="m1q2" value="false"> Les administrateurs ont moins de privilèges que les utilisateurs normaux</label>
+ <div class="result"></div>
+</div>
+</div>
 
 <div class="module">
 <h2>Module 2 :Menaces et attaques informatiques</h2>
@@ -224,11 +209,26 @@ h2>
     préparation des modules consacrés aux solutions et aux mesures de protection.
   </p>
 
-<div class="qcm" id="qcm2">
-<h3>QCM Module 2 – 5 questions difficiles</h3>
+<div class="qcm" data-group="g2">
+<h3>QCM Module 2 </h3>
 
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quel type de malware se propage automatiquement sur un réseau sans intervention humaine ?</p>
+    <label><input type="radio" name="m2q1" value="true"> Un ver informatique</label><br>
+    <label><input type="radio" name="m2q1" value="false"> Un cheval de Troie</label><br>
+    <label><input type="radio" name="m2q1" value="false"> Un ransomware</label>
+  </div>
 
-
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle attaque repose sur la manipulation psychologique des utilisateurs pour obtenir des informations sensibles ?</p>
+    <label><input type="radio" name="m2q2" value="true"> L’ingénierie sociale</label><br>
+    <label><input type="radio" name="m2q2" value="false"> L’attaque DDoS</label><br>
+    <label><input type="radio" name="m2q2" value="false"> L’injection SQL</label>
+ <div class="result"></div>
+</div>
+</div>
+    
 <div class="module">
 <h2>Module 3 :Mesures de protection et bonnes pratiques</h2>
 <p>
@@ -282,10 +282,25 @@ h2>
     et à appliquer les principes de base de la protection numérique avant d’aborder des notions
     plus avancées dans les modules suivants.</p>
 
-<div class="qcm" id="qcm3">
-<h3>QCM Module 3 – 5 questions difficiles</h3>
+<div class="qcm" data-group="g3">
+<h3>QCM Module 3 </h3>
 
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle mesure réduit le plus efficacement le risque lié aux mots de passe compromis ?</p>
+    <label><input type="radio" name="m3q1" value="true"> L’authentification multi-facteurs (MFA)</label><br>
+    <label><input type="radio" name="m3q1" value="false"> La modification mensuelle des mots de passe</label><br>
+    <label><input type="radio" name="m3q1" value="false"> L’utilisation d’un mot de passe unique pour chaque site</label>
+  </div>
 
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Pourquoi est-il essentiel de sauvegarder régulièrement les données ?</p>
+    <label><input type="radio" name="m3q2" value="true"> Pour restaurer rapidement les informations en cas d’incident ou d’attaque</label><br>
+    <label><input type="radio" name="m3q2" value="false"> Pour réduire la consommation de bande passante</label><br>
+    <label><input type="radio" name="m3q2" value="false"> Pour éviter d’utiliser des antivirus</label>
+ <div class="result"></div>
+</div>
+</div>
 
 <div class="module">
 <h2>Module 4 :Sécurité des réseaux</h2>
@@ -339,9 +354,24 @@ La sécurité des réseaux est cruciale pour protéger les communications, les s
     critiques contre les menaces internes et externes.
   </p>
 
-<div class="qcm" id="qcm4">
-<h3>QCM Module 4 – 5 questions difficiles</h3>
+<div class="qcm" data-group="g4">
+<h3>QCM Module 4 </h3>
 
+<div class="qcm">
+    <p><strong>Question 1 :</strong> Quel mécanisme isole différents segments du réseau pour limiter la propagation d’attaques ?</p>
+    <label><input type="radio" name="m4q1" value="true"> La segmentation VLAN</label><br>
+    <label><input type="radio" name="m4q1" value="false"> Le VPN</label><br>
+    <label><input type="radio" name="m4q1" value="false"> L’authentification multi-facteurs</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle solution permet de détecter et bloquer automatiquement des activités réseau suspectes ?</p>
+    <label><input type="radio" name="m4q2" value="true"> IDS/IPS</label><br>
+    <label><input type="radio" name="m4q2" value="false"> VPN</label><br>
+    <label><input type="radio" name="m4q2" value="false"> Pare-feu statique</label>
+  <div class="result"></div>
+</div>
+</div>
 <div class="module">
 <h2>Module 5 :Sécurité applicative et cybersécurité des systèmes</h2>
 <p>
@@ -383,9 +413,25 @@ La sécurité applicative vise à protéger les logiciels et applications contre
     environnements critiques.
   </p>
 
-<div class="qcm" id="qcm5">
-<h3>QCM Module 5 – 5 questions difficiles</h3>
+<div class="qcm" data-group="g5">
+<h3>QCM Module 5 </h3>
 
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle pratique réduit le risque d’injection SQL dans une application web ?</p>
+    <label><input type="radio" name="m5q1" value="true"> Valider et filtrer toutes les entrées utilisateurs</label><br>
+    <label><input type="radio" name="m5q1" value="false"> Utiliser uniquement HTTPS</label><br>
+    <label><input type="radio" name="m5q1" value="false"> Installer un antivirus sur le serveur</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle mesure est essentielle pour sécuriser un système contre les malwares ?</p>
+    <label><input type="radio" name="m5q2" value="true"> Maintenir les systèmes et logiciels à jour</label><br>
+    <label><input type="radio" name="m5q2" value="false"> Augmenter la taille des disques durs</label><br>
+    <label><input type="radio" name="m5q2" value="false"> Déconnecter les utilisateurs du réseau interne</label>
+ <div class="result"></div>
+</div>
+</div>
 <div class="module">
 <h2>Module 6 :Cybersécurité avancée</h2>
 <p>
@@ -433,9 +479,26 @@ La cybersécurité avancée concerne les techniques et stratégies pour protége
     centres de données ou infrastructures industrielles.
   </p>
 
-<div class="qcm" id="qcm6">
-<h3>QCM Module 6 – 5 questions difficiles</h3>
-  
+<div class="qcm" data-group="g6">
+<h3>QCM Module 6 </h3>
+
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle technique permet de protéger la confidentialité des données même si un attaquant accède aux systèmes ?</p>
+    <label><input type="radio" name="m6q1" value="true"> Le chiffrement avancé (AES, RSA)</label><br>
+    <label><input type="radio" name="m6q1" value="false"> La segmentation VLAN</label><br>
+    <label><input type="radio" name="m6q1" value="false"> L’authentification biométrique</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle solution permet de détecter des attaques persistantes ciblées (APT) sur un réseau ?</p>
+    <label><input type="radio" name="m6q2" value="true"> Honeypots et systèmes SIEM</label><br>
+    <label><input type="radio" name="m6q2" value="false"> VPN uniquement</label><br>
+    <label><input type="radio" name="m6q2" value="false"> Antivirus classique</label>
+ <div class="result"></div>
+</div>
+</div>
+
 <div class="module">
 <h2>Module 7 :Sécurité mobile & IoT</h2>
 <p>
@@ -465,9 +528,25 @@ Ce module traite de la sécurité des smartphones, tablettes et objets connecté
     technologie connectée.
   </p>
 
-<div class="qcm" id="qcm7">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g7">
+<h3>QCM –MODULES 7</h3>
 
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle mesure réduit le plus efficacement le risque lié aux objets connectés vulnérables ?</p>
+    <label><input type="radio" name="m7q1" value="true"> Mettre régulièrement à jour le firmware et les applications</label><br>
+    <label><input type="radio" name="m7q1" value="false"> Désactiver le Wi-Fi sur tous les appareils</label><br>
+    <label><input type="radio" name="m7q1" value="false"> Chiffrer uniquement les emails</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle pratique sécurise les communications d’un appareil mobile sur un réseau public ?</p>
+    <label><input type="radio" name="m7q2" value="true"> Utiliser un VPN pour chiffrer le trafic</label><br>
+    <label><input type="radio" name="m7q2" value="false"> Désactiver le Bluetooth</label><br>
+    <label><input type="radio" name="m7q2" value="false"> Supprimer toutes les applications sociales</label>
+ <div class="result"></div>
+</div>
+</div>
 <div class="module">
 <h2>Module 8 : Sécurité Cloud</h2>
 <p>
@@ -502,8 +581,26 @@ La sécurité Cloud vise à protéger les données, applications et infrastructu
     internes et externes.
   </p>
 
-<div class="qcm" id="qcm8">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g8">
+<h3>QCM MODULES 8</h3>
+
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle mesure réduit le risque d’accès non autorisé aux comptes Cloud ?</p>
+    <label><input type="radio" name="m8q1" value="true"> L’authentification multi-facteurs (MFA)</label><br>
+    <label><input type="radio" name="m8q1" value="false"> L’utilisation d’un antivirus sur le PC</label><br>
+    <label><input type="radio" name="m8q1" value="false"> La segmentation VLAN</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quel processus garantit la continuité des services Cloud en cas d’incident ?</p>
+    <label><input type="radio" name="m8q2" value="true"> Plans de reprise d’activité et de continuité (PRA/PCA)</label><br>
+    <label><input type="radio" name="m8q2" value="false"> Chiffrement symétrique uniquement</label><br>
+    <label><input type="radio" name="m8q2" value="false"> Tests d’intrusion ponctuels</label>
+ <div class="result"></div>
+</div>
+</div>
+    
 <div class="module">
 <h2>Module 9 : Sécurité Web</h2>
 <p>
@@ -533,9 +630,24 @@ Ce module présente les principales vulnérabilités des applications web et les
     confidentialité et l’intégrité des données, et assurer la sécurité des utilisateurs.
   </p>
 
-<div class="qcm" id="qcm9">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g9">
+<h3>QCM MODULE 9</h3>
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle attaque exploite une faille permettant d’injecter du code malveillant dans le navigateur de l’utilisateur ?</p>
+    <label><input type="radio" name="m9q1" value="true"> Cross-Site Scripting (XSS)</label><br>
+    <label><input type="radio" name="m9q1" value="false"> Injection SQL</label><br>
+    <label><input type="radio" name="m9q1" value="false"> Déni de service (DoS)</label>
+  </div>
 
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle pratique renforce la sécurité des sessions utilisateur sur une application web ?</p>
+    <label><input type="radio" name="m9q2" value="true"> Gestion sécurisée des cookies et expiration des sessions</label><br>
+    <label><input type="radio" name="m9q2" value="false"> Utilisation de mots de passe courts pour tous les utilisateurs</label><br>
+    <label><input type="radio" name="m9q2" value="false"> Redirection automatique vers HTTP</label>
+  <div class="result"></div>
+</div>
+</div>
 <div class="module">
 <h2>Module 10 : Sécurité réseau avancée</h2>
 <p>
@@ -569,8 +681,26 @@ Ce module traite de la protection avancée des réseaux informatiques afin de pr
     et la continuité des services.
   </p>
 
-<div class="qcm" id="qcm10">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g10">
+<h3>QCM MODULES 10</h3>
+
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quel outil permet de surveiller et bloquer automatiquement les comportements suspects sur le réseau ?</p>
+    <label><input type="radio" name="m10q1" value="true"> IDS/IPS</label><br>
+    <label><input type="radio" name="m10q1" value="false"> VPN</label><br>
+    <label><input type="radio" name="m10q1" value="false"> Pare-feu statique</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle pratique limite la propagation des attaques dans un réseau interne ?</p>
+    <label><input type="radio" name="m10q2" value="true"> Segmentation VLAN</label><br>
+    <label><input type="radio" name="m10q2" value="false"> Installation d’antivirus sur le serveur uniquement</label><br>
+    <label><input type="radio" name="m10q2" value="false"> Désactivation des mises à jour automatiques</label>
+ <div class="result"></div>
+</div>
+</div>
+    
 <div class="module">
 <h2>Module 11 : Sécurité physique et humaine</h2>
 <p>
@@ -602,9 +732,26 @@ La cybersécurité ne se limite pas aux systèmes informatiques et aux logiciels
     les infrastructures et les informations sensibles.
   </p>
 
-<div class="qcm" id="qcm11">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g11">
+<h3>QCM MODULES 11</h3>
 
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle mesure réduit le risque d’intrusion physique dans un centre de données ?</p>
+    <label><input type="radio" name="m11q1" value="true"> Contrôle d’accès électronique avec badges et biométrie</label><br>
+    <label><input type="radio" name="m11q1" value="false"> Installation d’antivirus sur tous les postes</label><br>
+    <label><input type="radio" name="m11q1" value="false"> Segmenter les VLAN du réseau interne</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle action réduit le risque lié aux erreurs humaines dans la cybersécurité ?</p>
+    <label><input type="radio" name="m11q2" value="true"> Former et sensibiliser régulièrement les employés</label><br>
+    <label><input type="radio" name="m11q2" value="false"> Interdire l’accès aux emails professionnels</label><br>
+    <label><input type="radio" name="m11q2" value="false"> Déconnecter tous les utilisateurs du réseau interne</label>
+ <div class="result"></div>
+</div>
+</div>
+    
 <div class="module">
 <h2>Module 12 : Gestion des incidents</h2>
 <p>
@@ -637,9 +784,26 @@ La gestion des incidents consiste à détecter, analyser et résoudre rapidement
     les systèmes et les données critiques.
   </p>
 
-<div class="qcm" id="qcm12">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g12">
+<h3>QCM MODULES 12</h3>
 
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle étape est cruciale pour limiter la propagation d’un incident de sécurité ?</p>
+    <label><input type="radio" name="m12q1" value="true"> Contention immédiate de l’incident</label><br>
+    <label><input type="radio" name="m12q1" value="false"> Archivage des logs uniquement</label><br>
+    <label><input type="radio" name="m12q1" value="false"> Augmentation de la bande passante réseau</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quelle pratique améliore la gestion future des incidents ?</p>
+    <label><input type="radio" name="m12q2" value="true"> Documenter et analyser chaque incident</label><br>
+    <label><input type="radio" name="m12q2" value="false"> Ignorer les incidents mineurs</label><br>
+    <label><input type="radio" name="m12q2" value="false"> Désactiver les alertes système</label>
+ <div class="result"></div>
+</div>
+</div>
+    
 <div class="module">
 <h2>Module 13 : Gouvernance et conformité</h2>
 <p>
@@ -672,9 +836,25 @@ La gouvernance et la conformité en cybersécurité concernent l’ensemble des 
     de contrôle et d’amélioration continue.
   </p>
 
-<div class="qcm" id="qcm13">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g13">
+<h3>QCM MODULES 13</h3>
 
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle action fait partie de la gouvernance de la sécurité ?</p>
+    <label><input type="radio" name="m13q1" value="true"> Définir les rôles et responsabilités pour la sécurité</label><br>
+    <label><input type="radio" name="m13q1" value="false"> Installer un antivirus sur un poste utilisateur</label><br>
+    <label><input type="radio" name="m13q1" value="false"> Configurer un pare-feu réseau</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quel élément est crucial pour la conformité réglementaire ?</p>
+    <label><input type="radio" name="m13q2" value="true"> Respecter les normes et lois applicables, comme RGPD</label><br>
+    <label><input type="radio" name="m13q2" value="false"> Bloquer tout accès Internet pour tous les employés</label><br>
+    <label><input type="radio" name="m13q2" value="false"> Segmenter le réseau interne</label>
+  <div class="result"></div>
+</div>
+</div>
 <div class="module">
 <h2>Module 14 : Analyse des vulnérabilités et tests d’intrusion</h2>
 <p>
@@ -707,8 +887,25 @@ L’analyse des vulnérabilités et les tests d’intrusion sont des méthodes e
     pour sécuriser efficacement les systèmes.
   </p>
 
-<div class="qcm" id="qcm14">
-<h3>QCM – 5 questions difficiles</h3>
+<div class="qcm" data-group="g14">
+<h3>QCM MODULES 14</h3>
+
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle technique permet de détecter les failles connues dans un système avant qu’elles ne soient exploitées ?</p>
+    <label><input type="radio" name="m14q1" value="true"> Analyse des vulnérabilités (vulnerability scan)</label><br>
+    <label><input type="radio" name="m14q1" value="false"> Chiffrement des données</label><br>
+    <label><input type="radio" name="m14q1" value="false"> Segmentation VLAN</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quel type de test simule des attaques réelles pour évaluer la sécurité d’un système ?</p>
+    <label><input type="radio" name="m14q2" value="true"> Test d’intrusion (Pentest)</label><br>
+    <label><input type="radio" name="m14q2" value="false"> Sauvegarde régulière des données</label><br>
+    <label><input type="radio" name="m14q2" value="false"> Authentification multi-facteurs</label>
+ <div class="result"></div>
+</div>
+</div>
 
 <div class="module">
 <h2>Module 15 : Sensibilisation et formation à la cybersécurité</h2>
@@ -742,5 +939,98 @@ L’analyse des vulnérabilités et les tests d’intrusion sont des méthodes e
     de reconnaître les risques liés aux comportements des utilisateurs et de mettre en œuvre des programmes 
     efficaces de sensibilisation et de formation pour protéger les systèmes et les données de l’organisation.
   </p>
+<div class="qcm" data-group="g15">
+<h3>QCM MODULES 15</h3>
+
+<!-- QCM difficile -->
+  <div class="qcm">
+    <p><strong>Question 1 :</strong> Quelle approche permet de réduire efficacement les risques liés aux erreurs humaines ?</p>
+    <label><input type="radio" name="m15q1" value="true"> Sensibilisation et formation régulières des employés</label><br>
+    <label><input type="radio" name="m15q1" value="false"> Déconnecter tous les utilisateurs du réseau interne</label><br>
+    <label><input type="radio" name="m15q1" value="false"> Installation d’un antivirus uniquement</label>
+  </div>
+
+  <div class="qcm">
+    <p><strong>Question 2 :</strong> Quel comportement indique une bonne pratique de cybersécurité par les utilisateurs ?</p>
+    <label><input type="radio" name="m15q2" value="true"> Signaler immédiatement les emails ou liens suspects</label><br>
+    <label><input type="radio" name="m15q2" value="false"> Partager ses mots de passe pour gagner du temps</label><br>
+    <label><input type="radio" name="m15q2" value="false"> Ignorer les mises à jour de sécurité</label>
+<div class="result"></div>
+</div>
+</div>
+<script>
+
+// Mélanger automatiquement toutes les questions au chargement
+window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".qcm").forEach(qcm => {
+        shuffleOptionsOfQuestion(qcm);
+    });
+});
+const tentativesMax = 1;
+
+function verifierGroupe(btn){
+    const group = btn.dataset.group;
+    const qcms = document.querySelectorAll('.qcm[data-group="'+group+'"]');
+
+    qcms.forEach(qcm => {
+        const radios = qcm.querySelectorAll('input[type="radio"]');
+        const labels = qcm.querySelectorAll('label');
+        const resultDiv = qcm.querySelector('.result');
+
+        if(!qcm.dataset.tentatives) qcm.dataset.tentatives = 0;
+        if(qcm.dataset.tentatives >= tentativesMax) return;
+
+        let correct = true;
+        let answered = false;
+
+        radios.forEach(radio => {
+            if(radio.checked){
+                answered = true;
+                if(radio.value !== "true") correct = false;
+            }
+        });
+
+        if(!answered){
+            resultDiv.textContent = "Veuillez répondre à toutes les questions ⚠️";
+            resultDiv.className = "result wrong";
+            return;
+        }
+
+        qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
+
+        labels.forEach(label => {
+            const radio = label.querySelector('input');
+            label.style.backgroundColor = "";
+
+            if(radio.value === "true"){
+                label.style.backgroundColor = "lightgreen";
+            } else if(radio.checked){
+                label.style.backgroundColor = "salmon";
+            }
+        });
+
+        if(correct){
+            resultDiv.textContent = "Correct ✅";
+            resultDiv.className = "result correct";
+            radios.forEach(r => r.disabled = true);
+        } else {
+            const reste = tentativesMax - qcm.dataset.tentatives;
+            resultDiv.textContent = "CORRECTION QCM CORRET✅VS INCORRECT❌ "
+            resultDiv.className = "result wrong";
+
+            if(qcm.dataset.tentatives >= tentativesMax){
+                radios.forEach(r => r.disabled = true);
+            }
+        }
+    });
+
+    const allDone = Array.from(qcms).every(qcm =>
+        qcm.dataset.tentatives >= tentativesMax
+    );
+
+    if(allDone) btn.disabled = true;
+}
+</script>
+
 </body>
 </html>
