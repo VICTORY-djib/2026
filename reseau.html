@@ -1066,7 +1066,9 @@ function verifier(btn){
         resultDiv.className = "result correct";
 
         labels.forEach((label, i) => {
-            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen";
+            if(radios[i].value === "true"){
+                label.style.backgroundColor = "lightgreen";
+            }
         });
 
         radios.forEach(r => r.disabled = true);
@@ -1076,8 +1078,11 @@ function verifier(btn){
         resultDiv.className = "result wrong";
 
         labels.forEach((label, i) => {
-            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen";
-            else if(radios[i].checked) label.style.backgroundColor = "salmon";
+            if(radios[i].value === "true"){
+                label.style.backgroundColor = "lightgreen";
+            } else if(radios[i].checked){
+                label.style.backgroundColor = "salmon";
+            }
         });
 
         if(qcm.dataset.tentatives >= tentativesMax){
@@ -1086,19 +1091,7 @@ function verifier(btn){
     }
 }
 
-/* 🔀 Mélange des questions */
-function melangerQuestions(){
-    const container = document.querySelector('.qcm-container');
-    const questions = Array.from(container.children);
-
-    for(let i = questions.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [questions[i], questions[j]] = [questions[j], questions[i]];
-    }
-    questions.forEach(q => container.appendChild(q));
-}
-
-/* 🔀 Mélange des options A / B / C */
+/* 🔀 MÉLANGE DES OPTIONS (SEULEMENT) */
 function melangerOptions(){
     document.querySelectorAll('.qcm').forEach(qcm => {
         const labels = Array.from(qcm.querySelectorAll('label'));
@@ -1108,15 +1101,13 @@ function melangerOptions(){
             const j = Math.floor(Math.random() * (i + 1));
             [labels[i], labels[j]] = [labels[j], labels[i]];
         }
+
         labels.forEach(label => qcm.insertBefore(label, btn));
     });
 }
 
-/* ▶️ Lancement automatique */
-document.addEventListener("DOMContentLoaded", () => {
-    melangerQuestions();
-    melangerOptions();
-});
+/* ▶️ Lancement auto */
+document.addEventListener("DOMContentLoaded", melangerOptions);
 </script>
 
 </body>
