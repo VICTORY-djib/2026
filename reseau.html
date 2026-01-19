@@ -1040,8 +1040,9 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <div class="result"></div>
 </div>
 </div>
+    
 <script>
-const tentativesMax = 1; // nombre max de tentatives
+const tentativesMax = 2; // nombre max de tentatives
 
 function verifierGroupe(btn){
     const group = btn.dataset.group;
@@ -1065,15 +1066,13 @@ function verifierGroupe(btn){
         // Réinitialise toutes les couleurs
         labels.forEach(label => label.style.backgroundColor = "");
 
-        // Affiche les couleurs
+        // Coloration : bonne réponse verte, mauvaise sélection rouge
         labels.forEach(label => {
             const radio = qcm.querySelector(`#${label.getAttribute('for')}`);
             if(radio.value === "true") {
-                // La bonne réponse devient toujours verte
-                label.style.backgroundColor = "lightgreen";
+                label.style.backgroundColor = "lightgreen"; // bonne réponse
             } else if(radio.checked) {
-                // La mauvaise sélection devient rouge
-                label.style.backgroundColor = "salmon";
+                label.style.backgroundColor = "salmon"; // mauvaise sélection
             }
         });
 
