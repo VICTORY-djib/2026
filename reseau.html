@@ -1059,6 +1059,7 @@ function verifier(btn){
 
     qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
 
+    // Reset couleurs
     labels.forEach(label => label.style.backgroundColor = "");
 
     if(correct){
@@ -1076,8 +1077,8 @@ function verifier(btn){
         resultDiv.className = "result wrong";
 
         labels.forEach((label, i) => {
-            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen"; 
-            else if(radios[i].checked) label.style.backgroundColor = "salmon"; 
+            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen"; // bonne réponse
+            else if(radios[i].checked) label.style.backgroundColor = "salmon"; // mauvaise sélection
         });
 
         if(qcm.dataset.tentatives >= tentativesMax){
@@ -1085,24 +1086,6 @@ function verifier(btn){
         }
     }
 }
-
-/* 🔀 Mélange automatique des options */
-function melangerOptions(){
-    document.querySelectorAll('.qcm').forEach(qcm => {
-        const labels = Array.from(qcm.querySelectorAll('label'));
-        const btn = qcm.querySelector('button');
-
-        for(let i = labels.length - 1; i > 0; i--){
-            const j = Math.floor(Math.random() * (i + 1));
-            [labels[i], labels[j]] = [labels[j], labels[i]];
-        }
-
-        labels.forEach(label => qcm.insertBefore(label, btn));
-    });
-}
-
-/* ▶️ Lancement automatique au chargement */
-document.addEventListener("DOMContentLoaded", melangerOptions);
 </script>
 
 </body>
