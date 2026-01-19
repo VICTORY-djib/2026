@@ -1052,14 +1052,14 @@ function shuffle(array){
     }
 }
 
-// Mélanger les options de chaque question au chargement
+// Mélanger les options de CHAQUE question individuellement
 window.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".qcm").forEach(qcm => {
         const labels = Array.from(qcm.querySelectorAll("label"));
         shuffle(labels);
         labels.forEach(label => qcm.appendChild(label));
     });
-})
+});
 const tentativesMax = 1;
 
 function verifierGroupe(btn){
