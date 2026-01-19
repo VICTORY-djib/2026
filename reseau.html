@@ -1043,7 +1043,7 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 </div>
 
 <script>
-const tentativesMax = 1;
+const tentativesMax = 3;
 
 function verifier(btn){
     const qcm = btn.parentElement;
@@ -1065,26 +1065,36 @@ function verifier(btn){
     if(correct){
         resultDiv.innerHTML = "Correct ✅";
         resultDiv.className = "result correct";
-
         labels.forEach((label, i) => {
             if(radios[i].value === "true") label.style.backgroundColor = "lightgreen";
         });
-
         radios.forEach(r => r.disabled = true);
+        // Afficher le bouton Suivant si existant
+        const suivantBtn = qcm.querySelector("button[id^='suivant']");
+        if(suivantBtn) suivantBtn.style.display = "inline-block";
+
     } else {
         const reste = tentativesMax - qcm.dataset.tentatives;
         resultDiv.innerHTML = `Incorrect ❌ - Il vous reste ${reste} tentatives`;
         resultDiv.className = "result wrong";
-
         labels.forEach((label, i) => {
-            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen"; // bonne réponse
-            else if(radios[i].checked) label.style.backgroundColor = "salmon"; // mauvaise sélection
+            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen";
+            else if(radios[i].checked) label.style.backgroundColor = "salmon";
         });
-
         if(qcm.dataset.tentatives >= tentativesMax){
             radios.forEach(r => r.disabled = true);
+            // Afficher le bouton Suivant même si pas correct
+            const suivantBtn = qcm.querySelector("button[id^='suivant']");
+            if(suivantBtn) suivantBtn.style.display = "inline-block";
         }
     }
+}
+
+// Fonction pour passer au module suivant
+function suivant(currentId, nextId){
+    document.getElementById(currentId).style.display = "none";
+    const nextModule = document.getElementById(nextId);
+    if(nextModule) nextModule.style.display = "block";
 }
 </script>
 
