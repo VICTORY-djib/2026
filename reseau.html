@@ -1044,15 +1044,6 @@ et une prise de décision éclairée.
 
 <!-- SCRIPT -->
 <script>
-// Mélanger les options d'une question spécifique
-function shuffleOptionsOfQuestion(qcmElement){
-    const labels = Array.from(qcmElement.querySelectorAll("label")); // options de la question
-    for(let i = labels.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [labels[i], labels[j]] = [labels[j], labels[i]];
-    }
-    labels.forEach(label => qcmElement.appendChild(label)); // réinsérer mélangé
-}
 
 // Mélanger automatiquement toutes les questions au chargement
 window.addEventListener("DOMContentLoaded", () => {
