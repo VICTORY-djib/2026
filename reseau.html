@@ -109,7 +109,7 @@ confidentialité, l’intégrité et la disponibilité des données.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" data-correct="0">
+<div class="module qcm" id="module1">
 <h3>QCM – Niveau avancé</h3>
 
 <p><strong>Question 1 :</strong> Quel ensemble de mécanismes rend TCP fiable ?</p>
@@ -1094,12 +1094,11 @@ function verifier(btn,nextModuleId=null){
         radios.forEach(r=>r.disabled=true);
         btn.disabled=true;
 
-        // Afficher module suivant
         if(nextModuleId) document.getElementById(nextModuleId).classList.remove('hidden');
 
     }else{
         const reste = tentativesMax - qcm.dataset.tentatives;
-        resultDiv.innerHTML=`Incorrect ❌ - Il vous reste ${reste} tentatives`;
+        resultDiv.innerHTML=`correction 
         resultDiv.className="result wrong";
         labels.forEach((label,i)=>{
             if(radios[i].value==="true") label.classList.add('selected-correct');
@@ -1116,5 +1115,4 @@ function verifier(btn,nextModuleId=null){
 
 </body>
 </html>
-
 
