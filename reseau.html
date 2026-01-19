@@ -1044,21 +1044,20 @@ et une prise de décision éclairée.
 
 <!-- SCRIPT -->
 <script>
-// Fonction de mélange
-function shuffle(array){
-    for(let i = array.length - 1; i > 0; i--){
+// Mélanger les options d'une question spécifique
+function shuffleOptionsOfQuestion(qcmElement){
+    const labels = Array.from(qcmElement.querySelectorAll("label")); // options de la question
+    for(let i = labels.length - 1; i > 0; i--){
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [labels[i], labels[j]] = [labels[j], labels[i]];
     }
-    return array;
+    labels.forEach(label => qcmElement.appendChild(label)); // réinsérer mélangé
 }
 
-// Mélanger les options de chaque question au chargement
+// Mélanger automatiquement toutes les questions au chargement
 window.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".qcm").forEach(qcm => {
-        const labels = Array.from(qcm.querySelectorAll("label")); // toutes les options de cette question
-        shuffle(labels); // mélange les labels
-        labels.forEach(label => qcm.appendChild(label)); // réinsère mélangé
+        shuffleOptionsOfQuestion(qcm);
     });
 });
 const tentativesMax = 1;
