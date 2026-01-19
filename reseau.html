@@ -49,14 +49,6 @@ main{max-width:1200px;margin:40px auto;padding:0 20px;}
 .correct{color:green;}
 .wrong{color:red;}
 footer{background:#2563eb;color:white;text-align:center;padding:20px;margin-top:40px;}
-
-/* Pour cacher les modules suivants */
-.hidden { display: none; }
-
-/* Styles pour les options après sélection */
-.selected-correct { background-color: lightgreen; }
-.selected-wrong { background-color: salmon; }
-    
 </style>
 </head>
 <body>
@@ -1051,7 +1043,7 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 </div>
 
 <script>
-const tentativesMax = 2; // nombre max de tentatives
+const tentativesMax = 1; // nombre max de tentatives
 
 function verifierGroupe(btn){
     const group = btn.dataset.group;
@@ -1066,17 +1058,20 @@ function verifierGroupe(btn){
         if(qcm.dataset.tentatives >= tentativesMax) return;
 
         let correct = false;
-        radios.forEach(radio => { if(radio.checked) correct = radio.value === "true"; });
+        radios.forEach(radio => { 
+            if(radio.checked) correct = radio.value === "true"; 
+        });
 
         qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
 
-        // Reset couleurs
+        // Réinitialise les couleurs
         labels.forEach(label => label.style.backgroundColor = "");
 
         if(correct){
             resultDiv.innerHTML = "Correct ✅";
             resultDiv.className = "result correct";
 
+            // Met la bonne réponse en vert
             labels.forEach(label => {
                 const radio = qcm.querySelector(`#${label.getAttribute('for')}`);
                 if(radio.value === "true") label.style.backgroundColor = "lightgreen";
@@ -1085,10 +1080,10 @@ function verifierGroupe(btn){
             radios.forEach(r => r.disabled = true);
         } else {
             const reste = tentativesMax - qcm.dataset.tentatives;
-            resultDiv.innerHTML = `Incorrect ❌ - Il vous reste ${reste} tentatives`;
+            resultDiv.innerHTML = `CORRECTION - ${reste} tentatives`;
             resultDiv.className = "result wrong";
 
-            // Bonne réponse en vert et mauvaise sélectionnée en rouge
+            // Bonne réponse en vert, mauvaise sélectionnée en rouge
             labels.forEach(label => {
                 const radio = qcm.querySelector(`#${label.getAttribute('for')}`);
                 if(radio.value === "true") label.style.backgroundColor = "lightgreen";
@@ -1101,7 +1096,7 @@ function verifierGroupe(btn){
         }
     });
 
-    // Désactive le bouton si toutes les questions du groupe sont correctes
+    // Désactive le bouton si toutes les questions du groupe sont correctes ou tentatives finies
     const allCorrect = Array.from(qcms).every(qcm => {
         return qcm.querySelector('input[value="true"]').checked || qcm.dataset.tentatives >= tentativesMax;
     });
@@ -1109,6 +1104,3 @@ function verifierGroupe(btn){
     if(allCorrect) btn.disabled = true;
 }
 </script>
-
-</body>
-</html>
