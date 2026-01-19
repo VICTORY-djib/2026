@@ -998,23 +998,20 @@ Il est essentiel pour garantir la disponibilité, la performance et la sécurit�
 <p>
 Les outils de surveillance incluent Wireshark pour l’analyse détaillée des paquets,
 Nagios et Zabbix pour la supervision de serveurs et équipements, et SNMP pour récupérer
-les métriques des dispositifs réseau. Une bonne stratégie de monitoring combine plusieurs outils
-pour obtenir une vision complète et en temps réel du réseau.
+les métriques des dispositifs réseau.
 </p>
 
 <p>
 L’analyse réseau permet de détecter les goulots d’étranglement, les surcharges, et les comportements
-anormaux pouvant indiquer des attaques, comme les scans de ports, les dénis de service ou les tentatives
-d’intrusion. Les alertes doivent être configurées pour notifier immédiatement l’administrateur.
+anormaux pouvant indiquer des attaques.
 </p>
 
 <p>
-La mise en place de dashboards, de logs centralisés et de rapports réguliers permet de prendre
-des décisions éclairées pour l’optimisation et la sécurité du réseau. La surveillance proactive
-réduit les temps d’arrêt et assure la continuité des services critiques.
+Dashboards, logs centralisés et rapports réguliers permettent une surveillance proactive
+et une prise de décision éclairée.
 </p>
 
-<!-- QCM DIFFICILE -->
+<!-- QCM -->
 <div class="qcm" data-group="g17">
 <h3>QCM – Niveau avancé</h3>
 
@@ -1023,7 +1020,7 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <label><input type="radio" name="m17q2" value="false"> HTTP</label>
 <label><input type="radio" name="m17q2" value="false"> SMTP</label>
 <label><input type="radio" name="m17q2" value="false"> DNS</label>
-    
+
 <p><strong>Question 2 :</strong> Quel est l’avantage principal d’un monitoring réseau proactif ?</p>
 <label><input type="radio" name="m17q3" value="true"> Détection rapide des anomalies et réduction des temps d’arrêt</label>
 <label><input type="radio" name="m17q3" value="false"> Augmentation automatique de la bande passante</label>
@@ -1036,9 +1033,16 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <label><input type="radio" name="m17q4" value="false"> Changement aléatoire des adresses IP</label>
 <label><input type="radio" name="m17q4" value="false"> Désactivation des firewalls</label>
 
-<button data-group="g17" onclick="verifierGroupe(this)">Vérifier</button>
+<!-- RESULT OBLIGATOIRE -->
+<div class="result"></div>
+
+<button data-group="g17" onclick="verifierGroupe(this)">
+    Vérifier
+</button>
 </div>
 </div>
+
+<!-- SCRIPT -->
 <script>
 const tentativesMax = 2;
 
@@ -1054,19 +1058,33 @@ function verifierGroupe(btn){
         if(!qcm.dataset.tentatives) qcm.dataset.tentatives = 0;
         if(qcm.dataset.tentatives >= tentativesMax) return;
 
-        let correct = false;
+        let correct = true;
+        let answered = false;
+
         radios.forEach(radio => {
-            if(radio.checked) correct = radio.value === "true";
+            if(radio.checked){
+                answered = true;
+                if(radio.value !== "true") correct = false;
+            }
         });
+
+        if(!answered){
+            resultDiv.textContent = "Veuillez répondre à toutes les questions ⚠️";
+            resultDiv.className = "result wrong";
+            return;
+        }
 
         qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
 
-        labels.forEach(label => label.style.backgroundColor = "");
-
         labels.forEach(label => {
-            const radio = qcm.querySelector('#' + label.htmlFor);
-            if(radio.value === "true") label.style.backgroundColor = "lightgreen";
-            else if(radio.checked) label.style.backgroundColor = "salmon";
+            const radio = label.querySelector('input');
+            label.style.backgroundColor = "";
+
+            if(radio.value === "true"){
+                label.style.backgroundColor = "lightgreen";
+            } else if(radio.checked){
+                label.style.backgroundColor = "salmon";
+            }
         });
 
         if(correct){
@@ -1075,7 +1093,7 @@ function verifierGroupe(btn){
             radios.forEach(r => r.disabled = true);
         } else {
             const reste = tentativesMax - qcm.dataset.tentatives;
-            resultDiv.textContent = "Incorrect ❌ - Il reste " + reste + " tentatives";
+            resultDiv.textContent = "Incorrect ❌ - Tentatives restantes : " + reste;
             resultDiv.className = "result wrong";
 
             if(qcm.dataset.tentatives >= tentativesMax){
@@ -1085,8 +1103,7 @@ function verifierGroupe(btn){
     });
 
     const allDone = Array.from(qcms).every(qcm =>
-        qcm.dataset.tentatives >= tentativesMax ||
-        qcm.querySelector('input[value="true"]').checked
+        qcm.dataset.tentatives >= tentativesMax
     );
 
     if(allDone) btn.disabled = true;
