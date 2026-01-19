@@ -1066,9 +1066,7 @@ function verifier(btn){
         resultDiv.className = "result correct";
 
         labels.forEach((label, i) => {
-            if(radios[i].value === "true"){
-                label.style.backgroundColor = "lightgreen";
-            }
+            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen";
         });
 
         radios.forEach(r => r.disabled = true);
@@ -1078,11 +1076,8 @@ function verifier(btn){
         resultDiv.className = "result wrong";
 
         labels.forEach((label, i) => {
-            if(radios[i].value === "true"){
-                label.style.backgroundColor = "lightgreen";
-            } else if(radios[i].checked){
-                label.style.backgroundColor = "salmon";
-            }
+            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen"; 
+            else if(radios[i].checked) label.style.backgroundColor = "salmon"; 
         });
 
         if(qcm.dataset.tentatives >= tentativesMax){
@@ -1091,7 +1086,7 @@ function verifier(btn){
     }
 }
 
-/* 🔀 MÉLANGE DES OPTIONS (SEULEMENT) */
+/* 🔀 Mélange automatique des options */
 function melangerOptions(){
     document.querySelectorAll('.qcm').forEach(qcm => {
         const labels = Array.from(qcm.querySelectorAll('label'));
@@ -1106,7 +1101,7 @@ function melangerOptions(){
     });
 }
 
-/* ▶️ Lancement auto */
+/* ▶️ Lancement automatique au chargement */
 document.addEventListener("DOMContentLoaded", melangerOptions);
 </script>
 
