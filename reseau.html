@@ -1044,14 +1044,6 @@ et une prise de décision éclairée.
 
 <!-- SCRIPT -->
 <script>
-// Mélanger un tableau
-function shuffle(array){
-    for(let i = array.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 // Mélanger les options de CHAQUE question individuellement
 window.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".qcm").forEach(qcm => {
