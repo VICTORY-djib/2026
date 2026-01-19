@@ -1049,24 +1049,25 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <div class="result"></div>
 </div>
 </div>
+
 <script>
 const tentativesMax = 1;
 
-// Mélanger les options
+// Fonction pour mélanger un tableau
 function shuffle(array){
-    for(let i=array.length-1; i>0; i--){
+    for(let i = array.length-1; i>0; i--){
         const j = Math.floor(Math.random()*(i+1));
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
 }
 
-// Mélanger toutes les options au chargement
+// Mélanger les options de chaque QCM au chargement
 window.addEventListener('DOMContentLoaded',()=>{
     document.querySelectorAll('.qcm').forEach(qcm=>{
         const labels = Array.from(qcm.querySelectorAll('label'));
         const shuffled = shuffle(labels);
-        shuffled.forEach(label=>qcm.insertBefore(label,qcm.querySelector('button')));
+        shuffled.forEach(label => qcm.insertBefore(label, qcm.querySelector('button')));
     });
 });
 
@@ -1076,43 +1077,47 @@ function verifier(btn,nextModuleId=null){
     const labels = qcm.querySelectorAll('label');
     const resultDiv = qcm.querySelector('.result');
 
-    if(!qcm.dataset.tentatives) qcm.dataset.tentatives=0;
+    if(!qcm.dataset.tentatives) qcm.dataset.tentatives = 0;
     if(qcm.dataset.tentatives >= tentativesMax) return;
 
     let correct = false;
-    radios.forEach(radio=>{ if(radio.checked && radio.value==="true") correct=true; });
+    radios.forEach(radio => { if(radio.checked && radio.value==="true") correct = true; });
 
-    qcm.dataset.tentatives=parseInt(qcm.dataset.tentatives)+1;
+    qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
 
     // Reset couleurs
-    labels.forEach(label=>label.classList.remove('selected-correct','selected-wrong'));
+    labels.forEach(label => label.classList.remove('selected-correct','selected-wrong'));
 
     if(correct){
-        resultDiv.innerHTML="Correct ✅";
-        resultDiv.className="result correct";
+        resultDiv.innerHTML = "Correct ✅";
+        resultDiv.className = "result correct";
         labels.forEach((label,i)=>{ if(radios[i].value==="true") label.classList.add('selected-correct'); });
-        radios.forEach(r=>r.disabled=true);
-        btn.disabled=true;
+        radios.forEach(r => r.disabled = true);
+        btn.disabled = true;
 
-        if(nextModuleId) document.getElementById(nextModuleId).classList.remove('hidden');
+        if(nextModuleId){
+            document.getElementById(nextModuleId).classList.remove('hidden');
+        }
 
-    }else{
+    } else {
         const reste = tentativesMax - qcm.dataset.tentatives;
-        resultDiv.innerHTML=`correction 
-        resultDiv.className="result wrong";
+        resultDiv.innerHTML = `correction qcm - ${reste} tentative(s)`;
+        resultDiv.className = "result wrong";
         labels.forEach((label,i)=>{
             if(radios[i].value==="true") label.classList.add('selected-correct');
             else if(radios[i].checked) label.classList.add('selected-wrong');
         });
+
         if(qcm.dataset.tentatives >= tentativesMax){
-            radios.forEach(r=>r.disabled=true);
-            btn.disabled=true;
-            if(nextModuleId) document.getElementById(nextModuleId).classList.remove('hidden');
+            radios.forEach(r => r.disabled = true);
+            btn.disabled = true;
+            if(nextModuleId){
+                document.getElementById(nextModuleId).classList.remove('hidden');
+            }
         }
     }
 }
 </script>
-
 </body>
 </html>
 
