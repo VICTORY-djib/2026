@@ -1041,10 +1041,26 @@ réduit les temps d’arrêt et assure la continuité des services critiques.
 <div class="result"></div>
 </div>
 </div>
-    
+
 <script>
 const tentativesMax = 1;
 
+/* 🔀 Mélange des options */
+function melangerOptions(){
+    document.querySelectorAll('.qcm').forEach(qcm => {
+        const labels = Array.from(qcm.querySelectorAll('label'));
+
+        for(let i = labels.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [labels[i], labels[j]] = [labels[j], labels[i]];
+        }
+
+        const btn = qcm.querySelector('button');
+        labels.forEach(label => qcm.insertBefore(label, btn));
+    });
+}
+
+/* ✅ Vérification */
 function verifier(btn){
     const qcm = btn.parentElement;
     const radios = qcm.querySelectorAll('input[type="radio"]');
@@ -1055,37 +1071,41 @@ function verifier(btn){
     if(qcm.dataset.tentatives >= tentativesMax) return;
 
     let correct = false;
-    radios.forEach(radio => { if(radio.checked && radio.value === "true") correct = true; });
+    radios.forEach(r => {
+        if(r.checked && r.value === "true") correct = true;
+    });
 
-    qcm.dataset.tentatives = parseInt(qcm.dataset.tentatives) + 1;
+    qcm.dataset.tentatives++;
 
-    // Reset couleurs
-    labels.forEach(label => label.style.backgroundColor = "");
+    labels.forEach(l => l.style.backgroundColor = "");
 
     if(correct){
-        resultDiv.innerHTML = "Correct ✅";
+        resultDiv.textContent = "Correct ✅";
         resultDiv.className = "result correct";
 
         labels.forEach((label, i) => {
-            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen";
+            if(radios[i].value === "true"){
+                label.style.backgroundColor = "lightgreen";
+            }
         });
-
-        radios.forEach(r => r.disabled = true);
     } else {
-        const reste = tentativesMax - qcm.dataset.tentatives;
-        resultDiv.innerHTML = `Incorrect ❌ - Il vous reste ${reste} tentatives`;
+        resultDiv.textContent = "Incorrect ❌";
         resultDiv.className = "result wrong";
 
         labels.forEach((label, i) => {
-            if(radios[i].value === "true") label.style.backgroundColor = "lightgreen"; // bonne réponse
-            else if(radios[i].checked) label.style.backgroundColor = "salmon"; // mauvaise sélection
+            if(radios[i].value === "true"){
+                label.style.backgroundColor = "lightgreen";
+            } else if(radios[i].checked){
+                label.style.backgroundColor = "salmon";
+            }
         });
-
-        if(qcm.dataset.tentatives >= tentativesMax){
-            radios.forEach(r => r.disabled = true);
-        }
     }
+
+    radios.forEach(r => r.disabled = true);
 }
+
+/* ▶️ Mélange au chargement */
+document.addEventListener("DOMContentLoaded", melangerOptions);
 </script>
 
 </body>
