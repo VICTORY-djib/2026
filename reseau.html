@@ -1044,7 +1044,7 @@ et une prise de décision éclairée.
 
 <!-- SCRIPT -->
 <script>
-const tentativesMax = 2;
+const tentativesMax = 1;
 
 function verifierGroupe(btn){
     const group = btn.dataset.group;
@@ -1093,7 +1093,7 @@ function verifierGroupe(btn){
             radios.forEach(r => r.disabled = true);
         } else {
             const reste = tentativesMax - qcm.dataset.tentatives;
-            resultDiv.textContent = "Incorrect ❌ - Tentatives restantes : " + reste;
+            resultDiv.textContent = "CORRECTION QCM ✅VS "
             resultDiv.className = "result wrong";
 
             if(qcm.dataset.tentatives >= tentativesMax){
