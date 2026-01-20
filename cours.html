@@ -147,6 +147,8 @@ pour aborder les modules suivants de la formation.
 <label><input type="radio" name="m1q2" value="true"> Les utilisateurs n’ont accès qu’aux ressources nécessaires à leurs fonctions</label><br>
 <label><input type="radio" name="m1q2" value="false"> Tous les utilisateurs ont un accès complet pour simplifier la gestion</label><br>
 <label><input type="radio" name="m1q2" value="false"> Les administrateurs ont moins de privilèges que les utilisateurs normaux</label>
+
+<button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>    
 <div class="result"></div>
 </div>
 </div>
@@ -155,56 +157,56 @@ pour aborder les modules suivants de la formation.
 <h2>Module 2 :Menaces et attaques informatiques</h2>
 
 <p>
-    Les systèmes informatiques sont exposés en permanence à de nombreuses menaces pouvant compromettre
-    la sécurité des données, des réseaux et des services numériques. Une menace informatique désigne
-    toute action ou tout événement susceptible d’exploiter une vulnérabilité afin de provoquer des
-    dommages, qu’ils soient matériels, financiers ou informationnels.
+Les systèmes informatiques sont exposés en permanence à de nombreuses menaces pouvant compromettre
+la sécurité des données, des réseaux et des services numériques. Une menace informatique désigne
+toute action ou tout événement susceptible d’exploiter une vulnérabilité afin de provoquer des
+dommages, qu’ils soient matériels, financiers ou informationnels.
 </p>
 
 <p>
-    Parmi les menaces les plus répandues figurent les logiciels malveillants, également appelés
-    malwares. Ces programmes sont conçus pour s’introduire dans un système sans l’autorisation de
-    l’utilisateur. Ils peuvent se propager par des pièces jointes frauduleuses, des téléchargements
-    illicites, des supports amovibles infectés ou des sites web compromis. Une fois installés, ils
-    peuvent voler des informations, perturber le fonctionnement du système ou permettre un accès
-    non autorisé à distance.
+Parmi les menaces les plus répandues figurent les logiciels malveillants, également appelés
+malwares. Ces programmes sont conçus pour s’introduire dans un système sans l’autorisation de
+l’utilisateur. Ils peuvent se propager par des pièces jointes frauduleuses, des téléchargements
+illicites, des supports amovibles infectés ou des sites web compromis. Une fois installés, ils
+peuvent voler des informations, perturber le fonctionnement du système ou permettre un accès
+non autorisé à distance.
 </p>
 
 <p>
-    Les virus informatiques s’attachent généralement à des fichiers légitimes et se répliquent lors
-    de leur exécution, entraînant des dysfonctionnements ou la corruption de données. Les vers
-    informatiques se distinguent par leur capacité à se propager automatiquement à travers les
-    réseaux sans intervention humaine. Les chevaux de Troie, quant à eux, se présentent comme des
-    logiciels légitimes ou utiles tout en dissimulant des fonctionnalités malveillantes.
+Les virus informatiques s’attachent généralement à des fichiers légitimes et se répliquent lors
+de leur exécution, entraînant des dysfonctionnements ou la corruption de données. Les vers
+informatiques se distinguent par leur capacité à se propager automatiquement à travers les
+réseaux sans intervention humaine. Les chevaux de Troie, quant à eux, se présentent comme des
+logiciels légitimes ou utiles tout en dissimulant des fonctionnalités malveillantes.
 </p>
 
 <p>
-    Les ransomwares représentent aujourd’hui une menace majeure. Ils chiffrent les données de la
-    victime et exigent le paiement d’une rançon en échange de la clé de déchiffrement. Ce type
-    d’attaque peut paralyser totalement une organisation et entraîner des pertes financières
-    importantes ainsi qu’une interruption des services essentiels.
+Les ransomwares représentent aujourd’hui une menace majeure. Ils chiffrent les données de la
+victime et exigent le paiement d’une rançon en échange de la clé de déchiffrement. Ce type
+d’attaque peut paralyser totalement une organisation et entraîner des pertes financières
+importantes ainsi qu’une interruption des services essentiels.
 </p>
 
 <p>
-    L’ingénierie sociale constitue une autre forme d’attaque particulièrement efficace. Elle repose
-    sur la manipulation psychologique des utilisateurs afin de les inciter à divulguer des
-    informations confidentielles ou à effectuer des actions dangereuses. Le phishing, par exemple,
-    consiste à envoyer des messages frauduleux imitant des entités de confiance pour tromper les
-    victimes.
+L’ingénierie sociale constitue une autre forme d’attaque particulièrement efficace. Elle repose
+sur la manipulation psychologique des utilisateurs afin de les inciter à divulguer des
+informations confidentielles ou à effectuer des actions dangereuses. Le phishing, par exemple,
+consiste à envoyer des messages frauduleux imitant des entités de confiance pour tromper les
+victimes.
 </p>
 
 <p>
-    Les attaques par déni de service, connues sous le nom d’attaques DDoS, visent à rendre un service
-    ou un site web indisponible en le surchargeant de requêtes. Bien qu’elles ne ciblent pas
-    directement les données, elles peuvent perturber gravement les activités et nuire à la
-    réputation d’une organisation.
+Les attaques par déni de service, connues sous le nom d’attaques DDoS, visent à rendre un service
+ou un site web indisponible en le surchargeant de requêtes. Bien qu’elles ne ciblent pas
+directement les données, elles peuvent perturber gravement les activités et nuire à la
+réputation d’une organisation.
 </p>
 
 <p>
-    Comprendre les différentes menaces et attaques informatiques est essentiel pour mieux s’en
-    protéger. Ce module permet à l’apprenant de reconnaître les principaux types d’attaques, d’en
-    comprendre les mécanismes et d’adopter une vigilance accrue face aux risques numériques, en
-    préparation des modules consacrés aux solutions et aux mesures de protection.
+Comprendre les différentes menaces et attaques informatiques est essentiel pour mieux s’en
+protéger. Ce module permet à l’apprenant de reconnaître les principaux types d’attaques, d’en
+comprendre les mécanismes et d’adopter une vigilance accrue face aux risques numériques, en
+préparation des modules consacrés aux solutions et aux mesures de protection.
 </p>
 
 <div class="qcm" data-group="g2">
@@ -232,55 +234,55 @@ pour aborder les modules suivants de la formation.
 <div class="module">
 <h2>Module 3 :Mesures de protection et bonnes pratiques</h2>
 <p>
-    Face à la multiplication des menaces numériques, la mise en place de mesures de protection
-    adaptées est indispensable pour garantir la sécurité des systèmes informatiques et des données.
-    Ces mesures combinent des solutions techniques, des règles organisationnelles et des
-    comportements responsables de la part des utilisateurs.
+Face à la multiplication des menaces numériques, la mise en place de mesures de protection
+adaptées est indispensable pour garantir la sécurité des systèmes informatiques et des données.
+Ces mesures combinent des solutions techniques, des règles organisationnelles et des
+comportements responsables de la part des utilisateurs.
 </p>
 
 <p>
-    L’une des premières mesures de protection consiste à contrôler l’accès aux systèmes et aux
-    informations. L’utilisation de mots de passe forts, uniques et régulièrement renouvelés permet
-    de limiter les risques d’intrusion. L’authentification à plusieurs facteurs renforce cette
-    protection en ajoutant une couche de sécurité supplémentaire, réduisant considérablement les
-    risques liés au vol de mots de passe.
+L’une des premières mesures de protection consiste à contrôler l’accès aux systèmes et aux
+informations. L’utilisation de mots de passe forts, uniques et régulièrement renouvelés permet
+de limiter les risques d’intrusion. L’authentification à plusieurs facteurs renforce cette
+protection en ajoutant une couche de sécurité supplémentaire, réduisant considérablement les
+risques liés au vol de mots de passe.
 </p>
 
 <p>
-    La mise à jour régulière des systèmes d’exploitation, des logiciels et des applications joue un
-    rôle essentiel dans la cybersécurité. Les mises à jour corrigent des vulnérabilités connues qui
-    pourraient être exploitées par des attaquants. Négliger ces mises à jour expose les systèmes à
-    des attaques évitables.
+La mise à jour régulière des systèmes d’exploitation, des logiciels et des applications joue un
+rôle essentiel dans la cybersécurité. Les mises à jour corrigent des vulnérabilités connues qui
+pourraient être exploitées par des attaquants. Négliger ces mises à jour expose les systèmes à
+des attaques évitables.
 </p>
 
 <p>
-    Les solutions de sécurité telles que les antivirus, les pare-feu et les systèmes de détection
-    d’intrusion permettent de surveiller les activités suspectes et de bloquer les menaces avant
-    qu’elles ne causent des dommages. Dans les environnements professionnels, ces outils sont
-    souvent complétés par des mécanismes plus avancés, comme les réseaux privés virtuels et les
-    systèmes de surveillance centralisée.
+Les solutions de sécurité telles que les antivirus, les pare-feu et les systèmes de détection
+d’intrusion permettent de surveiller les activités suspectes et de bloquer les menaces avant
+qu’elles ne causent des dommages. Dans les environnements professionnels, ces outils sont
+souvent complétés par des mécanismes plus avancés, comme les réseaux privés virtuels et les
+systèmes de surveillance centralisée.
 </p>
 
 <p>
-    La sauvegarde régulière des données constitue une mesure de protection fondamentale. En cas
-    d’incident, de panne ou d’attaque par ransomware, disposer de sauvegardes à jour permet de
-    restaurer rapidement les informations sans céder aux exigences des attaquants. Ces sauvegardes
-    doivent être stockées dans des emplacements sécurisés et séparés du système principal.
+La sauvegarde régulière des données constitue une mesure de protection fondamentale. En cas
+d’incident, de panne ou d’attaque par ransomware, disposer de sauvegardes à jour permet de
+restaurer rapidement les informations sans céder aux exigences des attaquants. Ces sauvegardes
+doivent être stockées dans des emplacements sécurisés et séparés du système principal.
 </p>
 
 <p>
-    Le facteur humain reste un élément clé de la cybersécurité. La sensibilisation et la formation
-    des utilisateurs aux risques numériques permettent de réduire considérablement les incidents
-    liés à l’ingénierie sociale. Adopter des comportements prudents, tels que vérifier l’origine
-    des messages, éviter les liens suspects et respecter les règles de sécurité, contribue
-    efficacement à la protection globale des systèmes.
+Le facteur humain reste un élément clé de la cybersécurité. La sensibilisation et la formation
+des utilisateurs aux risques numériques permettent de réduire considérablement les incidents
+liés à l’ingénierie sociale. Adopter des comportements prudents, tels que vérifier l’origine
+des messages, éviter les liens suspects et respecter les règles de sécurité, contribue
+efficacement à la protection globale des systèmes.
 </p>
 
 <p>
-    Ce module met en évidence l’importance d’une approche globale de la cybersécurité, combinant
-    technologie, organisation et responsabilité individuelle. Il prépare l’apprenant à comprendre
-    et à appliquer les principes de base de la protection numérique avant d’aborder des notions
-    plus avancées dans les modules suivants.</p>
+Ce module met en évidence l’importance d’une approche globale de la cybersécurité, combinant
+technologie, organisation et responsabilité individuelle. Il prépare l’apprenant à comprendre
+et à appliquer les principes de base de la protection numérique avant d’aborder des notions
+plus avancées dans les modules suivants.</p>
 
 <div class="qcm" data-group="g3">
 <h3>QCM Module 3 </h3>
