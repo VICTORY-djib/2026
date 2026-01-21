@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Déverrouillage sécurisé + QCM</title>
+<title>EVALUATION.COM</title>
 <style>
 body{
     margin:0;
@@ -53,8 +53,8 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 
 <header>
     <nav>
-        <a href="index.html">HOME👨🏽‍💻</a>
-        <a href="cours.html">>Cyber-Sécurité📖</a>
+        <a href="index.html">home👨🏽‍💻</a>
+        <a href="cours.html">Cyber-Sécurité📖</a>
         <a href="reseau.html">reseau-informatique📖</a>
         <a class="active" href="#">Evaluation1📝</a>
     </nav>
@@ -65,6 +65,19 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
     <h2>Déverrouillage</h2>
     <input type="password" id="pin" placeholder="••••">
     <button id="btn" onclick="unlock()">Déverrouiller</button>
+
+<script>
+function unlock(){
+    alert("Déverrouillé !");
+}
+
+// Déclenchement avec la touche Entrée
+document.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        unlock();
+    }
+});
+</script>
     <div class="msg" id="lock-msg"></div>
 </div>
 
