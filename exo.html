@@ -95,27 +95,57 @@ document.addEventListener("keydown", function(event){
 
 <script>
 const PIN_CORRECT = "2026";
-let tentativesActuelles = 0;  // Tentatives actuelles
-let essaisScores = [];         // Scores enregistrés
+const PUK_CORRECT = "999999";
 const MAX_TENTATIVES = 3;
 
+let tentatives = 0;
+let etape = "PIN"; // PIN | PUK
 function unlock() {
     const pin = document.getElementById("pin").value;
     const msg = document.getElementById("lock-msg");
-    if (pin === PIN_CORRECT) {
-        msg.style.color = "#00ff9d";
-        msg.textContent = "✔ Accès autorisé";
-        tentativesActuelles++;
-        setTimeout(() => {
-            document.getElementById("lock-screen").style.display = "none";
-            document.getElementById("quiz-screen").style.display = "block";
-            startQuiz();
-        }, 300);
-    } else {
-        msg.style.color = "#ff4d4d";
-        msg.textContent = "❌ PIN incorrect";
+    if(etape === "PIN"){
+        if(valeur === PIN_CORRECT){
+            msg.style.color = "#00ff9d";
+            msg.textContent = "✔ PIN correct, accès autorisé";
+
+            tentatives = 0;
+
+            setTimeout(() => {
+                document.getElementById("lock-screen").style.display = "none";
+                document.getElementById("quiz-screen").style.display = "block";
+                startQuiz();   // 🔓 OUVERTURE DE LA PAGE
+            }, 300);
+        } 
+        else {
+            tentatives++;
+            msg.style.color = "#ff4d4d";
+            msg.textContent = ❌ PIN incorrect (${tentatives}/${MAX_TENTATIVES});
+
+            if(tentatives >= MAX_TENTATIVES){
+                etape = "PUK";
+                msg.style.color = "#ffcc00";
+                msg.textContent = "🔒 Trop de tentatives. Entrez le PUK";
+                input.placeholder = "Entrer le PUK";
+            }
+        }
     }
-    document.getElementById("pin").value = "";
+
+    /* ===== ÉTAPE PUK ===== */
+    else if(etape === "PUK"){
+        if(valeur === PUK_CORRECT){
+            etape = "PIN";
+            tentatives = 0;
+
+            msg.style.color = "#00c6ff";
+            msg.textContent = "🔓 PUK correct. Entrez votre PIN";
+            input.placeholder = "Entrer le PIN";
+        } else {
+            msg.style.color = "#ff4d4d";
+            msg.textContent = "❌ PUK incorrect";
+        }
+    }
+
+    input.value = "";
 }
 
 function relock(reason = "") {
