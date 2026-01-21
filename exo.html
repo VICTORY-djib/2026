@@ -171,6 +171,11 @@ document.addEventListener("visibilitychange", () => {
         relock("🔐 Changement d’onglet détecté");
     }
 });
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden && document.getElementById("quiz-screen").style.display === "block") {
+        relock("🔐 Changement d’onglet détecté");
+    }
+});
 /* ===== QCM QUESTIONS ===== */
 const questions=[
 {q:"Quel mécanisme permet de garantir que les données n'ont pas été altérées ?", o:["Chiffrement symétrique","Hashing et intégrité via HMAC","VPN"], a:1},
