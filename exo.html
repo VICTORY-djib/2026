@@ -95,7 +95,7 @@ document.addEventListener("keydown", function(event){
 
 <script>
 const PIN_CORRECT = "2026";
-const PUK_CORRECT = "999999";
+const PUK_CORRECT = "253";
 const MAX_TENTATIVES = 3;
 
 let tentatives = 0;
@@ -143,9 +143,6 @@ function unlock() {
             msg.style.color = "#ff4d4d";
             msg.textContent = "❌ PUK incorrect";
         }
-    }
-
-    input.value = "";
 }
 
 function relock(reason = "") {
