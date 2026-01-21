@@ -81,88 +81,45 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 </div>
 
 <script>
-const PIN_CORRECT = "2026"; // Ton PIN initial
-const PUK_CORRECT = "253";  // Ton PUK
+const PIN_CORRECT = "2026";
+let tentativesActuelles = 0;  // Tentatives actuelles
+let essaisScores = [];         // Scores enregistrés
 const MAX_TENTATIVES = 3;
 
-let tentatives = 0;       // Compteur de tentatives PIN
-let etape = "PIN";        // "PIN" ou "PUK"
-
-// Fonction principale
-function unlock(){
-    const input = document.getElementById("pin");
+function unlock() {
+    const pin = document.getElementById("pin").value;
     const msg = document.getElementById("lock-msg");
-    const valeur = input.value;
-
-    /* ===== ÉTAPE PIN ===== */
-    if(etape === "PIN"){
-        if(valeur === PIN_CORRECT){
-            msg.style.color = "#00ff9d";
-            msg.textContent = "✔ PIN correct, accès autorisé";
-            tentatives = 0;
-
-            setTimeout(() => {
-                document.getElementById("lock-screen").style.display = "none";
-                document.getElementById("quiz-screen").style.display = "block";
-                if(typeof startQuiz === "function"){ startQuiz(); }
-            }, 300);
-        } else {
-            tentatives++;
-            msg.style.color = "#ff4d4d";
-            msg.textContent = `❌ PIN incorrect (${tentatives}/${MAX_TENTATIVES})`;
-
-            if(tentatives >= MAX_TENTATIVES){
-                etape = "PUK";
-                msg.style.color = "#ffcc00";
-                msg.textContent = "🔒 Trop de tentatives. Entrez le PUK";
-                input.placeholder = "Entrer le PUK";
-            }
-        }
+    if (pin === PIN_CORRECT) {
+        msg.style.color = "#00ff9d";
+        msg.textContent = "✔ Accès autorisé";
+        tentativesActuelles++;
+        setTimeout(() => {
+            document.getElementById("lock-screen").style.display = "none";
+            document.getElementById("quiz-screen").style.display = "block";
+            startQuiz();
+        }, 300);
+    } else {
+        msg.style.color = "#ff4d4d";
+        msg.textContent = "❌ PIN incorrect";
     }
-
-    /* ===== ÉTAPE PUK ===== */
-    else if(etape === "PUK"){
-        if(valeur === PUK_CORRECT){
-            etape = "PIN";       // Retour au PIN
-            tentatives = 0;      // réinitialisation des tentatives
-            msg.style.color = "#00c6ff";
-            msg.textContent = "🔓 PUK correct. Entrez votre PIN";
-            input.placeholder = "••••"; // PIN
-        } else {
-            msg.style.color = "#ff4d4d";
-            msg.textContent = "❌ PUK incorrect";
-        }
-    }
-
-    input.value = "";
+    document.getElementById("pin").value = "";
 }
 
-// Déclenchement avec la touche Entrée
-document.addEventListener("keydown", function(event){
-    if(event.key === "Enter"){
-        unlock();
-    }
-});
-
-// Re-verrouillage si l'utilisateur change d'onglet ou quitte
-document.addEventListener("visibilitychange", () => {
-    if(document.hidden && document.getElementById("quiz-screen").style.display === "block"){
-        document.getElementById("quiz-screen").style.display = "none";
-        document.getElementById("lock-screen").style.display = "block";
-        document.getElementById("lock-msg").style.color = "#ffcc00";
-        document.getElementById("lock-msg").textContent = "🔐 Changement d’onglet détecté";
-        document.getElementById("pin").value = "";
-    }
-});
-
-window.addEventListener("beforeunload", () => {
+function relock(reason = "") {
+    clearInterval(timerInterval);
     document.getElementById("quiz-screen").style.display = "none";
     document.getElementById("lock-screen").style.display = "block";
     document.getElementById("lock-msg").style.color = "#ffcc00";
-    document.getElementById("lock-msg").textContent = "🔐 Vous avez quitté la page";
+    document.getElementById("lock-msg").textContent = reason || "🔐 Session verrouillée";
     document.getElementById("pin").value = "";
+}
+
+window.addEventListener("beforeunload", () => { relock("🔐 Vous avez quitté la page"); });
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden && document.getElementById("quiz-screen").style.display === "block") {
+        relock("🔐 Changement d’onglet détecté");
+    }
 });
-</script>
 /* ===== QCM QUESTIONS ===== */
 const questions=[
 {q:"Quel mécanisme permet de garantir que les données n'ont pas été altérées ?", o:["Chiffrement symétrique","Hashing et intégrité via HMAC","VPN"], a:1},
