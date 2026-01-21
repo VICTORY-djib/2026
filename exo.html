@@ -65,23 +65,10 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
     <h2>Déverrouillage</h2>
     <input type="password" id="pin" placeholder="••••">
     <button id="btn" onclick="unlock()">Déverrouiller</button>
-
-<script>
-function unlock(){
-    alert("Déverrouillé !");
-}
-
-// Déclenchement avec la touche Entrée
-document.addEventListener("keydown", function(event){
-    if(event.key === "Enter"){
-        unlock();
-    }
-});
-</script>
     <div class="msg" id="lock-msg"></div>
 </div>
 
-<div id="quiz-screen">
+<div id="quiz-screen" style="display:none;">
     <h1>QCM Cybersécurité</h1>
     <div class="top-bar">
         <div class="progress" id="progress"></div>
@@ -117,10 +104,9 @@ function unlock(){
             setTimeout(() => {
                 document.getElementById("lock-screen").style.display = "none";
                 document.getElementById("quiz-screen").style.display = "block";
-                startQuiz();   // 🔓 OUVERTURE DE LA PAGE
+                if(typeof startQuiz === "function"){ startQuiz(); } // ouvre le quiz
             }, 300);
-        } 
-        else {
+        } else {
             tentatives++;
             msg.style.color = "#ff4d4d";
             msg.textContent = `❌ PIN incorrect (${tentatives}/${MAX_TENTATIVES})`;
@@ -137,9 +123,8 @@ function unlock(){
     /* ===== ÉTAPE PUK ===== */
     else if(etape === "PUK"){
         if(valeur === PUK_CORRECT){
-            etape = "PIN";
-            tentatives = 0;
-
+            etape = "PIN";       // 🔁 Retour au PIN
+            tentatives = 0;      // réinitialisation des tentatives
             msg.style.color = "#00c6ff";
             msg.textContent = "🔓 PUK correct. Entrez votre PIN";
             input.placeholder = "Entrer le PIN";
@@ -151,6 +136,13 @@ function unlock(){
 
     input.value = "";
 }
+
+// ===== Déclenchement avec la touche Entrée =====
+document.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        unlock();
+    }
+});
 </script>
 /* ===== QCM QUESTIONS ===== */
 const questions=[
