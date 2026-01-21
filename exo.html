@@ -100,11 +100,14 @@ const MAX_TENTATIVES = 3;
 
 let tentatives = 0;
 let etape = "PIN"; // PIN | PUK
+
 function unlock() {
-    const pin = document.getElementById("pin").value;
+    const input = document.getElementById("pin");
+    const valeur = input.value;
     const msg = document.getElementById("lock-msg");
-    if(etape === "PIN"){
-        if(valeur === PIN_CORRECT){
+
+    if (etape === "PIN") {
+        if (valeur === PIN_CORRECT) {
             msg.style.color = "#00ff9d";
             msg.textContent = "✔ PIN correct, accès autorisé";
 
@@ -113,47 +116,56 @@ function unlock() {
             setTimeout(() => {
                 document.getElementById("lock-screen").style.display = "none";
                 document.getElementById("quiz-screen").style.display = "block";
-                startQuiz();   // 🔓 OUVERTURE DE LA PAGE
+                startQuiz(); // 🔓 OUVERTURE DE LA PAGE
             }, 300);
-        } 
-        else {
+
+        } else {
             tentatives++;
             msg.style.color = "#ff4d4d";
-            msg.textContent = ❌ PIN incorrect (${tentatives}/${MAX_TENTATIVES});
+            msg.textContent = `❌ PIN incorrect (${tentatives}/${MAX_TENTATIVES})`;
 
-            if(tentatives >= MAX_TENTATIVES){
+            if (tentatives >= MAX_TENTATIVES) {
                 etape = "PUK";
                 msg.style.color = "#ffcc00";
                 msg.textContent = "🔒 Trop de tentatives. Entrez le PUK";
                 input.placeholder = "Entrer le PUK";
+                input.value = "";
             }
         }
     }
 
-    /* ===== ÉTAPE PUK ===== */
-    else if(etape === "PUK"){
-        if(valeur === PUK_CORRECT){
+    // ===== ÉTAPE PUK =====
+    else if (etape === "PUK") {
+        if (valeur === PUK_CORRECT) {
             etape = "PIN";
             tentatives = 0;
-
             msg.style.color = "#00c6ff";
             msg.textContent = "🔓 PUK correct. Entrez votre PIN";
             input.placeholder = "Entrer le PIN";
+            input.value = "";
         } else {
             msg.style.color = "#ff4d4d";
             msg.textContent = "❌ PUK incorrect";
-        };
+        }
+    }
+}
 
+// ===== Fonction pour verrouiller à nouveau =====
 function relock(reason = "") {
-    clearInterval(timerInterval);
+    // clearInterval(timerInterval); // si tu as un timer
     document.getElementById("quiz-screen").style.display = "none";
     document.getElementById("lock-screen").style.display = "block";
-    document.getElementById("lock-msg").style.color = "#ffcc00";
-    document.getElementById("lock-msg").textContent = reason || "🔐 Session verrouillée";
+    const msg = document.getElementById("lock-msg");
+    msg.style.color = "#ffcc00";
+    msg.textContent = reason || "🔐 Session verrouillée";
     document.getElementById("pin").value = "";
 }
 
-window.addEventListener("beforeunload", () => { relock("🔐 Vous avez quitté la page"); });
+// ===== Détection fermeture onglet / changement de visibilité =====
+window.addEventListener("beforeunload", () => {
+    relock("🔐 Vous avez quitté la page");
+});
+
 document.addEventListener("visibilitychange", () => {
     if (document.hidden && document.getElementById("quiz-screen").style.display === "block") {
         relock("🔐 Changement d’onglet détecté");
