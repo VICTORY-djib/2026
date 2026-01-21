@@ -65,6 +65,19 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
     <h2>Déverrouillage</h2>
     <input type="password" id="pin" placeholder="••••">
     <button id="btn" onclick="unlock()">Déverrouiller</button>
+
+<script>
+function unlock(){
+    alert("Déverrouillé !");
+}
+
+// Déclenchement avec la touche Entrée
+document.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        unlock();
+    }
+});
+</script>
     <div class="msg" id="lock-msg"></div>
 </div>
 
