@@ -1002,7 +1002,7 @@ function verifierGroupe(btn){
             radios.forEach(r => r.disabled = true);
         } else {
             const reste = tentativesMax - qcm.dataset.tentatives;
-            resultDiv.textContent = "CORRECTION QCM CORRET✅VS INCORRECT❌ "
+            resultDiv.textContent = "CORRECTION QCM "
             resultDiv.className = "result wrong";
 
             if(qcm.dataset.tentatives >= tentativesMax){
