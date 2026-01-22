@@ -251,12 +251,19 @@ const questions=[
 {q:"Attaque saturant mémoire ou ressource ?", o:["Buffer Overflow","DDoS","MITM"], a:1},
 ]
 
-// --- Variables ---
-let current=0, score=0, timeLeft=900, timerInterval;
-let tentativesActuelles=1, MAX_TENTATIVES=3;
-let essaisScores=[];
+function shuffleOptions() {
+    questions.forEach(q => {
+        let correctAnswer = q.o[q.a];
+        for (let i = q.o.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [q.o[i], q.o[j]] = [q.o[j], q.o[i]];
+        }
+         q.a = q.o.indexOf(correctAnswer);
+    });
+}
 
-// --- Mélange questions ---
+let current=0, score=0, timeLeft=900, timerInterval;
+
 function shuffleQuestions(array){
     for(let i=array.length-1;i>0;i--){
         const j=Math.floor(Math.random()*(i+1));
@@ -264,62 +271,42 @@ function shuffleQuestions(array){
     }
 }
 
-// --- Mélange options et met à jour l'index correct ---
-function shuffleOptions(){
-    questions.forEach(q=>{
-        let correctAnswer=q.o[q.a];
-        for(let i=q.o.length-1;i>0;i--){
-            const j=Math.floor(Math.random()*(i+1));
-            [q.o[i],q.o[j]]=[q.o[j],q.o[i]];
-        }
-        q.a=q.o.indexOf(correctAnswer);
-    });
-}
-
-// --- Démarrage du quiz ---
 function startQuiz(){
-    current=0; score=0; timeLeft=900;
+    current = 0; score = 0; timeLeft = 900;
     shuffleQuestions(questions);
     shuffleOptions();
     document.getElementById("result").innerHTML="";
     document.getElementById("restart").style.display="none";
-    document.getElementById("quiz-screen").style.display="block";
-    document.getElementById("lock-screen").style.display="none";
     startTimer();
     showQuestion();
 }
 
-// --- Timer ---
 function startTimer(){
     clearInterval(timerInterval);
     timerInterval=setInterval(()=>{
         let m=Math.floor(timeLeft/60);
         let s=timeLeft%60;
-        document.getElementById("timer").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+        document.getElementById("timer").textContent=${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")};
         timeLeft--;
-        if(timeLeft<0){ endQuiz(); }
+        if(timeLeft<0){ relock("⏱ Temps écoulé – examen terminé"); }
     },1000);
 }
 
-// --- Affiche question ---
 function showQuestion(){
     if(current>=questions.length){ endQuiz(); return; }
-    document.getElementById("progress").textContent=`Question ${current+1} / ${questions.length}`;
+    document.getElementById("progress").textContent=Question ${current+1} / ${questions.length};
     let q=questions[current];
-    let html=`<div class="question">${q.q}</div><div id="options">`;
-    q.o.forEach((opt,i)=>{ html+=`<button onclick="answer(${i},this)">${opt}</button>`; });
-    html+="</div>";
+    let html=<div class="question">${q.q}</div>;
+    q.o.forEach((opt,i)=>{html+=<button class="option" onclick="answer(${i},this)">${opt}</button>;});
     document.getElementById("quiz").innerHTML=html;
 }
 
-// --- Réponse ---
 function answer(val,btn){
     let correct=questions[current].a;
     if(val===correct){ btn.classList.add("correct"); score++; } else { btn.classList.add("wrong"); }
-    document.querySelectorAll("#options button").forEach(b=>b.disabled=true);
+    document.querySelectorAll(".option").forEach(b=>b.disabled=true);
     setTimeout(()=>{ current++; showQuestion(); },700);
 }
-
 // --- Note stylée ---
 function showStyledNote(note){
     let msg="", colorClass="";
@@ -332,7 +319,6 @@ function showStyledNote(note){
     resultBox.innerHTML=`Tentative ${tentativesActuelles} : ${note}/20 → ${msg}`;
     resultBox.className=`result-box ${colorClass}`;
 }
-
 // --- Fin du quiz ---
 function endQuiz(){
     clearInterval(timerInterval);
