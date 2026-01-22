@@ -54,7 +54,6 @@ header nav a:hover{
     display:flex;
     align-items:center;
     justify-content:space-around;
-    padding-top:80px;
 }
 
 /* ================= HERO LEFT ================= */
@@ -93,13 +92,6 @@ header nav a:hover{
     box-shadow:0 20px 45px rgba(0,0,0,0.45);
     color:white;
     animation:fadeIn 0.6s ease;
-    margin:40px auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.gmail-card:hover{
-    transform:scale(1.02);
-    opacity:1;
 }
 
 .gmail-header{
@@ -122,17 +114,34 @@ header nav a:hover{
     text-align:center;
 }
 
-.gmail-card input{
+.gmail-btn{
+    display:block;
     width:100%;
-    padding:10px;
-    margin-bottom:12px;
-    border-radius:10px;
-    border:none;
-    outline:none;
+    padding:13px 0;
+    text-align:center;
+    background:linear-gradient(135deg,#ea4335,#c5221f);
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
     transition:0.3s;
 }
 
-.gmail-card input:focus{
-    box-shadow:0 0 8px #00b4ff;
+.gmail-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 35px rgba(234,67,53,0.55);
 }
 
+/* ================= ANIMATION ================= */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(15px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        padding-top:120px;
+    }
+}
