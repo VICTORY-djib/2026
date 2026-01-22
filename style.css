@@ -10,53 +10,52 @@ body {
     min-height: 100vh;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
-    position:fixed;
-    top:10px;
-    left:50%;
+    position:fixed;              
+    top:10px;                    
+    left:50%;                    
     transform:translateX(-50%);
-    background:rgba(37, 99, 235, 0.75);   /* transparence */
+    background:rgba(37, 99, 235, 0.85); 
     backdrop-filter: blur(14px);
-    padding:12px 24px;
-    border-radius:40px;
+    padding:6px 24px;           /* très peu de hauteur pour le header */
+    border-radius:25px;          
     border:1px solid rgba(255,255,255,0.25);
-    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+    box-shadow:0 5px 15px rgba(0,0,0,0.25);
     z-index:1000;
     transition:all 0.3s ease;
 }
 
-/* NAV */
+/* ===== NAV ===== */
 header nav{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:12px;                   
 }
 
-/* LIENS */
+/* ===== LIENS ===== */
 header nav a{
-   color:white;
+    color:white;
     text-decoration:none;
-    padding:9px 20px;        /* ⬅️ équilibre : court + un peu long */
-    border-radius:22px;
-    font-size:14.5px;
+    padding:2px 18px;           /* ✅ très court verticalement, largeur conservée */
+    border-radius:20px;
+    font-size:14px;
     font-weight:600;
-    letter-spacing:0.3px;
     white-space:nowrap;
-    transition:all 0.3s ease;
+    transition:all 0.25s ease;
 }
 
-/* SURVOL */
+/* ===== SURVOL ===== */
 header nav a:hover{
     background:rgba(255,255,255,0.25);
-    transform:translateY(-2px);
+    transform:translateY(-1px);
 }
 
-/* LIEN ACTIF */
+/* ===== LIEN ACTIF ===== */
 header nav a.active{
     background:white;
     color:#2563eb;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
 
 /* HERO SECTION */
