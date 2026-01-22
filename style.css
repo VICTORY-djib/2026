@@ -13,13 +13,13 @@ body {
 /* ===== HEADER ===== */
 header{
     position:fixed;              
-    top:10px;                    
+    top:0;                        /* colle en haut de la page */
     left:50%;                    
     transform:translateX(-50%);
     background:rgba(37, 99, 235, 0.85); 
     backdrop-filter: blur(14px);
-    padding:6px 24px;           /* très peu de hauteur pour le header */
-    border-radius:25px;          
+    padding:6px 24px;           /* cadre court verticalement */
+    border-radius:0 0 25px 25px; /* arrondi uniquement en bas */
     border:1px solid rgba(255,255,255,0.25);
     box-shadow:0 5px 15px rgba(0,0,0,0.25);
     z-index:1000;
@@ -37,7 +37,7 @@ header nav{
 header nav a{
     color:white;
     text-decoration:none;
-    padding:2px 18px;           /* ✅ très court verticalement, largeur conservée */
+    padding:2px 18px;           /* très court verticalement, largeur conservée */
     border-radius:20px;
     font-size:14px;
     font-weight:600;
