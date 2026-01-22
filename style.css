@@ -1,255 +1,99 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
-body {
-    background: linear-gradient(to right, #0b6fc2, #00aaff);
-    min-height: 100vh;
+body{
+    background:linear-gradient(to right,#0b6fc2,#00aaff);
+    min-height:100vh;
 }
 
-/* HEADER FLOTTANT TRANSPARENT */
+/* ================= HEADER ================= */
 header{
     position:fixed;
     top:10px;
     left:50%;
     transform:translateX(-50%);
-    background:rgba(37, 99, 235, 0.75);   /* transparence */
-    backdrop-filter: blur(14px);
+    background:rgba(37,99,235,0.75);
+    backdrop-filter:blur(14px);
     padding:12px 24px;
     border-radius:40px;
     border:1px solid rgba(255,255,255,0.25);
     box-shadow:0 8px 25px rgba(0,0,0,0.25);
     z-index:1000;
-    transition:all 0.3s ease;
 }
 
-/* NAV */
 header nav{
     display:flex;
-    align-items:center;
     gap:12px;
 }
 
-/* LIENS */
 header nav a{
-   color:white;
+    color:white;
     text-decoration:none;
-    padding:9px 20px;        /* ⬅️ équilibre : court + un peu long */
+    padding:9px 20px;
     border-radius:22px;
     font-size:14.5px;
     font-weight:600;
-    letter-spacing:0.3px;
-    white-space:nowrap;
-    transition:all 0.3s ease;
+    transition:0.3s;
 }
 
-/* SURVOL */
 header nav a:hover{
     background:rgba(255,255,255,0.25);
     transform:translateY(-2px);
 }
 
-/* LIEN ACTIF */
-header nav a.active{
-    background:white;
-    color:#2563eb;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* ===== HERO SECTION FULL SCREEN ===== */
+/* ================= HERO ================= */
 .hero{
-    position: relative;
-    height: 100vh;                     /* prend toute la hauteur de la page */
-    width: 100vw;                      /* prend toute la largeur de la page */
-    background: url("hacker.png.PNG") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;           /* centre le contenu horizontalement */
-}
-
-/* ===== CONTENU HERO ===== */
-.hero-right {
-    max-width: 500px;
-    color: white;
-    text-align: center;               /* centre le texte */
-}
-
-.hero-right h1 {
-    font-size: 34px;
-    margin-bottom: 20px;
-}
-
-.hero-right p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #cfd8ff;
-}
-
-.hero-right button {
-    margin-top: 25px;
-    padding: 12px 28px;
-    background: #00b4ff;
-    border: none;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* ===== DOTS INDICATEURS ===== */
-.dots {
-    margin-top: 30px;
-}
-
-.dots span {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #00b4ff;
-    border-radius: 50%;
-    margin-right: 8px;
-    opacity: 0.5;
-}
-.dots span:first-child {
-    opacity: 1;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: linear-gradient(to right, #0b6fc2, #00aaff);
-    min-height: 100vh;
-}
-
-/* HEADER FLOTTANT TRANSPARENT */
-header{
-    position:fixed;
-    top:10px;
-    left:50%;
-    transform:translateX(-50%);
-    background:rgba(37, 99, 235, 0.75);   /* transparence */
-    backdrop-filter: blur(14px);
-    padding:12px 24px;
-    border-radius:40px;
-    border:1px solid rgba(255,255,255,0.25);
-    box-shadow:0 8px 25px rgba(0,0,0,0.25);
-    z-index:1000;
-    transition:all 0.3s ease;
-}
-
-/* NAV */
-header nav{
+    height:100vh;
+    width:100vw;
+    background:url("hacker.png.PNG") center/cover no-repeat;
     display:flex;
     align-items:center;
-    gap:12px;
+    justify-content:space-around;
 }
 
-/* LIENS */
-header nav a{
-   color:white;
-    text-decoration:none;
-    padding:9px 20px;        /* ⬅️ équilibre : court + un peu long */
-    border-radius:22px;
-    font-size:14.5px;
-    font-weight:600;
-    letter-spacing:0.3px;
-    white-space:nowrap;
-    transition:all 0.3s ease;
+/* ================= HERO LEFT ================= */
+.hero-left{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-/* SURVOL */
-header nav a:hover{
-    background:rgba(255,255,255,0.25);
-    transform:translateY(-2px);
+/* ================= HERO RIGHT ================= */
+.hero-right{
+    max-width:500px;
+    color:white;
+    text-align:center;
 }
 
-/* LIEN ACTIF */
-header nav a.active{
-    background:white;
-    color:#2563eb;
-    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+.hero-right h1{
+    font-size:34px;
+    margin-bottom:20px;
 }
 
-/* ===== HERO SECTION FULL SCREEN ===== */
-.hero{
-    position: relative;
-    height: 100vh;                     /* prend toute la hauteur de la page */
-    width: 100vw;                      /* prend toute la largeur de la page */
-    background: url("hacker.png.PNG") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;           /* centre le contenu horizontalement */
+.hero-right p{
+    font-size:16px;
+    line-height:1.7;
+    color:#cfd8ff;
 }
 
-/* ===== CONTENU HERO ===== */
-.hero-right {
-    max-width: 500px;
-    color: white;
-    text-align: center;               /* centre le texte */
-}
-
-.hero-right h1 {
-    font-size: 34px;
-    margin-bottom: 20px;
-}
-
-.hero-right p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #cfd8ff;
-}
-
-.hero-right button {
-    margin-top: 25px;
-    padding: 12px 28px;
-    background: #00b4ff;
-    border: none;
-    color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* ===== DOTS INDICATEURS ===== */
-.dots {
-    margin-top: 30px;
-}
-
-.dots span {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #00b4ff;
-    border-radius: 50%;
-    margin-right: 8px;
-    opacity: 0.5;
-}
-.dots span:first-child {
-    opacity: 1;
-}
-/* ===== CARTE GMAIL CONNEXION ===== */
+/* ================= CARTE GMAIL ================= */
 .gmail-card{
     width:340px;
     padding:26px;
     background:rgba(255,255,255,0.10);
     backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
     border-radius:20px;
-    border:1px solid rgba(255,255,255,0.2);
+    border:1px solid rgba(255,255,255,0.22);
     box-shadow:0 20px 45px rgba(0,0,0,0.45);
-    color:#fff;
+    color:white;
     animation:fadeIn 0.6s ease;
 }
 
-/* HEADER */
 .gmail-header{
     display:flex;
     align-items:center;
@@ -261,18 +105,15 @@ header nav a.active{
 
 .gmail-header img{
     width:36px;
-    height:36px;
 }
 
-/* TEXTE */
 .gmail-card p{
     font-size:15px;
-    line-height:1.6;
     color:#dbe9ff;
     margin-bottom:22px;
+    text-align:center;
 }
 
-/* BOUTON */
 .gmail-btn{
     display:block;
     width:100%;
@@ -283,12 +124,24 @@ header nav a.active{
     color:white;
     text-decoration:none;
     font-weight:600;
-    letter-spacing:0.4px;
-    transition:all 0.3s ease;
-    box-shadow:0 12px 28px rgba(234,67,53,0.35);
+    transition:0.3s;
 }
 
 .gmail-btn:hover{
     transform:translateY(-3px);
     box-shadow:0 18px 35px rgba(234,67,53,0.55);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(15px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        padding-top:120px;
+    }
 }
