@@ -10,7 +10,7 @@ body{
     font-family:'Segoe UI',Tahoma,sans-serif;
     background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
-/* LOCK SCREEN */
+/* CENTRAGE DU LOCK SCREEN */
 #lock-screen{
     width:360px;
     padding:40px 30px;
@@ -20,35 +20,66 @@ body{
     box-shadow:0 20px 40px rgba(0,0,0,0.4);
     text-align:center;
     color:#fff;
-    position:absolute;
+    position: absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
+#lock-screen img{width:70px;margin-bottom:20px;}
 #lock-screen input{width:100%;padding:15px;border-radius:10px;border:none;margin-bottom:20px;font-size:16px;text-align:center;letter-spacing:4px;}
 #lock-screen button{width:100%;padding:14px;border:none;border-radius:10px;background:#00c6ff;font-weight:bold;cursor:pointer;}
 #lock-msg{margin-top:18px;height:18px;color:#fff;}
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{  
-    position:fixed;top:10px;left:50%;
+    position:fixed;
+    top:10px;
+    left:50%;
     transform:translateX(-50%);
-    background:rgba(37,99,235,0.75);
+    background:rgba(37, 99, 235, 0.75);   /* transparence */
     backdrop-filter: blur(14px);
-    padding:12px 24px;border-radius:40px;
+    padding:12px 24px;
+    border-radius:40px;
     border:1px solid rgba(255,255,255,0.25);
     box-shadow:0 8px 25px rgba(0,0,0,0.25);
-    z-index:1000; transition:all 0.3s ease;
+    z-index:1000;
+    transition:all 0.3s ease;
+    }
+
+/* ===== NAV ===== */
+header nav{
+    display:flex;
+    gap:12px;
+    justify-content:center;       /* centre les liens à l'intérieur */
 }
-header nav{display:flex;gap:12px;justify-content:center;}
-header nav a{color:white;text-decoration:none;padding:8px 20px;border-radius:999px;font-size:14.5px;font-weight:600;white-space:nowrap;transition:all 0.25s ease;}
-header nav a:hover{background:rgba(255,255,255,0.25);}
-header nav a.active{background:white;color:#2563eb;box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+
+/* ===== LIENS MENU ===== */
+header nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 20px;           /* court + un peu long */
+    border-radius:999px;
+    font-size:14.5px;
+    font-weight:600;
+    white-space:nowrap;
+    transition:all 0.25s ease;
+}
+
+/* ===== SURVOL ===== */
+header nav a:hover{
+    background:rgba(255,255,255,0.25);
+}
+
+/* ===== LIEN ACTIF ===== */
+header nav a.active{
+    background:white;
+    color:#2563eb;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+}
 header{background:#2563eb;color:white;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
 header nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500;}
 header nav a.active{text-decoration:underline;}
-
-/* QUIZ SCREEN */
 #quiz-screen{display:none;max-width:800px;width:90%;margin:40px auto;background:#fff;padding:30px;border-radius:16px;box-shadow:0 15px 40px rgba(0,0,0,.15);}
 h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
@@ -62,13 +93,6 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
 #result{text-align:center;font-size:24px;font-weight:700;margin-top:20px;}
 #restart{display:none;margin:25px auto 0;padding:12px 24px;font-size:18px;border:none;border-radius:999px;background:#2563eb;color:#fff;cursor:pointer;}
 #recent-scores{margin-top:20px;font-size:16px;color:#020617;text-align:center;}
-
-/* ESSAIS BOX */
-#attempts-box{display:flex;gap:14px;justify-content:center;margin:15px 0}
-.attempt{padding:10px 20px;border-radius:18px;background:rgba(255,255,255,.15);color:#fff;text-align:center;min-width:110px;cursor:pointer}
-.attempt small{display:block;font-size:13px}
-.attempt.active{background:#00ff9d;color:#000}
-.attempt.done{background:rgba(255,255,255,.08);color:#aaa;cursor:not-allowed;}
 </style>
 </head>
 <body>
@@ -89,7 +113,6 @@ h1{text-align:center;color:#2563eb;margin-bottom:10px;}
     <button id="btn" onclick="unlock()">Déverrouiller</button>
 
 <script>
-
 function unlock(){
     alert("Déverrouillé !");
 }
@@ -133,19 +156,20 @@ function unlock() {
         if (valeur === PIN_CORRECT) {
             msg.style.color = "#00ff9d";
             msg.textContent = "✔ PIN correct, accès autorisé";
+
             tentatives = 0;
 
             setTimeout(() => {
                 document.getElementById("lock-screen").style.display = "none";
                 document.getElementById("quiz-screen").style.display = "block";
-                startQuiz();
+                startQuiz(); // 🔓 OUVERTURE DE LA PAGE
             }, 300);
 
         } else {
             tentatives++;
             msg.style.color = "#ff4d4d";
             msg.textContent = `❌ PIN incorrect (${tentatives}/${MAX_TENTATIVES})`;
-
+ 
             if (tentatives >= MAX_TENTATIVES) {
                 etape = "PUK";
                 msg.style.color = "#ffcc00";
@@ -156,6 +180,7 @@ function unlock() {
         }
     }
 
+    // ===== ÉTAPE PUK =====
     else if (etape === "PUK") {
         if (valeur === PUK_CORRECT) {
             etape = "PIN";
@@ -171,32 +196,31 @@ function unlock() {
     }
 }
 
-// 🔐 Verrouillage propre
-function relock(reason = "🔐 Session verrouillée") {
+// ===== Fonction pour verrouiller à nouveau =====
+function relock(reason = "") {
+    // clearInterval(timerInterval); // si tu as un timer
     document.getElementById("quiz-screen").style.display = "none";
     document.getElementById("lock-screen").style.display = "block";
-
     const msg = document.getElementById("lock-msg");
     msg.style.color = "#ffcc00";
-    msg.textContent = reason;
-
+    msg.textContent = reason || "🔐 Session verrouillée";
     document.getElementById("pin").value = "";
 }
 
-// 👁️ Changement d’onglet / réduction app
+// ===== Détection fermeture onglet / changement de visibilité =====
+window.addEventListener("beforeunload", () => {
+    relock("🔐 Vous avez quitté la page");
+});
+
 document.addEventListener("visibilitychange", () => {
-    if (
-        document.hidden &&
-        document.getElementById("quiz-screen").style.display === "block"
-    ) {
+    if (document.hidden && document.getElementById("quiz-screen").style.display === "block") {
         relock("🔐 Changement d’onglet détecté");
     }
 });
-
-// ⚠️ Optionnel : avertissement sortie
-window.addEventListener("beforeunload", (e) => {
-    e.preventDefault();
-    e.returnValue = "";
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden && document.getElementById("quiz-screen").style.display === "block") {
+        relock("🔐 Changement d’onglet détecté");
+    }
 });
 /* ===== QCM QUESTIONS ===== */
 const questions=[
@@ -226,95 +250,104 @@ const questions=[
 {q:"Protection contre malwares propagés ?", o:["Antivirus","Segmentation","IDS"], a:1},
 {q:"Attaque saturant mémoire ou ressource ?", o:["Buffer Overflow","DDoS","MITM"], a:1},
 ]
-
-/* OUTILS */
-const noteInfo=n=>{
- if(n<10)return{t:"❌ Mauvais",c:"#ff4d4d"};
- if(n>=18)return{t:"🌟 Excellente",c:"#00ff9d"};
- if(n>=15)return{t:"👏 Très bien",c:"#4ade80"};
- if(n>=12)return{t:"✅ Convenable",c:"#60a5fa"};
- return{t:"⚠️ Moyen",c:"#facc15"};
-};
-
-/* LOCK / UNLOCK */
-function unlock(){
- const v=document.getElementById("pin").value,m=document.getElementById("lock-msg");
- if(etape==="PIN"){
-  if(v===PIN_CORRECT){
-   tentativesPIN=0; m.style.color="#00ff9d"; m.textContent="✔ Accès autorisé";
-   setTimeout(()=>{document.getElementById("lock-screen").style.display="none";document.getElementById("quiz-screen").style.display="block";startAttempt(1);},300);
-  }else{
-   tentativesPIN++; m.style.color="#ff4d4d"; m.textContent=`❌ PIN incorrect (${tentativesPIN}/3)`;
-   if(tentativesPIN>=3){etape="PUK";m.style.color="#ffcc00";m.textContent="🔒 Entrez le PUK";document.getElementById("pin").placeholder="PUK";document.getElementById("pin").value="";}
-  }
- }else{
-  if(v===PUK_CORRECT){etape="PIN";tentativesPIN=0;m.style.color="#00c6ff";m.textContent="🔓 PUK OK – PIN";document.getElementById("pin").placeholder="PIN";document.getElementById("pin").value="";}
-  else{m.style.color="#ff4d4d";m.textContent="❌ PUK incorrect";}
- }
-}
-function relock(msg="🔐 Session verrouillée"){
- clearInterval(timerInterval);
- document.getElementById("quiz-screen").style.display="none"; document.getElementById("lock-screen").style.display="block";
- document.getElementById("lock-msg").style.color="#ffcc00"; document.getElementById("lock-msg").textContent=msg; document.getElementById("pin").value="";
+function shuffleOptions() {
+    questions.forEach(q => {
+        let correctAnswer = q.o[q.a];
+        for (let i = q.o.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [q.o[i], q.o[j]] = [q.o[j], q.o[i]];
+        }
+         q.a = q.o.indexOf(correctAnswer);
+    });
 }
 
-/* ESSAIS AUTO */
-function startAttempt(n){
- document.querySelectorAll(".attempt").forEach(a=>a.className="attempt");
- document.querySelectorAll(".attempt")[n-1].classList.add("active");
- tentativesActuelles=n-1;
- startQuiz();
+let current=0, score=0, timeLeft=900, timerInterval;
+
+function shuffleQuestions(array){
+    for(let i=array.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [array[i],array[j]]=[array[j],array[i]];
+    }
 }
 
-/* QUIZ */
 function startQuiz(){
- clearInterval(timerInterval);
- current=0; score=0; timeLeft=QUIZ_TIME;
- document.getElementById("result").innerHTML=""; document.getElementById("restart").style.display="none";
- startTimer(); showQuestion();
+    current = 0; score = 0; timeLeft = 900;
+    shuffleQuestions(questions);
+    shuffleOptions();
+    document.getElementById("result").innerHTML="";
+    document.getElementById("restart").style.display="none";
+    startTimer();
+    showQuestion();
 }
+
 function startTimer(){
- timerInterval=setInterval(()=>{
-  document.getElementById("timer").textContent=`${String(Math.floor(timeLeft/60)).padStart(2,"0")}:${String(timeLeft%60).padStart(2,"0")}`;
-  if(timeLeft<=0){relock("⏱ Temps écoulé");return;} timeLeft--;
- },1000);
+    clearInterval(timerInterval);
+    timerInterval=setInterval(()=>{
+        let m=Math.floor(timeLeft/60);
+        let s=timeLeft%60;
+        document.getElementById("timer").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+        timeLeft--;
+        if(timeLeft<0){ relock("⏱ Temps écoulé – examen terminé"); }
+    },1000);
 }
+
 function showQuestion(){
- if(current>=questions.length){endQuiz();return;}
- document.getElementById("progress").textContent=`Question ${current+1}/${questions.length}`;
- const q=questions[current];
- document.getElementById("quiz").innerHTML=`<div class="question">${q.q}</div>`+
- q.o.map((o,i)=>`<button class="option" onclick="answer(${i},this)">${o}</button>`).join("");
-}
-function answer(v,b){
- if(v===questions[current].a){b.classList.add("correct");score++;}else b.classList.add("wrong");
- document.querySelectorAll(".option").forEach(x=>x.disabled=true);
- setTimeout(()=>{current++;showQuestion();},700);
+    if(current>=questions.length){ endQuiz(); return; }
+    document.getElementById("progress").textContent=`Question ${current+1} / ${questions.length}`;
+    let q=questions[current];
+    let html=`<div class="question">${q.q}</div>`;
+    q.o.forEach((opt,i)=>{html+=`<button class="option" onclick="answer(${i},this)">${opt}</button>`;});
+    document.getElementById("quiz").innerHTML=html;
 }
 
-/* FIN QUIZ AUTO */
+function answer(val,btn){
+    let correct=questions[current].a;
+    if(val===correct){ btn.classList.add("correct"); score++; } else { btn.classList.add("wrong"); }
+    document.querySelectorAll(".option").forEach(b=>b.disabled=true);
+    setTimeout(()=>{ current++; showQuestion(); },700);
+}
+
 function endQuiz(){
- clearInterval(timerInterval);
- const note=Number(((score/questions.length)*20).toFixed(2));
- essaisScores.push(note);
- const info=noteInfo(note);
- document.getElementById("result").innerHTML=`<div>🎯 ${score}/${questions.length}</div><div style="color:${info.c};font-weight:600">📊 ${note}/20 – ${info.t}</div>`;
+    clearInterval(timerInterval);
+    let noteSur20 = ((score / questions.length)*20).toFixed(2);
+    essaisScores.push(Number(noteSur20));
+    showRecentScores();
 
- const idx=++tentativesActuelles;
- const box=document.querySelectorAll(".attempt")[idx-1];
- box.className="attempt done";
- document.getElementById(`score-${idx}`).textContent=`${note}/20`;
+    document.getElementById("quiz").innerHTML = "";
+    document.getElementById("result").innerHTML = `🎯 Score : ${score}/${questions.length}<br>📊 Note : ${noteSur20}/20`;
 
- if(idx<MAX_TENTATIVES){setTimeout(()=>startAttempt(idx+1),2000);return;}
- const total=essaisScores.reduce((a,b)=>a+b,0);
- const percent=((total/(MAX_TENTATIVES*20))*100).toFixed(2);
- setTimeout(()=>{percent>=70?relock(`✅ ${percent}% obtenu – PIN requis`):(alert(`⚠️ ${percent}% obtenu\n1 tentative bonus autorisée`),tentativesActuelles=MAX_TENTATIVES-1,relock("🔐 Entrez le PIN")); document.getElementById("restart").style.display="block";},1500);
+    if(tentativesActuelles < MAX_TENTATIVES){
+        // Tentatives 1 à 3 → redémarrage automatique
+        tentativesActuelles++;
+        setTimeout(startQuiz,1500);
+        document.getElementById("restart").style.display="none";
+    } else {
+        // 4ᵉ tentative → affiche résultat et bouton redémarrer → demande PIN
+        document.getElementById("restart").style.display="block";
+        let total = essaisScores.reduce((a,b)=>a+b,0);
+        let percent = ((total / (MAX_TENTATIVES*20))*100).toFixed(2);
+        alert(`✅ Fin des ${MAX_TENTATIVES} tentatives !\nTotal : ${total}/100\nPourcentage : ${percent}%`);
+    }
 }
-function restartQuiz(){tentativesActuelles=0; essaisScores=[]; relock("🔐 Entrez le PIN pour recommencer");}
 
-/* SECURITE */
-document.addEventListener("visibilitychange",()=>{if(document.hidden && document.getElementById("quiz-screen").style.display==="block") relock("🔐 Changement d’onglet détecté");});
+function restartQuiz(){
+    // Après 4ᵉ tentative → retour au PIN
+    document.getElementById("quiz-screen").style.display="none";
+    document.getElementById("lock-screen").style.display="block";
+    document.getElementById("lock-msg").style.color="#ffcc00";
+    document.getElementById("lock-msg").textContent="🔐 Veuillez entrer le PIN pour continuer";
+    tentativesActuelles = 0;
+    essaisScores = [];
+}
+
+function showRecentScores(){
+    document.getElementById("recent-scores").textContent =
+        essaisScores.length > 0
+            ? `💾 Scores tentatives : ${essaisScores.join(" / ")}`
+            : "💾 Pas encore de scores";
+}
+
+showRecentScores();
 </script>
-
 </body>
 </html>
