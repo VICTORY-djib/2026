@@ -169,7 +169,7 @@ function unlock() {
             tentatives++;
             msg.style.color = "#ff4d4d";
             msg.textContent = `❌ PIN incorrect (${tentatives}/${MAX_TENTATIVES})`;
-
+ 
             if (tentatives >= MAX_TENTATIVES) {
                 etape = "PUK";
                 msg.style.color = "#ffcc00";
@@ -251,19 +251,12 @@ const questions=[
 {q:"Attaque saturant mémoire ou ressource ?", o:["Buffer Overflow","DDoS","MITM"], a:1},
 ]
 
-function shuffleOptions() {
-    questions.forEach(q => {
-        let correctAnswer = q.o[q.a];
-        for (let i = q.o.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [q.o[i], q.o[j]] = [q.o[j], q.o[i]];
-        }
-        q.a = q.o.indexOf(correctAnswer);
-    });
-}
-
+// --- Variables ---
 let current=0, score=0, timeLeft=900, timerInterval;
+let tentativesActuelles=1, MAX_TENTATIVES=3;
+let essaisScores=[];
 
+// --- Mélange questions ---
 function shuffleQuestions(array){
     for(let i=array.length-1;i>0;i--){
         const j=Math.floor(Math.random()*(i+1));
@@ -271,16 +264,32 @@ function shuffleQuestions(array){
     }
 }
 
+// --- Mélange options et met à jour l'index correct ---
+function shuffleOptions(){
+    questions.forEach(q=>{
+        let correctAnswer=q.o[q.a];
+        for(let i=q.o.length-1;i>0;i--){
+            const j=Math.floor(Math.random()*(i+1));
+            [q.o[i],q.o[j]]=[q.o[j],q.o[i]];
+        }
+        q.a=q.o.indexOf(correctAnswer);
+    });
+}
+
+// --- Démarrage du quiz ---
 function startQuiz(){
-    current = 0; score = 0; timeLeft = 900;
+    current=0; score=0; timeLeft=900;
     shuffleQuestions(questions);
     shuffleOptions();
     document.getElementById("result").innerHTML="";
     document.getElementById("restart").style.display="none";
+    document.getElementById("quiz-screen").style.display="block";
+    document.getElementById("lock-screen").style.display="none";
     startTimer();
     showQuestion();
 }
 
+// --- Timer ---
 function startTimer(){
     clearInterval(timerInterval);
     timerInterval=setInterval(()=>{
@@ -288,67 +297,94 @@ function startTimer(){
         let s=timeLeft%60;
         document.getElementById("timer").textContent=`${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
         timeLeft--;
-        if(timeLeft<0){ relock("⏱ Temps écoulé – examen terminé"); }
+        if(timeLeft<0){ endQuiz(); }
     },1000);
 }
 
+// --- Affiche question ---
 function showQuestion(){
     if(current>=questions.length){ endQuiz(); return; }
     document.getElementById("progress").textContent=`Question ${current+1} / ${questions.length}`;
     let q=questions[current];
-    let html=`<div class="question">${q.q}</div>`;
-    q.o.forEach((opt,i)=>{html+=`<button class="option" onclick="answer(${i},this)">${opt}</button>`;});
+    let html=`<div class="question">${q.q}</div><div id="options">`;
+    q.o.forEach((opt,i)=>{ html+=`<button onclick="answer(${i},this)">${opt}</button>`; });
+    html+="</div>";
     document.getElementById("quiz").innerHTML=html;
 }
 
+// --- Réponse ---
 function answer(val,btn){
     let correct=questions[current].a;
     if(val===correct){ btn.classList.add("correct"); score++; } else { btn.classList.add("wrong"); }
-    document.querySelectorAll(".option").forEach(b=>b.disabled=true);
+    document.querySelectorAll("#options button").forEach(b=>b.disabled=true);
     setTimeout(()=>{ current++; showQuestion(); },700);
 }
 
+// --- Note stylée ---
+function showStyledNote(note){
+    let msg="", colorClass="";
+    if(note<10){ msg="Résultat mauvais"; colorClass="result-bad"; }
+    else if(note>=10 && note<12){ msg="Résultat moyen"; colorClass="result-medium"; }
+    else if(note>=12 && note<15){ msg="Résultat convenable"; colorClass="result-good"; }
+    else if(note>=15 && note<18){ msg="Très bien"; colorClass="result-verygood"; }
+    else{ msg="Excellente"; colorClass="result-excellent"; }
+    const resultBox=document.getElementById("result");
+    resultBox.innerHTML=`Tentative ${tentativesActuelles} : ${note}/20 → ${msg}`;
+    resultBox.className=`result-box ${colorClass}`;
+}
+
+// --- Fin du quiz ---
 function endQuiz(){
     clearInterval(timerInterval);
-    let noteSur20 = ((score / questions.length)*20).toFixed(2);
+    let noteSur20=((score/questions.length)*20).toFixed(2);
     essaisScores.push(Number(noteSur20));
+    showStyledNote(noteSur20);
     showRecentScores();
 
-    document.getElementById("quiz").innerHTML = "";
-    document.getElementById("result").innerHTML = `🎯 Score : ${score}/${questions.length}<br>📊 Note : ${noteSur20}/20`;
-
-    if(tentativesActuelles < MAX_TENTATIVES){
-        // Tentatives 1 à 3 → redémarrage automatique
+    if(tentativesActuelles<MAX_TENTATIVES){
         tentativesActuelles++;
+        current=0; score=0;
         setTimeout(startQuiz,1500);
-        document.getElementById("restart").style.display="none";
     } else {
-        // 4ᵉ tentative → affiche résultat et bouton redémarrer → demande PIN
+        let total=essaisScores.reduce((a,b)=>a+b,0);
+        let percent=((total/(20*MAX_TENTATIVES))*100).toFixed(2);
+        let finalMsg = percent>=70 ? 
+            `✅ Score total ${percent}% → Verrouillage activé, PIN requis.` :
+            `⚠️ Score total ${percent}% → Tentative supplémentaire autorisée après verrouillage.`;
+
+        document.getElementById("recent-scores").innerHTML+=`<p style="font-weight:bold;color:#0056b3">${finalMsg}</p>`;
+        document.getElementById("quiz").innerHTML="";
+        document.getElementById("progress").textContent="✅ Quiz terminé";
         document.getElementById("restart").style.display="block";
-        let total = essaisScores.reduce((a,b)=>a+b,0);
-        let percent = ((total / (MAX_TENTATIVES*20))*100).toFixed(2);
-        alert(`✅ Fin des ${MAX_TENTATIVES} tentatives !\nTotal : ${total}/100\nPourcentage : ${percent}%`);
+        document.getElementById("restart").onclick=()=>{ restartQuiz(); };
     }
 }
 
+// --- Redémarrage après PIN ---
 function restartQuiz(){
-    // Après 4ᵉ tentative → retour au PIN
     document.getElementById("quiz-screen").style.display="none";
     document.getElementById("lock-screen").style.display="block";
-    document.getElementById("lock-msg").style.color="#ffcc00";
     document.getElementById("lock-msg").textContent="🔐 Veuillez entrer le PIN pour continuer";
-    tentativesActuelles = 0;
-    essaisScores = [];
+    tentativesActuelles=1; essaisScores=[]; score=0; current=0;
 }
 
+// --- Vérification PIN ---
+function checkPIN(){
+    const PIN_CORRECT="2026";
+    const input=document.getElementById("pin-input").value;
+    if(input===PIN_CORRECT){ startQuiz(); document.getElementById("pin-input").value=""; }
+    else{ alert("❌ PIN incorrect !"); }
+}
+
+// --- Historique ---
 function showRecentScores(){
-    document.getElementById("recent-scores").textContent =
-        essaisScores.length > 0
-            ? `💾 Scores tentatives : ${essaisScores.join(" / ")}`
-            : "💾 Pas encore de scores";
+    document.getElementById("recent-scores").innerHTML=essaisScores.length>0 ?
+        `<h3>💾 Scores tentatives :</h3><ul>${essaisScores.map((s,i)=>`<li>Tentative ${i+1} : ${s}/20</li>`).join("")}</ul>` :
+        "💾 Pas encore de scores";
 }
 
-showRecentScores();
+// --- Démarrage initial ---
+startQuiz();
 </script>
 </body>
 </html>
