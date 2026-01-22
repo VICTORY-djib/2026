@@ -21,6 +21,50 @@
 
     <p id="login-status"></p>
 </div>
+
+<script>
+// --- LOGIN SIMULATION ---
+function login(){
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const status = document.getElementById("login-status");
+
+    if(email.endsWith("@gmail.com") && password.length >= 6){
+        status.style.color = "#00ff99";
+        status.innerText = "Connexion réussie ✅";
+
+        document.getElementById("cyber").disabled = false;
+        document.getElementById("reseau").disabled = false;
+        document.getElementById("next").disabled = false;
+    } else {
+        status.style.color = "red";
+        status.innerText = "Email ou mot de passe incorrect ❌";
+
+        document.getElementById("cyber").disabled = true;
+        document.getElementById("reseau").disabled = true;
+        document.getElementById("next").disabled = true;
+    }
+}
+
+// --- RESET BOUTONS LORS DE LA SAISIE ---
+document.getElementById("email").addEventListener("input", disableButtons);
+document.getElementById("password").addEventListener("input", disableButtons);
+
+function disableButtons(){
+    document.getElementById("cyber").disabled = true;
+    document.getElementById("reseau").disabled = true;
+    document.getElementById("next").disabled = true;
+    document.getElementById("login-status").innerText = "";
+}
+
+// --- ENTREE POUR VALIDER ---
+document.addEventListener("keydown", function(e){
+    if(e.key === "Enter") login();
+});
+</script>
+
+</body>
+</html>
 <header>
 
     <nav>
