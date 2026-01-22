@@ -76,7 +76,6 @@ header nav a.active{
     color:#2563eb;
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
-}
 header{background:#2563eb;color:white;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
 header nav a{color:white;margin-left:15px;text-decoration:none;font-weight:500;}
 header nav a.active{text-decoration:underline;}
@@ -250,6 +249,7 @@ const questions=[
 {q:"Protection contre malwares propagés ?", o:["Antivirus","Segmentation","IDS"], a:1},
 {q:"Attaque saturant mémoire ou ressource ?", o:["Buffer Overflow","DDoS","MITM"], a:1},
 ]
+
 function shuffleOptions() {
     questions.forEach(q => {
         let correctAnswer = q.o[q.a];
