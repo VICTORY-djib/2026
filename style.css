@@ -116,80 +116,179 @@ header nav a.active{
 .dots span:first-child {
     opacity: 1;
 }
-/* --- AJOUTS POUR LA CONNEXION GOOGLE --- */
 
-/* On s'assure que le bloc de gauche est bien centré */
-.hero-left {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #0b6fc2, #00aaff);
+    min-height: 100vh;
+}
+
+/* HEADER FLOTTANT TRANSPARENT */
+header{
+    position:fixed;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(37, 99, 235, 0.75);   /* transparence */
+    backdrop-filter: blur(14px);
+    padding:12px 24px;
+    border-radius:40px;
+    border:1px solid rgba(255,255,255,0.25);
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+    z-index:1000;
+    transition:all 0.3s ease;
+}
+
+/* NAV */
+header nav{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* LIENS */
+header nav a{
+   color:white;
+    text-decoration:none;
+    padding:9px 20px;        /* ⬅️ équilibre : court + un peu long */
+    border-radius:22px;
+    font-size:14.5px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    white-space:nowrap;
+    transition:all 0.3s ease;
+}
+
+/* SURVOL */
+header nav a:hover{
+    background:rgba(255,255,255,0.25);
+    transform:translateY(-2px);
+}
+
+/* LIEN ACTIF */
+header nav a.active{
+    background:white;
+    color:#2563eb;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== HERO SECTION FULL SCREEN ===== */
+.hero{
+    position: relative;
+    height: 100vh;                     /* prend toute la hauteur de la page */
+    width: 100vw;                      /* prend toute la largeur de la page */
+    background: url("hacker.png.PNG") center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-width: 420px; /* Garde la même largeur que votre image d'origine */
+    justify-content: center;           /* centre le contenu horizontalement */
 }
 
-/* Style pour le conteneur du bouton Google */
-#google-auth-container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05); /* Un léger fond transparent */
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #00b4ff;
+/* ===== CONTENU HERO ===== */
+.hero-right {
+    max-width: 500px;
+    color: white;
+    text-align: center;               /* centre le texte */
 }
 
-#google-auth-container h3 {
-    font-size: 18px;
+.hero-right h1 {
+    font-size: 34px;
     margin-bottom: 20px;
-    font-weight: normal;
 }
 
-/* Style pour le message de bienvenue après connexion */
-#welcome-message {
-    text-align: center;
-    animation: fadeIn 0.5s ease-in;
+.hero-right p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cfd8ff;
 }
 
-#welcome-message img {
-    width: 350px; /* Taille de l'image une fois connecté */
-    margin-bottom: 15px;
+.hero-right button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #00b4ff;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-#user-name {
-    font-size: 24px;
-    color: #00b4ff;
+/* ===== DOTS INDICATEURS ===== */
+.dots {
+    margin-top: 30px;
 }
 
-/* Animation pour une transition fluide */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #00b4ff;
+    border-radius: 50%;
+    margin-right: 8px;
+    opacity: 0.5;
+}
+.dots span:first-child {
+    opacity: 1;
+}
+/* ===== CARTE GMAIL CONNEXION ===== */
+.gmail-card{
+    width:340px;
+    padding:26px;
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 20px 45px rgba(0,0,0,0.45);
+    color:#fff;
+    animation:fadeIn 0.6s ease;
 }
 
-/* Ajustement pour la navigation */
-nav a {
-    transition: all 0.3s ease;
-}
-.cours {
-    padding: 30px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.module {
-    background: #ffffff;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-left: 6px solid #00c3ff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* HEADER */
+.gmail-header{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:16px;
 }
 
-.module h2 {
-    color: #0a1f44;
+.gmail-header img{
+    width:36px;
+    height:36px;
 }
 
-.module h3 {
-    color: #333;
+/* TEXTE */
+.gmail-card p{
+    font-size:15px;
+    line-height:1.6;
+    color:#dbe9ff;
+    margin-bottom:22px;
 }
 
-.module ul {
-    margin-left: 20px;
+/* BOUTON */
+.gmail-btn{
+    display:block;
+    width:100%;
+    padding:13px 0;
+    text-align:center;
+    background:linear-gradient(135deg,#ea4335,#c5221f);
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:0.4px;
+    transition:all 0.3s ease;
+    box-shadow:0 12px 28px rgba(234,67,53,0.35);
+}
+
+.gmail-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 35px rgba(234,67,53,0.55);
 }
