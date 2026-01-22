@@ -11,12 +11,54 @@ body {
 }
 
 /* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
+header{
+    position:fixed;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(37, 99, 235, 0.75);   /* transparence */
+    backdrop-filter: blur(14px);
+    padding:12px 24px;
+    border-radius:40px;
+    border:1px solid rgba(255,255,255,0.25);
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+    z-index:1000;
+    transition:all 0.3s ease;
 }
+
+/* NAV */
+header nav{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* LIENS */
+header nav a{
+   color:white;
+    text-decoration:none;
+    padding:9px 20px;        /* ⬅️ équilibre : court + un peu long */
+    border-radius:22px;
+    font-size:14.5px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    white-space:nowrap;
+    transition:all 0.3s ease;
+}
+
+/* SURVOL */
+header nav a:hover{
+    background:rgba(255,255,255,0.25);
+    transform:translateY(-2px);
+}
+
+/* LIEN ACTIF */
+header nav a.active{
+    background:white;
+    color:#2563eb;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
 
 .logo {
     width: 40px;
