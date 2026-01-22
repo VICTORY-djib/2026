@@ -59,22 +59,21 @@ header nav a.active{
     box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ===== HERO SECTION FULL SCREEN ===== */
+/* HERO SECTION */
 .hero{
     position: relative;
-    height: 100vh;                     /* prend toute la hauteur de la page */
-    width: 100vw;                      /* prend toute la largeur de la page */
-    background: url("hacker.png.PNG") center/cover no-repeat;
+    height: calc(100vh - 70px);
+    width: 100%;                       /* prend toute la largeur */
+    background: url("hacker.png.PNG") center center/cover no-repeat; /* centre image */
     display: flex;
     align-items: center;
-    justify-content: center;           /* centre le contenu horizontalement */
+    justify-content: center;            /* centre le contenu horizontalement */
 }
 
-/* ===== CONTENU HERO ===== */
 .hero-right {
     max-width: 500px;
     color: white;
-    text-align: center;               /* centre le texte */
+    text-align: center;                 /* texte centré */
 }
 
 .hero-right h1 {
@@ -83,7 +82,7 @@ header nav a.active{
 }
 
 .hero-right p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7;
     color: #cfd8ff;
 }
@@ -99,7 +98,6 @@ header nav a.active{
     font-weight: bold;
 }
 
-/* ===== DOTS INDICATEURS ===== */
 .dots {
     margin-top: 30px;
 }
@@ -113,7 +111,6 @@ header nav a.active{
     margin-right: 8px;
     opacity: 0.5;
 }
-
 .dots span:first-child {
     opacity: 1;
 }
