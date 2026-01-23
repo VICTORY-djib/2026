@@ -392,29 +392,24 @@ function answer(val,btn){
     setTimeout(()=>{ current++; showQuestion(); },700);
 }
 
+/* ===== FIN + RÈGLE 70 % ===== */
 function endQuiz(){
     clearInterval(timerInterval);
-    let noteSur20 = ((score / questions.length)*20).toFixed(2);
-    essaisScores.push(Number(noteSur20));
-    showRecentScores();
+    let note=((score/questions.length)*20).toFixed(2);
+    let pct=((note/20)*100).toFixed(2);
 
-    document.getElementById("quiz").innerHTML = "";
-    document.getElementById("result").innerHTML = `🎯 Score : ${score}/${questions.length}<br>📊 Note : ${noteSur20}/20`;
+    essaisScores.push(Number(note));
+    tentativesActuelles++;
 
-    if(tentativesActuelles < MAX_TENTATIVES){
-        // Tentatives 1 à 3 → redémarrage automatique
-        tentativesActuelles++;
-        setTimeout(startQuiz,1500);
-        document.getElementById("restart").style.display="none";
-    } else {
-        // 4ᵉ tentative → affiche résultat et bouton redémarrer → demande PIN
-        document.getElementById("restart").style.display="block";
-        let total = essaisScores.reduce((a,b)=>a+b,0);
-        let percent = ((total / (MAX_TENTATIVES*20))*100).toFixed(2);
-        alert(`✅ Fin des ${MAX_TENTATIVES} tentatives !\nTotal : ${total}/100\nPourcentage : ${percent}%`);
+    result.innerHTML=`🎯 ${score}/${questions.length}<br>📊 ${note}/20 (${pct}%)`;
+    recent-scores.textContent=`Scores : ${essaisScores.join(" / ")}`;
+
+    if(pct>=70){
+        setTimeout(()=>relock("✅ ≥ 70% — PIN requis"),2000);
+        return;
     }
-}
-
+    if(tentativesActuelles<MAX_TENTATIVES) setTimeout(startQuiz,2000);
+    else restart.style.display="block";
 function restartQuiz(){
     // Après 4ᵉ tentative → retour au PIN
     document.getElementById("quiz-screen").style.display="none";
@@ -432,6 +427,12 @@ function showRecentScores(){
             : "💾 Pas encore de scores";
 }
 
+/* ===== RELOCK ===== */
+function relock(msg){
+    quiz-screen.style.display="none";
+    lock-screen.style.display="block";
+    lock-msg.textContent=msg;
+}
 showRecentScores();
 </script>
 </body>
