@@ -378,13 +378,16 @@ function startTimer(){
 
 function showQuestion(){
     if(current>=questions.length){ endQuiz(); return; }
-    document.getElementById("progress").textContent=`Question ${current+1} / ${questions.length}`;
+    document.getElementById("progress").textContent=
+        `Question ${current+1}/${questions.length}`;
+
     let q=questions[current];
     let html=`<div class="question">${q.q}</div>`;
-    q.o.forEach((opt,i)=>{html+=`<button class="option" onclick="answer(${i},this)">${opt}</button>`;});
+    q.o.forEach((opt,i)=>{
+        html+=`<button class="option" onclick="answer(${i},this)">${opt}</button>`;
+    });
     document.getElementById("quiz").innerHTML=html;
 }
-
 function answer(val,btn){
     let correct=questions[current].a;
     if(val===correct){ btn.classList.add("correct"); score++; } else { btn.classList.add("wrong"); }
@@ -408,32 +411,34 @@ function endQuiz(){
         setTimeout(()=>relock("✅ ≥ 70% — PIN requis"),2000);
         return;
     }
-    if(tentativesActuelles<MAX_TENTATIVES) setTimeout(startQuiz,2000);
-    else restart.style.display="block";
+
+    if(tentativesActuelles<MAX_TENTATIVES){
+        setTimeout(startQuiz,2000);
+    }else{
+        document.getElementById("restart").style.display="block";
+    }
+}
 function restartQuiz(){
-    // Après 4ᵉ tentative → retour au PIN
+    tentativesActuelles=0;
+    essaisScores=[];
     document.getElementById("quiz-screen").style.display="none";
     document.getElementById("lock-screen").style.display="block";
-    document.getElementById("lock-msg").style.color="#ffcc00";
-    document.getElementById("lock-msg").textContent="🔐 Veuillez entrer le PIN pour continuer";
-    tentativesActuelles = 0;
-    essaisScores = [];
+    document.getElementById("lock-msg").textContent="🔐 Entrez le PIN";
 }
 
 function showRecentScores(){
     document.getElementById("recent-scores").textContent =
-        essaisScores.length > 0
-            ? `💾 Scores tentatives : ${essaisScores.join(" / ")}`
-            : "💾 Pas encore de scores";
+        essaisScores.length
+        ? `💾 Scores : ${essaisScores.join(" / ")}`
+        : "💾 Pas encore de scores";
 }
 
 /* ===== RELOCK ===== */
 function relock(msg){
-    quiz-screen.style.display="none";
-    lock-screen.style.display="block";
-    lock-msg.textContent=msg;
+    document.getElementById("quiz-screen").style.display="none";
+    document.getElementById("lock-screen").style.display="block";
+    document.getElementById("lock-msg").textContent=msg;
 }
-showRecentScores();
 </script>
 </body>
 </html>
