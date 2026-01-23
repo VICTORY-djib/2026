@@ -422,11 +422,11 @@ function endQuiz(){
 
     // Message stylé selon note
     let msg;
-    if(noteSur20<10) msg="Résultat mauvais";
-    else if(noteSur20<12) msg="Résultat moyen";
-    else if(noteSur20<15) msg="Résultat convenable";
-    else if(noteSur20<18) msg="Très bien";
-    else msg="Excellente";
+    if(noteSur20<10) msg="Résultat mauvais❌";
+    else if(noteSur20<12) msg="Résultat moyen✅";
+    else if(noteSur20<15) msg="Résultat convenable✅";
+    else if(noteSur20<18) msg="Très bien👏";
+    else msg="Excellente🏆";
 
     document.getElementById("result").innerHTML=`🎯 Score : ${score}/${questions.length}<br>📊 Note : ${noteSur20}/20`;
     document.getElementById("result-msg").textContent=msg;
