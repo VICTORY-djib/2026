@@ -254,880 +254,1177 @@ footer{
   </div>
 </div>
 
-<!-- MODULE 2 -->
 <div class="module">
-<h2>2. Protocoles et modèles OSI/TCP-IP</h2>
-
-<p>
-Les protocoles réseau sont des règles standardisées permettant aux systèmes
-informatiques de communiquer de manière cohérente. Le modèle OSI définit
-7 couches distinctes : physique, liaison, réseau, transport, session, présentation
-et application. Chaque couche a un rôle précis et facilite le diagnostic, la
-maintenance et la sécurisation du réseau.
-</p>
-
-<p>
-Le modèle TCP/IP, largement utilisé dans le monde réel, regroupe ces fonctions
-en 4 couches : liaison, internet, transport et application. TCP/IP est la base
-d’Internet et des réseaux d’entreprise, garantissant la livraison fiable des
-données et la compatibilité entre systèmes hétérogènes.
-</p>
-
-<p>
-La compréhension approfondie de ces modèles permet aux administrateurs de
-résoudre rapidement les problèmes de performance, de configurer correctement
-les dispositifs réseau, de sécuriser les communications et d’anticiper les
-failles potentielles.
-</p>
-
-<p>
-Les protocoles comme TCP, UDP, ICMP, HTTP, HTTPS, DNS et DHCP jouent un rôle
-crucial dans le fonctionnement et la sécurité du réseau. Maîtriser ces protocoles
-est essentiel pour tout professionnel réseau et cybersécurité.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g2">
-<h3>QCM MODULES 2</h3>
-
-<div class="question">
-  <p><strong>Question 1 :</strong> Quelle est la fonction principale de la couche transport TCP ?</p>
-  <label><input type="radio" name="m2q1" value="true"> Garantir la livraison correcte et ordonnée des données</label>
-  <label><input type="radio" name="m2q1" value="false"> Gérer le routage global</label>
-  <label><input type="radio" name="m2q1" value="false"> Chiffrer automatiquement les données</label>
-  <label><input type="radio" name="m2q1" value="false"> Convertir les adresses IP en noms de domaine</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 2 :</strong> Pourquoi le modèle OSI est-il utile pour la sécurité réseau ?</p>
-  <label><input type="radio" name="m2q2" value="true"> Il permet de définir des contrôles à chaque couche</label>
-  <label><input type="radio" name="m2q2" value="false"> Il chiffre automatiquement le trafic</label>
-  <label><input type="radio" name="m2q2" value="false"> Il supprime le besoin de firewalls</label>
-  <label><input type="radio" name="m2q2" value="false"> Il remplace le modèle TCP/IP</label>
-</div>
-
-<button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-<!-- MODULE 3 -->
-<div class="module">
-<h2>3. Adressage IP et sous-réseaux</h2>
-
-<p>
-L’adressage IP est la pierre angulaire de tout réseau informatique. Chaque
-hôte, serveur ou dispositif connecté doit posséder une adresse IP unique pour
-communiquer. La compréhension des adresses IPv4 et IPv6, des masques de sous-réseau
-et de la planification des plages d’adresses est cruciale pour concevoir des
-réseaux fiables et sécurisés.
-</p>
-
-<p>
-La segmentation d’un réseau en sous-réseaux (subnets) permet d’optimiser
-la performance, de limiter les broadcasts et d’améliorer la sécurité. Les
-administrateurs réseau utilisent également des VLAN pour isoler logiquement
-les segments du réseau et appliquer des politiques de sécurité spécifiques.
-</p>
-
-<p>
-La maîtrise des concepts comme DHCP, NAT et plan d’adressage IP permet
-d’anticiper la croissance du réseau et de prévenir les conflits d’adresses
-ou les problèmes de connectivité. Une bonne planification facilite la
-maintenance et la surveillance des réseaux complexes.
-</p>
-
-<p>
-Enfin, la compréhension des adresses privées, publiques, et de la notation CIDR
-(estimation du nombre d’hôtes par sous-réseau) est essentielle pour configurer
-correctement les dispositifs et assurer la sécurité et la performance du réseau.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g3">
-<h3>QCM MODULES 3</h3>
-
-<div class="question">
-  <p><strong>Question 1 :</strong> Quelle plage IP est réservée pour les adresses privées ?</p>
-  <label><input type="radio" name="m3q1" value="true"> 192.168.0.0 – 192.168.255.255</label>
-  <label><input type="radio" name="m3q1" value="false"> 8.8.8.0 – 8.8.8.255</label>
-  <label><input type="radio" name="m3q1" value="false"> 1.1.1.0 – 1.1.1.255</label>
-  <label><input type="radio" name="m3q1" value="false"> 9.0.0.0 – 9.255.255.255</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 2 :</strong> Quel masque CIDR correspond à 255.255.255.0 ?</p>
-  <label><input type="radio" name="m3q2" value="true"> /24</label>
-  <label><input type="radio" name="m3q2" value="false"> /16</label>
-  <label><input type="radio" name="m3q2" value="false"> /28</label>
-  <label><input type="radio" name="m3q2" value="false"> /30</label>
-</div>
-
-<button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-
-<!-- MODULE 4 -->
-<div class="module">
-<h2>4. Routeurs et commutateurs avancés</h2>
-
-<p>
-Les commutateurs (switches) sont au cœur des réseaux locaux (LAN). Ils acheminent
-les trames en fonction des adresses MAC, réduisent les collisions et optimisent
-la bande passante disponible. Les routeurs, quant à eux, relient différents
-réseaux et déterminent le meilleur chemin pour les paquets IP, permettant ainsi
-la communication entre LAN, WAN et Internet.
-</p>
-
-<p>
-La configuration avancée des routeurs et switches inclut les VLAN, les ACL (Access
-Control Lists), le routage statique et dynamique (OSPF, BGP), ainsi que la
-QoS (Quality of Service) pour gérer les priorités de trafic. Ces fonctions sont
-indispensables pour un réseau performant et sécurisé.
-</p>
-
-<p>
-Les administrateurs doivent également connaître la haute disponibilité (HA) et
-le protocole STP (Spanning Tree Protocol) pour éviter les boucles réseau et
-garantir la résilience du réseau. La surveillance continue des performances
-et la gestion proactive des incidents sont cruciales dans les environnements
-professionnels.
-</p>
-
-<p>
-Enfin, la maîtrise des protocoles ARP, ICMP et des mécanismes de routage
-permet de diagnostiquer rapidement les problèmes et d’assurer la sécurité
-et l’efficacité du réseau. La connaissance des équipements avancés est
-essentielle pour les architectes réseau et les ingénieurs systèmes.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g5">
-<h3>QCM MODULES 5 – Routeur & Commutateurs avancés</h3>
-
-<div class="question">
-  <p><strong>Question 1 :</strong> Quelle est la fonction principale d’un routeur ?</p>
-  <label><input type="radio" name="m5q1" value="true"> Acheminer les paquets entre des réseaux différents</label>
-  <label><input type="radio" name="m5q1" value="false"> Transmettre les trames au niveau local uniquement</label>
-  <label><input type="radio" name="m5q1" value="false"> Chiffrer automatiquement le trafic</label>
-  <label><input type="radio" name="m5q1" value="false"> Fournir des adresses MAC</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 2 :</strong> À quelle couche OSI fonctionne principalement un commutateur (switch) ?</p>
-  <label><input type="radio" name="m5q2" value="true"> Couche 2 (Liaison de données)</label>
-  <label><input type="radio" name="m5q2" value="false"> Couche 1 (Physique)</label>
-  <label><input type="radio" name="m5q2" value="false"> Couche 3 (Réseau)</label>
-  <label><input type="radio" name="m5q2" value="false"> Couche 7 (Application)</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 3 :</strong> Quel protocole permet d’éviter les boucles réseau sur les commutateurs ?</p>
-  <label><input type="radio" name="m5q3" value="true"> STP (Spanning Tree Protocol)</label>
-  <label><input type="radio" name="m5q3" value="false"> ARP</label>
-  <label><input type="radio" name="m5q3" value="false"> ICMP</label>
-  <label><input type="radio" name="m5q3" value="false"> FTP</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 4 :</strong> Quelle fonctionnalité d’un commutateur permet de segmenter le réseau logiquement ?</p>
-  <label><input type="radio" name="m5q4" value="true"> VLAN</label>
-  <label><input type="radio" name="m5q4" value="false"> NAT</label>
-  <label><input type="radio" name="m5q4" value="false"> DHCP</label>
-  <label><input type="radio" name="m5q4" value="false"> DNS</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 5 :</strong> Quelle est la différence majeure entre un routeur et un switch de niveau 3 ?</p>
-  <label><input type="radio" name="m5q5" value="true"> Le routeur est optimisé pour l’interconnexion WAN</label>
-  <label><input type="radio" name="m5q5" value="false"> Le switch L3 ne peut pas faire de routage</label>
-  <label><input type="radio" name="m5q5" value="false"> Le routeur ne connaît pas les adresses IP</label>
-  <label><input type="radio" name="m5q5" value="false"> Il n’y a aucune différence</label>
-</div>
-
-<button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-
-<button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-
-<!-- MODULE 5 -->
-<div class="module">
-<h2>5. VLAN et segmentation</h2>
-
-<p>
-Le VLAN (Virtual Local Area Network) permet de segmenter un réseau physique en
-plusieurs réseaux logiques indépendants. Cela offre isolation, sécurité et
-meilleure gestion du trafic. Les VLANs réduisent les broadcasts et facilitent
-l’administration des grands réseaux d’entreprise.
-</p>
-
-<p>
-La segmentation réseau permet de créer des zones sécurisées, où l’accès aux
-ressources sensibles peut être contrôlé de manière granulaire. Elle améliore
-également les performances en limitant le trafic inutile entre segments.
-Les VLANs sont configurables sur les switches managés et peuvent être liés à
-des ports, des adresses MAC ou des protocoles spécifiques.
-</p>
-
-<p>
-L’interconnexion entre VLANs nécessite un routeur ou un switch de niveau 3,
-souvent appelé "Router-on-a-Stick", qui assure la communication inter-VLAN
-tout en appliquant les politiques de sécurité et les ACL (Access Control Lists).
-</p>
-
-<p>
-La gestion efficace des VLANs inclut l’étiquetage VLAN (802.1Q), la sécurité
-des ports, la prévention des VLAN hopping, et la surveillance continue pour
-détecter toute anomalie. Une conception soignée des VLANs est essentielle
-pour la performance, la sécurité et la résilience du réseau.
-</p>
-
-<div class="qcm" data-group="g6">
-<h3>QCM MODULES 6 – VLAN & Segmentation</h3>
-
-<div class="question">
-  <p><strong>Question 1 :</strong> Quel est l’objectif principal des VLAN ?</p>
-  <label><input type="radio" name="m6q1" value="true"> Segmenter le réseau logiquement indépendamment de la topologie physique</label>
-  <label><input type="radio" name="m6q1" value="false"> Augmenter automatiquement la bande passante</label>
-  <label><input type="radio" name="m6q1" value="false"> Remplacer le routage</label>
-  <label><input type="radio" name="m6q1" value="false"> Chiffrer le trafic interne</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 2 :</strong> Quel type de port transporte plusieurs VLAN simultanément ?</p>
-  <label><input type="radio" name="m6q2" value="true"> Port trunk</label>
-  <label><input type="radio" name="m6q2" value="false"> Port access</label>
-  <label><input type="radio" name="m6q2" value="false"> Port miroir</label>
-  <label><input type="radio" name="m6q2" value="false"> Port isolé</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 3 :</strong> Quel protocole permet l’identification des VLAN sur un lien trunk ?</p>
-  <label><input type="radio" name="m6q3" value="true"> IEEE 802.1Q</label>
-  <label><input type="radio" name="m6q3" value="false"> STP</label>
-  <label><input type="radio" name="m6q3" value="false"> ARP</label>
-  <label><input type="radio" name="m6q3" value="false"> ICMP</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 4 :</strong> Que se passe-t-il si deux hôtes sont dans des VLAN différents ?</p>
-  <label><input type="radio" name="m6q4" value="true"> Ils doivent passer par un équipement de couche 3 pour communiquer</label>
-  <label><input type="radio" name="m6q4" value="false"> Ils communiquent directement</label>
-  <label><input type="radio" name="m6q4" value="false"> Le switch convertit automatiquement les VLAN</label>
-  <label><input type="radio" name="m6q4" value="false"> Le trafic est chiffré automatiquement</label>
-</div>
-
-<div class="question">
-  <p><strong>Question 5 :</strong> Quel est l’avantage principal de la segmentation réseau ?</p>
-  <label><input type="radio" name="m6q5" value="true"> Réduction de la surface d’attaque et du trafic inutile</label>
-  <label><input type="radio" name="m6q5" value="false"> Suppression des firewalls</label>
-  <label><input type="radio" name="m6q5" value="false"> Augmentation automatique du débit Internet</label>
-  <label><input type="radio" name="m6q5" value="false"> Centralisation des mots de passe</label>
-</div>
-
-<button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-
-<!-- MODULE 6 -->
-<div class="module">
-<h2>6. Wi-Fi et réseaux sans fil avancés</h2>
-
-<p>
-Le Wi-Fi moderne repose sur les normes IEEE 802.11ac et 802.11ax (Wi-Fi 5 et Wi-Fi 6),
-qui offrent des débits très élevés, une meilleure couverture et une gestion optimisée
-du spectre radio. Les protocoles WPA2 et WPA3 garantissent la confidentialité et
-l’intégrité des données échangées.
-</p>
-
-<p>
-Les points d’accès peuvent gérer plusieurs SSID, appliquer des VLANs différents,
-et offrir des politiques d’accès différenciées selon les utilisateurs ou types de
-dispositifs. La qualité de service (QoS) est utilisée pour prioriser certains flux,
-comme la VoIP ou le streaming vidéo, garantissant des performances stables.
-</p>
-
-<p>
-Les attaques contre les réseaux Wi-Fi incluent le brute-force, le rogue AP,
-l’usurpation de MAC et le WPA cracking. La sécurité repose sur le chiffrement AES,
-l’authentification 802.1X et la segmentation des réseaux invités.
-</p>
-
-<p>
-Une bonne gestion du Wi-Fi inclut la rotation régulière des clés, la surveillance
-des canaux pour éviter les interférences, et l’intégration à un contrôleur centralisé
-pour les réseaux d’entreprise. La planification et le déploiement intelligents
-sont essentiels pour maintenir performance, sécurité et fiabilité.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g6">
-<h3>QCM MODULES 6</h3>
-
-<p><strong>Question 1 :</strong> Quelle norme Wi-Fi offre les meilleures performances et efficacité ?</p>
-<label><input type="radio" name="m6q1" value="true"> IEEE 802.11ax</label>
-<label><input type="radio" name="m6q1" value="false"> IEEE 802.11n</label>
-<label><input type="radio" name="m6q1" value="false"> IEEE 802.11g</label>
-<label><input type="radio" name="m6q1" value="false"> IEEE 802.11b</label>
-
-<p><strong>Question 2 :</strong> Quel protocole de sécurité est recommandé pour un Wi-Fi d’entreprise ?</p>
-<label><input type="radio" name="m6q2" value="true"> WPA3 avec authentification 802.1X</label>
-<label><input type="radio" name="m6q2" value="false"> WEP</label>
-<label><input type="radio" name="m6q2" value="false"> Open Wi-Fi</label>
-<label><input type="radio" name="m6q2" value="false"> WPA2 TKIP uniquement</label>
-
-<button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
-
-<!-- MODULE 7 -->
-<div class="module">
-<h2>7. Protocoles de sécurité réseau</h2>
-
-<p>
-Les protocoles de sécurité réseau sont essentiels pour protéger les communications
-entre serveurs, postes clients et périphériques. TLS (Transport Layer Security)
-assure le chiffrement des données échangées sur le web, IPsec sécurise les tunnels VPN,
-et SSH (Secure Shell) protège l’accès à distance aux systèmes.
-</p>
-
-<p>
-Ces protocoles garantissent la confidentialité, l’intégrité et l’authenticité des
-données. La mise en œuvre correcte inclut la gestion des certificats, la configuration
-des clés, et le respect des standards pour éviter les failles comme Heartbleed,
-POODLE ou Man-in-the-Middle.
-</p>
-
-<p>
-IPsec fonctionne en mode transport ou tunnel, avec des algorithmes modernes comme AES
-et SHA-2. SSH offre un chiffrement fort et une authentification par clé publique,
-réduisant considérablement les risques liés aux mots de passe faibles.
-</p>
-
-<p>
-La surveillance et la mise à jour régulière des protocoles sont essentielles pour
-prévenir les vulnérabilités, assurer la conformité aux normes ISO/IEC et maintenir
-la sécurité dans des environnements critiques.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g7">
-<h3>QCM MODULES 7</h3>
-
-<p><strong>Question 1 :</strong> Quel protocole est utilisé pour sécuriser l’accès à distance aux serveurs ?</p>
-<label><input type="radio" name="m7q1" value="true"> SSH</label>
-<label><input type="radio" name="m7q1" value="false"> HTTP</label>
-<label><input type="radio" name="m7q1" value="false"> FTP</label>
-<label><input type="radio" name="m7q1" value="false"> Telnet</label>
-
-<p><strong>Question 2 :</strong> Quel protocole chiffre les communications web et garantit l’intégrité ?</p>
-<label><input type="radio" name="m7q2" value="true"> TLS</label>
-<label><input type="radio" name="m7q2" value="false"> SMTP simple</label>
-<label><input type="radio" name="m7q2" value="false"> ICMP</label>
-<label><input type="radio" name="m7q2" value="false"> DNS</label>
-
-<button data-group="g7" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
-
-<!-- MODULE 8 -->
-<div class="module">
-<h2>8. VPN et tunnels sécurisés</h2>
-
-<p>
-Un VPN (Virtual Private Network) permet de créer un tunnel sécurisé et chiffré
-entre un utilisateur et un serveur, ou entre deux réseaux distants. Les VPN
-garantissent la confidentialité et l’intégrité des données sur des réseaux publics
-ou non fiables. Les protocoles les plus courants incluent OpenVPN, IPsec et WireGuard.
-</p>
-
-<p>
-La configuration d’un VPN comprend l’authentification des utilisateurs, le chiffrement
-des flux (AES-256, ChaCha20), et la mise en place de tunnels sécurisés. Les VPN
-sont utilisés pour le télétravail, l’accès distant aux ressources d’entreprise,
-et le contournement sécurisé des restrictions géographiques.
-</p>
-
-<p>
-WireGuard est un protocole moderne, léger et rapide, qui simplifie la configuration
-tout en offrant un chiffrement moderne. IPsec reste très utilisé dans les environnements
-entreprises pour sa compatibilité et sa robustesse. Les VPN doivent être surveillés
-pour détecter toute tentative d’intrusion ou fuite de données.
-</p>
-
-<p>
-Une bonne politique VPN inclut la rotation régulière des clés, la gestion centralisée,
-et l’intégration avec l’authentification à deux facteurs pour renforcer la sécurité.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g8">
-<h3>QCM MODULES 8</h3>
-
-<p><strong>Question 1 :</strong> Quel protocole VPN est moderne, léger et rapide ?</p>
-<label><input type="radio" name="m8q1" value="true"> WireGuard</label>
-<label><input type="radio" name="m8q1" value="false"> PPTP</label>
-<label><input type="radio" name="m8q1" value="false"> L2TP sans chiffrement</label>
-<label><input type="radio" name="m8q1" value="false"> Telnet</label>
-
-<p><strong>Question 2 :</strong> Quel algorithme est recommandé pour le chiffrement des flux VPN ?</p>
-<label><input type="radio" name="m8q2" value="true"> AES-256</label>
-<label><input type="radio" name="m8q2" value="false"> MD5 simple</label>
-<label><input type="radio" name="m8q2" value="false"> WEP</label>
-<label><input type="radio" name="m8q2" value="false"> HTTP</label>
-
-<button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
-
-<!-- MODULE 9 -->
-<div class="module">
-<h2>9. Firewalls et contrôle d’accès</h2>
-
-<p>
-Un firewall est un dispositif de sécurité réseau qui contrôle le trafic entrant et sortant
-selon des règles prédéfinies. Il peut être matériel ou logiciel, et existe sous différentes
-formes : stateless (filtrage simple), stateful (analyse des sessions) ou NGFW (Next-Generation Firewall)
-capable d’inspecter le contenu des paquets.
-</p>
-
-<p>
-Les firewalls modernes intègrent des fonctions avancées telles que la détection d’intrusions,
-l’inspection profonde des paquets (Deep Packet Inspection), et la gestion granulaire des
-politiques d’accès utilisateur. Ils permettent également de segmenter le réseau et d’appliquer
-des ACL (Access Control Lists) pour protéger les ressources sensibles.
-</p>
-
-<p>
-Pour un réseau sécurisé, il est essentiel de configurer correctement les règles de firewall,
-de surveiller les journaux pour détecter toute activité suspecte, et de tester régulièrement
-les configurations avec des audits de sécurité et des scans de vulnérabilités.
-</p>
-
-<p>
-Une mauvaise configuration peut laisser passer des attaques telles que le spoofing, les scans de ports
-non autorisés ou les tentatives de brute-force sur les services critiques.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g9">
-<h3>QCM MODULES 9</h3>
-
-<p><strong>Question 1 :</strong> Quel type de firewall analyse le contenu des paquets en profondeur ?</p>
-<label><input type="radio" name="m9q1" value="true"> Next-Generation Firewall (NGFW)</label>
-<label><input type="radio" name="m9q1" value="false"> Stateless simple</label>
-<label><input type="radio" name="m9q1" value="false"> Router classique</label>
-<label><input type="radio" name="m9q1" value="false"> Switch non manageable</label>
-
-<p><strong>Question 2 :</strong> Les ACL (Access Control Lists) servent à :</p>
-<label><input type="radio" name="m9q2" value="true"> Définir quelles ressources sont accessibles à quels utilisateurs</label>
-<label><input type="radio" name="m9q2" value="false"> Prioriser le trafic VoIP uniquement</label>
-<label><input type="radio" name="m9q2" value="false"> Configurer les VLAN automatiquement</label>
-<label><input type="radio" name="m9q2" value="false"> Assigner des adresses IP dynamiques</label>
-
-<button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
-
-<!-- MODULE 10 -->
-<div class="module">
-<h2>10. IDS / IPS avancés</h2>
-
-<p>
-Les systèmes IDS (Intrusion Detection System) et IPS (Intrusion Prevention System) sont
-des outils essentiels pour sécuriser les réseaux d’entreprise. Un IDS surveille le trafic
-et alerte lorsqu’une activité suspecte est détectée, tandis qu’un IPS peut bloquer automatiquement
-les attaques en temps réel.
-</p>
-
-<p>
-Ces systèmes utilisent plusieurs techniques : la détection basée sur des signatures, qui repère
-les modèles connus d’attaques ; la détection basée sur le comportement, qui identifie les
-actions anormales par rapport au trafic habituel ; et des règles personnalisées adaptées à
-l’infrastructure spécifique de l’entreprise.
-</p>
-
-<p>
-Pour être efficace, un IDS/IPS doit être correctement configuré, régulièrement mis à jour
-avec les dernières signatures, et intégré à un système de journalisation centralisée pour
-analyser les alertes et corriger rapidement les failles détectées.
-</p>
-
-<p>
-La combinaison d’IDS/IPS avec des firewalls, VPN, et solutions de monitoring permet de créer
-une architecture de sécurité en couches, limitant les risques d’intrusions et protégeant
-les données sensibles de l’entreprise.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g10">
-<h3>QCM MODULES 10</h3>
-
-<p><strong>Question 1 :</strong> Quel est le rôle principal d’un IDS ?</p>
-<label><input type="radio" name="m10q1" value="true"> Détecter et alerter sur les intrusions dans le réseau</label>
-<label><input type="radio" name="m10q1" value="false"> Attribuer des adresses IP automatiquement</label>
-<label><input type="radio" name="m10q1" value="false"> Prioriser le trafic VoIP</label>
-<label><input type="radio" name="m10q1" value="false"> Configurer les VLANs</label>
-
-<p><strong>Question 2 :</strong> Quelle fonction distingue un IPS d’un IDS classique ?</p>
-<label><input type="radio" name="m10q2" value="true"> Bloquer automatiquement les attaques détectées</label>
-<label><input type="radio" name="m10q2" value="false"> Surveiller uniquement les journaux</label>
-<label><input type="radio" name="m10q2" value="false"> Fournir une interface Wi-Fi sécurisée</label>
-<label><input type="radio" name="m10q2" value="false"> Créer des VLAN dynamiques</label>
-
-<button data-group="g10" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
+  <h2>Module 2 – Modèles OSI et TCP/IP</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Pour comprendre comment les réseaux communiquent, il est essentiel de connaître les <strong>modèles de référence réseau</strong>. Les deux modèles principaux sont le 
+    <strong>modèle OSI</strong> et le <strong>modèle TCP/IP</strong>. Ces modèles servent à organiser et standardiser la communication entre les appareils sur un réseau.
+  </p>
+
+  <p>
+    Le <strong>modèle OSI (Open Systems Interconnection)</strong> est composé de 7 couches :
+    <ul>
+      <li><strong>Couche 7 – Application :</strong> interface avec l’utilisateur, par exemple navigateur web ou client email.</li>
+      <li><strong>Couche 6 – Présentation :</strong> formatage des données, chiffrement et compression.</li>
+      <li><strong>Couche 5 – Session :</strong> gestion des sessions et dialogues entre applications.</li>
+      <li><strong>Couche 4 – Transport :</strong> transmission fiable des données avec TCP ou rapide mais moins fiable avec UDP.</li>
+      <li><strong>Couche 3 – Réseau :</strong> routage et adressage IP pour déterminer le chemin vers la destination.</li>
+      <li><strong>Couche 2 – Liaison :</strong> transmission des trames sur le réseau local, par exemple Ethernet ou VLAN.</li>
+      <li><strong>Couche 1 – Physique :</strong> transmission des bits sur les supports physiques : câble, fibre ou ondes radio.</li>
+    </ul>
+  </p>
+
+  <p>
+    Le <strong>modèle TCP/IP</strong> est plus simple et pratique pour Internet, avec 4 couches principales :
+    <ul>
+      <li><strong>Application :</strong> inclut tous les services utilisateurs (HTTP, FTP, SMTP…)</li>
+      <li><strong>Transport :</strong> TCP et UDP pour transporter les données</li>
+      <li><strong>Internet :</strong> gestion de l’adressage et routage des paquets (IP)</li>
+      <li><strong>Accès réseau :</strong> correspond aux couches physique et liaison du modèle OSI</li>
+    </ul>
+  </p>
+
+  <p>
+    Ces modèles permettent aux ingénieurs réseau de <strong>diagnostiquer les problèmes, concevoir les réseaux et comprendre comment les données circulent d’un ordinateur à un autre</strong>.
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Lorsqu’un utilisateur envoie un email, les données passent par chaque couche : l’application compose l’email, la couche transport segmente et vérifie la transmission, la couche réseau achemine les paquets à travers Internet, et enfin les couches liaison et physique transfèrent les bits via le câble ou la fibre jusqu’au serveur de destination.
+  </p>
+
+  <!-- QCM Module 2 -->
+  <div class="qcm" data-group="g2">
+    <h3>QCM MODULE 2 – Modèles OSI et TCP/IP</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Combien de couches comporte le modèle OSI ?</p>
+      <label><input type="radio" name="m2q1" value="true"> 7</label>
+      <label><input type="radio" name="m2q1" value="false"> 4</label>
+      <label><input type="radio" name="m2q1" value="false"> 5</label>
+      <label><input type="radio" name="m2q1" value="false"> 6</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quelle couche du modèle TCP/IP correspond à la couche réseau du modèle OSI ?</p>
+      <label><input type="radio" name="m2q2" value="true"> Internet</label>
+      <label><input type="radio" name="m2q2" value="false"> Transport</label>
+      <label><input type="radio" name="m2q2" value="false"> Application</label>
+      <label><input type="radio" name="m2q2" value="false"> Accès réseau</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
 </div>
     
-<!-- MODULE 11 -->
 <div class="module">
-<h2>11. NAT avancé et translation d'adresses</h2>
+  <h2>Module 3 – Adressage IP (IPv4 & IPv6)</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    L’<strong>adressage IP</strong> est la méthode qui permet d’identifier de manière unique chaque appareil connecté à un réseau informatique.  
+    Chaque appareil, qu’il s’agisse d’un ordinateur, d’un serveur, d’une imprimante réseau ou d’un smartphone, doit avoir une adresse IP pour pouvoir communiquer et échanger des données sur le réseau.
+  </p>
 
-<p>
-Le NAT (Network Address Translation) est une technique fondamentale pour la gestion des adresses IP
-dans les réseaux modernes. Il permet de traduire les adresses privées des dispositifs internes
-en adresses publiques, offrant à la fois connectivité Internet et sécurité en masquant la topologie interne.
-</p>
+  <p>
+    Il existe deux versions principales d’adresses IP :
+    <ul>
+      <li><strong>IPv4 :</strong> utilise 32 bits, représentés par quatre nombres décimaux compris entre 0 et 255, séparés par des points (ex : 192.168.1.1). C’est la version la plus utilisée mais limitée en nombre d’adresses disponibles.</li>
+      <li><strong>IPv6 :</strong> utilise 128 bits, représentés par huit groupes hexadécimaux séparés par des deux-points (ex : 2001:0db8:85a3::8a2e:0370:7334). Elle a été créée pour résoudre le problème de pénurie d’adresses IPv4 et offre plus de fonctionnalités, notamment l’autoconfiguration et la sécurité intégrée.</li>
+    </ul>
+  </p>
 
-<p>
-Il existe plusieurs types de NAT : le NAT statique, qui associe une adresse privée à une adresse
-publique fixe ; le NAT dynamique, qui utilise un pool d’adresses publiques pour plusieurs hôtes
-internes ; et le PAT (Port Address Translation), qui permet à plusieurs hôtes de partager une
-seule adresse publique grâce à des numéros de ports différents.
-</p>
+  <p>
+    Les adresses IPv4 sont classées en différentes <strong>classes</strong> pour organiser les réseaux :
+    <ul>
+      <li><strong>Classe A :</strong> grandes organisations, jusqu’à 16 millions d’hôtes par réseau.</li>
+      <li><strong>Classe B :</strong> organisations moyennes, jusqu’à 65 000 hôtes par réseau.</li>
+      <li><strong>Classe C :</strong> petites organisations ou réseaux locaux, jusqu’à 254 hôtes par réseau.</li>
+      <li>Les classes D et E sont réservées pour le multicast et les usages expérimentaux.</li>
+    </ul>
+  </p>
 
-<p>
-Le NAT améliore la sécurité en empêchant les attaques directes sur les adresses internes et permet
-d’économiser des adresses IPv4 dans des réseaux de grande taille. Une configuration correcte
-doit inclure des règles précises et un suivi des sessions pour éviter les conflits et les interruptions
-de service.
-</p>
+  <p>
+    Pour optimiser l’utilisation des adresses et améliorer la gestion des réseaux, on utilise le <strong>subnetting</strong>.  
+    Le subnetting consiste à diviser un réseau en sous-réseaux plus petits afin de : 
+    <ul>
+      <li>Réduire le trafic inutile sur chaque segment.</li>
+      <li>Améliorer la sécurité en isolant certains départements ou services.</li>
+      <li>Gérer plus facilement les adresses IP.</li>
+    </ul>
+    Le format <strong>CIDR (Classless Inter-Domain Routing)</strong> est utilisé pour représenter la taille du réseau et du sous-réseau.  
+    Exemple : <code>192.168.1.0/24</code> signifie que les 24 premiers bits sont réservés au réseau et les 8 derniers aux hôtes.
+  </p>
 
-<p>
-Les administrateurs réseau combinent souvent NAT avec des firewalls et des VPN pour sécuriser
-les échanges, et avec des mécanismes de journalisation pour surveiller le trafic et détecter
-des comportements anormaux.
-</p>
+  <p>
+    <strong>Exemple concret :</strong> Une entreprise de 500 ordinateurs peut utiliser l’adresse IPv4 <code>192.168.0.0/23</code>, créant deux sous-réseaux de 256 adresses chacun pour séparer les départements IT et Finance.  
+    Cela permet d’éviter que tout le trafic se mélange et rend le réseau plus performant et sécurisé.
+  </p>
 
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g11">
-<h3>QCM MODULES 11</h3>
+  <p>
+    <strong>Points importants :</strong>
+    <ul>
+      <li>Une adresse IP est unique pour chaque appareil dans le même réseau.</li>
+      <li>IPv6 permet d’avoir un nombre quasi illimité d’adresses, idéal pour l’IoT et les réseaux modernes.</li>
+      <li>Subnetting et CIDR permettent de gérer efficacement les réseaux et la sécurité.</li>
+    </ul>
+  </p>
 
-<p><strong>Question 1 :</strong> Quel type de NAT permet de mapper plusieurs hôtes internes sur une seule IP publique ?</p>
-<label><input type="radio" name="m11q1" value="true"> PAT (Port Address Translation)</label>
-<label><input type="radio" name="m11q1" value="false"> NAT statique</label>
-<label><input type="radio" name="m11q1" value="false"> NAT dynamique classique</label>
-<label><input type="radio" name="m11q1" value="false"> NAT bidirectionnel</label>
+  <!-- QCM Module 3 -->
+  <div class="qcm" data-group="g3">
+    <h3>QCM MODULE 3 – Adressage IP (IPv4 & IPv6)</h3>
 
-<p><strong>Question 2 :</strong> Quelle est la principale fonction du NAT ?</p>
-<label><input type="radio" name="m11q2" value="true"> Traduire les adresses IP internes en adresses publiques</label>
-<label><input type="radio" name="m11q2" value="false"> Crypter les paquets IP</label>
-<label><input type="radio" name="m11q2" value="false"> Prioriser le trafic VoIP</label>
-<label><input type="radio" name="m11q2" value="false"> Surveiller les intrusions</label>
+    <div class="question">
+      <p><strong>Question 1 :</strong> Combien de bits utilise IPv4 pour représenter une adresse ?</p>
+      <label><input type="radio" name="m3q1" value="true"> 32 bits</label>
+      <label><input type="radio" name="m3q1" value="false"> 128 bits</label>
+      <label><input type="radio" name="m3q1" value="false"> 64 bits</label>
+      <label><input type="radio" name="m3q1" value="false"> 16 bits</label>
+    </div>
 
-<button data-group="g11" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel est l’objectif principal du subnetting ?</p>
+      <label><input type="radio" name="m3q2" value="true"> Diviser un réseau en sous-réseaux plus petits</label>
+      <label><input type="radio" name="m3q2" value="false"> Créer des adresses MAC</label>
+      <label><input type="radio" name="m3q2" value="false"> Augmenter la vitesse d’Internet</label>
+      <label><input type="radio" name="m3q2" value="false"> Chiffrer les paquets IP</label>
+    </div>
 
-<!-- MODULE 12 -->
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
 <div class="module">
-<h2>12. DNS avancé et sécurité</h2>
+  <h2>Module 4 – Adresse IP (IPv4) </h2>
 
-<p>
-Le DNS (Domain Name System) est un composant critique d’Internet, permettant de traduire
-les noms de domaine en adresses IP que les machines peuvent comprendre. Une mauvaise
-configuration DNS peut rendre un réseau vulnérable à des attaques telles que le DNS Spoofing,
-le Cache Poisoning ou les DDoS ciblant les serveurs DNS.
-</p>
+  <p>
+    Une <strong>adresse IPv4</strong> est composée de 32 bits et sert à identifier un appareil sur un réseau.  
+    Ces 32 bits sont divisés en 4 octets (8 bits chacun), séparés par des points.  
+    Pour chaque réseau, il est essentiel de connaître les composants suivants :
+  </p>
 
-<p>
-Pour renforcer la sécurité DNS, les entreprises utilisent DNSSEC, qui signe cryptographiquement
-les zones DNS afin de garantir l’intégrité et l’authenticité des réponses. Les serveurs DNS doivent
-être résilients, répartis géographiquement, et configurés pour limiter les tentatives de cache
-poisoning et les requêtes non autorisées.
-</p>
+  <h3>1. Adresse réseau</h3>
+  <p>
+    <strong>Définition :</strong> Identifie le réseau dans lequel se trouvent les appareils.  
+    <br><strong>Exemple :</strong> 192.168.1.0  
+    <br><strong>Fonction :</strong> Permet aux routeurs et appareils de savoir à quel réseau appartient une IP.  
+    <br><strong>Binaire :</strong> 11000000.10101000.00000001.00000000
+  </p>
 
-<p>
-La surveillance des journaux DNS, la mise en place de serveurs secondaires sécurisés, et
-l’intégration avec des systèmes de détection d’intrusions (IDS/IPS) permettent de détecter
-rapidement des comportements suspects et de protéger l’infrastructure réseau.
-</p>
+  <h3>2. Masque de sous-réseau (Masque par défaut)</h3>
+  <p>
+    <strong>Définition :</strong> Indique quelles parties de l’adresse IP correspondent au réseau et quelles parties aux hôtes.  
+    <br><strong>Exemple :</strong> 255.255.255.0 (/24)  
+    <br><strong>Fonction :</strong> Permet de séparer la portion réseau et la portion hôte pour savoir combien d’appareils peuvent être connectés.  
+    <br><strong>Binaire :</strong> 11111111.11111111.11111111.00000000
+  </p>
 
-<p>
-En environnement professionnel, le DNS sécurisé est souvent combiné avec des politiques
-de firewall, des VPN et des filtres de contenu pour garantir la disponibilité, l’intégrité
-et la confidentialité des flux de données.
-</p>
+  <h3>3. Plage d’hôtes</h3>
+  <p>
+    <strong>Définition :</strong> Ensemble des adresses IP que l’on peut attribuer aux appareils.  
+    <br><strong>Exemple :</strong> 192.168.1.1 à 192.168.1.254  
+    <br><strong>Fonction :</strong> Permet d’assigner des IP uniques à chaque appareil du réseau.  
+    <br><strong>Binaire :</strong> 11000000.10101000.00000001.00000001 à 11000000.10101000.00000001.11111110
+  </p>
 
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g12">
-<h3>QCM MODULES 12</h3>
+  <h3>4. Adresse de diffusion</h3>
+  <p>
+    <strong>Définition :</strong> Dernière adresse du réseau utilisée pour envoyer un message à tous les appareils.  
+    <br><strong>Exemple :</strong> 192.168.1.255  
+    <br><strong>Fonction :</strong> Permet la communication simultanée avec tous les hôtes du réseau.  
+    <br><strong>Binaire :</strong> 11000000.10101000.00000001.11111111
+  </p>
 
-<p><strong>Question 1 :</strong> Quel mécanisme protège l'intégrité des réponses DNS ?</p>
-<label><input type="radio" name="m12q1" value="true"> DNSSEC</label>
-<label><input type="radio" name="m12q1" value="false"> HTTP/2</label>
-<label><input type="radio" name="m12q1" value="false"> VPN simple</label>
-<label><input type="radio" name="m12q1" value="false"> SSL/TLS uniquement</label>
+  <h3>Résumé visuel</h3>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Composant</th>
+      <th>Exemple</th>
+      <th>Binaire</th>
+      <th>Fonction</th>
+    </tr>
+    <tr>
+      <td>Adresse réseau</td>
+      <td>192.168.1.0</td>
+      <td>11000000.10101000.00000001.00000000</td>
+      <td>Identifie le réseau entier</td>
+    </tr>
+    <tr>
+      <td>Masque de sous-réseau</td>
+      <td>255.255.255.0 (/24)</td>
+      <td>11111111.11111111.11111111.00000000</td>
+      <td>Détermine la partie réseau et la partie hôte</td>
+    </tr>
+    <tr>
+      <td>Plage d’hôtes</td>
+      <td>192.168.1.1 à 192.168.1.254</td>
+      <td>11000000.10101000.00000001.00000001 à 11000000.10101000.00000001.11111110</td>
+      <td>Adresses assignables aux appareils</td>
+    </tr>
+    <tr>
+      <td>Adresse de diffusion</td>
+      <td>192.168.1.255</td>
+      <td>11000000.10101000.00000001.11111111</td>
+      <td>Adresse pour envoyer à tous les hôtes</td>
+    </tr>
+  </table>
 
-<p><strong>Question 2 :</strong> Quelle attaque DNS altère le cache des serveurs pour renvoyer de fausses adresses IP ?</p>
-<label><input type="radio" name="m12q2" value="true"> DNS Cache Poisoning</label>
-<label><input type="radio" name="m12q2" value="false"> Phishing classique</label>
-<label><input type="radio" name="m12q2" value="false"> ARP Spoofing</label>
-<label><input type="radio" name="m12q2" value="false"> Bruteforce Wi-Fi</label>
+  <!-- QCM Module -->
+  <div class="qcm" data-group="g4">
+    <h3>QCM – Adresse IP de Base</h3>
 
-<button data-group="g12" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quelle est l’adresse de diffusion du réseau 192.168.1.0/24 ?</p>
+      <label><input type="radio" name="q1" value="true"> 192.168.1.255</label>
+      <label><input type="radio" name="q1" value="false"> 192.168.1.254</label>
+      <label><input type="radio" name="q1" value="false"> 192.168.1.0</label>
+      <label><input type="radio" name="q1" value="false"> 192.168.1.1</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quelle est la plage des hôtes pour le réseau 192.168.1.0/24 ?</p>
+      <label><input type="radio" name="q2" value="true"> 192.168.1.1 à 192.168.1.254</label>
+      <label><input type="radio" name="q2" value="false"> 192.168.1.0 à 192.168.1.255</label>
+      <label><input type="radio" name="q2" value="false"> 192.168.1.0 à 192.168.1.254</label>
+      <label><input type="radio" name="q2" value="false"> 192.168.1.1 à 192.168.1.255</label>
+    </div>
+
+    <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
 </div>
-</div>
-
-<!-- MODULE 13 -->
 <div class="module">
-<h2>13. QoS et gestion de trafic</h2>
+  <h2>Module 5 – Sous-réseaux IPv4 </h2>
 
-<p>
-La QoS (Quality of Service) est une technique avancée utilisée pour garantir que certains types
-de trafic réseau bénéficient d’une priorité plus élevée que d’autres. Cela est crucial dans les
-environnements où la performance est critique, comme la VoIP, le streaming vidéo ou les systèmes
-industriels connectés.
-</p>
+  <p>
+    Le <strong>subnetting</strong> (division en sous-réseaux) permet de diviser un réseau en plusieurs parties plus petites.  
+    Chaque sous-réseau a ses propres adresses réseau, plage d’hôtes et adresse de diffusion, ce qui facilite la gestion des adresses et améliore la sécurité.
+  </p>
 
-<p>
-La mise en place de QoS implique la classification du trafic, l’allocation de bande passante,
-la mise en file d’attente (queuing), et l’application de politiques de limitation des flux non prioritaires.
-Une mauvaise configuration peut provoquer de la latence, de la perte de paquets et affecter
-les services critiques.
-</p>
+  <h3>Exemple : Réseau 192.168.10.0/24 découpé en sous-réseaux /26</h3>
+  <p>
+    - Masque sous-réseau : <strong>/26</strong> → 255.255.255.192  
+    - Chaque sous-réseau contient 64 adresses totales : 1 réseau + 62 hôtes + 1 diffusion
+  </p>
 
-<p>
-Les techniques de marquage des paquets, comme DSCP (Differentiated Services Code Point), permettent
-aux routeurs et commutateurs de prioriser correctement le trafic sur l’ensemble du réseau.
-La QoS est souvent combinée avec le monitoring pour ajuster dynamiquement les politiques
-selon la charge réseau réelle.
-</p>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Sous-réseau</th>
+      <th>Adresse réseau</th>
+      <th>Masque sous-réseau</th>
+      <th>Plage d’hôtes</th>
+      <th>Adresse de diffusion</th>
+      <th>Binaire adresse réseau</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>192.168.10.0</td>
+      <td>255.255.255.192</td>
+      <td>192.168.10.1 à 192.168.10.62</td>
+      <td>192.168.10.63</td>
+      <td>11000000.10101000.00001010.00000000</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>192.168.10.64</td>
+      <td>255.255.255.192</td>
+      <td>192.168.10.65 à 192.168.10.126</td>
+      <td>192.168.10.127</td>
+      <td>11000000.10101000.00001010.01000000</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>192.168.10.128</td>
+      <td>255.255.255.192</td>
+      <td>192.168.10.129 à 192.168.10.190</td>
+      <td>192.168.10.191</td>
+      <td>11000000.10101000.00001010.10000000</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>192.168.10.192</td>
+      <td>255.255.255.192</td>
+      <td>192.168.10.193 à 192.168.10.254</td>
+      <td>192.168.10.255</td>
+      <td>11000000.10101000.00001010.11000000</td>
+    </tr>
+  </table>
 
-<p>
-Enfin, la gestion de trafic inclut le contrôle des flux entrants et sortants, la détection des
-goulots d’étranglement, et l’optimisation des ressources réseau pour garantir la continuité
-des services et la satisfaction des utilisateurs.
-</p>
+  <h3>Explications détaillées :</h3>
+  <ul>
+    <li><strong>Adresse réseau :</strong> identifie le sous-réseau et ne peut pas être assignée à un hôte.</li>
+    <li><strong>Masque sous-réseau :</strong> indique combien de bits sont réservés au réseau et combien aux hôtes.</li>
+    <li><strong>Plage d’hôtes :</strong> adresses IP disponibles pour les appareils dans ce sous-réseau.</li>
+    <li><strong>Adresse de diffusion :</strong> dernière adresse du sous-réseau, utilisée pour envoyer des données à tous les appareils en même temps.</li>
+    <li><strong>Représentation binaire :</strong> permet de visualiser la structure IP et calculer les sous-réseaux.</li>
+  </ul>
 
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g13">
-<h3>QCM MODULES 13</h3>
+  <!-- QCM Module -->
+  <div class="qcm" data-group="g3">
+    <h3>QCM – Sous-réseaux /26</h3>
 
-<p><strong>Question 1 :</strong> Quelle technique permet de prioriser le trafic VoIP sur un réseau ?</p>
-<label><input type="radio" name="m13q1" value="true"> Marquage DSCP et file d’attente prioritaire</label>
-<label><input type="radio" name="m13q1" value="false"> NAT statique</label>
-<label><input type="radio" name="m13q1" value="false"> VLAN simple sans marquage</label>
-<label><input type="radio" name="m13q1" value="false"> DHCP automatique</label>
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quelle est l’adresse de diffusion du 3ème sous-réseau 192.168.10.128/26 ?</p>
+      <label><input type="radio" name="m3q1" value="true"> 192.168.10.191</label>
+      <label><input type="radio" name="m3q1" value="false"> 192.168.10.190</label>
+      <label><input type="radio" name="m3q1" value="false"> 192.168.10.128</label>
+      <label><input type="radio" name="m3q1" value="false"> 192.168.10.192</label>
+    </div>
 
-<p><strong>Question 2 :</strong> Quel composant réseau applique directement la QoS sur les paquets ?</p>
-<label><input type="radio" name="m13q2" value="true"> Routeur ou commutateur avec support QoS</label>
-<label><input type="radio" name="m13q2" value="false"> Serveur DNS uniquement</label>
-<label><input type="radio" name="m13q2" value="false"> Firewall matériel simple</label>
-<label><input type="radio" name="m13q2" value="false"> Client FTP</label>
+    <div class="question">
+      <p><strong>Question 2 :</strong> Combien d’hôtes utilisables dans un sous-réseau /26 ?</p>
+      <label><input type="radio" name="m3q2" value="true"> 62</label>
+      <label><input type="radio" name="m3q2" value="false"> 64</label>
+      <label><input type="radio" name="m3q2" value="false"> 126</label>
+      <label><input type="radio" name="m3q2" value="false"> 256</label>
+    </div>
 
-<button data-group="g13" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
+    <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
 </div>
-</div>
-
-<!-- MODULE 14 -->
 <div class="module">
-<h2>14. Sécurité Wi-Fi et authentification</h2>
+  <h2>Module 6 – Protocoles réseau essentiels</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Les <strong>protocoles réseau</strong> sont des ensembles de règles et de standards qui permettent aux appareils informatiques de communiquer entre eux correctement sur un réseau.  
+    Ils définissent la manière dont les données sont transmises, reçues, segmentées, adressées et vérifiées pour garantir une communication fiable et efficace. Sans protocoles, les ordinateurs ne pourraient pas échanger d’informations de manière compréhensible.
+  </p>
 
-<p>
-La sécurité des réseaux Wi-Fi est cruciale pour protéger les données transmises sans fil. Les réseaux
-Wi-Fi modernes utilisent des protocoles avancés comme WPA3, l’authentification 802.1X et le chiffrement
-AES pour empêcher les accès non autorisés et les attaques par interception.
-</p>
+  <p>
+    Chaque protocole a un rôle spécifique et opère généralement à une ou plusieurs couches du modèle OSI ou TCP/IP :
+    <ul>
+      <li><strong>TCP (Transmission Control Protocol) :</strong> 
+        Fonction : garantir la transmission fiable des données entre deux appareils.  
+        Comment : segmente les données en paquets, vérifie leur arrivée et demande la retransmission en cas de perte.  
+        Exemple : téléchargement de fichiers, emails, navigation web sécurisée.
+      </li>
+      <li><strong>UDP (User Datagram Protocol) :</strong> 
+        Fonction : transmettre les données rapidement sans vérifier leur arrivée.  
+        Avantage : faible latence, idéal pour le streaming vidéo ou le jeu en ligne.  
+        Inconvénient : moins fiable que TCP.
+      </li>
+      <li><strong>ICMP (Internet Control Message Protocol) :</strong> 
+        Fonction : envoyer des messages de contrôle ou d’erreur entre appareils.  
+        Exemple : le célèbre ping utilise ICMP pour vérifier la connectivité.
+      </li>
+      <li><strong>ARP (Address Resolution Protocol) :</strong> 
+        Fonction : traduire une adresse IP en adresse MAC pour permettre la communication dans un réseau local.  
+        Exemple : un ordinateur veut envoyer un paquet à 192.168.1.5 et utilise ARP pour trouver son adresse physique.
+      </li>
+      <li><strong>DNS (Domain Name System) :</strong> 
+        Fonction : traduire les noms de domaine en adresses IP compréhensibles par les ordinateurs.  
+        Exemple : www.google.com devient 142.250.190.68.
+      </li>
+      <li><strong>DHCP (Dynamic Host Configuration Protocol) :</strong> 
+        Fonction : attribuer automatiquement une adresse IP, un masque de sous-réseau et une passerelle aux appareils d’un réseau.  
+        Exemple : lorsqu’un smartphone se connecte au Wi-Fi d’une entreprise, DHCP lui donne instantanément une adresse IP valide.
+      </li>
+    </ul>
+  </p>
 
-<p>
-Les attaques courantes sur les réseaux Wi-Fi incluent le brute-force sur les mots de passe, les
-points d’accès malveillants (rogue AP), et l’usurpation d’adresses MAC pour contourner les restrictions.
-La mise en place d’un réseau sécurisé nécessite l’isolation des clients, la rotation régulière des
-clés, et l’intégration à un système de gestion centralisée des points d’accès.
-</p>
+  <p>
+    <strong>Exemple concret :</strong> Lorsqu’un utilisateur ouvre son navigateur et tape <code>www.example.com</code> :
+    <ol>
+      <li>Le protocole DNS convertit le nom de domaine en adresse IP.</li>
+      <li>TCP segmente les données de la page et garantit que tous les paquets arrivent correctement.</li>
+      <li>IP achemine les paquets vers le serveur correspondant.</li>
+      <li>Si l’utilisateur regarde une vidéo en direct, UDP peut être utilisé pour réduire la latence.</li>
+      <li>ARP permet aux appareils du réseau local de s’adresser correctement entre eux.</li>
+    </ol>
+  </p>
 
-<p>
-L’authentification 802.1X combinée à un serveur RADIUS assure que seuls les utilisateurs autorisés
-accèdent au réseau et permet d’appliquer des politiques spécifiques par utilisateur ou par groupe.
-Le suivi et la journalisation des connexions Wi-Fi permettent également de détecter des anomalies
-et d’assurer la conformité avec les normes de sécurité.
-</p>
+  <p>
+    Comprendre ces protocoles est fondamental pour :
+    <ul>
+      <li>Diagnostiquer et résoudre les problèmes réseau.</li>
+      <li>Configurer correctement les serveurs et services réseau.</li>
+      <li>Optimiser les performances et la sécurité des communications.</li>
+    </ul>
+  </p>
 
-<p>
-La sécurité Wi-Fi doit être évaluée régulièrement, en testant la résistance des clés et la robustesse
-des protocoles de chiffrement, afin de prévenir les intrusions et garantir la confidentialité
-des communications sur le réseau sans fil.
-</p>
+  <!-- QCM Module 6 -->
+  <div class="qcm" data-group="g6">
+    <h3>QCM MODULE 6 – Protocoles réseau essentiels</h3>
 
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g14">
-<h3>QCM MODULES 14</h3>
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel protocole garantit la transmission fiable des données entre deux appareils ?</p>
+      <label><input type="radio" name="m4q1" value="true"> TCP</label>
+      <label><input type="radio" name="m4q1" value="false"> UDP</label>
+      <label><input type="radio" name="m4q1" value="false"> ICMP</label>
+      <label><input type="radio" name="m4q1" value="false"> ARP</label>
+    </div>
 
-<p><strong>Question 1 :</strong> Quelle méthode assure une authentification robuste pour les utilisateurs Wi-Fi ?</p>
-<label><input type="radio" name="m14q1" value="true"> 802.1X avec serveur RADIUS</label>
-<label><input type="radio" name="m14q1" value="false"> WEP uniquement</label>
-<label><input type="radio" name="m14q1" value="false"> Open Wi-Fi sans clé</label>
-<label><input type="radio" name="m14q1" value="false"> DHCP simple</label>
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel protocole traduit les noms de domaine en adresses IP ?</p>
+      <label><input type="radio" name="m4q2" value="true"> DNS</label>
+      <label><input type="radio" name="m4q2" value="false"> DHCP</label>
+      <label><input type="radio" name="m4q2" value="false"> TCP</label>
+      <label><input type="radio" name="m4q2" value="false"> UDP</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 7 – Commutation (Switching)</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    La <strong>commutation</strong> est le processus par lequel un switch transmet les données entre les différents appareils d’un réseau local (LAN).  
+    Contrairement aux hubs, qui envoient les données à tous les appareils, les switches intelligents transmettent uniquement les paquets à l’appareil destinataire, améliorant ainsi la vitesse et la sécurité du réseau.
+  </p>
+
+  <p>
+    Les concepts essentiels en commutation :
+    <ul>
+      <li><strong>VLAN (Virtual Local Area Network) :</strong> permet de segmenter logiquement un réseau en plusieurs réseaux indépendants, même si les appareils sont physiquement connectés au même switch.  
+        <strong>Exemple :</strong> séparer le service IT, le service Finance et le service RH dans des VLAN différents pour limiter le trafic inutile et renforcer la sécurité.
+      </li>
+      <li><strong>Trunking :</strong> permet à un lien entre deux switches de transporter plusieurs VLAN simultanément.  
+        <strong>Exemple :</strong> un switch principal peut transporter les VLAN IT et Finance vers un switch secondaire sur le même câble.
+      </li>
+      <li><strong>STP (Spanning Tree Protocol) :</strong> empêche les boucles dans le réseau lorsque plusieurs chemins existent entre switches.  
+        <strong>Exemple :</strong> dans un réseau avec deux switches interconnectés, STP bloque temporairement un chemin pour éviter les boucles de broadcast.
+      </li>
+      <li><strong>Port Security :</strong> contrôle quels appareils peuvent se connecter à chaque port du switch.  
+        <strong>Exemple :</strong> bloquer l’accès aux ports si une adresse MAC inconnue tente de se connecter.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Les switches modernes permettent également :
+    <ul>
+      <li>La qualité de service (QoS) pour prioriser certains types de trafic.</li>
+      <li>La gestion centralisée via SNMP ou interface web.</li>
+      <li>La mise en place de réseaux virtuels (VLANs) et VPN internes pour plus de sécurité.</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Dans une entreprise, tous les ordinateurs du service IT appartiennent au VLAN 10, tandis que le service Finance est sur VLAN 20.  
+    Les deux VLAN peuvent partager un même switch mais restent isolés pour éviter que le trafic Finance ne surcharge le réseau IT.
+  </p>
+
+  <!-- QCM Module 7 -->
+  <div class="qcm" data-group="g7">
+    <h3>QCM MODULE 7 – Commutation (Switching)</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel est l’objectif principal d’un VLAN ?</p>
+      <label><input type="radio" name="m5q1" value="true"> Segmenter logiquement le réseau</label>
+      <label><input type="radio" name="m5q1" value="false"> Augmenter automatiquement la bande passante Internet</label>
+      <label><input type="radio" name="m5q1" value="false"> Remplacer un routeur</label>
+      <label><input type="radio" name="m5q1" value="false"> Chiffrer le trafic interne</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel protocole empêche les boucles dans un réseau avec plusieurs chemins ?</p>
+      <label><input type="radio" name="m5q2" value="true"> STP (Spanning Tree Protocol)</label>
+      <label><input type="radio" name="m5q2" value="false"> DHCP</label>
+      <label><input type="radio" name="m5q2" value="false"> ARP</label>
+      <label><input type="radio" name="m5q2" value="false"> ICMP</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g7" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 8 – Routage (Routing)</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Le <strong>routage</strong> est le processus qui permet de transférer des données d’un réseau à un autre.  
+    Les routeurs examinent les adresses IP des paquets et décident du meilleur chemin pour les acheminer jusqu’à leur destination.  
+    Sans routage, les réseaux locaux resteraient isolés et la communication entre différents réseaux serait impossible.
+  </p>
+
+  <p>
+    Il existe deux types principaux de routage :
+    <ul>
+      <li><strong>Routage statique :</strong> les routes sont configurées manuellement par l’administrateur réseau.  
+        <strong>Exemple :</strong> un petit réseau d’entreprise avec deux routes fixes vers un réseau partenaire.
+      </li>
+      <li><strong>Routage dynamique :</strong> les routes sont apprises automatiquement par le routeur grâce à des protocoles de routage.  
+        Les protocoles les plus connus sont :
+        <ul>
+          <li><strong>RIP (Routing Information Protocol) :</strong> simple, basé sur le nombre de sauts (hop count) pour atteindre le réseau de destination.</li>
+          <li><strong>OSPF (Open Shortest Path First) :</strong> basé sur l’état des liens pour trouver le chemin le plus rapide et fiable.</li>
+          <li><strong>EIGRP (Enhanced Interior Gateway Routing Protocol) :</strong> développé par Cisco, combine distance et métriques de performance pour choisir la meilleure route.</li>
+          <li><strong>BGP (Border Gateway Protocol) :</strong> utilisé pour le routage entre réseaux sur Internet, basé sur des politiques et des chemins AS (Autonomous Systems).</li>
+        </ul>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Le routage permet également :
+    <ul>
+      <li>De connecter plusieurs VLAN ou sous-réseaux entre eux via un routeur ou un switch de couche 3.</li>
+      <li>D’assurer la redondance et la tolérance aux pannes grâce à plusieurs chemins possibles.</li>
+      <li>D’optimiser la performance du réseau en choisissant les routes les plus rapides.</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Dans une entreprise avec plusieurs sites (Paris, Lyon, Marseille), chaque site a son réseau local.  
+    Le routage dynamique avec OSPF permet aux routeurs de connaître automatiquement les chemins vers les autres sites et d’acheminer les données de manière optimale, même si une ligne tombe en panne.
+  </p>
+
+  <!-- QCM Module 8 -->
+  <div class="qcm" data-group="g8">
+    <h3>QCM MODULE 8 – Routage (Routing)</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel protocole de routage est basé sur le nombre de sauts (hop count) ?</p>
+      <label><input type="radio" name="m6q1" value="true"> RIP</label>
+      <label><input type="radio" name="m6q1" value="false"> OSPF</label>
+      <label><input type="radio" name="m6q1" value="false"> BGP</label>
+      <label><input type="radio" name="m6q1" value="false"> EIGRP</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel protocole est utilisé pour le routage entre réseaux sur Internet ?</p>
+      <label><input type="radio" name="m6q2" value="true"> BGP</label>
+      <label><input type="radio" name="m6q2" value="false"> RIP</label>
+      <label><input type="radio" name="m6q2" value="false"> OSPF</label>
+      <label><input type="radio" name="m6q2" value="false"> EIGRP</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+
+<div class="module">
+  <h2>Module 9 – Réseaux sans fil (Wireless)</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Les <strong>réseaux sans fil</strong> permettent aux appareils de communiquer et d’échanger des données sans utiliser de câbles physiques.  
+    Ils utilisent des ondes radio pour transmettre les informations entre les appareils (ordinateurs, smartphones, imprimantes) et les points d’accès (AP – Access Point).
+  </p>
+
+  <p>
+    Les principaux standards Wi-Fi sont définis par la norme <strong>IEEE 802.11</strong> :
+    <ul>
+      <li><strong>802.11a :</strong> vitesse jusqu’à 54 Mbps sur la bande 5 GHz.</li>
+      <li><strong>802.11b :</strong> vitesse jusqu’à 11 Mbps sur la bande 2,4 GHz.</li>
+      <li><strong>802.11g :</strong> vitesse jusqu’à 54 Mbps sur la bande 2,4 GHz.</li>
+      <li><strong>802.11n :</strong> vitesse jusqu’à 600 Mbps, multi-bande (2,4 et 5 GHz).</li>
+      <li><strong>802.11ac :</strong> vitesse jusqu’à plusieurs Gbps sur la bande 5 GHz.</li>
+      <li><strong>802.11ax (Wi-Fi 6) :</strong> vitesse plus élevée, meilleure efficacité pour les environnements denses.</li>
+    </ul>
+  </p>
+
+  <p>
+    La sécurité des réseaux sans fil est essentielle pour éviter les intrusions et le vol de données.  
+    Les principaux mécanismes de sécurité :
+    <ul>
+      <li><strong>WEP :</strong> ancien protocole, peu sécurisé aujourd’hui.</li>
+      <li><strong>WPA/WPA2 :</strong> protocole plus sûr, utilisant le chiffrement AES.</li>
+      <li><strong>WPA3 :</strong> dernière norme, offrant une meilleure protection des mots de passe et du trafic.</li>
+      <li><strong>MAC filtering :</strong> restriction d’accès aux appareils autorisés par adresse MAC.</li>
+      <li><strong>VPN :</strong> protection supplémentaire lors de l’accès à un réseau public.</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Dans une entreprise avec plusieurs bureaux, chaque point d’accès Wi-Fi est configuré avec WPA2 et un SSID dédié à chaque département.  
+    Cela permet aux employés de se connecter facilement, tout en maintenant une isolation entre les différents services.
+  </p>
+
+  <!-- QCM Module 9 -->
+  <div class="qcm" data-group="g9">
+    <h3>QCM MODULE 9 – Réseaux sans fil (Wireless)</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quelle norme Wi-Fi offre la meilleure efficacité pour les environnements denses ?</p>
+      <label><input type="radio" name="m7q1" value="true"> 802.11ax (Wi-Fi 6)</label>
+      <label><input type="radio" name="m7q1" value="false"> 802.11b</label>
+      <label><input type="radio" name="m7q1" value="false"> 802.11g</label>
+      <label><input type="radio" name="m7q1" value="false"> 802.11a</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel protocole est recommandé pour sécuriser un réseau Wi-Fi aujourd’hui ?</p>
+      <label><input type="radio" name="m7q2" value="true"> WPA2 ou WPA3</label>
+      <label><input type="radio" name="m7q2" value="false"> WEP</label>
+      <label><input type="radio" name="m7q2" value="false"> HTTP</label>
+      <label><input type="radio" name="m7q2" value="false"> FTP</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 10 – Sécurité des réseaux 🔐</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    La <strong>sécurité des réseaux</strong> est l’ensemble des techniques et des mesures visant à protéger les réseaux informatiques contre les intrusions, les attaques et les pertes de données.  
+    Avec l’augmentation des menaces comme le piratage, le phishing ou les virus, la sécurité réseau est devenue essentielle pour toute entreprise ou organisation.
+  </p>
+
+  <p>
+    Les objectifs principaux de la sécurité réseau sont :
+    <ul>
+      <li><strong>Confidentialité :</strong> protéger les données pour qu’elles ne soient accessibles qu’aux personnes autorisées.</li>
+      <li><strong>Intégrité :</strong> garantir que les données ne sont pas altérées pendant leur transmission.</li>
+      <li><strong>Disponibilité :</strong> assurer que le réseau et ses services restent accessibles aux utilisateurs autorisés.</li>
+    </ul>
+  </p>
+
+  <p>
+    Pour atteindre ces objectifs, plusieurs solutions et protocoles sont utilisés :
+    <ul>
+      <li><strong>Firewall :</strong> pare-feu qui contrôle le trafic entrant et sortant selon des règles définies.  
+        <strong>Exemple :</strong> bloquer les accès aux ports non utilisés ou limiter l’accès à certains sites web pour les employés.
+      </li>
+      <li><strong>IDS/IPS (Intrusion Detection/Prevention System) :</strong> détecte ou empêche les activités suspectes.  
+        <strong>Exemple :</strong> alerter l’administrateur si un logiciel malveillant tente de scanner le réseau.
+      </li>
+      <li><strong>VPN (Virtual Private Network) :</strong> crée un tunnel sécurisé pour accéder au réseau à distance.  
+        <strong>Exemple :</strong> un employé en télétravail se connecte au réseau de l’entreprise via un VPN pour chiffrer ses données.
+      </li>
+      <li><strong>NAT (Network Address Translation) :</strong> traduit les adresses IP privées internes en adresse IP publique pour sécuriser le réseau interne.  
+        <strong>Exemple :</strong> plusieurs appareils d’une entreprise utilisent la même IP publique pour accéder à Internet, masquant ainsi leur adresse interne.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    D’autres bonnes pratiques de sécurité réseau incluent :
+    <ul>
+      <li>Mettre à jour régulièrement les logiciels et firmwares des équipements réseau.</li>
+      <li>Utiliser des mots de passe forts et la double authentification (2FA).</li>
+      <li>Segmenter le réseau avec VLAN pour limiter l’accès aux données sensibles.</li>
+      <li>Surveiller les journaux et alertes pour détecter les comportements anormaux.</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Une entreprise utilise un firewall pour filtrer le trafic externe, un IDS pour détecter les intrusions, et un VPN pour permettre aux employés de se connecter depuis l’extérieur.  
+    Grâce à ces mesures, le réseau est protégé contre les attaques externes tout en restant accessible aux utilisateurs autorisés.
+  </p>
+
+  <!-- QCM Module 8 -->
+  <div class="qcm" data-group="g8">
+    <h3>QCM MODULE 8 – Sécurité des réseaux 🔐</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel dispositif contrôle le trafic entrant et sortant selon des règles définies ?</p>
+      <label><input type="radio" name="m8q1" value="true"> Firewall</label>
+      <label><input type="radio" name="m8q1" value="false"> VPN</label>
+      <label><input type="radio" name="m8q1" value="false"> ARP</label>
+      <label><input type="radio" name="m8q1" value="false"> DHCP</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel protocole permet de sécuriser l’accès à distance au réseau d’une entreprise ?</p>
+      <label><input type="radio" name="m8q2" value="true"> VPN</label>
+      <label><input type="radio" name="m8q2" value="false"> TCP</label>
+      <label><input type="radio" name="m8q2" value="false"> RIP</label>
+      <label><input type="radio" name="m8q2" value="false"> STP</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 9 – Services réseau</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Les <strong>services réseau</strong> sont des applications ou protocoles essentiels qui permettent aux utilisateurs et aux systèmes de communiquer, partager des ressources et accéder à des informations sur un réseau.  
+    Sans ces services, un réseau ne serait qu’un ensemble d’appareils interconnectés, incapables de fournir des fonctionnalités utiles.
+  </p>
+
+  <p>
+    Les services réseau les plus importants incluent :
+    <ul>
+      <li><strong>DNS (Domain Name System) :</strong> traduit les noms de domaine (ex : www.google.com) en adresses IP numériques pour que les ordinateurs puissent localiser les serveurs.  
+        <strong>Exemple :</strong> sans DNS, il faudrait connaître l’adresse IP exacte d’un site web pour s’y connecter, ce qui serait impraticable.
+      </li>
+      <li><strong>DHCP (Dynamic Host Configuration Protocol) :</strong> attribue automatiquement aux appareils une adresse IP, un masque de sous-réseau et une passerelle.  
+        <strong>Exemple :</strong> lorsqu’un ordinateur portable se connecte à un réseau Wi-Fi d’entreprise, DHCP lui donne instantanément une adresse IP valide.
+      </li>
+      <li><strong>FTP (File Transfer Protocol) :</strong> permet le transfert de fichiers entre un client et un serveur.  
+        <strong>Exemple :</strong> un administrateur réseau transfère des fichiers de configuration ou des sauvegardes vers un serveur central.
+      </li>
+      <li><strong>HTTP/HTTPS :</strong> protocoles de navigation web, avec HTTPS ajoutant un chiffrement sécurisé des données.  
+        <strong>Exemple :</strong> les transactions bancaires en ligne utilisent HTTPS pour sécuriser les informations sensibles.
+      </li>
+      <li><strong>SMTP (Simple Mail Transfer Protocol) :</strong> utilisé pour envoyer des emails d’un client à un serveur ou entre serveurs.  
+        <strong>Exemple :</strong> lorsqu’un employé envoie un email via Outlook ou Gmail, SMTP assure la transmission correcte du message.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Ces services réseau sont essentiels pour :
+    <ul>
+      <li>Partager et accéder aux ressources réseau de manière fluide.</li>
+      <li>Assurer la communication correcte et rapide entre utilisateurs et systèmes.</li>
+      <li>Protéger les échanges via des protocoles sécurisés comme HTTPS ou VPN.</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Dans une entreprise moderne :
+    <ol>
+      <li>Un ordinateur reçoit automatiquement une adresse IP grâce au DHCP.</li>
+      <li>Un utilisateur se connecte à un site web via HTTPS, sécurisé par SSL/TLS.</li>
+      <li>Un email est envoyé via SMTP vers le serveur de messagerie.</li>
+      <li>Des fichiers sont transférés vers un serveur distant via FTP.</li>
+      <li>Le DNS permet de résoudre les noms de domaine pour accéder facilement aux ressources web internes et externes.</li>
+    </ol>
+    Ensemble, ces services permettent une expérience réseau complète et sécurisée pour tous les utilisateurs.
+  </p>
+
+  <!-- QCM Module 9 -->
+  <div class="qcm" data-group="g9">
+    <h3>QCM MODULE 9 – Services réseau</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel service traduit les noms de domaine en adresses IP ?</p>
+      <label><input type="radio" name="m9q1" value="true"> DNS</label>
+      <label><input type="radio" name="m9q1" value="false"> DHCP</label>
+      <label><input type="radio" name="m9q1" value="false"> FTP</label>
+      <label><input type="radio" name="m9q1" value="false"> SMTP</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel protocole est utilisé pour transférer des fichiers entre un client et un serveur ?</p>
+      <label><input type="radio" name="m9q2" value="true"> FTP</label>
+      <label><input type="radio" name="m9q2" value="false"> DNS</label>
+      <label><input type="radio" name="m9q2" value="false"> HTTP</label>
+      <label><input type="radio" name="m9q2" value="false"> SMTP</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 10 – Câblage et supports réseau</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Le <strong>câblage et les supports réseau</strong> constituent l’infrastructure physique qui permet aux appareils de communiquer entre eux.  
+    Une installation correcte assure fiabilité, performance et évolutivité du réseau. Le choix des câbles et des supports dépend de la vitesse requise, de la distance et de l’environnement.
+  </p>
+
+  <p>
+    Les principaux types de câbles et supports réseau :
+    <ul>
+      <li><strong>Câbles Ethernet cuivre :</strong> utilisés pour les réseaux locaux (LAN).  
+        <strong>Catégories :</strong> Cat5e (jusqu’à 1 Gbps), Cat6 (jusqu’à 10 Gbps sur courte distance), Cat6a et Cat7 (10 Gbps et plus avec blindage).  
+        <strong>Exemple :</strong> câbler un bureau ou une salle serveur pour connecter tous les ordinateurs et imprimantes.
+      </li>
+      <li><strong>Fibre optique :</strong> transmet les données via des signaux lumineux, idéale pour de longues distances et haut débit.  
+        <strong>Exemple :</strong> relier plusieurs bâtiments d’un campus universitaire ou des centres de données.
+      </li>
+      <li><strong>Connecteurs et prises :</strong> RJ45 pour cuivre, LC/SC pour fibre optique, utilisés pour connecter les câbles aux équipements réseau.
+      </li>
+      <li><strong>Supports sans fil :</strong> Wi-Fi, Bluetooth ou autres technologies radio pour connecter des appareils sans câbles physiques.  
+        <strong>Exemple :</strong> points d’accès Wi-Fi dans un bureau pour que les laptops et smartphones se connectent sans fil.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Les bonnes pratiques de câblage :
+    <ul>
+      <li>Respecter les normes TIA/EIA pour assurer la compatibilité et la performance.</li>
+      <li>Étiqueter les câbles pour une maintenance facile.</li>
+      <li>Éviter les interférences électromagnétiques en séparant les câbles réseau des câbles électriques.</li>
+      <li>Utiliser des chemins de câbles et goulottes pour protéger les câbles et faciliter l’organisation.</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Dans un réseau d’entreprise, chaque poste de travail est connecté via un câble Cat6 blindé à un switch central, tandis que le serveur de données est relié en fibre optique pour assurer un débit élevé et une faible latence.
+  </p>
+
+  <!-- QCM Module 10 -->
+  <div class="qcm" data-group="g10">
+    <h3>QCM MODULE 10 – Câblage et supports réseau</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel type de câble est recommandé pour des débits supérieurs à 10 Gbps sur courte distance ?</p>
+      <label><input type="radio" name="m10q1" value="true"> Cat6a ou Cat7</label>
+      <label><input type="radio" name="m10q1" value="false"> Cat5</label>
+      <label><input type="radio" name="m10q1" value="false"> Fibre multimode uniquement</label>
+      <label><input type="radio" name="m10q1" value="false"> Bluetooth</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel support est utilisé pour transmettre des données sur de longues distances avec un haut débit ?</p>
+      <label><input type="radio" name="m10q2" value="true"> Fibre optique</label>
+      <label><input type="radio" name="m10q2" value="false"> Cat5e</label>
+      <label><input type="radio" name="m10q2" value="false"> Wi-Fi 2,4 GHz</label>
+      <label><input type="radio" name="m10q2" value="false"> RJ45</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g10" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 11 – Administration et supervision réseau</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    L’<strong>administration et la supervision réseau</strong> consistent à gérer, contrôler et surveiller un réseau pour assurer son bon fonctionnement, sa performance et sa sécurité.  
+    Ces tâches sont essentielles pour détecter rapidement les pannes, optimiser les ressources et maintenir la disponibilité des services.
+  </p>
+
+  <p>
+    Les rôles principaux de l’administration réseau :
+    <ul>
+      <li><strong>Configuration des équipements :</strong> routeurs, switches, points d’accès, serveurs.  
+        <strong>Exemple :</strong> attribuer des adresses IP fixes aux serveurs et configurer des VLAN sur les switches.
+      </li>
+      <li><strong>Gestion des utilisateurs :</strong> création, modification et suppression des comptes, gestion des droits d’accès.  
+        <strong>Exemple :</strong> un employé rejoint le service IT, on lui attribue un accès au VLAN IT et aux partages de fichiers nécessaires.
+      </li>
+      <li><strong>Mise à jour des logiciels et firmwares :</strong> maintenir les équipements à jour pour corriger les failles de sécurité et améliorer les fonctionnalités.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    La supervision réseau implique :
+    <ul>
+      <li><strong>SNMP (Simple Network Management Protocol) :</strong> collecte des informations sur les appareils et alertes en cas de problèmes.</li>
+      <li><strong>Monitoring :</strong> suivi en temps réel des performances, du trafic et de la disponibilité des services.  
+        <strong>Exemple :</strong> surveiller l’utilisation de la bande passante pour détecter les anomalies ou les surcharges.
+      </li>
+      <li><strong>Analyse des logs :</strong> détection des incidents, identification des causes et planification des actions correctives.</li>
+      <li><strong>Gestion des pannes :</strong> mise en place de procédures pour corriger rapidement les problèmes et minimiser l’impact sur les utilisateurs.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Un administrateur réseau configure un serveur SNMP pour surveiller tous les switches et routeurs.  
+    Lorsqu’un switch surchauffe ou qu’un port tombe en panne, une alerte est envoyée automatiquement, permettant à l’équipe IT de résoudre le problème avant que les utilisateurs ne soient affectés.
+  </p>
+
+  <!-- QCM Module 11 -->
+  <div class="qcm" data-group="g11">
+    <h3>QCM MODULE 11 – Administration et supervision réseau</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel protocole permet de collecter des informations sur les équipements réseau et de générer des alertes ?</p>
+      <label><input type="radio" name="m11q1" value="true"> SNMP</label>
+      <label><input type="radio" name="m11q1" value="false"> HTTP</label>
+      <label><input type="radio" name="m11q1" value="false"> FTP</label>
+      <label><input type="radio" name="m11q1" value="false"> SMTP</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel est l’objectif principal de la supervision réseau ?</p>
+      <label><input type="radio" name="m11q2" value="true"> Détecter et résoudre rapidement les problèmes</label>
+      <label><input type="radio" name="m11q2" value="false"> Augmenter automatiquement la vitesse d’Internet</label>
+      <label><input type="radio" name="m11q2" value="false"> Installer les ordinateurs</label>
+      <label><input type="radio" name="m11q2" value="false"> Configurer les imprimantes seulement</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g11" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 12 – Virtualisation et réseaux virtuels</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    La <strong>virtualisation réseau</strong> permet de créer des réseaux logiques indépendants du matériel physique.  
+    Elle facilite la gestion, l’isolation et la sécurité des réseaux tout en optimisant l’utilisation des ressources.
+  </p>
+
+  <p>
+    Les concepts clés de la virtualisation :
+    <ul>
+      <li><strong>VLAN (Virtual LAN) :</strong> permet de segmenter un réseau physique en plusieurs réseaux logiques.  
+        <strong>Exemple :</strong> dans une entreprise, les départements IT, Finance et RH peuvent être isolés tout en utilisant le même switch physique.
+      </li>
+      <li><strong>VPN (Virtual Private Network) :</strong> crée un tunnel sécurisé entre deux réseaux ou un utilisateur distant et le réseau d’entreprise.  
+        <strong>Exemple :</strong> un employé en télétravail accède aux ressources internes via un VPN chiffré.
+      </li>
+      <li><strong>Virtual Switch :</strong> un switch logiciel qui permet de connecter plusieurs machines virtuelles sur un même hôte.  
+        <strong>Exemple :</strong> plusieurs serveurs virtuels sur VMware communiquent entre eux via un virtual switch.
+      </li>
+      <li><strong>Plateformes de virtualisation :</strong> VMware, Hyper-V, Proxmox, qui permettent de créer et gérer des machines virtuelles et des réseaux virtuels.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Les avantages de la virtualisation réseau :
+    <ul>
+      <li>Isolation des réseaux pour améliorer la sécurité.</li>
+      <li>Optimisation des ressources matérielles grâce aux machines virtuelles.</li>
+      <li>Facilité de gestion et de configuration des réseaux complexes.</li>
+      <li>Possibilité de tester des environnements et des configurations sans impacter le réseau physique.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Une entreprise utilise VMware pour héberger plusieurs serveurs virtuels sur un même serveur physique.  
+    Chaque département dispose d’un VLAN séparé et les employés distants se connectent via VPN.  
+    Cela permet de sécuriser les données et de simplifier la gestion du réseau.
+  </p>
+
+  <!-- QCM Module 12 -->
+  <div class="qcm" data-group="g12">
+    <h3>QCM MODULE 12 – Virtualisation et réseaux virtuels</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel outil permet de créer un réseau isolé pour plusieurs machines virtuelles sur un même hôte ?</p>
+      <label><input type="radio" name="m12q1" value="true"> Virtual Switch</label>
+      <label><input type="radio" name="m12q1" value="false"> DHCP</label>
+      <label><input type="radio" name="m12q1" value="false"> BGP</label>
+      <label><input type="radio" name="m12q1" value="false"> STP</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel protocole permet à un utilisateur distant de se connecter de manière sécurisée au réseau de l’entreprise ?</p>
+      <label><input type="radio" name="m12q2" value="true"> VPN</label>
+      <label><input type="radio" name="m12q2" value="false"> RIP</label>
+      <label><input type="radio" name="m12q2" value="false"> FTP</label>
+      <label><input type="radio" name="m12q2" value="false"> ICMP</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g12" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 13 – Qualité de service (QoS)</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    La <strong>Qualité de Service (QoS)</strong> est un ensemble de techniques qui permet de gérer et de prioriser le trafic réseau pour garantir des performances optimales.  
+    Elle est essentielle dans les réseaux modernes où plusieurs types de trafic coexistent (voix, vidéo, données), chacun ayant des exigences spécifiques.
+  </p>
+
+  <p>
+    Les principaux objectifs de la QoS :
+    <ul>
+      <li><strong>Priorisation du trafic :</strong> certains types de données, comme la voix ou la vidéo, sont prioritaires pour éviter les interruptions ou la latence.  
+        <strong>Exemple :</strong> un appel VoIP ne doit pas être interrompu par le téléchargement massif de fichiers.
+      </li>
+      <li><strong>Gestion de la bande passante :</strong> allouer la bande disponible selon les besoins des applications pour éviter la congestion.  
+        <strong>Exemple :</strong> limiter le débit d’un service non critique pour que les applications sensibles restent performantes.
+      </li>
+      <li><strong>Réduction de la latence :</strong> le temps que mettent les données à parcourir le réseau est réduit pour les services temps réel.  
+        <strong>Exemple :</strong> les jeux en ligne ou les visioconférences nécessitent une faible latence.
+      </li>
+      <li><strong>Minimisation de la perte de paquets :</strong> les paquets critiques sont protégés pour éviter les retransmissions qui ralentiraient le réseau.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Les techniques courantes de QoS :
+    <ul>
+      <li>Classification du trafic : identifier les flux selon leur type (voix, vidéo, données).</li>
+      <li>Marquage des paquets : utiliser des champs comme DSCP ou VLAN priority pour signaler la priorité.</li>
+      <li>File d’attente et shaping : organiser les paquets selon leur priorité et lisser le trafic pour éviter les pics.</li>
+      <li>Policing : limiter le débit d’un flux pour éviter qu’il ne monopolise la bande passante.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Dans une entreprise, les appels VoIP et les visioconférences sont configurés avec une priorité élevée via QoS.  
+    Les téléchargements de fichiers ou les mises à jour logicielles ont une priorité plus faible pour que le trafic critique reste fluide et sans interruption.
+  </p>
+
+  <!-- QCM Module 13 -->
+  <div class="qcm" data-group="g13">
+    <h3>QCM MODULE 13 – Qualité de service (QoS)</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel est l’objectif principal de la QoS ?</p>
+      <label><input type="radio" name="m13q1" value="true"> Prioriser le trafic pour garantir des performances optimales</label>
+      <label><input type="radio" name="m13q1" value="false"> Installer des câbles réseau</label>
+      <label><input type="radio" name="m13q1" value="false"> Créer des VLAN</label>
+      <label><input type="radio" name="m13q1" value="false"> Attribuer des adresses IP</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel type de trafic doit être priorisé pour éviter la latence et les interruptions ?</p>
+      <label><input type="radio" name="m13q2" value="true"> Voix et vidéo en temps réel</label>
+      <label><input type="radio" name="m13q2" value="false"> Téléchargements de fichiers</label>
+      <label><input type="radio" name="m13q2" value="false"> Emails internes</label>
+      <label><input type="radio" name="m13q2" value="false"> Impressions réseau</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g13" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 14 – Réseaux d’entreprise</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Un <strong>réseau d’entreprise</strong> est une infrastructure informatique qui connecte tous les utilisateurs, serveurs, équipements et sites d’une organisation pour permettre le partage sécurisé des ressources et des données.  
+    Ces réseaux sont conçus pour être fiables, sécurisés et performants afin de supporter les besoins critiques de l’entreprise.
+  </p>
+
+  <p>
+    Les éléments clés d’un réseau d’entreprise :
+    <ul>
+      <li><strong>Architecture réseau :</strong> définit la manière dont les différents composants sont interconnectés.  
+        <strong>Exemple :</strong> architecture en étoile avec un cœur de réseau central (core switch) et plusieurs branches (distribution et accès).
+      </li>
+      <li><strong>Haute disponibilité :</strong> garantir que les services restent opérationnels même en cas de panne.  
+        <strong>Exemple :</strong> utiliser des liens redondants et des serveurs en cluster pour éviter toute interruption.
+      </li>
+      <li><strong>Redondance :</strong> duplication des équipements et chemins réseau pour éviter les points de défaillance uniques.  
+        <strong>Exemple :</strong> deux routeurs connectés à Internet pour assurer la continuité de la connexion si l’un tombe en panne.
+      </li>
+      <li><strong>Sécurité :</strong> firewalls, IDS/IPS, segmentation VLAN pour protéger les données sensibles et contrôler l’accès.  
+        <strong>Exemple :</strong> le département financier est isolé du reste du réseau pour protéger les informations confidentielles.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Les bonnes pratiques pour un réseau d’entreprise performant :
+    <ul>
+      <li>Planification et documentation complète de l’architecture réseau.</li>
+      <li>Surveillance constante de la performance et du trafic.</li>
+      <li>Mises à jour régulières des équipements et des logiciels.</li>
+      <li>Implémentation de politiques de sécurité strictes et formation des utilisateurs.</li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Une grande entreprise dispose de plusieurs bureaux dans différentes villes.  
+    Chaque site est connecté via un WAN sécurisé, avec un cœur de réseau central dans le siège social.  
+    Les VLAN isolent les départements (IT, RH, Finance) et des firewalls contrôlent l’accès externe.  
+    Les liens redondants et serveurs en cluster garantissent que les services restent disponibles même en cas de panne.
+  </p>
+
+  <!-- QCM Module 14 -->
+  <div class="qcm" data-group="g14">
+    <h3>QCM MODULE 14 – Réseaux d’entreprise</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quel élément permet de garantir la continuité des services en cas de panne ?</p>
+      <label><input type="radio" name="m14q1" value="true"> Redondance</label>
+      <label><input type="radio" name="m14q1" value="false"> DHCP</label>
+      <label><input type="radio" name="m14q1" value="false"> FTP</label>
+      <label><input type="radio" name="m14q1" value="false"> VLAN</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quelle pratique améliore la sécurité dans un réseau d’entreprise ?</p>
+      <label><input type="radio" name="m14q2" value="true"> Segmentation VLAN et firewalls</label>
+      <label><input type="radio" name="m14q2" value="false"> Installer plus de câbles</label>
+      <label><input type="radio" name="m14q2" value="false"> Ajouter des imprimantes réseau</label>
+      <label><input type="radio" name="m14q2" value="false"> Utiliser uniquement des switches non managés</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g14" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
+<div class="module">
+  <h2>Module 15 – Bases du Cloud et réseaux modernes</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Les <strong>réseaux modernes et le Cloud</strong> représentent l’évolution des infrastructures réseau traditionnelles vers des solutions plus flexibles, évolutives et centralisées.  
+    Le Cloud permet de stocker, gérer et traiter les données sur des serveurs distants accessibles via Internet, tandis que les réseaux modernes intègrent des technologies comme SDN et SD-WAN pour optimiser la connectivité.
+  </p>
+
+  <p>
+    Les concepts clés :
+    <ul>
+      <li><strong>Cloud Networking :</strong> les ressources réseau sont hébergées dans le Cloud, offrant une accessibilité mondiale et une flexibilité.  
+        <strong>Exemple :</strong> une entreprise utilise des serveurs Cloud pour héberger ses applications et bases de données, accessibles depuis n’importe quel site ou utilisateur distant.
+      </li>
+      <li><strong>SDN (Software-Defined Networking) :</strong> réseau contrôlé par logiciel, séparant le plan de contrôle du plan de données pour faciliter la gestion.  
+        <strong>Exemple :</strong> modifier la topologie d’un réseau virtuel à distance sans toucher au matériel physique.
+      </li>
+      <li><strong>SD-WAN :</strong> technologie WAN définie par logiciel qui optimise le trafic sur plusieurs types de connexions (Internet, MPLS, LTE).  
+        <strong>Exemple :</strong> une entreprise avec plusieurs succursales réparties géographiquement utilise SD-WAN pour garantir la performance des applications critiques.
+      </li>
+      <li><strong>Sécurité dans le Cloud :</strong> chiffrement des données, VPN, segmentation et contrôle d’accès pour protéger les informations sensibles.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    Les avantages des réseaux modernes et du Cloud :
+    <ul>
+      <li>Flexibilité et scalabilité pour répondre aux besoins changeants de l’entreprise.</li>
+      <li>Accès aux applications et données depuis n’importe où dans le monde.</li>
+      <li>Optimisation de la performance réseau grâce à SDN et SD-WAN.</li>
+      <li>Réduction des coûts d’infrastructure et de maintenance physique.
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Exemple concret :</strong> Une entreprise internationale utilise un Cloud privé pour héberger ses applications internes et un SD-WAN pour connecter ses bureaux partout dans le monde.  
+    Le réseau peut automatiquement prioriser le trafic critique, sécuriser les connexions et adapter la bande passante selon la charge.
+  </p>
+
+  <!-- QCM Module 15 -->
+  <div class="qcm" data-group="g15">
+    <h3>QCM MODULE 15 – Bases du Cloud et réseaux modernes</h3>
+
+    <div class="question">
+      <p><strong>Question 1 :</strong> Quelle technologie permet de contrôler le réseau via logiciel en séparant le plan de contrôle du plan de données ?</p>
+      <label><input type="radio" name="m15q1" value="true"> SDN</label>
+      <label><input type="radio" name="m15q1" value="false"> VLAN</label>
+      <label><input type="radio" name="m15q1" value="false"> DHCP</label>
+      <label><input type="radio" name="m15q1" value="false"> FTP</label>
+    </div>
+
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quel avantage principal offre le Cloud aux entreprises ?</p>
+      <label><input type="radio" name="m15q2" value="true"> Accès aux applications et données depuis n’importe où</label>
+      <label><input type="radio" name="m15q2" value="false"> Installer uniquement des câbles RJ45</label>
+      <label><input type="radio" name="m15q2" value="false"> Configurer des switches manuellement</label>
+      <label><input type="radio" name="m15q2" value="false"> Supprimer les firewalls</label>
+    </div>
+
+    <!-- Bouton Vérifier relié uniquement à ce module -->
+    <button data-group="g15" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
+</div>
     
-<p><strong>Question 2 :</strong> Quelle attaque Wi-Fi consiste à créer un point d’accès frauduleux pour tromper les clients ?</p>
-<label><input type="radio" name="m14q3" value="true"> Rogue AP</label>
-<label><input type="radio" name="m14q3" value="false"> Phishing par email</label>
-<label><input type="radio" name="m14q3" value="false"> DNS Spoofing</label>
-<label><input type="radio" name="m14q3" value="false"> ARP Poisoning</label>
-
-<button data-group="g14" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
-
-<!-- MODULE 15 -->
-<div class="module">
-<h2>15. VPN avancé et WireGuard</h2>
-
-<p>
-WireGuard est un protocole VPN moderne, léger et extrêmement rapide, qui utilise des algorithmes de chiffrement de pointe pour sécuriser les communications.
-Contrairement à IPSec ou OpenVPN, sa configuration est plus simple et sa surface d’attaque plus réduite, ce qui en fait un choix recommandé pour le télétravail et l’accès à distance.
-</p>
-
-<p>
-Les VPN avancés incluent la gestion centralisée des clés, l’authentification multi-facteurs et la journalisation pour les audits de sécurité.
-Ils permettent de créer des tunnels sécurisés entre sites ou utilisateurs, garantissant la confidentialité et l’intégrité des données, même sur des réseaux publics.
-</p>
-
-<p>
-WireGuard repose sur des clés publiques et privées pour l’authentification et chiffre toutes les communications avec des algorithmes modernes comme ChaCha20.
-Son faible overhead permet des performances supérieures et une latence minimale, idéal pour les applications critiques et la VoIP.
-</p>
-
-<p>
-L’utilisation d’un VPN doit être accompagnée d’une surveillance des connexions et de tests réguliers pour prévenir toute faille ou fuite de données,
-ainsi que pour assurer la conformité aux politiques de sécurité de l’entreprise.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g15">
-<h3>QCM MODULES 15</h3>
-
-<p><strong>Question 1 :</strong> Quel protocole VPN moderne est connu pour sa rapidité et sécurité ?</p>
-<label><input type="radio" name="m15q1" value="true"> WireGuard</label>
-<label><input type="radio" name="m15q1" value="false"> PPTP</label>
-<label><input type="radio" name="m15q1" value="false"> L2TP sans chiffrement</label>
-<label><input type="radio" name="m15q1" value="false"> IPsec ancien</label>
-
-<p><strong>Question 2 :</strong> Quel algorithme de chiffrement est utilisé par WireGuard ?</p>
-<label><input type="radio" name="m15q2" value="true"> ChaCha20</label>
-<label><input type="radio" name="m15q2" value="false"> DES</label>
-<label><input type="radio" name="m15q2" value="false"> RC4</label>
-<label><input type="radio" name="m15q2" value="false"> MD5</label>
-
-<button data-group="g15" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
-
-<!-- MODULE 16 -->
-<div class="module">
-<h2>16. IPv6 et transition</h2>
-
-<p>
-IPv6 est la dernière version du protocole Internet, offrant un espace d’adressage quasi illimité par
-rapport à IPv4. Il simplifie la configuration des réseaux en supprimant le besoin généralisé de NAT
-(Network Address Translation) et intègre des fonctionnalités de sécurité telles que IPsec.
-</p>
-
-<p>
-La transition de IPv4 vers IPv6 nécessite une planification minutieuse. Les stratégies incluent le
-dual-stack (où IPv4 et IPv6 coexistent sur les mêmes équipements), les tunnels pour acheminer
-le trafic IPv6 sur une infrastructure IPv4, et la traduction d’adresses pour compatibilité avec
-les anciens systèmes.
-</p>
-
-<p>
-La gestion des adresses, la configuration DNS spécifique à IPv6, et la mise en place de pare-feu
-compatibles sont essentielles pour garantir la sécurité et la performance des réseaux hybrides.
-Les administrateurs doivent également former les équipes et tester la compatibilité des applications.
-</p>
-
-<p>
-IPv6 améliore la connectivité directe entre les hôtes et favorise le déploiement d’IoT et de
-services cloud à grande échelle. Une transition réussie réduit les risques d’erreurs, de conflits
-d’adresses et de failles de sécurité.
-</p>
-
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g16">
-<h3>QCM MODULES 16</h3>
-
-<p><strong>Question 1 :</strong> Quel mécanisme permet la coexistence IPv4/IPv6 ?</p>
-<label><input type="radio" name="m16q1" value="true"> Dual-stack et tunnels IPv6</label>
-<label><input type="radio" name="m16q1" value="false"> NAT classique uniquement</label>
-<label><input type="radio" name="m16q1" value="false"> DHCPv4 simple</label>
-<label><input type="radio" name="m16q1" value="false"> WEP uniquement</label>
-    
-<p><strong>Question 2 :</strong> Quel est un avantage principal d’IPv6 par rapport à IPv4 ?</p>
-<label><input type="radio" name="m16q3" value="true"> Espace d’adressage quasi illimité</label>
-<label><input type="radio" name="m16q3" value="false"> Chiffrement automatique WPA3</label>
-<label><input type="radio" name="m16q3" value="false"> Détection d’intrusions intégrée</label>
-<label><input type="radio" name="m16q3" value="false"> Priorisation VoIP uniquement</label>
-
-<button data-group="g16" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
-</div>
-
-<!-- MODULE 17 -->
-<div class="module">
-<h2>17. Monitoring et analyse réseau</h2>
-
-<p>
-Le monitoring réseau consiste à collecter, analyser et interpréter les flux, journaux et alertes
-pour détecter anomalies, intrusions ou défaillances dans l’infrastructure réseau.
-Il est essentiel pour garantir la disponibilité, la performance et la sécurité des systèmes.
-</p>
-
-<p>
-Les outils de surveillance incluent Wireshark pour l’analyse détaillée des paquets,
-Nagios et Zabbix pour la supervision de serveurs et équipements, et SNMP pour récupérer
-les métriques des dispositifs réseau.
-</p>
-
-<p>
-L’analyse réseau permet de détecter les goulots d’étranglement, les surcharges, et les comportements
-anormaux pouvant indiquer des attaques.
-</p>
-
-<p>
-Dashboards, logs centralisés et rapports réguliers permettent une surveillance proactive
-et une prise de décision éclairée.
-</p>
-
-<!-- QCM -->
-<div class="qcm" data-group="g17">
-<h3>QCM MODULES 17</h3>
-
-<p><strong>Question 1 :</strong> Quel protocole permet de récupérer les métriques des équipements réseau ?</p>
-<label><input type="radio" name="m17q2" value="true"> SNMP</label>
-<label><input type="radio" name="m17q2" value="false"> HTTP</label>
-<label><input type="radio" name="m17q2" value="false"> SMTP</label>
-<label><input type="radio" name="m17q2" value="false"> DNS</label>
-
-<p><strong>Question 2 :</strong> Quel est l’avantage principal d’un monitoring réseau proactif ?</p>
-<label><input type="radio" name="m17q3" value="true"> Détection rapide des anomalies et réduction des temps d’arrêt</label>
-<label><input type="radio" name="m17q3" value="false"> Augmentation automatique de la bande passante</label>
-<label><input type="radio" name="m17q3" value="false"> Génération de clés WPA3</label>
-<label><input type="radio" name="m17q3" value="false"> Attribution d’IP dynamiques</label>
-
-<!-- RESULT OBLIGATOIRE -->
 <div class="result"></div>
 
 <button data-group="g17" onclick="verifierGroupe(this)">
