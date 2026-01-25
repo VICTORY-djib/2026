@@ -181,57 +181,76 @@ footer{
 
 <main>
 
-<!-- MODULE 1 -->
-<div class="module">
-<h2>1. Introduction aux réseaux avancés</h2>
+<div class="module" id="module1">
+  <h2>Module 1 – Introduction aux réseaux informatiques</h2>
+  
+  <!-- Explications détaillées -->
+  <p>
+    Un <strong>réseau informatique</strong> est un ensemble d’ordinateurs, de serveurs, de périphériques et d’autres équipements interconnectés afin de 
+    <strong>partager des informations, des ressources et de communiquer efficacement</strong>. Grâce aux réseaux, plusieurs utilisateurs peuvent accéder à des fichiers partagés, utiliser des imprimantes réseau, envoyer des emails internes et se connecter à Internet. 
+    Les réseaux sont indispensables dans le monde moderne, que ce soit pour les entreprises, les écoles, les administrations ou même à la maison.
+  </p>
 
-<p>
-Un réseau informatique avancé est une infrastructure complexe permettant l’échange
-de données entre des systèmes hétérogènes : postes clients, serveurs, équipements
-réseau, objets connectés et services cloud. Ces réseaux sont au cœur des systèmes
-d’information modernes et supportent des services critiques tels que les applications
-web, la virtualisation, le stockage distribué et les communications sécurisées.
-</p>
+  <p>
+    Les réseaux peuvent être classés selon leur taille et leur portée :
+    <ul>
+      <li><strong>LAN (Local Area Network)</strong> : réseau local limité à un bâtiment ou un site. Exemple : réseau interne d’une entreprise connectant tous les ordinateurs, serveurs et imprimantes.</li>
+      <li><strong>MAN (Metropolitan Area Network)</strong> : réseau couvrant une ville entière ou plusieurs sites urbains. Exemple : réseau reliant plusieurs campus universitaires d’une ville.</li>
+      <li><strong>WAN (Wide Area Network)</strong> : réseau étendu sur plusieurs villes, pays ou continents. Exemple : Internet, qui connecte des milliards de dispositifs dans le monde entier.</li>
+    </ul>
+  </p>
 
-<p>
-La conception d’un réseau repose sur des principes fondamentaux comme la
-structuration en couches (modèles OSI et TCP/IP), la gestion des flux, le routage,
-la commutation et la segmentation logique. Une mauvaise conception peut entraîner
-des problèmes de performance, de disponibilité et de sécurité.
-</p>
+  <p>
+    Les réseaux utilisent différentes <strong>topologies</strong> qui définissent la manière dont les appareils sont connectés :
+    <ul>
+      <li><strong>Étoile :</strong> tous les ordinateurs connectés à un switch ou hub central. Avantages : facile à gérer et à dépanner.</li>
+      <li><strong>Bus :</strong> tous les appareils reliés à un câble principal unique. Avantages : simple et économique.</li>
+      <li><strong>Anneau :</strong> les appareils sont connectés en boucle. Avantages : bonne gestion du trafic pour certains protocoles.</li>
+    </ul>
+  </p>
 
-<p>
-Dans les environnements professionnels, les réseaux sont constamment exposés
-aux menaces : interceptions, attaques par déni de service, propagation de malwares
-et accès non autorisés. C’est pourquoi la compréhension des mécanismes réseau
-est indispensable pour appliquer des stratégies de cybersécurité efficaces.
-</p>
+  <p>
+    Les réseaux reposent sur des <strong>protocoles</strong> qui définissent les règles de communication entre les appareils. Les plus connus sont :
+    <ul>
+      <li><strong>TCP/IP :</strong> utilisé pour envoyer et recevoir des données sur Internet.</li>
+      <li><strong>HTTP/HTTPS :</strong> pour la navigation web.</li>
+      <li><strong>FTP :</strong> pour le transfert de fichiers.</li>
+      <li><strong>SMTP :</strong> pour l’envoi d’emails.</li>
+      <li><strong>DHCP :</strong> pour attribuer automatiquement des adresses IP.</li>
+    </ul>
+  </p>
 
-<p>
-Aujourd’hui, la sécurité réseau ne se limite plus à un simple pare-feu.
-Elle doit être intégrée dès la phase de conception afin de garantir la
-confidentialité, l’intégrité et la disponibilité des données.
-</p>
+  <p>
+    <strong>Exemples :</strong> Dans une entreprise, un réseau permet de partager des fichiers et une imprimante commune, tandis qu’Internet connecte des milliards d’ordinateurs dans le monde pour le web et les services cloud.
+  </p>
 
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g1">
-<h3>QCM MODULES 1</h3>
+  <p>
+    En résumé, un réseau informatique est essentiel pour <strong>la communication, le partage des ressources et l’efficacité des systèmes informatiques modernes</strong>.
+  </p>
 
-<p><strong>Question 1 :</strong> Quel ensemble de mécanismes rend TCP fiable ?</p>
-<label><input type="radio" name="m1q1" value="false"> La diffusion en broadcast des paquets</label>
-<label><input type="radio" name="m1q1" value="true"> Numéros de séquence, accusés de réception et retransmission</label>
-<label><input type="radio" name="m1q1" value="false"> Le chiffrement automatique des données</label>
-<label><input type="radio" name="m1q1" value="false"> Le routage dynamique</label>
+  <!-- QCM Module 1 -->
+  <div class="qcm" data-group="g1">
+    <h3>QCM MODULE 1 – Introduction aux réseaux informatiques</h3>
 
-<p><strong>Question 2 :</strong> Pourquoi le modèle OSI est-il utilisé en diagnostic réseau ?</p>
-<label><input type="radio" name="m1q2" value="false"> Il augmente la bande passante</label>
-<label><input type="radio" name="m1q2" value="true"> Il permet d’identifier les problèmes couche par couche</label>
-<label><input type="radio" name="m1q2" value="false"> Il chiffre les communications réseau</label>
-<label><input type="radio" name="m1q2" value="false"> Il remplace TCP/IP</label>
+    <div class="question">
+      <p><strong>Question 1 :</strong> Qu’est-ce qu’un réseau informatique ?</p>
+      <label><input type="radio" name="m1q1" value="true"> Un ensemble d’ordinateurs et équipements interconnectés pour partager des ressources</label>
+      <label><input type="radio" name="m1q1" value="false"> Un seul ordinateur connecté à Internet</label>
+      <label><input type="radio" name="m1q1" value="false"> Un logiciel de traitement de texte</label>
+      <label><input type="radio" name="m1q1" value="false"> Un type de processeur pour serveurs</label>
+    </div>
 
-<button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
-</div>
+    <div class="question">
+      <p><strong>Question 2 :</strong> Quels sont les types de réseaux les plus courants ?</p>
+      <label><input type="radio" name="m1q2" value="true"> LAN, MAN, WAN</label>
+      <label><input type="radio" name="m1q2" value="false"> HTTP, FTP, SMTP</label>
+      <label><input type="radio" name="m1q2" value="false"> SSD, HDD, RAM</label>
+      <label><input type="radio" name="m1q2" value="false"> IPv4, IPv6, MAC</label>
+    </div>
+
+    <button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
+  </div>
 </div>
 
 <!-- MODULE 2 -->
@@ -270,23 +289,25 @@ est essentiel pour tout professionnel réseau et cybersécurité.
 <div class="qcm" data-group="g2">
 <h3>QCM MODULES 2</h3>
 
-<p><strong>Question 1 :</strong> Quelle est la fonction principale de la couche transport TCP ?</p>
-<label><input type="radio" name="m2q1" value="true"> Garantir la livraison correcte et ordonnée des données</label>
-<label><input type="radio" name="m2q1" value="false"> Gérer le routage global</label>
-<label><input type="radio" name="m2q1" value="false"> Chiffrer automatiquement les données</label>
-<label><input type="radio" name="m2q1" value="false"> Convertir les adresses IP en noms de domaine</label>
+<div class="question">
+  <p><strong>Question 1 :</strong> Quelle est la fonction principale de la couche transport TCP ?</p>
+  <label><input type="radio" name="m2q1" value="true"> Garantir la livraison correcte et ordonnée des données</label>
+  <label><input type="radio" name="m2q1" value="false"> Gérer le routage global</label>
+  <label><input type="radio" name="m2q1" value="false"> Chiffrer automatiquement les données</label>
+  <label><input type="radio" name="m2q1" value="false"> Convertir les adresses IP en noms de domaine</label>
+</div>
 
-<p><strong>Question 2 :</strong> Pourquoi le modèle OSI est-il utile pour la sécurité réseau ?</p>
-<label><input type="radio" name="m2q2" value="true"> Il permet de définir des contrôles à chaque couche</label>
-<label><input type="radio" name="m2q2" value="false"> Il chiffre automatiquement le trafic</label>
-<label><input type="radio" name="m2q2" value="false"> Il supprime le besoin de firewalls</label>
-<label><input type="radio" name="m2q2" value="false"> Il remplace le modèle TCP/IP</label>
+<div class="question">
+  <p><strong>Question 2 :</strong> Pourquoi le modèle OSI est-il utile pour la sécurité réseau ?</p>
+  <label><input type="radio" name="m2q2" value="true"> Il permet de définir des contrôles à chaque couche</label>
+  <label><input type="radio" name="m2q2" value="false"> Il chiffre automatiquement le trafic</label>
+  <label><input type="radio" name="m2q2" value="false"> Il supprime le besoin de firewalls</label>
+  <label><input type="radio" name="m2q2" value="false"> Il remplace le modèle TCP/IP</label>
+</div>
 
 <button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
 </div>
-</div>
-
 <!-- MODULE 3 -->
 <div class="module">
 <h2>3. Adressage IP et sous-réseaux</h2>
@@ -323,21 +344,24 @@ correctement les dispositifs et assurer la sécurité et la performance du rése
 <div class="qcm" data-group="g3">
 <h3>QCM MODULES 3</h3>
 
-<p><strong>Question 1 :</strong> Quelle plage IP est réservée pour les adresses privées ?</p>
-<label><input type="radio" name="m3q1" value="true"> 192.168.0.0 – 192.168.255.255</label>
-<label><input type="radio" name="m3q1" value="false"> 8.8.8.0 – 8.8.8.255</label>
-<label><input type="radio" name="m3q1" value="false"> 172.20.0.0 – 172.20.255.255</label>
-<label><input type="radio" name="m3q1" value="false"> 1.1.1.0 – 1.1.1.255</label>
+<div class="question">
+  <p><strong>Question 1 :</strong> Quelle plage IP est réservée pour les adresses privées ?</p>
+  <label><input type="radio" name="m3q1" value="true"> 192.168.0.0 – 192.168.255.255</label>
+  <label><input type="radio" name="m3q1" value="false"> 8.8.8.0 – 8.8.8.255</label>
+  <label><input type="radio" name="m3q1" value="false"> 1.1.1.0 – 1.1.1.255</label>
+  <label><input type="radio" name="m3q1" value="false"> 9.0.0.0 – 9.255.255.255</label>
+</div>
 
-<p><strong>Question 2 :</strong> Quel masque CIDR correspond à 255.255.255.0 ?</p>
-<label><input type="radio" name="m3q2" value="true"> /24</label>
-<label><input type="radio" name="m3q2" value="false"> /16</label>
-<label><input type="radio" name="m3q2" value="false"> /28</label>
-<label><input type="radio" name="m3q2" value="false"> /30</label>
+<div class="question">
+  <p><strong>Question 2 :</strong> Quel masque CIDR correspond à 255.255.255.0 ?</p>
+  <label><input type="radio" name="m3q2" value="true"> /24</label>
+  <label><input type="radio" name="m3q2" value="false"> /16</label>
+  <label><input type="radio" name="m3q2" value="false"> /28</label>
+  <label><input type="radio" name="m3q2" value="false"> /30</label>
+</div>
 
 <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
-</div>
 </div>
 
 <!-- MODULE 4 -->
@@ -375,24 +399,55 @@ essentielle pour les architectes réseau et les ingénieurs systèmes.
 </p>
 
 <!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g4">
-<h3>QCM MODULES 4</h3>
+<div class="qcm" data-group="g5">
+<h3>QCM MODULES 5 – Routeur & Commutateurs avancés</h3>
 
-<p><strong>Question 1 :</strong> Quel protocole est utilisé pour le routage inter-domaine ?</p>
-<label><input type="radio" name="m4q1" value="true"> BGP</label>
-<label><input type="radio" name="m4q1" value="false"> RIP uniquement</label>
-<label><input type="radio" name="m4q1" value="false"> ICMP</label>
-<label><input type="radio" name="m4q1" value="false"> ARP</label>
+<div class="question">
+  <p><strong>Question 1 :</strong> Quelle est la fonction principale d’un routeur ?</p>
+  <label><input type="radio" name="m5q1" value="true"> Acheminer les paquets entre des réseaux différents</label>
+  <label><input type="radio" name="m5q1" value="false"> Transmettre les trames au niveau local uniquement</label>
+  <label><input type="radio" name="m5q1" value="false"> Chiffrer automatiquement le trafic</label>
+  <label><input type="radio" name="m5q1" value="false"> Fournir des adresses MAC</label>
+</div>
 
-<p><strong>Question 2 :</strong> Quel protocole évite les boucles dans un réseau Ethernet ?</p>
-<label><input type="radio" name="m4q2" value="true"> STP (Spanning Tree Protocol)</label>
-<label><input type="radio" name="m4q2" value="false"> OSPF</label>
-<label><input type="radio" name="m4q2" value="false"> NAT</label>
-<label><input type="radio" name="m4q2" value="false"> DHCP</label>
+<div class="question">
+  <p><strong>Question 2 :</strong> À quelle couche OSI fonctionne principalement un commutateur (switch) ?</p>
+  <label><input type="radio" name="m5q2" value="true"> Couche 2 (Liaison de données)</label>
+  <label><input type="radio" name="m5q2" value="false"> Couche 1 (Physique)</label>
+  <label><input type="radio" name="m5q2" value="false"> Couche 3 (Réseau)</label>
+  <label><input type="radio" name="m5q2" value="false"> Couche 7 (Application)</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 3 :</strong> Quel protocole permet d’éviter les boucles réseau sur les commutateurs ?</p>
+  <label><input type="radio" name="m5q3" value="true"> STP (Spanning Tree Protocol)</label>
+  <label><input type="radio" name="m5q3" value="false"> ARP</label>
+  <label><input type="radio" name="m5q3" value="false"> ICMP</label>
+  <label><input type="radio" name="m5q3" value="false"> FTP</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 4 :</strong> Quelle fonctionnalité d’un commutateur permet de segmenter le réseau logiquement ?</p>
+  <label><input type="radio" name="m5q4" value="true"> VLAN</label>
+  <label><input type="radio" name="m5q4" value="false"> NAT</label>
+  <label><input type="radio" name="m5q4" value="false"> DHCP</label>
+  <label><input type="radio" name="m5q4" value="false"> DNS</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 5 :</strong> Quelle est la différence majeure entre un routeur et un switch de niveau 3 ?</p>
+  <label><input type="radio" name="m5q5" value="true"> Le routeur est optimisé pour l’interconnexion WAN</label>
+  <label><input type="radio" name="m5q5" value="false"> Le switch L3 ne peut pas faire de routage</label>
+  <label><input type="radio" name="m5q5" value="false"> Le routeur ne connaît pas les adresses IP</label>
+  <label><input type="radio" name="m5q5" value="false"> Il n’y a aucune différence</label>
+</div>
+
+<button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>
+<div class="result"></div>
+</div>
 
 <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
 <div class="result"></div>
-</div>
 </div>
 
 <!-- MODULE 5 -->
@@ -427,25 +482,51 @@ détecter toute anomalie. Une conception soignée des VLANs est essentielle
 pour la performance, la sécurité et la résilience du réseau.
 </p>
 
-<!-- QCM DIFFICILE -->
-<div class="qcm" data-group="g5">
-<h3>QCM MODULES 5</h3>
+<div class="qcm" data-group="g6">
+<h3>QCM MODULES 6 – VLAN & Segmentation</h3>
 
-<p><strong>Question 1 :</strong> Quel protocole permet le transport des informations VLAN entre switches ?</p>
-<label><input type="radio" name="m5q1" value="true"> IEEE 802.1Q</label>
-<label><input type="radio" name="m5q1" value="false"> OSPF</label>
-<label><input type="radio" name="m5q1" value="false"> ICMP</label>
-<label><input type="radio" name="m5q1" value="false"> DNS</label>
-
-<p><strong>Question 2 :</strong> Quelle méthode empêche un utilisateur de changer son VLAN par attaque VLAN hopping ?</p>
-<label><input type="radio" name="m5q2" value="true"> Sécurisation des ports et native VLAN isolé</label>
-<label><input type="radio" name="m5q2" value="false"> DHCP uniquement</label>
-<label><input type="radio" name="m5q2" value="false"> NAT</label>
-<label><input type="radio" name="m5q2" value="false"> STP</label>
-
-<button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>
-<div class="result"></div>
+<div class="question">
+  <p><strong>Question 1 :</strong> Quel est l’objectif principal des VLAN ?</p>
+  <label><input type="radio" name="m6q1" value="true"> Segmenter le réseau logiquement indépendamment de la topologie physique</label>
+  <label><input type="radio" name="m6q1" value="false"> Augmenter automatiquement la bande passante</label>
+  <label><input type="radio" name="m6q1" value="false"> Remplacer le routage</label>
+  <label><input type="radio" name="m6q1" value="false"> Chiffrer le trafic interne</label>
 </div>
+
+<div class="question">
+  <p><strong>Question 2 :</strong> Quel type de port transporte plusieurs VLAN simultanément ?</p>
+  <label><input type="radio" name="m6q2" value="true"> Port trunk</label>
+  <label><input type="radio" name="m6q2" value="false"> Port access</label>
+  <label><input type="radio" name="m6q2" value="false"> Port miroir</label>
+  <label><input type="radio" name="m6q2" value="false"> Port isolé</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 3 :</strong> Quel protocole permet l’identification des VLAN sur un lien trunk ?</p>
+  <label><input type="radio" name="m6q3" value="true"> IEEE 802.1Q</label>
+  <label><input type="radio" name="m6q3" value="false"> STP</label>
+  <label><input type="radio" name="m6q3" value="false"> ARP</label>
+  <label><input type="radio" name="m6q3" value="false"> ICMP</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 4 :</strong> Que se passe-t-il si deux hôtes sont dans des VLAN différents ?</p>
+  <label><input type="radio" name="m6q4" value="true"> Ils doivent passer par un équipement de couche 3 pour communiquer</label>
+  <label><input type="radio" name="m6q4" value="false"> Ils communiquent directement</label>
+  <label><input type="radio" name="m6q4" value="false"> Le switch convertit automatiquement les VLAN</label>
+  <label><input type="radio" name="m6q4" value="false"> Le trafic est chiffré automatiquement</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 5 :</strong> Quel est l’avantage principal de la segmentation réseau ?</p>
+  <label><input type="radio" name="m6q5" value="true"> Réduction de la surface d’attaque et du trafic inutile</label>
+  <label><input type="radio" name="m6q5" value="false"> Suppression des firewalls</label>
+  <label><input type="radio" name="m6q5" value="false"> Augmentation automatique du débit Internet</label>
+  <label><input type="radio" name="m6q5" value="false"> Centralisation des mots de passe</label>
+</div>
+
+<button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
+<div class="result"></div>
 </div>
 
 <!-- MODULE 6 -->
@@ -1057,12 +1138,25 @@ et une prise de décision éclairée.
 <!-- SCRIPT -->
 <script>
 
-// Mélanger automatiquement toutes les questions au chargement
-window.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".qcm").forEach(qcm => {
-        shuffleOptionsOfQuestion(qcm);
+<script>
+function melangerOptions() {
+    document.querySelectorAll(".question").forEach(question => {
+        const labels = Array.from(question.querySelectorAll("label"));
+
+        // Mélange aléatoire (Fisher-Yates)
+        for (let i = labels.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [labels[i], labels[j]] = [labels[j], labels[i]];
+        }
+
+        // Réinsertion dans la question
+        labels.forEach(label => question.appendChild(label));
     });
-});
+}
+
+// Mélange dès le chargement de la page
+window.addEventListener("DOMContentLoaded", melangerOptions);
+</script>
 const tentativesMax = 1;
 
 function verifierGroupe(btn){
@@ -1128,6 +1222,3 @@ function verifierGroupe(btn){
     if(allDone) btn.disabled = true;
 }
 </script>
-
-</body>
-</html>
