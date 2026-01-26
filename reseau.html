@@ -182,51 +182,125 @@ footer{
 <main>
 
 <div class="module">
-  <h2>Module 1 – Introduction aux réseaux informatiques</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    Un <strong>réseau informatique</strong> est un ensemble d’ordinateurs, de serveurs, de périphériques et d’autres équipements interconnectés afin de 
-    <strong>partager des informations, des ressources et de communiquer efficacement</strong>. Grâce aux réseaux, plusieurs utilisateurs peuvent accéder à des fichiers partagés, utiliser des imprimantes réseau, envoyer des emails internes et se connecter à Internet. 
-    Les réseaux sont indispensables dans le monde moderne, que ce soit pour les entreprises, les écoles, les administrations ou même à la maison.
-  </p>
+ <h1>Module 1 – Introduction aux réseaux informatiques</h1>
 
-  <p>
-    Les réseaux peuvent être classés selon leur taille et leur portée :
-    <ul>
-      <li><strong>LAN (Local Area Network)</strong> : réseau local limité à un bâtiment ou un site. Exemple : réseau interne d’une entreprise connectant tous les ordinateurs, serveurs et imprimantes.</li>
-      <li><strong>MAN (Metropolitan Area Network)</strong> : réseau couvrant une ville entière ou plusieurs sites urbains. Exemple : réseau reliant plusieurs campus universitaires d’une ville.</li>
-      <li><strong>WAN (Wide Area Network)</strong> : réseau étendu sur plusieurs villes, pays ou continents. Exemple : Internet, qui connecte des milliards de dispositifs dans le monde entier.</li>
-    </ul>
-  </p>
+<!-- Section 1 -->
+<h2>1. Définition d’un réseau informatique</h2>
+<p>Un <strong>réseau informatique</strong> est un ensemble d’ordinateurs, serveurs et périphériques interconnectés afin de <strong>partager des informations, des ressources et communiquer efficacement</strong>. C’est la base de toute infrastructure informatique moderne.</p>
+<p>Fonctions principales :</p>
+<ul>
+    <li>Échanges rapides et sécurisés de fichiers, documents et bases de données.</li>
+    <li>Partage de périphériques tels que imprimantes, scanners et serveurs de stockage.</li>
+    <li>Communication interne via emails, messageries instantanées et applications collaboratives.</li>
+    <li>Accès à Internet et à des services distants comme le cloud ou les applications web.</li>
+</ul>
+<p><strong>Exemple :</strong> Dans une entreprise, les ordinateurs des employés sont connectés à un réseau interne (LAN) permettant à chacun d’imprimer, partager des fichiers ou accéder aux mêmes bases de données.</p>
 
-  <p>
-    Les réseaux utilisent différentes <strong>topologies</strong> qui définissent la manière dont les appareils sont connectés :
-    <ul>
-      <li><strong>Étoile :</strong> tous les ordinateurs connectés à un switch ou hub central. Avantages : facile à gérer et à dépanner.</li>
-      <li><strong>Bus :</strong> tous les appareils reliés à un câble principal unique. Avantages : simple et économique.</li>
-      <li><strong>Anneau :</strong> les appareils sont connectés en boucle. Avantages : bonne gestion du trafic pour certains protocoles.</li>
-    </ul>
-  </p>
+<!-- Section 2 -->
+<h2>2. Rôle des réseaux</h2>
+<p>Les réseaux remplissent plusieurs fonctions essentielles :</p>
+<ul>
+    <li><strong>Communication :</strong> Les utilisateurs et systèmes peuvent échanger des données rapidement et de manière fiable.</li>
+    <li><strong>Partage de ressources :</strong> Les imprimantes, serveurs et logiciels peuvent être utilisés simultanément par plusieurs utilisateurs.</li>
+    <li><strong>Gestion centralisée :</strong> Les données sont stockées sur des serveurs centraux, facilitant sauvegardes et mises à jour.</li>
+    <li><strong>Sécurité :</strong> Contrôle d’accès aux ressources et protection contre les intrusions.</li>
+    <li><strong>Support de services essentiels :</strong> Applications cloud, VoIP, messagerie, visioconférences et collaboration à distance.</li>
+</ul>
+<p><strong>Exemple :</strong> Une société peut utiliser un serveur central pour stocker tous les documents administratifs, accessibles seulement aux employés autorisés.</p>
 
-  <p>
-    Les réseaux reposent sur des <strong>protocoles</strong> qui définissent les règles de communication entre les appareils. Les plus connus sont :
-    <ul>
-      <li><strong>TCP/IP :</strong> utilisé pour envoyer et recevoir des données sur Internet.</li>
-      <li><strong>HTTP/HTTPS :</strong> pour la navigation web.</li>
-      <li><strong>FTP :</strong> pour le transfert de fichiers.</li>
-      <li><strong>SMTP :</strong> pour l’envoi d’emails.</li>
-      <li><strong>DHCP :</strong> pour attribuer automatiquement des adresses IP.</li>
-    </ul>
-  </p>
+<!-- Section 3 -->
+<h2>3. Types de réseaux</h2>
+<p>Les réseaux sont classés selon leur portée géographique :</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Type de réseau</th>
+        <th>Portée</th>
+        <th>Exemple</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>LAN (Local Area Network)</td>
+        <td>Bâtiment ou bureau</td>
+        <td>Réseau interne d’entreprise ou école</td>
+        <td>Réseau limité à une zone restreinte. Rapide et sécurisé pour les échanges internes.</td>
+    </tr>
+    <tr>
+        <td>MAN (Metropolitan Area Network)</td>
+        <td>Ville ou campus</td>
+        <td>Campus universitaire multi-bâtiments</td>
+        <td>Connecte plusieurs LAN sur un site plus large, souvent via fibres optiques ou lignes spécialisées.</td>
+    </tr>
+    <tr>
+        <td>WAN (Wide Area Network)</td>
+        <td>Pays ou continents</td>
+        <td>Internet ou réseau multi-sites d’entreprise</td>
+        <td>Réseau étendu reliant des sites distants via Internet ou liaisons spécialisées, souvent avec VPN pour la sécurité.</td>
+    </tr>
+</table>
 
-  <p>
-    <strong>Exemples :</strong> Dans une entreprise, un réseau permet de partager des fichiers et une imprimante commune, tandis qu’Internet connecte des milliards d’ordinateurs dans le monde pour le web et les services cloud.
-  </p>
+<!-- Section 4 -->
+<h2>4. Topologies réseau</h2>
+<p>La <strong>topologie</strong> décrit la façon dont les périphériques sont connectés :</p>
+<ul>
+    <li><strong>Étoile :</strong> Tous les périphériques connectés à un point central (switch ou hub). <em>Exemple :</em> tous les ordinateurs d’un bureau connectés au switch principal. Avantages : gestion simple, isolation facile des pannes. Inconvénients : dépend du point central.</li>
+    <li><strong>Bus :</strong> Tous les périphériques connectés sur un câble principal. <em>Exemple :</em> ancien réseau utilisant câble coaxial unique. Avantages : faible coût. Inconvénients : collisions fréquentes, panne du câble affecte tout le réseau.</li>
+    <li><strong>Anneau :</strong> Les périphériques forment une boucle. <em>Exemple :</em> réseaux industriels ou certaines topologies token ring. Avantages : flux organisé, moins de collisions. Inconvénients : panne d’un appareil peut interrompre le réseau.</li>
+    <li><strong>Maillé :</strong> Chaque périphérique est connecté à plusieurs autres. <em>Exemple :</em> data centers et réseaux critiques. Avantages : tolérance aux pannes, haute fiabilité. Inconvénients : coûteux et complexe.</li>
+</ul>
 
-  <p>
-    En résumé, un réseau informatique est essentiel pour <strong>la communication, le partage des ressources et l’efficacité des systèmes informatiques modernes</strong>.
-  </p>
+<!-- Section 5 -->
+<h2>5. Réseau filaire vs sans fil</h2>
+<p>Comparaison :</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Critère</th>
+        <th>Filaire</th>
+        <th>Sans fil</th>
+    </tr>
+    <tr>
+        <td>Connexion</td>
+        <td>Ethernet, câbles RJ45</td>
+        <td>Wi-Fi, radiofréquence</td>
+    </tr>
+    <tr>
+        <td>Vitesse</td>
+        <td>Stable et rapide</td>
+        <td>Variable selon distance, obstacles et interférences</td>
+    </tr>
+    <tr>
+        <td>Sécurité</td>
+        <td>Physiquement sécurisée</td>
+        <td>Nécessite cryptage WPA2/WPA3 pour protection</td>
+    </tr>
+    <tr>
+        <td>Mobilité</td>
+        <td>Limitée par câbles</td>
+        <td>Permet déplacements et flexibilité</td>
+    </tr>
+    <tr>
+        <td>Coût</td>
+        <td>Installation initiale plus coûteuse mais durable</td>
+        <td>Moins cher à installer, peut nécessiter répéteurs ou points d’accès supplémentaires</td>
+    </tr>
+</table>
+
+<!-- Section 6 -->
+<h2>6. Avantages et inconvénients des réseaux</h2>
+<ul>
+    <li><strong>Avantages :</strong> partage des ressources, communication rapide, centralisation des données, accès à distance, collaboration efficace.</li>
+    <li><strong>Inconvénients :</strong> coût d’installation, nécessité de sécuriser le réseau, maintenance et dépannage, dépendance aux équipements.</li>
+</ul>
+
+<!-- Section 7 -->
+<h2>7. Résumé et points clés</h2>
+<p>Points essentiels à retenir :</p>
+<ul>
+    <li>Les réseaux permettent le partage d’informations et de ressources dans une organisation.</li>
+    <li>Types de réseaux : LAN, MAN, WAN selon la portée et les besoins.</li>
+    <li>Topologies réseau : étoile, bus, anneau, maillé, avec avantages et limites.</li>
+    <li>Différences filaire vs sans fil : vitesse, sécurité, mobilité et coût.</li>
+    <li>Avantages et inconvénients des réseaux pour la performance et la sécurité.</li>
+</ul>
 
   <!-- QCM Module 1 -->
   <div class="qcm" data-group="g1">
@@ -255,44 +329,167 @@ footer{
 </div>
 
 <div class="module">
-  <h2>Module 2 – Modèles OSI et TCP/IP</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    Pour comprendre comment les réseaux communiquent, il est essentiel de connaître les <strong>modèles de référence réseau</strong>. Les deux modèles principaux sont le 
-    <strong>modèle OSI</strong> et le <strong>modèle TCP/IP</strong>. Ces modèles servent à organiser et standardiser la communication entre les appareils sur un réseau.
-  </p>
+ <h1>Module 2 – Modèles OSI et TCP/IP</h1>
 
-  <p>
-    Le <strong>modèle OSI (Open Systems Interconnection)</strong> est composé de 7 couches :
-    <ul>
-      <li><strong>Couche 7 – Application :</strong> interface avec l’utilisateur, par exemple navigateur web ou client email.</li>
-      <li><strong>Couche 6 – Présentation :</strong> formatage des données, chiffrement et compression.</li>
-      <li><strong>Couche 5 – Session :</strong> gestion des sessions et dialogues entre applications.</li>
-      <li><strong>Couche 4 – Transport :</strong> transmission fiable des données avec TCP ou rapide mais moins fiable avec UDP.</li>
-      <li><strong>Couche 3 – Réseau :</strong> routage et adressage IP pour déterminer le chemin vers la destination.</li>
-      <li><strong>Couche 2 – Liaison :</strong> transmission des trames sur le réseau local, par exemple Ethernet ou VLAN.</li>
-      <li><strong>Couche 1 – Physique :</strong> transmission des bits sur les supports physiques : câble, fibre ou ondes radio.</li>
-    </ul>
-  </p>
+<!-- Section 1 -->
+<h2>1. Introduction aux modèles réseau</h2>
+<p>Les modèles réseau servent à <strong>structurer et comprendre la communication entre appareils</strong>. Ils définissent comment les données circulent et comment chaque couche interagit avec les autres.</p>
+<p>Deux modèles principaux :</p>
+<ul>
+    <li><strong>Modèle OSI (Open Systems Interconnection) :</strong> standard international en 7 couches.</li>
+    <li><strong>Modèle TCP/IP :</strong> utilisé pour Internet et les réseaux actuels, en 4 couches.</li>
+</ul>
+<p><strong>Exemple :</strong> Lorsqu’un email est envoyé, chaque couche du modèle OSI ou TCP/IP effectue une tâche spécifique pour que le message atteigne le destinataire correctement.</p>
 
-  <p>
-    Le <strong>modèle TCP/IP</strong> est plus simple et pratique pour Internet, avec 4 couches principales :
-    <ul>
-      <li><strong>Application :</strong> inclut tous les services utilisateurs (HTTP, FTP, SMTP…)</li>
-      <li><strong>Transport :</strong> TCP et UDP pour transporter les données</li>
-      <li><strong>Internet :</strong> gestion de l’adressage et routage des paquets (IP)</li>
-      <li><strong>Accès réseau :</strong> correspond aux couches physique et liaison du modèle OSI</li>
-    </ul>
-  </p>
+<!-- Section 2 -->
+<h2>2. Modèle OSI – Les 7 couches</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Couche</th>
+        <th>Nom</th>
+        <th>Fonction principale</th>
+        <th>Exemple concret</th>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Application</td>
+        <td>Interface utilisateur et services réseau</td>
+        <td>Navigateurs web, clients email</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Présentation</td>
+        <td>Formatage, chiffrement et compression des données</td>
+        <td>Conversion JPEG, cryptage SSL/TLS</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Session</td>
+        <td>Gestion des connexions entre applications</td>
+        <td>Maintien d’une session FTP ou HTTP</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Transport</td>
+        <td>Segmentation, contrôle des flux et fiabilité</td>
+        <td>TCP (fiable), UDP (non fiable)</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Réseau</td>
+        <td>Routage et adressage logique</td>
+        <td>IP, détermination du chemin pour les paquets</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Liaison de données</td>
+        <td>Transmission sur un support physique, détection d’erreurs</td>
+        <td>Switches, trames Ethernet, MAC addresses</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Physique</td>
+        <td>Transmission binaire sur le support (câble ou ondes)</td>
+        <td>Câbles Ethernet, fibre optique, signaux radio Wi-Fi</td>
+    </tr>
+</table>
 
-  <p>
-    Ces modèles permettent aux ingénieurs réseau de <strong>diagnostiquer les problèmes, concevoir les réseaux et comprendre comment les données circulent d’un ordinateur à un autre</strong>.
-  </p>
+<p><strong>Exemple d’utilisation OSI :</strong> Lorsqu’un utilisateur envoie un fichier via FTP : le fichier est segmenté (Transport), adressé (Réseau), encapsulé dans des trames (Liaison), puis transmis physiquement (Physique) jusqu’au serveur.</p>
 
-  <p>
-    <strong>Exemple concret :</strong> Lorsqu’un utilisateur envoie un email, les données passent par chaque couche : l’application compose l’email, la couche transport segmente et vérifie la transmission, la couche réseau achemine les paquets à travers Internet, et enfin les couches liaison et physique transfèrent les bits via le câble ou la fibre jusqu’au serveur de destination.
-  </p>
+<!-- Section 3 -->
+<h2>3. Modèle TCP/IP – Les 4 couches</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Couche</th>
+        <th>Nom</th>
+        <th>Fonction principale</th>
+        <th>Exemple concret</th>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Application</td>
+        <td>Services et applications réseau</td>
+        <td>HTTP, HTTPS, FTP, SMTP</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Transport</td>
+        <td>Segmentation, contrôle des flux et fiabilité</td>
+        <td>TCP et UDP</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Internet</td>
+        <td>Routage et adressage IP</td>
+        <td>Protocole IP, routage des paquets</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Accès réseau</td>
+        <td>Transmission sur le support physique</td>
+        <td>Ethernet, Wi-Fi, MAC addresses</td>
+    </tr>
+</table>
+
+<p><strong>Exemple :</strong> En naviguant sur un site web :</p>
+<ul>
+    <li>L’application (HTTP) prépare la requête.</li>
+    <li>Le transport (TCP) segmente et assure la livraison.</li>
+    <li>La couche Internet (IP) trouve le chemin vers le serveur.</li>
+    <li>La couche accès réseau transmet les paquets physiquement.</li>
+</ul>
+
+<!-- Section 4 -->
+<h2>4. Comparaison OSI vs TCP/IP</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Critère</th>
+        <th>Modèle OSI</th>
+        <th>Modèle TCP/IP</th>
+    </tr>
+    <tr>
+        <td>Nombre de couches</td>
+        <td>7</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Orientation</td>
+        <td>Théorique et pédagogique</td>
+        <td>Pratique et utilisé pour Internet</td>
+    </tr>
+    <tr>
+        <td>Exemples de protocoles</td>
+        <td>FTP, HTTP, TCP, IP</td>
+        <td>HTTP, TCP, IP, UDP</td>
+    </tr>
+    <tr>
+        <td>Objectif</td>
+        <td>Compréhension globale des couches réseau</td>
+        <td>Communication réelle sur Internet</td>
+    </tr>
+</table>
+
+<!-- Section 5 -->
+<h2>5. Encapsulation et communication entre hôtes</h2>
+<p>L’<strong>encapsulation</strong> consiste à ajouter des informations (en-têtes et parfois trailers) à chaque couche pour que les données puissent circuler correctement.</p>
+<p><strong>Exemple concret :</strong> Lorsqu’un ordinateur A envoie un email :</p>
+<ul>
+    <li>La couche Application crée le message email.</li>
+    <li>La couche Transport segmente le message et ajoute un numéro de séquence (TCP).</li>
+    <li>La couche Internet ajoute l’adresse IP source et destination.</li>
+    <li>La couche Accès réseau encapsule dans une trame Ethernet avec l’adresse MAC.</li>
+    <li>Le message traverse le réseau et est décapsulé couche par couche sur l’ordinateur B.</li>
+</ul>
+
+<!-- Section 6 -->
+<h2>6. Points clés à retenir</h2>
+<ul>
+    <li>Le modèle OSI est utile pour comprendre la communication réseau couche par couche.</li>
+    <li>Le modèle TCP/IP est pratique et utilisé dans la plupart des réseaux actuels.</li>
+    <li>Les protocoles TCP et UDP assurent la livraison fiable ou rapide des données.</li>
+    <li>L’encapsulation est essentielle pour que les données voyagent correctement entre deux hôtes.</li>
+    <li>Connaître ces modèles facilite le diagnostic et le dépannage réseau.</li>
+</ul>
 
   <!-- QCM Module 2 -->
   <div class="qcm" data-group="g2">
@@ -320,62 +517,239 @@ footer{
   </div>
 </div>    
 <div class="module">
-  <h2>Module 3 – Adressage IP (IPv4 & IPv6)</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    L’<strong>adressage IP</strong> est la méthode qui permet d’identifier de manière unique chaque appareil connecté à un réseau informatique.  
-    Chaque appareil, qu’il s’agisse d’un ordinateur, d’un serveur, d’une imprimante réseau ou d’un smartphone, doit avoir une adresse IP pour pouvoir communiquer et échanger des données sur le réseau.
-  </p>
+  <h1>Module 3 – Adressage IP (IPv4 & IPv6)</h1>
 
-  <p>
-    Il existe deux versions principales d’adresses IP :
-    <ul>
-      <li><strong>IPv4 :</strong> utilise 32 bits, représentés par quatre nombres décimaux compris entre 0 et 255, séparés par des points (ex : 192.168.1.1). C’est la version la plus utilisée mais limitée en nombre d’adresses disponibles.</li>
-      <li><strong>IPv6 :</strong> utilise 128 bits, représentés par huit groupes hexadécimaux séparés par des deux-points (ex : 2001:0db8:85a3::8a2e:0370:7334). Elle a été créée pour résoudre le problème de pénurie d’adresses IPv4 et offre plus de fonctionnalités, notamment l’autoconfiguration et la sécurité intégrée.</li>
-    </ul>
-  </p>
+<!-- Section 1 -->
+<h2>1. Introduction à l’adressage IP</h2>
+<p>Une <strong>adresse IP</strong> identifie de manière unique un appareil sur un réseau. Elle permet aux machines de communiquer entre elles.</p>
+<p>Deux types principaux :</p>
+<ul>
+    <li><strong>IPv4 :</strong> format 32 bits, exemple : 192.168.1.1</li>
+    <li><strong>IPv6 :</strong> format 128 bits, exemple : 2001:0db8:85a3::8a2e:0370:7334</li>
+</ul>
+<p>Chaque adresse IP peut être utilisée pour <strong>identifier un hôte, un réseau ou un sous-réseau</strong>.</p>
 
-  <p>
-    Les adresses IPv4 sont classées en différentes <strong>classes</strong> pour organiser les réseaux :
-    <ul>
-      <li><strong>Classe A :</strong> grandes organisations, jusqu’à 16 millions d’hôtes par réseau.</li>
-      <li><strong>Classe B :</strong> organisations moyennes, jusqu’à 65 000 hôtes par réseau.</li>
-      <li><strong>Classe C :</strong> petites organisations ou réseaux locaux, jusqu’à 254 hôtes par réseau.</li>
-      <li>Les classes D et E sont réservées pour le multicast et les usages expérimentaux.</li>
-    </ul>
-  </p>
+<!-- Section 2 -->
+<h2>2. Classes d’adresses IPv4</h2>
+<p>IPv4 utilise des classes pour distinguer les plages d’adresses :</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Classe</th>
+        <th>Plage d’adresses</th>
+        <th>Usage</th>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>1.0.0.0 à 126.255.255.255</td>
+        <td>Grands réseaux</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>128.0.0.0 à 191.255.255.255</td>
+        <td>Moyens réseaux</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>192.0.0.0 à 223.255.255.255</td>
+        <td>Petits réseaux / LAN</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>224.0.0.0 à 239.255.255.255</td>
+        <td>Multicast</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>240.0.0.0 à 255.255.255.255</td>
+        <td>Expérimental / réservé</td>
+    </tr>
+</table>
 
-  <p>
-    Pour optimiser l’utilisation des adresses et améliorer la gestion des réseaux, on utilise le <strong>subnetting</strong>.  
-    Le subnetting consiste à diviser un réseau en sous-réseaux plus petits afin de : 
-    <ul>
-      <li>Réduire le trafic inutile sur chaque segment.</li>
-      <li>Améliorer la sécurité en isolant certains départements ou services.</li>
-      <li>Gérer plus facilement les adresses IP.</li>
-    </ul>
-    Le format <strong>CIDR (Classless Inter-Domain Routing)</strong> est utilisé pour représenter la taille du réseau et du sous-réseau.  
-    Exemple : <code>192.168.1.0/24</code> signifie que les 24 premiers bits sont réservés au réseau et les 8 derniers aux hôtes.
-  </p>
+<p><strong>Exemple :</strong> Un réseau d’entreprise peut utiliser la classe C : 192.168.1.0/24 pour connecter jusqu’à 254 appareils.</p>
 
-  <p>
-    <strong>Exemple concret :</strong> Une entreprise de 500 ordinateurs peut utiliser l’adresse IPv4 <code>192.168.0.0/23</code>, créant deux sous-réseaux de 256 adresses chacun pour séparer les départements IT et Finance.  
-    Cela permet d’éviter que tout le trafic se mélange et rend le réseau plus performant et sécurisé.
-  </p>
+<!-- Section 3 -->
+<h2>3. CIDR et subnetting</h2>
+<p><strong>CIDR (Classless Inter-Domain Routing)</strong> permet d’assigner des sous-réseaux plus flexibles que les classes fixes.</p>
+<p><strong>Exemple :</strong> 192.168.1.0/28 signifie :</p>
+<ul>
+    <li>Adresse réseau : 192.168.1.0</li>
+    <li>Masque sous-réseau : 255.255.255.240</li>
+    <li>Adresses utilisables : 192.168.1.1 à 192.168.1.14</li>
+</ul>
 
-  <p>
-    <strong>Points importants :</strong>
-    <ul>
-      <li>Une adresse IP est unique pour chaque appareil dans le même réseau.</li>
-      <li>IPv6 permet d’avoir un nombre quasi illimité d’adresses, idéal pour l’IoT et les réseaux modernes.</li>
-      <li>Subnetting et CIDR permettent de gérer efficacement les réseaux et la sécurité.</li>
-    </ul>
-  </p>
+<p>Le <strong>subnetting</strong> divise un réseau en plusieurs sous-réseaux plus petits pour optimiser l’usage des adresses.</p>
+
+<!-- Section 4 -->
+<h2>4. Masques de sous-réseau et plages d’adresses</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Masque</th>
+        <th>Nombre d’adresses</th>
+        <th>Exemple d’adresses utilisables</th>
+    </tr>
+    <tr>
+        <td>255.255.255.0 (/24)</td>
+        <td>254</td>
+        <td>192.168.1.1 à 192.168.1.254</td>
+    </tr>
+    <tr>
+        <td>255.255.255.128 (/25)</td>
+        <td>126</td>
+        <td>192.168.1.1 à 192.168.1.126</td>
+    </tr>
+    <tr>
+        <td>255.255.255.192 (/26)</td>
+        <td>62</td>
+        <td>192.168.1.1 à 192.168.1.62</td>
+    </tr>
+</table>
+
+<p><strong>Exemple :</strong> Une société avec 60 postes peut utiliser un sous-réseau /26 pour séparer les services internes et invités.</p>
+
+<!-- Section 5 -->
+<h2>5. Différences IPv4 vs IPv6</h2>
+<ul>
+    <li><strong>IPv4 :</strong> 32 bits, environ 4 milliards d’adresses, notation décimale (192.168.0.1)</li>
+    <li><strong>IPv6 :</strong> 128 bits, très grand nombre d’adresses, notation hexadécimale (2001:0db8:85a3::8a2e:0370:7334)</li>
+    <li>IPv6 simplifie la configuration, élimine NAT et supporte mieux les réseaux modernes et IoT.</li>
+</ul>
+
+<p><strong>Exemple :</strong> Un fournisseur d’accès Internet peut attribuer une adresse IPv6 unique à chaque appareil d’une maison sans NAT.</p>
+
+<!-- Section 6 -->
+<h2>6. Notation IPv6</h2>
+<p>IPv6 utilise la notation hexadécimale et peut être abrégée :</p>
+<ul>
+    <li>Adresse complète : 2001:0db8:0000:0000:0000:ff00:0042:8329</li>
+    <li>Adresse abrégée : 2001:db8::ff00:42:8329</li>
+</ul>
+<p>Les zéros consécutifs peuvent être remplacés par :: une seule fois par adresse.</p>
+
+<!-- Section 7 -->
+<h2>7. Points clés à retenir</h2>
+<ul>
+    <li>IPv4 et IPv6 permettent d’identifier un appareil sur un réseau.</li>
+    <li>Le subnetting et CIDR optimisent l’utilisation des adresses.</li>
+    <li>Les masques de sous-réseau définissent la taille des réseaux et sous-réseaux.</li>
+    <li>IPv6 résout le problème de pénurie d’adresses et simplifie la gestion des réseaux modernes.</li>
+    <li>Exemples concrets permettent de planifier et configurer des réseaux d’entreprise.</li>
+</ul>
 
   <!-- QCM Module 3 -->
 
     <div class="qcm" data-group="g3">
-    <h3>QCM MODULE 3 – Adressage IP (IPv4 & IPv6)</h3>
+    <h1>Module 4 – Adressage IP avancé et binaire</h1>
+
+<!-- Section 1 -->
+<h2>1. Introduction</h2>
+<p>Ce module approfondit :</p>
+<ul>
+    <li>Subnetting et calcul des sous-réseaux</li>
+    <li>Adressage privé vs public et NAT</li>
+    <li>IPv6 avancé : EUI-64, SLAAC et DHCPv6</li>
+    <li>Représentation binaire des adresses IP</li>
+</ul>
+
+<!-- Section 2 -->
+<h2>2. IPv4 en binaire</h2>
+<p>Chaque adresse IPv4 est composée de 32 bits, divisés en 4 octets (8 bits chacun). Comprendre la représentation binaire est essentiel pour le subnetting.</p>
+<p><strong>Exemple :</strong> 192.168.10.5</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Décimal</th>
+        <th>Binaire</th>
+    </tr>
+    <tr>
+        <td>192</td>
+        <td>11000000</td>
+    </tr>
+    <tr>
+        <td>168</td>
+        <td>10101000</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>00001010</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>00000101</td>
+    </tr>
+</table>
+<p>La notation binaire est utilisée pour calculer les masques et les sous-réseaux.</p>
+
+<!-- Section 3 -->
+<h2>3. Masques de sous-réseau en binaire</h2>
+<p>Le masque détermine quelle partie de l’adresse est réseau et quelle partie est hôte.</p>
+<p><strong>Exemple :</strong> /26 → 255.255.255.192</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Décimal</th>
+        <th>Binaire</th>
+    </tr>
+    <tr>
+        <td>255</td>
+        <td>11111111</td>
+    </tr>
+    <tr>
+        <td>255</td>
+        <td>11111111</td>
+    </tr>
+    <tr>
+        <td>255</td>
+        <td>11111111</td>
+    </tr>
+    <tr>
+        <td>192</td>
+        <td>11000000</td>
+    </tr>
+</table>
+
+<p><strong>Plage d’adresses :</strong> 192.168.10.0 – 192.168.10.63</p>
+<p>En binaire :</p>
+<ul>
+    <li>Adresse réseau : 11000000.10101000.00001010.00000000</li>
+    <li>Dernière adresse hôte : 11000000.10101000.00001010.00111110</li>
+</ul>
+
+<!-- Section 4 -->
+<h2>4. Subnetting pratique avec binaire</h2>
+<p>Pour créer plusieurs sous-réseaux :</p>
+<ul>
+    <li>Décider du nombre de sous-réseaux nécessaires.</li>
+    <li>Convertir l’adresse réseau et le masque en binaire.</li>
+    <li>Allouer des bits pour les sous-réseaux et les hôtes.</li>
+</ul>
+
+<p><strong>Exemple :</strong> 192.168.20.0/24 pour 4 sous-réseaux</p>
+<ul>
+    <li>Adresse réseau en binaire : 11000000.10101000.00010100.00000000</li>
+    <li>Masque /26 en binaire : 11111111.11111111.11111111.11000000</li>
+    <li>Sous-réseaux :</li>
+    <ul>
+        <li>192.168.20.0 → 11000000.10101000.00010100.00000000</li>
+        <li>192.168.20.64 → 11000000.10101000.00010100.01000000</li>
+        <li>192.168.20.128 → 11000000.10101000.00010100.10000000</li>
+        <li>192.168.20.192 → 11000000.10101000.00010100.11000000</li>
+    </ul>
+</ul>
+
+<!-- Section 5 -->
+<h2>5. IPv6 et binaire</h2>
+<p>Chaque adresse IPv6 est codée sur 128 bits. Elle est généralement représentée en hexadécimal, mais le binaire est utile pour comprendre les sous-réseaux et l’EUI-64.</p>
+<p><strong>Exemple :</strong> 2001:0db8:85a3::8a2e:0370:7334</p>
+<p>Binaire du premier bloc 2001 : 00100000 00000001</p>
+<p>Les bits permettent de calculer le préfixe réseau et l’ID de l’hôte.</p>
+
+<!-- Section 6 -->
+<h2>6. Points clés à retenir</h2>
+<ul>
+    <li>IPv4 est sur 32 bits et IPv6 sur 128 bits.</li>
+    <li>Le subnetting nécessite de comprendre les adresses et masques en binaire.</li>
+    <li>Les bits de masque "1" correspondent au réseau, les bits "0" aux hôtes.</li>
+    <li>IPv6 simplifie le plan d’adressage mais le binaire reste utile pour les préfixes et SLAAC.</li>
+    <li>Exemples concrets de conversion binaire aident à planifier et déployer un réseau efficace.</li>
+</ul>
 
     <div class="question">
       <p><strong>Question 1 :</strong> Combien de bits utilise IPv4 pour représenter une adresse ?</p>
@@ -400,528 +774,433 @@ footer{
     </div>
 </div>
 <div class="module">
-  <h2>Module 4 – Adresse IP (IPv4) </h2>
-  <p>
-    Une <strong>adresse IPv4</strong> est composée de 32 bits et sert à identifier un appareil sur un réseau.  
-    Ces 32 bits sont divisés en 4 octets (8 bits chacun), séparés par des points.  
-    Pour chaque réseau, il est essentiel de connaître les composants suivants :
-  </p>
+  <h1>Module 5 – Commutation (Switching)</h1>
 
-  <h3>1. Adresse réseau</h3>
-  <p>
-    <strong>Définition :</strong> Identifie le réseau dans lequel se trouvent les appareils.  
-    <br><strong>Exemple :</strong> 192.168.1.0  
-    <br><strong>Fonction :</strong> Permet aux routeurs et appareils de savoir à quel réseau appartient une IP.  
-    <br><strong>Binaire :</strong> 11000000.10101000.00000001.00000000
-  </p>
+<!-- Section 1 -->
+<h2>1. Introduction à la commutation</h2>
+<p>La commutation réseau permet de transmettre les données entre périphériques dans un réseau local (LAN) de manière efficace et organisée.</p>
+<p>Le composant principal est le <strong>switch</strong>, qui fonctionne au niveau de la couche 2 (liaison de données) du modèle OSI.</p>
 
-  <h3>2. Masque de sous-réseau (Masque par défaut)</h3>
-  <p>
-    <strong>Définition :</strong> Indique quelles parties de l’adresse IP correspondent au réseau et quelles parties aux hôtes.  
-    <br><strong>Exemple :</strong> 255.255.255.0 (/24)  
-    <br><strong>Fonction :</strong> Permet de séparer la portion réseau et la portion hôte pour savoir combien d’appareils peuvent être connectés.  
-    <br><strong>Binaire :</strong> 11111111.11111111.11111111.00000000
-  </p>
-
-  <h3>3. Plage d’hôtes</h3>
-  <p>
-    <strong>Définition :</strong> Ensemble des adresses IP que l’on peut attribuer aux appareils.  
-    <br><strong>Exemple :</strong> 192.168.1.1 à 192.168.1.254  
-    <br><strong>Fonction :</strong> Permet d’assigner des IP uniques à chaque appareil du réseau.  
-    <br><strong>Binaire :</strong> 11000000.10101000.00000001.00000001 à 11000000.10101000.00000001.11111110
-  </p>
-
-  <h3>4. Adresse de diffusion</h3>
-  <p>
-    <strong>Définition :</strong> Dernière adresse du réseau utilisée pour envoyer un message à tous les appareils.  
-    <br><strong>Exemple :</strong> 192.168.1.255  
-    <br><strong>Fonction :</strong> Permet la communication simultanée avec tous les hôtes du réseau.  
-    <br><strong>Binaire :</strong> 11000000.10101000.00000001.11111111
-  </p>
-
-  <h3>Résumé visuel</h3>
-  <table border="1" cellpadding="8">
+<!-- Section 2 -->
+<h2>2. Switch vs Hub</h2>
+<table border="1" cellpadding="5" cellspacing="0">
     <tr>
-      <th>Composant</th>
-      <th>Exemple</th>
-      <th>Binaire</th>
-      <th>Fonction</th>
+        <th>Caractéristique</th>
+        <th>Switch</th>
+        <th>Hub</th>
     </tr>
     <tr>
-      <td>Adresse réseau</td>
-      <td>192.168.1.0</td>
-      <td>11000000.10101000.00000001.00000000</td>
-      <td>Identifie le réseau entier</td>
+        <td>Fonction</td>
+        <td>Transmet les trames uniquement au périphérique destinataire</td>
+        <td>Transmet les données à tous les ports</td>
     </tr>
     <tr>
-      <td>Masque de sous-réseau</td>
-      <td>255.255.255.0 (/24)</td>
-      <td>11111111.11111111.11111111.00000000</td>
-      <td>Détermine la partie réseau et la partie hôte</td>
+        <td>Performance</td>
+        <td>Élevée, évite les collisions</td>
+        <td>Faible, collisions fréquentes</td>
     </tr>
     <tr>
-      <td>Plage d’hôtes</td>
-      <td>192.168.1.1 à 192.168.1.254</td>
-      <td>11000000.10101000.00000001.00000001 à 11000000.10101000.00000001.11111110</td>
-      <td>Adresses assignables aux appareils</td>
+        <td>Utilisation</td>
+        <td>Réseaux modernes LAN</td>
+        <td>Réseaux très anciens ou simples</td>
     </tr>
-    <tr>
-      <td>Adresse de diffusion</td>
-      <td>192.168.1.255</td>
-      <td>11000000.10101000.00000001.11111111</td>
-      <td>Adresse pour envoyer à tous les hôtes</td>
-    </tr>
-  </table>
+</table>
+<p><strong>Exemple :</strong> Dans un bureau de 20 postes, un switch assure que chaque poste reçoit seulement ses données, contrairement au hub qui envoie tout à tout le monde.</p>
 
+<!-- Section 3 -->
+<h2>3. VLAN (Virtual LAN)</h2>
+<p>Un VLAN est un réseau logique isolé au sein d’un même switch physique. Il permet :</p>
+<ul>
+    <li>Séparer le trafic des différents services (ex : Finance, IT, RH).</li>
+    <li>Améliorer la sécurité et réduire le broadcast.</li>
+</ul>
+<p><strong>Exemple :</strong> VLAN 10 → Finance, VLAN 20 → IT. Même switch physique, trafic séparé.</p>
+
+<!-- Section 4 -->
+<h2>4. Trunking</h2>
+<p>Le trunking permet de transporter le trafic de plusieurs VLAN entre switches :</p>
+<ul>
+    <li>Utilisation de protocoles comme IEEE 802.1Q.</li>
+    <li>Chaque trame est taguée avec le VLAN correspondant.</li>
+</ul>
+<p><strong>Exemple :</strong> Deux switches connectés par un port trunk peuvent transporter les VLAN 10 et 20 simultanément.</p>
+
+<!-- Section 5 -->
+<h2>5. STP (Spanning Tree Protocol)</h2>
+<p>STP évite les boucles réseau dans les topologies redondantes :</p>
+<ul>
+    <li>Détecte les boucles et bloque certains ports pour assurer une seule voie active.</li>
+    <li>Assure la tolérance aux pannes en activant les ports bloqués si nécessaire.</li>
+</ul>
+<p><strong>Exemple :</strong> Deux switches reliés par deux câbles, STP bloque un port pour éviter une boucle mais le débloque si l’autre lien tombe.</p>
+
+<!-- Section 6 -->
+<h2>6. MAC Learning et Flooding</h2>
+<p>Le switch utilise l’adresse MAC pour transmettre les trames :</p>
+<ul>
+    <li><strong>MAC Learning :</strong> Le switch apprend quelles adresses MAC sont sur quels ports et envoie les données uniquement à ces ports.</li>
+    <li><strong>Flooding :</strong> Si l’adresse MAC destination n’est pas connue, le switch envoie la trame sur tous les ports (broadcast temporaire).</li>
+</ul>
+<p><strong>Exemple :</strong> Une nouvelle imprimante connectée au switch n’a pas encore son MAC dans la table → première trame floodée, puis switch apprend l’adresse pour les prochains paquets.</p>
+
+<!-- Section 7 -->
+<h2>7. Points clés à retenir</h2>
+<ul>
+    <li>Le switch est plus performant que le hub grâce au filtrage basé sur les adresses MAC.</li>
+    <li>Les VLAN permettent de segmenter le réseau sans matériel supplémentaire.</li>
+    <li>Le trunking transporte plusieurs VLAN sur un seul lien physique.</li>
+    <li>STP empêche les boucles et assure la redondance.</li>
+    <li>Le MAC Learning optimise la transmission, et le flooding est temporaire pour les adresses inconnues.</li>
+</ul>
   <!-- QCM Module -->
   <div class="qcm" data-group="g4">
-    <h3>QCM – Adresse IP de Base</h3>
+   <h1>Questions – Module 5 : Commutation (Switching)</h1>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quelle est l’adresse de diffusion du réseau 192.168.1.0/24 ?</p>
-      <label><input type="radio" name="q1" value="true"> 192.168.1.255</label>
-      <label><input type="radio" name="q1" value="false"> 192.168.1.254</label>
-      <label><input type="radio" name="q1" value="false"> 192.168.1.0</label>
-      <label><input type="radio" name="q1" value="false"> 192.168.1.1</label>
-    </div>
+<!-- Question 1 -->
+<h2>1. Quelle est la principale différence entre un switch et un hub ?</h2>
+<label><input type="radio" name="q1" value="false"> Un switch fonctionne uniquement sur les réseaux sans fil.</label><br>
+<label><input type="radio" name="q1" value="true"> Un switch envoie les trames uniquement au port correspondant à l’adresse MAC de destination.</label><br>
+<label><input type="radio" name="q1" value="false"> Un hub est plus rapide qu’un switch pour transmettre les données.</label><br>
+<label><input type="radio" name="q1" value="false"> Un hub ne peut pas connecter plusieurs périphériques.</label><br>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quelle est la plage des hôtes pour le réseau 192.168.1.0/24 ?</p>
-      <label><input type="radio" name="q2" value="true"> 192.168.1.1 à 192.168.1.254</label>
-      <label><input type="radio" name="q2" value="false"> 192.168.1.0 à 192.168.1.255</label>
-      <label><input type="radio" name="q2" value="false"> 192.168.1.0 à 192.168.1.254</label>
-      <label><input type="radio" name="q2" value="false"> 192.168.1.1 à 192.168.1.255</label>
-    </div>
+<!-- Question 2 -->
+<h2>2. Qu’est-ce qu’un VLAN ?</h2>
+<label><input type="radio" name="q2" value="false"> Une connexion Internet sans fil sécurisée.</label>
+<label><input type="radio" name="q2" value="true"> Un réseau logique isolé au sein d’un switch physique permettant de segmenter le trafic.</label>
+<label><input type="radio" name="q2" value="false"> Un protocole de routage pour WAN.</label>
+<label><input type="radio" name="q2" value="false"> Une adresse IP privée pour un réseau local.</label>
 
+<!-- Question 3 -->
+<h2>3. Quel protocole permet de transporter plusieurs VLAN sur un même lien physique ?</h2>
+<label><input type="radio" name="q3" value="false"> STP</label>
+<label><input type="radio" name="q3" value="false"> RIP</label>
+<label><input type="radio" name="q3" value="true"> Trunking (IEEE 802.1Q)</label>
+<label><input type="radio" name="q3" value="false"> DHCP</label>
     <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
 
   </div>
 </div>
 <div class="module">
-  <h2>Module 5 – Sous-réseaux IPv4 </h2>
+<h1>Module 6 – Routage (Routing)</h1>
 
-  <p>
-    Le <strong>subnetting</strong> (division en sous-réseaux) permet de diviser un réseau en plusieurs parties plus petites.  
-    Chaque sous-réseau a ses propres adresses réseau, plage d’hôtes et adresse de diffusion, ce qui facilite la gestion des adresses et améliore la sécurité.
-  </p>
+<!-- Section 1 -->
+<h2>1. Introduction au routage</h2>
+<p>Le <strong>routage</strong> permet d’envoyer les paquets d’un réseau à un autre en utilisant le meilleur chemin disponible. Il se fait via des routeurs et peut être :</p>
+<ul>
+    <li><strong>Statique :</strong> défini manuellement par l’administrateur.</li>
+    <li><strong>Dynamique :</strong> les routeurs échangent des informations pour calculer automatiquement le meilleur chemin.</li>
+</ul>
 
-  <h3>Exemple : Réseau 192.168.10.0/24 découpé en sous-réseaux /26</h3>
-  <p>
-    - Masque sous-réseau : <strong>/26</strong> → 255.255.255.192  
-    - Chaque sous-réseau contient 64 adresses totales : 1 réseau + 62 hôtes + 1 diffusion
-  </p>
+<!-- Section 2 -->
+<h2>2. Routage statique</h2>
+<p>Le routage statique consiste à configurer manuellement les routes :</p>
+<ul>
+    <li>Simple à mettre en place pour de petits réseaux.</li>
+    <li>Stable mais peu flexible si le réseau change.</li>
+</ul>
+<p><strong>Exemple :</strong> Pour atteindre le réseau 192.168.20.0/24 via le routeur 192.168.10.1 :</p>
+<pre>ip route 192.168.20.0 255.255.255.0 192.168.10.1</pre>
 
-  <table border="1" cellpadding="8">
-    <tr>
-      <th>Sous-réseau</th>
-      <th>Adresse réseau</th>
-      <th>Masque sous-réseau</th>
-      <th>Plage d’hôtes</th>
-      <th>Adresse de diffusion</th>
-      <th>Binaire adresse réseau</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>192.168.10.0</td>
-      <td>255.255.255.192</td>
-      <td>192.168.10.1 à 192.168.10.62</td>
-      <td>192.168.10.63</td>
-      <td>11000000.10101000.00001010.00000000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>192.168.10.64</td>
-      <td>255.255.255.192</td>
-      <td>192.168.10.65 à 192.168.10.126</td>
-      <td>192.168.10.127</td>
-      <td>11000000.10101000.00001010.01000000</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>192.168.10.128</td>
-      <td>255.255.255.192</td>
-      <td>192.168.10.129 à 192.168.10.190</td>
-      <td>192.168.10.191</td>
-      <td>11000000.10101000.00001010.10000000</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>192.168.10.192</td>
-      <td>255.255.255.192</td>
-      <td>192.168.10.193 à 192.168.10.254</td>
-      <td>192.168.10.255</td>
-      <td>11000000.10101000.00001010.11000000</td>
-    </tr>
-  </table>
+<!-- Section 3 -->
+<h2>3. Routage dynamique</h2>
+<p>Les protocoles de routage dynamique permettent aux routeurs de calculer automatiquement les chemins :</p>
 
-  <h3>Explications détaillées :</h3>
-  <ul>
-    <li><strong>Adresse réseau :</strong> identifie le sous-réseau et ne peut pas être assignée à un hôte.</li>
-    <li><strong>Masque sous-réseau :</strong> indique combien de bits sont réservés au réseau et combien aux hôtes.</li>
-    <li><strong>Plage d’hôtes :</strong> adresses IP disponibles pour les appareils dans ce sous-réseau.</li>
-    <li><strong>Adresse de diffusion :</strong> dernière adresse du sous-réseau, utilisée pour envoyer des données à tous les appareils en même temps.</li>
-    <li><strong>Représentation binaire :</strong> permet de visualiser la structure IP et calculer les sous-réseaux.</li>
-  </ul>
+<h3>3.1 RIP (Routing Information Protocol)</h3>
+<ul>
+    <li>Protocole simple basé sur le nombre de sauts (hop count).</li>
+    <li>Limite de 15 sauts maximum.</li>
+</ul>
+<p><strong>Exemple :</strong> Réseau d’entreprise simple où chaque routeur envoie sa table de routage toutes les 30 secondes.</p>
+
+<h3>3.2 OSPF (Open Shortest Path First)</h3>
+<ul>
+    <li>Protocole de type link-state qui calcule le chemin le plus court selon les coûts (bandes passantes).</li>
+    <li>Adapté aux réseaux moyens à grands.</li>
+</ul>
+<p><strong>Exemple :</strong> Dans un campus multi-bâtiments, OSPF permet de choisir automatiquement le chemin le plus rapide pour les paquets entre départements.</p>
+
+<h3>3.3 EIGRP (Enhanced Interior Gateway Routing Protocol)</h3>
+<ul>
+    <li>Protocole propriétaire Cisco, hybride (distance-vector et link-state).</li>
+    <li>Calcule les meilleurs chemins avec métriques multiples (bande passante, délai, fiabilité).</li>
+</ul>
+<p><strong>Exemple :</strong> Entre plusieurs sites Cisco, EIGRP ajuste automatiquement les routes en cas de panne de lien.</p>
+
+<h3>3.4 BGP (Border Gateway Protocol)</h3>
+<ul>
+    <li>Protocole de routage inter-domaines pour Internet.</li>
+    <li>Utilisé par les fournisseurs d’accès pour échanger des routes entre réseaux autonomes (AS).</li>
+</ul>
+<p><strong>Exemple :</strong> Un FAI annonce ses réseaux à d’autres FAI via BGP pour que les paquets Internet trouvent le bon chemin.</p>
+
+<!-- Section 4 -->
+<h2>4. Tables de routage et métriques</h2>
+<p>Chaque routeur possède une table de routage :</p>
+<ul>
+    <li>Adresse réseau de destination</li>
+    <li>Masque de sous-réseau</li>
+    <li>Next hop (prochain routeur)</li>
+    <li>Métrique (coût, nombre de sauts, délai, fiabilité)</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Destination</th>
+        <th>Masque</th>
+        <th>Next Hop</th>
+        <th>Métrique</th>
+    </tr>
+    <tr>
+        <td>192.168.10.0</td>
+        <td>255.255.255.0</td>
+        <td>Directement connecté</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>192.168.20.0</td>
+        <td>255.255.255.0</td>
+        <td>192.168.10.1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>0.0.0.0 (default)</td>
+        <td>0.0.0.0</td>
+        <td>192.168.10.254</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<!-- Section 5 -->
+<h2>5. Routage inter-VLAN</h2>
+<p>Permet la communication entre VLAN différents via un routeur ou un switch L3.</p>
+<p><strong>Exemple :</strong> VLAN 10 (Finance) et VLAN 20 (IT) doivent échanger des données → le routeur L3 fait la translation entre VLAN.</p>
+
+<!-- Section 6 -->
+<h2>6. Points clés à retenir</h2>
+<ul>
+    <li>Routage statique : simple, mais peu flexible.</li>
+    <li>Routage dynamique : RIP, OSPF, EIGRP pour LAN/MAN et BGP pour Internet.</li>
+    <li>Tables de routage : contiennent les destinations, next hop et métriques.</li>
+    <li>Routage inter-VLAN : essentiel pour communication entre réseaux isolés.</li>
+    <li>Le choix du protocole dépend de la taille et de la complexité du réseau.</li>
+</ul>
 
   <!-- QCM Module -->
-  <div class="qcm" data-group="g3">
-    <h3>QCM – Sous-réseaux /26</h3>
+  <div class="qcm" data-group="g5">
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quelle est l’adresse de diffusion du 3ème sous-réseau 192.168.10.128/26 ?</p>
-      <label><input type="radio" name="m3q1" value="true"> 192.168.10.191</label>
-      <label><input type="radio" name="m3q1" value="false"> 192.168.10.190</label>
-      <label><input type="radio" name="m3q1" value="false"> 192.168.10.128</label>
-      <label><input type="radio" name="m3q1" value="false"> 192.168.10.192</label>
-    </div>
+<h1>Questions – Module 6 : Routage (Routing)</h1>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Combien d’hôtes utilisables dans un sous-réseau /26 ?</p>
-      <label><input type="radio" name="m3q2" value="true"> 62</label>
-      <label><input type="radio" name="m3q2" value="false"> 64</label>
-      <label><input type="radio" name="m3q2" value="false"> 126</label>
-      <label><input type="radio" name="m3q2" value="false"> 256</label>
-    </div>
+<!-- Question 1 -->
+<h2>1. Quelle est la différence principale entre le routage statique et le routage dynamique ?</h2>
+<label><input type="radio" name="q1" value="true"> Le routage statique est configuré manuellement, le routage dynamique calcule automatiquement les chemins.</label><br>
+<label><input type="radio" name="q1" value="false"> Le routage statique utilise toujours OSPF, le routage dynamique utilise toujours RIP.</label><br>
+<label><input type="radio" name="q1" value="false"> Le routage statique est pour IPv6 uniquement.</label><br>
+<label><input type="radio" name="q1" value="false"> Le routage dynamique nécessite un hub central.</label><br>
 
-    <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
-    <div class="result"></div>
-  </div>
-</div>
-<div class="module">
-  <h2>Module 6 – Protocoles réseau essentiels</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    Les <strong>protocoles réseau</strong> sont des ensembles de règles et de standards qui permettent aux appareils informatiques de communiquer entre eux correctement sur un réseau.  
-    Ils définissent la manière dont les données sont transmises, reçues, segmentées, adressées et vérifiées pour garantir une communication fiable et efficace. Sans protocoles, les ordinateurs ne pourraient pas échanger d’informations de manière compréhensible.
-  </p>
+<!-- Question 2 -->
+<h2>2. Quel protocole est basé sur le nombre de sauts (hop count) pour déterminer le chemin le plus court ?</h2>
+<label><input type="radio" name="q2" value="true"> RIP (Routing Information Protocol)</label>
+<label><input type="radio" name="q2" value="false"> OSPF</label>
+<label><input type="radio" name="q2" value="false"> EIGRP</label>
+<label><input type="radio" name="q2" value="false"> BGP</label>
 
-  <p>
-    Chaque protocole a un rôle spécifique et opère généralement à une ou plusieurs couches du modèle OSI ou TCP/IP :
-    <ul>
-      <li><strong>TCP (Transmission Control Protocol) :</strong> 
-        Fonction : garantir la transmission fiable des données entre deux appareils.  
-        Comment : segmente les données en paquets, vérifie leur arrivée et demande la retransmission en cas de perte.  
-        Exemple : téléchargement de fichiers, emails, navigation web sécurisée.
-      </li>
-      <li><strong>UDP (User Datagram Protocol) :</strong> 
-        Fonction : transmettre les données rapidement sans vérifier leur arrivée.  
-        Avantage : faible latence, idéal pour le streaming vidéo ou le jeu en ligne.  
-        Inconvénient : moins fiable que TCP.
-      </li>
-      <li><strong>ICMP (Internet Control Message Protocol) :</strong> 
-        Fonction : envoyer des messages de contrôle ou d’erreur entre appareils.  
-        Exemple : le célèbre ping utilise ICMP pour vérifier la connectivité.
-      </li>
-      <li><strong>ARP (Address Resolution Protocol) :</strong> 
-        Fonction : traduire une adresse IP en adresse MAC pour permettre la communication dans un réseau local.  
-        Exemple : un ordinateur veut envoyer un paquet à 192.168.1.5 et utilise ARP pour trouver son adresse physique.
-      </li>
-      <li><strong>DNS (Domain Name System) :</strong> 
-        Fonction : traduire les noms de domaine en adresses IP compréhensibles par les ordinateurs.  
-        Exemple : www.google.com devient 142.250.190.68.
-      </li>
-      <li><strong>DHCP (Dynamic Host Configuration Protocol) :</strong> 
-        Fonction : attribuer automatiquement une adresse IP, un masque de sous-réseau et une passerelle aux appareils d’un réseau.  
-        Exemple : lorsqu’un smartphone se connecte au Wi-Fi d’une entreprise, DHCP lui donne instantanément une adresse IP valide.
-      </li>
-    </ul>
-  </p>
-
-  <p>
-    <strong>Exemple concret :</strong> Lorsqu’un utilisateur ouvre son navigateur et tape <code>www.example.com</code> :
-    <ol>
-      <li>Le protocole DNS convertit le nom de domaine en adresse IP.</li>
-      <li>TCP segmente les données de la page et garantit que tous les paquets arrivent correctement.</li>
-      <li>IP achemine les paquets vers le serveur correspondant.</li>
-      <li>Si l’utilisateur regarde une vidéo en direct, UDP peut être utilisé pour réduire la latence.</li>
-      <li>ARP permet aux appareils du réseau local de s’adresser correctement entre eux.</li>
-    </ol>
-  </p>
-
-  <p>
-    Comprendre ces protocoles est fondamental pour :
-    <ul>
-      <li>Diagnostiquer et résoudre les problèmes réseau.</li>
-      <li>Configurer correctement les serveurs et services réseau.</li>
-      <li>Optimiser les performances et la sécurité des communications.</li>
-    </ul>
-  </p>
-
-  <!-- QCM Module 6 -->
-  <div class="qcm" data-group="g6">
-    <h3>QCM MODULE 6 – Protocoles réseau essentiels</h3>
-
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel protocole garantit la transmission fiable des données entre deux appareils ?</p>
-      <label><input type="radio" name="m4q1" value="true"> TCP</label>
-      <label><input type="radio" name="m4q1" value="false"> UDP</label>
-      <label><input type="radio" name="m4q1" value="false"> ICMP</label>
-      <label><input type="radio" name="m4q1" value="false"> ARP</label>
-    </div>
-
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel protocole traduit les noms de domaine en adresses IP ?</p>
-      <label><input type="radio" name="m4q2" value="true"> DNS</label>
-      <label><input type="radio" name="m4q2" value="false"> DHCP</label>
-      <label><input type="radio" name="m4q2" value="false"> TCP</label>
-      <label><input type="radio" name="m4q2" value="false"> UDP</label>
-    </div>
-
-    <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
   </div>
 </div>
 <div class="module">
-  <h2>Module 7 – Commutation (Switching)</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    La <strong>commutation</strong> est le processus par lequel un switch transmet les données entre les différents appareils d’un réseau local (LAN).  
-    Contrairement aux hubs, qui envoient les données à tous les appareils, les switches intelligents transmettent uniquement les paquets à l’appareil destinataire, améliorant ainsi la vitesse et la sécurité du réseau.
-  </p>
+<h1>Module 7 – Réseaux sans fil (Wireless)</h1>
 
-  <p>
-    Les concepts essentiels en commutation :
+<!-- Section 1 -->
+<h2>1. Introduction au Wi-Fi</h2>
+<p>Le <strong>Wi-Fi</strong> est une technologie permettant de connecter des périphériques à un réseau local sans fil via des ondes radio. Il fonctionne selon les normes <strong>IEEE 802.11</strong>.</p>
+<p>Les réseaux sans fil sont utilisés pour :</p>
+<ul>
+    <li>Accéder à Internet sans câbles</li>
+    <li>Connecter ordinateurs, smartphones, tablettes et objets IoT</li>
+    <li>Créer des réseaux temporaires ou mobiles</li>
+</ul>
+
+<!-- Section 2 -->
+<h2>2. Normes Wi-Fi (802.11)</h2>
+<p>Différentes normes définissent la vitesse, la portée et la fréquence :</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Norme</th>
+        <th>Fréquence</th>
+        <th>Débit maximum théorique</th>
+        <th>Exemple d’usage</th>
+    </tr>
+    <tr>
+        <td>802.11a</td>
+        <td>5 GHz</td>
+        <td>54 Mbps</td>
+        <td>Petits réseaux professionnels</td>
+    </tr>
+    <tr>
+        <td>802.11b</td>
+        <td>2,4 GHz</td>
+        <td>11 Mbps</td>
+        <td>Réseaux domestiques anciens</td>
+    </tr>
+    <tr>
+        <td>802.11g</td>
+        <td>2,4 GHz</td>
+        <td>54 Mbps</td>
+        <td>Réseaux domestiques et bureaux</td>
+    </tr>
+    <tr>
+        <td>802.11n</td>
+        <td>2,4 / 5 GHz</td>
+        <td>600 Mbps</td>
+        <td>Wi-Fi haute performance pour entreprises et maisons</td>
+    </tr>
+    <tr>
+        <td>802.11ac</td>
+        <td>5 GHz</td>
+        <td>1,3 Gbps</td>
+        <td>Wi-Fi moderne pour streaming et gaming</td>
+    </tr>
+    <tr>
+        <td>802.11ax (Wi-Fi 6)</td>
+        <td>2,4 / 5 / 6 GHz</td>
+        <td>9,6 Gbps</td>
+        <td>Réseaux très denses et IoT</td>
+    </tr>
+</table>
+
+<!-- Section 3 -->
+<h2>3. Sécurité Wi-Fi</h2>
+<p>Pour sécuriser un réseau sans fil, plusieurs méthodes existent :</p>
+<ul>
+    <li><strong>WEP :</strong> ancien standard, peu sécurisé.</li>
+    <li><strong>WPA :</strong> meilleure sécurité que WEP, utilise le chiffrement TKIP.</li>
+    <li><strong>WPA2 :</strong> sécurisé, utilise AES, norme la plus répandue.</li>
+    <li><strong>WPA3 :</strong> nouvelle norme, meilleure protection contre attaques par mot de passe faible.</li>
+</ul>
+<p><strong>Exemple :</strong> Un café utilise WPA2 pour sécuriser son Wi-Fi public et limiter l’accès aux clients.</p>
+
+<!-- Section 4 -->
+<h2>4. SSID, canaux et bandes</h2>
+<p>Le SSID est le nom du réseau Wi-Fi visible par les périphériques.</p>
+<ul>
+    <li>Canaux : les réseaux utilisent différents canaux pour éviter les interférences.</li>
+    <li>Bandes :</li>
     <ul>
-      <li><strong>VLAN (Virtual Local Area Network) :</strong> permet de segmenter logiquement un réseau en plusieurs réseaux indépendants, même si les appareils sont physiquement connectés au même switch.  
-        <strong>Exemple :</strong> séparer le service IT, le service Finance et le service RH dans des VLAN différents pour limiter le trafic inutile et renforcer la sécurité.
-      </li>
-      <li><strong>Trunking :</strong> permet à un lien entre deux switches de transporter plusieurs VLAN simultanément.  
-        <strong>Exemple :</strong> un switch principal peut transporter les VLAN IT et Finance vers un switch secondaire sur le même câble.
-      </li>
-      <li><strong>STP (Spanning Tree Protocol) :</strong> empêche les boucles dans le réseau lorsque plusieurs chemins existent entre switches.  
-        <strong>Exemple :</strong> dans un réseau avec deux switches interconnectés, STP bloque temporairement un chemin pour éviter les boucles de broadcast.
-      </li>
-      <li><strong>Port Security :</strong> contrôle quels appareils peuvent se connecter à chaque port du switch.  
-        <strong>Exemple :</strong> bloquer l’accès aux ports si une adresse MAC inconnue tente de se connecter.
-      </li>
+        <li><strong>2,4 GHz :</strong> portée plus longue, vitesse plus faible, plus d’interférences.</li>
+        <li><strong>5 GHz :</strong> portée plus courte, vitesse plus élevée, moins d’interférences.</li>
     </ul>
-  </p>
+</ul>
+<p><strong>Exemple :</strong> Un routeur Wi-Fi dual-band diffuse le SSID "Maison-2,4" sur 2,4 GHz et "Maison-5" sur 5 GHz pour que les périphériques choisissent la meilleure bande.</p>
 
-  <p>
-    Les switches modernes permettent également :
-    <ul>
-      <li>La qualité de service (QoS) pour prioriser certains types de trafic.</li>
-      <li>La gestion centralisée via SNMP ou interface web.</li>
-      <li>La mise en place de réseaux virtuels (VLANs) et VPN internes pour plus de sécurité.</li>
-    </ul>
-  </p>
-
-  <p>
-    <strong>Exemple concret :</strong> Dans une entreprise, tous les ordinateurs du service IT appartiennent au VLAN 10, tandis que le service Finance est sur VLAN 20.  
-    Les deux VLAN peuvent partager un même switch mais restent isolés pour éviter que le trafic Finance ne surcharge le réseau IT.
-  </p>
-
-  <!-- QCM Module 7 -->
+<!-- Section 5 -->
+<h2>5. Points clés à retenir</h2>
+<ul>
+    <li>Wi-Fi permet la connexion sans fil de plusieurs périphériques.</li>
+    <li>Les normes 802.11 déterminent vitesse, fréquence et portée.</li>
+    <li>WPA2/WPA3 sont recommandés pour sécuriser le réseau.</li>
+    <li>Choisir la bande 2,4 ou 5 GHz selon portée et interférences.</li>
+    <li>Le SSID identifie le réseau et doit être configuré correctement pour la sécurité.</li>
+</ul>
+<!-- QCM Module -->
   <div class="qcm" data-group="g7">
-    <h3>QCM MODULE 7 – Commutation (Switching)</h3>
+<h1>Questions – Module 7 : Réseaux sans fil (Wi-Fi)</h1>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel est l’objectif principal d’un VLAN ?</p>
-      <label><input type="radio" name="m5q1" value="true"> Segmenter logiquement le réseau</label>
-      <label><input type="radio" name="m5q1" value="false"> Augmenter automatiquement la bande passante Internet</label>
-      <label><input type="radio" name="m5q1" value="false"> Remplacer un routeur</label>
-      <label><input type="radio" name="m5q1" value="false"> Chiffrer le trafic interne</label>
-    </div>
+<!-- Question 1 -->
+<h2>1. Quelle norme Wi-Fi offre la vitesse théorique la plus élevée et est adaptée aux environnements très denses ?</h2>
+<label><input type="radio" name="q1" value="false"> 802.11n</label>
+<label><input type="radio" name="q1" value="false"> 802.11ac</label>
+<label><input type="radio" name="q1" value="true"> 802.11ax (Wi-Fi 6)</label>
+<label><input type="radio" name="q1" value="false"> 802.11b</label>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel protocole empêche les boucles dans un réseau avec plusieurs chemins ?</p>
-      <label><input type="radio" name="m5q2" value="true"> STP (Spanning Tree Protocol)</label>
-      <label><input type="radio" name="m5q2" value="false"> DHCP</label>
-      <label><input type="radio" name="m5q2" value="false"> ARP</label>
-      <label><input type="radio" name="m5q2" value="false"> ICMP</label>
-    </div>
-
+<!-- Question 2 -->
+<h2>2. Quelle méthode de sécurité Wi-Fi est actuellement la plus recommandée pour un réseau domestique ou d’entreprise ?</h2>
+<label><input type="radio" name="q2" value="false"> WEP</label>
+<label><input type="radio" name="q2" value="false"> WPA</label>
+<label><input type="radio" name="q2" value="true"> WPA2 / WPA3</label>
+<label><input type="radio" name="q2" value="false"> Aucun chiffrement</label>
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g7" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
-  <h2>Module 8 – Routage (Routing)</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    Le <strong>routage</strong> est le processus qui permet de transférer des données d’un réseau à un autre.  
-    Les routeurs examinent les adresses IP des paquets et décident du meilleur chemin pour les acheminer jusqu’à leur destination.  
-    Sans routage, les réseaux locaux resteraient isolés et la communication entre différents réseaux serait impossible.
-  </p>
-
-  <p>
-    Il existe deux types principaux de routage :
-    <ul>
-      <li><strong>Routage statique :</strong> les routes sont configurées manuellement par l’administrateur réseau.  
-        <strong>Exemple :</strong> un petit réseau d’entreprise avec deux routes fixes vers un réseau partenaire.
-      </li>
-      <li><strong>Routage dynamique :</strong> les routes sont apprises automatiquement par le routeur grâce à des protocoles de routage.  
-        Les protocoles les plus connus sont :
-        <ul>
-          <li><strong>RIP (Routing Information Protocol) :</strong> simple, basé sur le nombre de sauts (hop count) pour atteindre le réseau de destination.</li>
-          <li><strong>OSPF (Open Shortest Path First) :</strong> basé sur l’état des liens pour trouver le chemin le plus rapide et fiable.</li>
-          <li><strong>EIGRP (Enhanced Interior Gateway Routing Protocol) :</strong> développé par Cisco, combine distance et métriques de performance pour choisir la meilleure route.</li>
-          <li><strong>BGP (Border Gateway Protocol) :</strong> utilisé pour le routage entre réseaux sur Internet, basé sur des politiques et des chemins AS (Autonomous Systems).</li>
-        </ul>
-      </li>
-    </ul>
-  </p>
-
-  <p>
-    Le routage permet également :
-    <ul>
-      <li>De connecter plusieurs VLAN ou sous-réseaux entre eux via un routeur ou un switch de couche 3.</li>
-      <li>D’assurer la redondance et la tolérance aux pannes grâce à plusieurs chemins possibles.</li>
-      <li>D’optimiser la performance du réseau en choisissant les routes les plus rapides.</li>
-    </ul>
-  </p>
-
-  <p>
-    <strong>Exemple concret :</strong> Dans une entreprise avec plusieurs sites (Paris, Lyon, Marseille), chaque site a son réseau local.  
-    Le routage dynamique avec OSPF permet aux routeurs de connaître automatiquement les chemins vers les autres sites et d’acheminer les données de manière optimale, même si une ligne tombe en panne.
-  </p>
-
-  <!-- QCM Module 8 -->
-  <div class="qcm" data-group="g8">
-    <h3>QCM MODULE 8 – Routage (Routing)</h3>
-
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel protocole de routage est basé sur le nombre de sauts (hop count) ?</p>
-      <label><input type="radio" name="m6q1" value="true"> RIP</label>
-      <label><input type="radio" name="m6q1" value="false"> OSPF</label>
-      <label><input type="radio" name="m6q1" value="false"> BGP</label>
-      <label><input type="radio" name="m6q1" value="false"> EIGRP</label>
-    </div>
-
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel protocole est utilisé pour le routage entre réseaux sur Internet ?</p>
-      <label><input type="radio" name="m6q2" value="true"> BGP</label>
-      <label><input type="radio" name="m6q2" value="false"> RIP</label>
-      <label><input type="radio" name="m6q2" value="false"> OSPF</label>
-      <label><input type="radio" name="m6q2" value="false"> EIGRP</label>
-    </div>
-
-    <!-- Bouton Vérifier relié uniquement à ce module -->
-    <button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
-    <div class="result"></div>
-  </div>
-</div>
 
 <div class="module">
-  <h2>Module 9 – Réseaux sans fil (Wireless)</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    Les <strong>réseaux sans fil</strong> permettent aux appareils de communiquer et d’échanger des données sans utiliser de câbles physiques.  
-    Ils utilisent des ondes radio pour transmettre les informations entre les appareils (ordinateurs, smartphones, imprimantes) et les points d’accès (AP – Access Point).
-  </p>
+<h1>Module 8 – Sécurité des réseaux 🔐</h1>
 
-  <p>
-    Les principaux standards Wi-Fi sont définis par la norme <strong>IEEE 802.11</strong> :
-    <ul>
-      <li><strong>802.11a :</strong> vitesse jusqu’à 54 Mbps sur la bande 5 GHz.</li>
-      <li><strong>802.11b :</strong> vitesse jusqu’à 11 Mbps sur la bande 2,4 GHz.</li>
-      <li><strong>802.11g :</strong> vitesse jusqu’à 54 Mbps sur la bande 2,4 GHz.</li>
-      <li><strong>802.11n :</strong> vitesse jusqu’à 600 Mbps, multi-bande (2,4 et 5 GHz).</li>
-      <li><strong>802.11ac :</strong> vitesse jusqu’à plusieurs Gbps sur la bande 5 GHz.</li>
-      <li><strong>802.11ax (Wi-Fi 6) :</strong> vitesse plus élevée, meilleure efficacité pour les environnements denses.</li>
-    </ul>
-  </p>
+<!-- Section 1 -->
+<h2>1. Introduction à la sécurité réseau</h2>
+<p>La <strong>sécurité des réseaux</strong> vise à protéger les données, les systèmes et les services contre les accès non autorisés, les attaques et les pertes de données.</p>
+<p>Objectifs :</p>
+<ul>
+    <li>Prévenir les intrusions et attaques malveillantes.</li>
+    <li>Assurer la confidentialité, l’intégrité et la disponibilité des données.</li>
+    <li>Gérer les accès et permissions des utilisateurs et périphériques.</li>
+</ul>
 
-  <p>
-    La sécurité des réseaux sans fil est essentielle pour éviter les intrusions et le vol de données.  
-    Les principaux mécanismes de sécurité :
-    <ul>
-      <li><strong>WEP :</strong> ancien protocole, peu sécurisé aujourd’hui.</li>
-      <li><strong>WPA/WPA2 :</strong> protocole plus sûr, utilisant le chiffrement AES.</li>
-      <li><strong>WPA3 :</strong> dernière norme, offrant une meilleure protection des mots de passe et du trafic.</li>
-      <li><strong>MAC filtering :</strong> restriction d’accès aux appareils autorisés par adresse MAC.</li>
-      <li><strong>VPN :</strong> protection supplémentaire lors de l’accès à un réseau public.</li>
-    </ul>
-  </p>
+<!-- Section 2 -->
+<h2>2. Firewalls</h2>
+<p>Un <strong>firewall</strong> est un dispositif (matériel ou logiciel) qui contrôle le trafic réseau en appliquant des règles de sécurité :</p>
+<ul>
+    <li>Filtrage des paquets entrants et sortants.</li>
+    <li>Protection contre les accès non autorisés.</li>
+    <li>Exemple : un firewall d’entreprise bloque les ports inutiles pour protéger les serveurs.</li>
+</ul>
 
-  <p>
-    <strong>Exemple concret :</strong> Dans une entreprise avec plusieurs bureaux, chaque point d’accès Wi-Fi est configuré avec WPA2 et un SSID dédié à chaque département.  
-    Cela permet aux employés de se connecter facilement, tout en maintenant une isolation entre les différents services.
-  </p>
+<!-- Section 3 -->
+<h2>3. IDS / IPS</h2>
+<p>Les systèmes de détection et prévention d’intrusions :</p>
+<ul>
+    <li><strong>IDS (Intrusion Detection System)</strong> : détecte les activités suspectes sur le réseau et alerte l’administrateur.</li>
+    <li><strong>IPS (Intrusion Prevention System)</strong> : détecte et bloque automatiquement les attaques.</li>
+    <li>Exemple : un IDS/IPS détecte et bloque une tentative de scan de ports depuis Internet.</li>
+</ul>
 
-  <!-- QCM Module 9 -->
-  <div class="qcm" data-group="g9">
-    <h3>QCM MODULE 9 – Réseaux sans fil (Wireless)</h3>
+<!-- Section 4 -->
+<h2>4. VPN (Virtual Private Network)</h2>
+<p>Le VPN permet de créer une connexion sécurisée entre deux réseaux ou utilisateurs via Internet :</p>
+<ul>
+    <li>Chiffrement des données pour assurer la confidentialité.</li>
+    <li>Accès sécurisé à distance pour les employés.</li>
+    <li>Exemple : un employé se connecte au réseau de son entreprise depuis chez lui via un VPN SSL.</li>
+</ul>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quelle norme Wi-Fi offre la meilleure efficacité pour les environnements denses ?</p>
-      <label><input type="radio" name="m7q1" value="true"> 802.11ax (Wi-Fi 6)</label>
-      <label><input type="radio" name="m7q1" value="false"> 802.11b</label>
-      <label><input type="radio" name="m7q1" value="false"> 802.11g</label>
-      <label><input type="radio" name="m7q1" value="false"> 802.11a</label>
-    </div>
+<!-- Section 5 -->
+<h2>5. NAT (Network Address Translation)</h2>
+<p>Le NAT traduit les adresses IP privées d’un réseau interne en adresses publiques :</p>
+<ul>
+    <li>Permet de partager une seule IP publique pour plusieurs périphériques.</li>
+    <li>Renforce la sécurité en masquant les adresses internes.</li>
+    <li>Exemple : un routeur domestique utilise NAT pour connecter tous les appareils à Internet avec une seule IP.</li>
+</ul>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel protocole est recommandé pour sécuriser un réseau Wi-Fi aujourd’hui ?</p>
-      <label><input type="radio" name="m7q2" value="true"> WPA2 ou WPA3</label>
-      <label><input type="radio" name="m7q2" value="false"> WEP</label>
-      <label><input type="radio" name="m7q2" value="false"> HTTP</label>
-      <label><input type="radio" name="m7q2" value="false"> FTP</label>
-    </div>
+<!-- Section 6 -->
+<h2>6. Concepts complémentaires</h2>
+<ul>
+    <li><strong>Segmentation :</strong> Diviser le réseau en sous-réseaux pour limiter l’impact des attaques.</li>
+    <li><strong>DMZ :</strong> Zone démilitarisée pour héberger les services accessibles depuis Internet (serveur web, mail).</li>
+    <li><strong>Authentification :</strong> Contrôle des accès avec mots de passe, certificats ou 2FA.</li>
+    <li><strong>Détection et prévention des attaques :</strong> surveillance continue, antivirus, filtres de contenu.</li>
+</ul>
 
-    <!-- Bouton Vérifier relié uniquement à ce module -->
-    <button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
-    <div class="result"></div>
-  </div>
-</div>
-<div class="module">
-  <h2>Module 10 – Sécurité des réseaux 🔐</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    La <strong>sécurité des réseaux</strong> est l’ensemble des techniques et des mesures visant à protéger les réseaux informatiques contre les intrusions, les attaques et les pertes de données.  
-    Avec l’augmentation des menaces comme le piratage, le phishing ou les virus, la sécurité réseau est devenue essentielle pour toute entreprise ou organisation.
-  </p>
+<!-- Section 7 -->
+<h2>7. Exemples pratiques</h2>
+<ul>
+    <li>Une entreprise utilise un firewall pour bloquer tous les ports sauf ceux nécessaires (HTTP/HTTPS, SSH).</li>
+    <li>Un IDS détecte une tentative de brute force sur un serveur de messagerie et envoie une alerte.</li>
+    <li>Les employés utilisent un VPN pour accéder au réseau interne en toute sécurité depuis l’extérieur.</li>
+    <li>Une DMZ héberge le serveur web, isolé du réseau interne pour limiter les risques en cas de compromission.</li>
+</ul>
 
-  <p>
-    Les objectifs principaux de la sécurité réseau sont :
-    <ul>
-      <li><strong>Confidentialité :</strong> protéger les données pour qu’elles ne soient accessibles qu’aux personnes autorisées.</li>
-      <li><strong>Intégrité :</strong> garantir que les données ne sont pas altérées pendant leur transmission.</li>
-      <li><strong>Disponibilité :</strong> assurer que le réseau et ses services restent accessibles aux utilisateurs autorisés.</li>
-    </ul>
-  </p>
-
-  <p>
-    Pour atteindre ces objectifs, plusieurs solutions et protocoles sont utilisés :
-    <ul>
-      <li><strong>Firewall :</strong> pare-feu qui contrôle le trafic entrant et sortant selon des règles définies.  
-        <strong>Exemple :</strong> bloquer les accès aux ports non utilisés ou limiter l’accès à certains sites web pour les employés.
-      </li>
-      <li><strong>IDS/IPS (Intrusion Detection/Prevention System) :</strong> détecte ou empêche les activités suspectes.  
-        <strong>Exemple :</strong> alerter l’administrateur si un logiciel malveillant tente de scanner le réseau.
-      </li>
-      <li><strong>VPN (Virtual Private Network) :</strong> crée un tunnel sécurisé pour accéder au réseau à distance.  
-        <strong>Exemple :</strong> un employé en télétravail se connecte au réseau de l’entreprise via un VPN pour chiffrer ses données.
-      </li>
-      <li><strong>NAT (Network Address Translation) :</strong> traduit les adresses IP privées internes en adresse IP publique pour sécuriser le réseau interne.  
-        <strong>Exemple :</strong> plusieurs appareils d’une entreprise utilisent la même IP publique pour accéder à Internet, masquant ainsi leur adresse interne.
-      </li>
-    </ul>
-  </p>
-
-  <p>
-    D’autres bonnes pratiques de sécurité réseau incluent :
-    <ul>
-      <li>Mettre à jour régulièrement les logiciels et firmwares des équipements réseau.</li>
-      <li>Utiliser des mots de passe forts et la double authentification (2FA).</li>
-      <li>Segmenter le réseau avec VLAN pour limiter l’accès aux données sensibles.</li>
-      <li>Surveiller les journaux et alertes pour détecter les comportements anormaux.</li>
-    </ul>
-  </p>
-
-  <p>
-    <strong>Exemple concret :</strong> Une entreprise utilise un firewall pour filtrer le trafic externe, un IDS pour détecter les intrusions, et un VPN pour permettre aux employés de se connecter depuis l’extérieur.  
-    Grâce à ces mesures, le réseau est protégé contre les attaques externes tout en restant accessible aux utilisateurs autorisés.
-  </p>
-
+<!-- Section 8 -->
+<h2>8. Points clés à retenir</h2>
+<ul>
+    <li>La sécurité réseau combine protection, surveillance et contrôle d’accès.</li>
+    <li>Firewalls, IDS/IPS, VPN et NAT sont des outils essentiels.</li>
+    <li>Segmentation et DMZ augmentent la sécurité des infrastructures.</li>
+    <li>La surveillance et la prévention proactive sont essentielles pour protéger les données.</li>
+</ul>
   <!-- QCM Module 8 -->
   <div class="qcm" data-group="g8">
     <h3>QCM MODULE 8 – Sécurité des réseaux 🔐</h3>
@@ -950,54 +1229,69 @@ footer{
 <div class="module">
   <h2>Module 9 – Services réseau</h2>
   
-  <!-- Explications détaillées -->
-  <p>
-    Les <strong>services réseau</strong> sont des applications ou protocoles essentiels qui permettent aux utilisateurs et aux systèmes de communiquer, partager des ressources et accéder à des informations sur un réseau.  
-    Sans ces services, un réseau ne serait qu’un ensemble d’appareils interconnectés, incapables de fournir des fonctionnalités utiles.
-  </p>
+<h1>Module 9 – Services réseau</h1>
 
-  <p>
-    Les services réseau les plus importants incluent :
-    <ul>
-      <li><strong>DNS (Domain Name System) :</strong> traduit les noms de domaine (ex : www.google.com) en adresses IP numériques pour que les ordinateurs puissent localiser les serveurs.  
-        <strong>Exemple :</strong> sans DNS, il faudrait connaître l’adresse IP exacte d’un site web pour s’y connecter, ce qui serait impraticable.
-      </li>
-      <li><strong>DHCP (Dynamic Host Configuration Protocol) :</strong> attribue automatiquement aux appareils une adresse IP, un masque de sous-réseau et une passerelle.  
-        <strong>Exemple :</strong> lorsqu’un ordinateur portable se connecte à un réseau Wi-Fi d’entreprise, DHCP lui donne instantanément une adresse IP valide.
-      </li>
-      <li><strong>FTP (File Transfer Protocol) :</strong> permet le transfert de fichiers entre un client et un serveur.  
-        <strong>Exemple :</strong> un administrateur réseau transfère des fichiers de configuration ou des sauvegardes vers un serveur central.
-      </li>
-      <li><strong>HTTP/HTTPS :</strong> protocoles de navigation web, avec HTTPS ajoutant un chiffrement sécurisé des données.  
-        <strong>Exemple :</strong> les transactions bancaires en ligne utilisent HTTPS pour sécuriser les informations sensibles.
-      </li>
-      <li><strong>SMTP (Simple Mail Transfer Protocol) :</strong> utilisé pour envoyer des emails d’un client à un serveur ou entre serveurs.  
-        <strong>Exemple :</strong> lorsqu’un employé envoie un email via Outlook ou Gmail, SMTP assure la transmission correcte du message.
-      </li>
-    </ul>
-  </p>
+<!-- Section 1 -->
+<h2>1. Introduction aux services réseau</h2>
+<p>Les <strong>services réseau</strong> sont des applications ou protocoles qui permettent aux utilisateurs et aux systèmes de communiquer, partager des ressources et accéder à Internet de manière organisée et sécurisée.</p>
 
-  <p>
-    Ces services réseau sont essentiels pour :
-    <ul>
-      <li>Partager et accéder aux ressources réseau de manière fluide.</li>
-      <li>Assurer la communication correcte et rapide entre utilisateurs et systèmes.</li>
-      <li>Protéger les échanges via des protocoles sécurisés comme HTTPS ou VPN.</li>
-    </ul>
-  </p>
+<!-- Section 2 -->
+<h2>2. DNS (Domain Name System)</h2>
+<p>Le DNS traduit les noms de domaine en adresses IP :</p>
+<ul>
+    <li>Exemple : www.example.com → 93.184.216.34</li>
+    <li>Permet aux utilisateurs d’utiliser des noms faciles à retenir au lieu des IP numériques.</li>
+    <li>Fonctionnement : requête DNS depuis un client → serveur DNS résout le nom → réponse avec l’adresse IP.</li>
+</ul>
 
-  <p>
-    <strong>Exemple concret :</strong> Dans une entreprise moderne :
-    <ol>
-      <li>Un ordinateur reçoit automatiquement une adresse IP grâce au DHCP.</li>
-      <li>Un utilisateur se connecte à un site web via HTTPS, sécurisé par SSL/TLS.</li>
-      <li>Un email est envoyé via SMTP vers le serveur de messagerie.</li>
-      <li>Des fichiers sont transférés vers un serveur distant via FTP.</li>
-      <li>Le DNS permet de résoudre les noms de domaine pour accéder facilement aux ressources web internes et externes.</li>
-    </ol>
-    Ensemble, ces services permettent une expérience réseau complète et sécurisée pour tous les utilisateurs.
-  </p>
+<!-- Section 3 -->
+<h2>3. DHCP (Dynamic Host Configuration Protocol)</h2>
+<p>Le DHCP attribue automatiquement des adresses IP aux périphériques sur un réseau :</p>
+<ul>
+    <li>Exemple : un ordinateur se connecte au réseau et reçoit automatiquement une IP 192.168.1.10.</li>
+    <li>Avantage : simplifie la gestion des adresses IP et évite les conflits.</li>
+</ul>
 
+<!-- Section 4 -->
+<h2>4. FTP (File Transfer Protocol)</h2>
+<p>Le FTP permet le transfert de fichiers entre client et serveur :</p>
+<ul>
+    <li>Exemple : un administrateur télécharge des fichiers de configuration sur un serveur.</li>
+    <li>Ports standards : 21 pour le contrôle, 20 pour les données (mode actif).</li>
+</ul>
+
+<!-- Section 5 -->
+<h2>5. HTTP / HTTPS</h2>
+<p>Ces protocoles permettent la navigation web :</p>
+<ul>
+    <li>HTTP : communication non chiffrée entre client et serveur web.</li>
+    <li>HTTPS : communication sécurisée via chiffrement SSL/TLS.</li>
+    <li>Exemple : navigation sur https://www.google.com.</li>
+</ul>
+
+<!-- Section 6 -->
+<h2>6. SMTP (Simple Mail Transfer Protocol)</h2>
+<p>SMTP est utilisé pour l’envoi de mails :</p>
+<ul>
+    <li>Exemple : un serveur envoie des emails aux clients via SMTP sur le port 25, 465 ou 587.</li>
+</ul>
+
+<!-- Section 7 -->
+<h2>7. Autres services réseau essentiels</h2>
+<ul>
+    <li><strong>Proxy :</strong> Intermédiaire entre client et serveur, filtre et optimise le trafic.</li>
+    <li><strong>NTP (Network Time Protocol) :</strong> Synchronise l’heure sur tous les périphériques du réseau.</li>
+    <li><strong>SNMP (Simple Network Management Protocol) :</strong> Surveille et gère les équipements réseau.</li>
+</ul>
+
+<!-- Section 8 -->
+<h2>8. Points clés à retenir</h2>
+<ul>
+    <li>Les services réseau sont indispensables pour le fonctionnement quotidien des réseaux.</li>
+    <li>DNS, DHCP, FTP, HTTP/HTTPS et SMTP sont parmi les plus utilisés.</li>
+    <li>Les services comme NTP, SNMP et Proxy facilitent la gestion et la supervision du réseau.</li>
+    <li>Ces services assurent communication, sécurité et efficacité sur le réseau.</li>
+</ul>
   <!-- QCM Module 9 -->
   <div class="qcm" data-group="g9">
     <h3>QCM MODULE 9 – Services réseau</h3>
@@ -1026,43 +1320,78 @@ footer{
 <div class="module">
   <h2>Module 10 – Câblage et supports réseau</h2>
   
-  <!-- Explications détaillées -->
-  <p>
-    Le <strong>câblage et les supports réseau</strong> constituent l’infrastructure physique qui permet aux appareils de communiquer entre eux.  
-    Une installation correcte assure fiabilité, performance et évolutivité du réseau. Le choix des câbles et des supports dépend de la vitesse requise, de la distance et de l’environnement.
-  </p>
+  <!-- Section 1 -->
+<h2>1. Introduction</h2>
+<p>Le câblage et les supports réseau sont essentiels pour la transmission fiable des données dans un réseau local ou étendu. Ils déterminent la vitesse, la portée et la qualité de communication.</p>
 
-  <p>
-    Les principaux types de câbles et supports réseau :
-    <ul>
-      <li><strong>Câbles Ethernet cuivre :</strong> utilisés pour les réseaux locaux (LAN).  
-        <strong>Catégories :</strong> Cat5e (jusqu’à 1 Gbps), Cat6 (jusqu’à 10 Gbps sur courte distance), Cat6a et Cat7 (10 Gbps et plus avec blindage).  
-        <strong>Exemple :</strong> câbler un bureau ou une salle serveur pour connecter tous les ordinateurs et imprimantes.
-      </li>
-      <li><strong>Fibre optique :</strong> transmet les données via des signaux lumineux, idéale pour de longues distances et haut débit.  
-        <strong>Exemple :</strong> relier plusieurs bâtiments d’un campus universitaire ou des centres de données.
-      </li>
-      <li><strong>Connecteurs et prises :</strong> RJ45 pour cuivre, LC/SC pour fibre optique, utilisés pour connecter les câbles aux équipements réseau.
-      </li>
-      <li><strong>Supports sans fil :</strong> Wi-Fi, Bluetooth ou autres technologies radio pour connecter des appareils sans câbles physiques.  
-        <strong>Exemple :</strong> points d’accès Wi-Fi dans un bureau pour que les laptops et smartphones se connectent sans fil.
-      </li>
-    </ul>
-  </p>
+<!-- Section 2 -->
+<h2>2. Ethernet</h2>
+<p>L’Ethernet est le standard le plus répandu pour les réseaux filaires :</p>
+<ul>
+    <li>Utilise des câbles de type RJ45.</li>
+    <li>Vitesses typiques : 100 Mbps, 1 Gbps, 10 Gbps selon la catégorie de câble.</li>
+    <li>Exemple : connexion d’ordinateurs et switches en LAN d’entreprise.</li>
+</ul>
 
-  <p>
-    Les bonnes pratiques de câblage :
-    <ul>
-      <li>Respecter les normes TIA/EIA pour assurer la compatibilité et la performance.</li>
-      <li>Étiqueter les câbles pour une maintenance facile.</li>
-      <li>Éviter les interférences électromagnétiques en séparant les câbles réseau des câbles électriques.</li>
-      <li>Utiliser des chemins de câbles et goulottes pour protéger les câbles et faciliter l’organisation.</li>
-    </ul>
-  </p>
+<!-- Section 3 -->
+<h2>3. Fibre optique</h2>
+<p>La fibre optique utilise la lumière pour transmettre les données, offrant de très hautes vitesses et longue portée :</p>
+<ul>
+    <li>Exemple : connexion entre data centers ou backbone Internet.</li>
+    <li>Moins sensible aux interférences électromagnétiques que le cuivre.</li>
+</ul>
 
-  <p>
-    <strong>Exemple concret :</strong> Dans un réseau d’entreprise, chaque poste de travail est connecté via un câble Cat6 blindé à un switch central, tandis que le serveur de données est relié en fibre optique pour assurer un débit élevé et une faible latence.
-  </p>
+<!-- Section 4 -->
+<h2>4. Types de câbles</h2>
+<p>Les principaux câbles réseau :</p>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Type</th>
+        <th>Usage</th>
+        <th>Vitesse max</th>
+    </tr>
+    <tr>
+        <td>Cat5e</td>
+        <td>Réseaux Ethernet jusqu’à 1 Gbps</td>
+        <td>1 Gbps</td>
+    </tr>
+    <tr>
+        <td>Cat6</td>
+        <td>Réseaux Ethernet jusqu’à 10 Gbps sur 55 m</td>
+        <td>10 Gbps</td>
+    </tr>
+    <tr>
+        <td>Cat6a</td>
+        <td>Réseaux Ethernet 10 Gbps sur 100 m</td>
+        <td>10 Gbps</td>
+    </tr>
+</table>
+
+<!-- Section 5 -->
+<h2>5. Normes TIA/EIA</h2>
+<p>Ces normes définissent les standards pour le câblage structuré :</p>
+<ul>
+    <li>Catégorisation des câbles (Cat5e, Cat6, Cat6a…)</li>
+    <li>Connecteurs et brochages RJ45</li>
+    <li>Installation et test pour garantir performance et compatibilité</li>
+</ul>
+
+<!-- Section 6 -->
+<h2>6. Installation et dépannage</h2>
+<ul>
+    <li>Tester les câbles avec un testeur de continuité ou de performance.</li>
+    <li>Respecter les longueurs maximales pour éviter la perte de signal.</li>
+    <li>Étiqueter correctement les câbles pour faciliter la maintenance.</li>
+</ul>
+
+<!-- Section 7 -->
+<h2>7. Points clés à retenir</h2>
+<ul>
+    <li>Le choix du support (cuivre ou fibre) dépend de la distance, vitesse et environnement.</li>
+    <li>Les câbles Cat5e, Cat6 et Cat6a sont les plus utilisés pour Ethernet.</li>
+    <li>La fibre optique est adaptée pour de longues distances et haut débit.</li>
+    <li>Respecter les normes TIA/EIA et tester le câblage garantit fiabilité et performance du réseau.</li>
+</ul>
 
   <!-- QCM Module 10 -->
   <div class="qcm" data-group="g10">
@@ -1090,46 +1419,128 @@ footer{
   </div>
 </div>
 <div class="module">
-  <h2>Module 11 – Administration et supervision réseau</h2>
-  
-  <!-- Explications détaillées -->
-  <p>
-    L’<strong>administration et la supervision réseau</strong> consistent à gérer, contrôler et surveiller un réseau pour assurer son bon fonctionnement, sa performance et sa sécurité.  
-    Ces tâches sont essentielles pour détecter rapidement les pannes, optimiser les ressources et maintenir la disponibilité des services.
-  </p>
+ <h1>Module 11 – Administration et supervision réseau</h1>
 
-  <p>
-    Les rôles principaux de l’administration réseau :
-    <ul>
-      <li><strong>Configuration des équipements :</strong> routeurs, switches, points d’accès, serveurs.  
-        <strong>Exemple :</strong> attribuer des adresses IP fixes aux serveurs et configurer des VLAN sur les switches.
-      </li>
-      <li><strong>Gestion des utilisateurs :</strong> création, modification et suppression des comptes, gestion des droits d’accès.  
-        <strong>Exemple :</strong> un employé rejoint le service IT, on lui attribue un accès au VLAN IT et aux partages de fichiers nécessaires.
-      </li>
-      <li><strong>Mise à jour des logiciels et firmwares :</strong> maintenir les équipements à jour pour corriger les failles de sécurité et améliorer les fonctionnalités.
-      </li>
-    </ul>
-  </p>
+<!-- Section 1 -->
+<h2>1. Introduction à l’administration réseau</h2>
+<p>
+L’<strong>administration réseau</strong> consiste à gérer, surveiller et maintenir un réseau informatique
+afin d’assurer son bon fonctionnement, sa sécurité et sa disponibilité.
+</p>
+<p>
+L’administrateur réseau est responsable de la configuration des équipements, du suivi des performances
+et de la résolution des incidents.
+</p>
 
-  <p>
-    La supervision réseau implique :
-    <ul>
-      <li><strong>SNMP (Simple Network Management Protocol) :</strong> collecte des informations sur les appareils et alertes en cas de problèmes.</li>
-      <li><strong>Monitoring :</strong> suivi en temps réel des performances, du trafic et de la disponibilité des services.  
-        <strong>Exemple :</strong> surveiller l’utilisation de la bande passante pour détecter les anomalies ou les surcharges.
-      </li>
-      <li><strong>Analyse des logs :</strong> détection des incidents, identification des causes et planification des actions correctives.</li>
-      <li><strong>Gestion des pannes :</strong> mise en place de procédures pour corriger rapidement les problèmes et minimiser l’impact sur les utilisateurs.
-      </li>
-    </ul>
-  </p>
+<!-- Section 2 -->
+<h2>2. Supervision réseau (Monitoring)</h2>
+<p>
+La <strong>supervision réseau</strong> permet de surveiller en temps réel l’état des équipements et des services.
+</p>
+<ul>
+    <li>Surveillance de la disponibilité (up / down).</li>
+    <li>Contrôle de l’utilisation de la bande passante.</li>
+    <li>Détection des pannes et anomalies.</li>
+</ul>
+<p>
+<strong>Exemple :</strong> un administrateur reçoit une alerte lorsqu’un routeur tombe en panne.
+</p>
 
-  <p>
-    <strong>Exemple concret :</strong> Un administrateur réseau configure un serveur SNMP pour surveiller tous les switches et routeurs.  
-    Lorsqu’un switch surchauffe ou qu’un port tombe en panne, une alerte est envoyée automatiquement, permettant à l’équipe IT de résoudre le problème avant que les utilisateurs ne soient affectés.
-  </p>
+<!-- Section 3 -->
+<h2>3. SNMP (Simple Network Management Protocol)</h2>
+<p>
+Le <strong>SNMP</strong> est un protocole utilisé pour gérer et superviser les équipements réseau :
+</p>
+<ul>
+    <li>Routeurs</li>
+    <li>Switches</li>
+    <li>Serveurs</li>
+</ul>
+<p>
+Il permet de collecter des informations comme :
+</p>
+<ul>
+    <li>Charge CPU</li>
+    <li>Utilisation de la mémoire</li>
+    <li>Trafic réseau</li>
+</ul>
+<p>
+<strong>Exemple :</strong> un outil SNMP affiche l’état et la performance d’un switch d’entreprise.
+</p>
 
+<!-- Section 4 -->
+<h2>4. Logs et journaux système</h2>
+<p>
+Les <strong>logs</strong> sont des fichiers qui enregistrent les événements du réseau et des systèmes :
+</p>
+<ul>
+    <li>Connexions et déconnexions</li>
+    <li>Erreurs système</li>
+    <li>Tentatives d’accès non autorisées</li>
+</ul>
+<p>
+<strong>Exemple :</strong> analyser les logs pour identifier l’origine d’une panne réseau.
+</p>
+
+<!-- Section 5 -->
+<h2>5. Gestion des pannes</h2>
+<p>
+La gestion des pannes consiste à :
+</p>
+<ul>
+    <li>Identifier rapidement la source du problème.</li>
+    <li>Isoler la panne pour éviter son impact sur tout le réseau.</li>
+    <li>Rétablir le service dans les meilleurs délais.</li>
+</ul>
+<p>
+<strong>Exemple :</strong> un câble défectueux est remplacé après détection d’une perte de connectivité.
+</p>
+
+<!-- Section 6 -->
+<h2>6. Analyse du trafic réseau</h2>
+<p>
+L’analyse du trafic permet de comprendre comment les données circulent sur le réseau :
+</p>
+<ul>
+    <li>Identifier les applications consommatrices de bande passante.</li>
+    <li>Détecter les comportements suspects.</li>
+    <li>Optimiser les performances.</li>
+</ul>
+<p>
+<strong>Exemple :</strong> repérer un poste infecté générant un trafic anormal.
+</p>
+
+<!-- Section 7 -->
+<h2>7. Qualité de service (QoS)</h2>
+<p>
+La <strong>QoS</strong> permet de prioriser certains types de trafic :
+</p>
+<ul>
+    <li>VoIP (voix sur IP)</li>
+    <li>Visioconférence</li>
+    <li>Applications critiques</li>
+</ul>
+<p>
+<strong>Exemple :</strong> donner la priorité aux appels VoIP pour éviter les coupures.
+</p>
+
+<!-- Section 8 -->
+<h2>8. Outils d’administration réseau</h2>
+<ul>
+    <li><strong>Wireshark :</strong> analyse des paquets réseau.</li>
+    <li><strong>Nagios :</strong> supervision et alertes.</li>
+    <li><strong>PRTG :</strong> monitoring de performance.</li>
+    <li><strong>Zabbix :</strong> supervision avancée des réseaux et serveurs.</li>
+</ul>
+
+<!-- Section 9 -->
+<h2>9. Points clés à retenir</h2>
+<ul>
+    <li>L’administration réseau garantit la stabilité et la sécurité.</li>
+    <li>La supervision permet d’anticiper les pannes.</li>
+    <li>SNMP et les logs sont essentiels pour le diagnostic.</li>
+    <li>Les outils de monitoring facilitent la gestion quotidienne.</li>
+</ul>
   <!-- QCM Module 11 -->
   <div class="qcm" data-group="g11">
     <h3>QCM MODULE 11 – Administration et supervision réseau</h3>
