@@ -637,17 +637,9 @@ footer{
 
   <!-- QCM Module 3 -->
 <div class="qcm" data-group="g3">
-    <h1>Module 4 – Adressage IP avancé et binaire</h1>
+    <h1>Module 3 – Adressage IP avancé et binaire</h1>
 <!-- Question 1 -->
 <h2>Question 1</h2>
-<p>Combien de bits compose une adresse IPv4 ?</p>
-<label><input type="radio" name="q1"> 16 bits</label>
-<label><input type="radio" name="q1"> 32 bits</label>
-<label><input type="radio" name="q1"> 64 bits</label>
-<label><input type="radio" name="q1"> 128 bits</label>
-
-<!-- Question 2 -->
-<h2>Question 2</h2>
 <p>Quel est l’équivalent binaire de l’octet décimal 192 ?</p>
 <label><input type="radio" name="q2"> 11000000</label>
 <label><input type="radio" name="q2"> 10101010</label>
@@ -655,7 +647,7 @@ footer{
 <label><input type="radio" name="q2"> 10000000</label>
 
 <!-- Question 3 -->
-<h2>Question 3</h2>
+<h2>Question 2</h2>
 <p>Quelle est la représentation binaire du masque 255.255.255.0 ?</p>
 <label><input type="radio" name="q3"> 11111111.11111111.11111111.00000000</label><
 <label><input type="radio" name="q3"> 11111111.00000000.00000000.00000000</label>
@@ -663,7 +655,7 @@ footer{
 <label><input type="radio" name="q3"> 00000000.11111111.11111111.11111111</label>
 
 <!-- Question 4 -->
-<h2>Question 4</h2>
+<h2>Question 3</h2>
 <p>Une adresse IP 192.168.1.0/24 peut contenir combien d’hôtes utilisables ?</p>
 <label><input type="radio" name="q4"> 254</label>
 <label><input type="radio" name="q4"> 256</label>
@@ -672,6 +664,9 @@ footer{
 <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
 </div>
+
+ <div class="module">
+      <h1>Module 4 – Adressage reseaux ET sous reseaux </h1>
 <!-- Section 1 -->
 <h2>1. Introduction</h2>
 <p>Ce module approfondit :</p>
@@ -782,8 +777,10 @@ footer{
     <li>IPv6 simplifie le plan d’adressage mais le binaire reste utile pour les préfixes et SLAAC.</li>
     <li>Exemples concrets de conversion binaire aident à planifier et déployer un réseau efficace.</li>
 </ul>
-    <div class="qcm" data-group="g3">
+     
+    <div class="qcm" data-group="g4">
     <div class="question">
+        <h1>Questions – Module 3 : adressage</h1>
       <p><strong>Question 1 :</strong> Combien de bits utilise IPv4 pour représenter une adresse ?</p>
       <label><input type="radio" name="m3q1" value="true"> 32 bits</label>
       <label><input type="radio" name="m3q1" value="false"> 128 bits</label>
@@ -800,7 +797,7 @@ footer{
     </div>
 
     <!-- Bouton Vérifier relié uniquement à ce module -->
-    <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
+    <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
 
     </div>
