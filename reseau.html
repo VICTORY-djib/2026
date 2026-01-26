@@ -641,30 +641,31 @@ footer{
 <!-- Question 1 -->
 <h2>Question 1</h2>
 <p>Quel est l’équivalent binaire de l’octet décimal 192 ?</p>
-<label><input type="radio" name="q2"> 11000000</label>
-<label><input type="radio" name="q2"> 10101010</label>
-<label><input type="radio" name="q2"> 11110000</label>
-<label><input type="radio" name="q2"> 10000000</label>
-
+<label><input type="radio" name="q2" value="true"> 11000000</label>
+<label><input type="radio" name="q2" value="false"> 10101010</label>
+<label><input type="radio" name="q2"value="false"> 11110000</label>
+<label><input type="radio" name="q2"value="false"> 10000000</label>
+ <label><input type="radio" name="m2q2" value="true"> Internet</label>
+      C
 <!-- Question 3 -->
 <h2>Question 2</h2>
 <p>Quelle est la représentation binaire du masque 255.255.255.0 ?</p>
-<label><input type="radio" name="q3"> 11111111.11111111.11111111.00000000</label><
-<label><input type="radio" name="q3"> 11111111.00000000.00000000.00000000</label>
-<label><input type="radio" name="q3"> 11111111.11111111.00000000.00000000</label>
-<label><input type="radio" name="q3"> 00000000.11111111.11111111.11111111</label>
+<label><input type="radio" name="q3" value="true"> 11111111.11111111.11111111.00000000</label>
+<label><input type="radio" name="q3"value="false"> 11111111.00000000.00000000.00000000</label>
+<label><input type="radio" name="q3"value="false"> 11111111.11111111.00000000.00000000</label>
+<label><input type="radio" name="q3"value="false"> 00000000.11111111.11111111.11111111</label>
 
 <!-- Question 4 -->
 <h2>Question 3</h2>
 <p>Une adresse IP 192.168.1.0/24 peut contenir combien d’hôtes utilisables ?</p>
-<label><input type="radio" name="q4"> 254</label>
-<label><input type="radio" name="q4"> 256</label>
-<label><input type="radio" name="q4"> 128</label>
-<label><input type="radio" name="q4"> 255</label>
+<label><input type="radio" name="q4"value="true"> 254</label>
+<label><input type="radio" name="q4"value="false"> 256</label>
+<label><input type="radio" name="q4"value="false"> 128</label>
+<label><input type="radio" name="q4"value="false"> 255</label>
 <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
+   </div>
 </div>
-
  <div class="module">
       <h1>Module 4 – Adressage reseaux ET sous reseaux </h1>
 <!-- Section 1 -->
