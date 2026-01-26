@@ -1437,26 +1437,21 @@ footer{
 
 <!-- SCRIPT -->
 <script>
+const tentativesMax = 1;
 
-<script>
+// Mélange aléatoire des options (Fisher-Yates)
 function melangerOptions() {
     document.querySelectorAll(".question").forEach(question => {
         const labels = Array.from(question.querySelectorAll("label"));
-
-        // Mélange aléatoire (Fisher-Yates)
         for (let i = labels.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [labels[i], labels[j]] = [labels[j], labels[i]];
         }
-
-        // Réinsertion dans la question
         labels.forEach(label => question.appendChild(label));
     });
 }
 
-// Mélange dès le chargement de la page
 window.addEventListener("DOMContentLoaded", melangerOptions);
-const tentativesMax = 1;
 
 function verifierGroupe(btn){
     const group = btn.dataset.group;
@@ -1505,7 +1500,7 @@ function verifierGroupe(btn){
             radios.forEach(r => r.disabled = true);
         } else {
             const reste = tentativesMax - qcm.dataset.tentatives;
-            resultDiv.textContent = "CORRECTION QCM "
+            resultDiv.textContent = "CORRECTION QCM";
             resultDiv.className = "result wrong";
 
             if(qcm.dataset.tentatives >= tentativesMax){
