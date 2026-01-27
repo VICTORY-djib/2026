@@ -638,26 +638,27 @@ footer{
   <!-- QCM Module 3 -->
 <div class="qcm" data-group="g3">
     <h1>Module 3 – Adressage IP avancé et binaire</h1>
-<!-- Question 1 -->
-<h2>Question 1</h2>
- <h1>Questions – Module 4 : adressage</h1>
+    <!-- Question 1 -->
+    <div class="question">
       <p><strong>Question 1 :</strong> Combien de bits utilise IPv4 pour représenter une adresse ?</p>
       <label><input type="radio" name="m4q1" value="true"> 32 bits</label>
       <label><input type="radio" name="m4q1" value="false"> 128 bits</label>
       <label><input type="radio" name="m4q1" value="false"> 64 bits</label>
       <label><input type="radio" name="m4q1" value="false"> 16 bits</label>
-    </div>
-<!-- Question 4 -->
-<h2>Question 2</h2>
-<p>Une adresse IP 192.168.1.0/24 peut contenir combien d’hôtes utilisables ?</p>
+        </div>
+
+        <!-- Question 2 -->
+    <div class="question">
+<p><strong>Question 2 :</strong>Une adresse IP 192.168.1.0/24 peut contenir combien d’hôtes utilisables ?</p>
 <label><input type="radio" name="m3q4"value="true"> 254</label>
 <label><input type="radio" name="m3q4"value="false"> 256</label>
 <label><input type="radio" name="m3q4"value="false"> 128</label>
 <label><input type="radio" name="m3q4"value="false"> 255</label>
+    </div>
 <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
    </div>
-</div>
+ </div>
  <div class="module">
       <h1>Module 4 – Adressage reseaux ET sous reseaux </h1>
 <!-- Section 1 -->
@@ -774,28 +775,27 @@ footer{
     <div class="qcm" data-group="g4">
     <div class="question">
         <h1>Questions – Module 4 : adressage</h1>
-        <h2>Question 1 </h2>
-<p>Quel est l’équivalent binaire de l’octet décimal 192 ?</p>
+    <div class="question">
+<p><strong>Question 1 :</strong>Quel est l’équivalent binaire de l’octet décimal 192 ?</p>
 <label><input type="radio" name="m4q2"value="true"> 11000000</label>
 <label><input type="radio" name="m4q2"value="false"> 10101010</label>
 <label><input type="radio" name="m4q2"value="false"> 11110000</label>
 <label><input type="radio" name="m4q2"value="false"> 10000000</label>
- <label><input type="radio" name="m4q2" value="true"> Internet</label>
+
 <!-- Question 3 -->
-<h2>Question 2</h2>
-<p>Quelle est la représentation binaire du masque 255.255.255.0 ?</p>
+    <div class="question">
+<p><strong>Question 2 :</strong>Quelle est la représentation binaire du masque 255.255.255.0 ?</p>
 <label><input type="radio" name="m4q3" value="true"> 11111111.11111111.11111111.00000000</label>
 <label><input type="radio" name="m4q3"value="false"> 11111111.00000000.00000000.00000000</label>
 <label><input type="radio" name="m4q3"value="false"> 11111111.11111111.00000000.00000000</label>
 <label><input type="radio" name="m4q3"value="false"> 00000000.11111111.11111111.11111111</label>
 
     <div class="question">
-      <p><strong>Question 2 :</strong> Quel est l’objectif principal du subnetting ?</p>
-      <label><input type="radio" name="m4q2" value="true"> Diviser un réseau en sous-réseaux plus petits</label>
-      <label><input type="radio" name="m4q2" value="false"> Créer des adresses MAC</label>
-      <label><input type="radio" name="m4q2" value="false"> Augmenter la vitesse d’Internet</label>
-      <label><input type="radio" name="m4q2" value="false"> Chiffrer les paquets IP</label>
-    </div>
+<p><strong>Question 3 :</strong> Quel est l’objectif principal du subnetting ?</p>
+<label><input type="radio" name="m4q2" value="true"> Diviser un réseau en sous-réseaux plus petits</label>
+<label><input type="radio" name="m4q2" value="false"> Créer des adresses MAC</label>
+<label><input type="radio" name="m4q2" value="false"> Augmenter la vitesse d’Internet</label>
+<label><input type="radio" name="m4q2" value="false"> Chiffrer les paquets IP</label>
 
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
@@ -883,26 +883,25 @@ footer{
 </ul>
   <!-- QCM Module -->
   <div class="qcm" data-group="g5">
-       <div class="question">
    <h1>Questions – Module 5 : Commutation (Switching)</h1>
 <!-- Question 1 -->
-<h2>1. Quelle est la principale différence entre un switch et un hub ?</h2>
+<p><strong>Question 1 :</strong>1. Quelle est la principale différence entre un switch et un hub ?</h2>
 <label><input type="radio" name="m5q1" value="false"> Un switch fonctionne uniquement sur les réseaux sans fil.</label>
 <label><input type="radio" name="m5q1" value="true"> Un switch envoie les trames uniquement au port correspondant à l’adresse MAC de destination.</label>
 <label><input type="radio" name="m5q1" value="false"> Un hub est plus rapide qu’un switch pour transmettre les données.</label>
 <label><input type="radio" name="m5q1" value="false"> Un hub ne peut pas connecter plusieurs périphériques.</label>
 
 <!-- Question 2 -->
-         <div class="question">
-<h2>2. Qu’est-ce qu’un VLAN ?</h2>
+    <div class="question">
+<p><strong>Question 2 :</strong><2. Qu’est-ce qu’un VLAN ?</h2>
 <label><input type="radio" name="m5q2" value="false"> Une connexion Internet sans fil sécurisée.</label>
 <label><input type="radio" name="m5q2" value="true"> Un réseau logique isolé au sein d’un switch physique permettant de segmenter le trafic.</label>
 <label><input type="radio" name="m5q2" value="false"> Un protocole de routage pour WAN.</label>
 <label><input type="radio" name="m5q2" value="false"> Une adresse IP privée pour un réseau local.</label>
  </div>
 <!-- Question 3 -->
-       <div class="question">
-<h2>3. Quel protocole permet de transporter plusieurs VLAN sur un même lien physique ?</h2>
+    <div class="question">
+<p><strong>Question 3 :</strong>3. Quel protocole permet de transporter plusieurs VLAN sur un même lien physique ?</h2>
 <label><input type="radio" name="m5q3" value="false"> STP</label>
 <label><input type="radio" name="m5q3" value="false"> RIP</label>
 <label><input type="radio" name="m5q3" value="true"> Trunking (IEEE 802.1Q)</label>
@@ -1022,15 +1021,16 @@ footer{
 <h1>Questions – Module 6 : Routage (Routing)</h1>
 
 <!-- Question 1 -->
-<h2>1. Quelle est la différence principale entre le routage statique et le routage dynamique ?</h2>
+     <div class="question">
+<p><strong>Question 1 :</strong>1. Quelle est la différence principale entre le routage statique et le routage dynamique ?</h2>
 <label><input type="radio" name="m6q1" value="true"> Le routage statique est configuré manuellement, le routage dynamique calcule automatiquement les chemins.</label>
 <label><input type="radio" name="m6q1" value="false"> Le routage statique utilise toujours OSPF, le routage dynamique utilise toujours RIP.</label>
 <label><input type="radio" name="m6q1" value="false"> Le routage statique est pour IPv6 uniquement.</label>
 <label><input type="radio" name="m6q1" value="false"> Le routage dynamique nécessite un hub central.</label>
 </div>
-<div class="question">
 <!-- Question 2 -->
-<h2>2. Quel protocole est basé sur le nombre de sauts (hop count) pour déterminer le chemin le plus court ?</h2>
+     <div class="question">
+<p><strong>Question 2 :</strong>2. Quel protocole est basé sur le nombre de sauts (hop count) pour déterminer le chemin le plus court ?</h2>
 <label><input type="radio" name="m6q2" value="true"> RIP (Routing Information Protocol)</label>
 <label><input type="radio" name="m6q2" value="false"> OSPF</label>
 <label><input type="radio" name="m6q2" value="false"> EIGRP</label>
@@ -1136,10 +1136,9 @@ footer{
 </ul>
 <!-- QCM Module -->
   <div class="qcm" data-group="g7"> 
-      <div class="question">
 <h1>Questions – Module 7 : Réseaux sans fil (Wi-Fi)</h1>
 <!-- Question 1 -->
-<h2>1. Quelle norme Wi-Fi offre la vitesse théorique la plus élevée et est adaptée aux environnements très denses ?</h2>
+<p><strong>Question 1 :</strong>1. Quelle norme Wi-Fi <ffre la vitesse théorique la plus élevée et est adaptée aux environnements très denses ?</h2>
 <label><input type="radio" name="m7q1" value="false"> 802.11n</label>
 <label><input type="radio" name="m7q1" value="false"> 802.11ac</label>
 <label><input type="radio" name="m7q1" value="true"> 802.11ax (Wi-Fi 6)</label>
@@ -1147,7 +1146,7 @@ footer{
   </div>
 <!-- Question 2 -->  
       <div class="question">
-<h2>2. Quelle méthode de sécurité Wi-Fi est actuellement la plus recommandée pour un réseau domestique ou d’entreprise ?</h2>
+<p><strong>Question 2 :</strong>2. Quelle méthode de sécurité Wi-Fi est actuellement la plus recommandée pour un réseau domestique ou d’entreprise ?</h2>
 <label><input type="radio" name="m7q2" value="false"> WEP</label>
 <label><input type="radio" name="m7q2" value="false"> WPA</label>
 <label><input type="radio" name="m7q2" value="true"> WPA2 / WPA3</label>
