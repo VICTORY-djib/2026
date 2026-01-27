@@ -246,28 +246,30 @@ footer{
 
 
 <div class="qcm" data-group="g1">
-<h3>QCM Module 1 </h3>
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Parmi les suivants, lequel illustre une violation de la disponibilité plutôt qu’une violation de la confidentialité ou de l’intégrité ?</p>
-<label><input type="radio" name="m1q1" value="true"> Une attaque DDoS qui rend un service indisponible</label>
-<label><input type="radio" name="m1q1" value="false">Les utilisateurs reçoivent des droits temporaires sans contrôle</label>
-<label><input type="radio" name="m1q1" value="false"> Le vol d’un mot de passe pour accéder à des données sensibles</label>
-<label><input type="radio" name="m1q1" value="false"> La modification non autorisée d’un fichier financier</label>
+    <h3>QCM Module 1 – Introduction à la cybersécurité</h3>
+
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Parmi les suivants, lequel illustre une violation de la <strong>disponibilité</strong> plutôt qu’une violation de la confidentialité ou de l’intégrité ?</p>
+        <label><input type="radio" name="m1q1" value="true"> Une attaque DDoS qui rend un service indisponible</label><br>
+        <label><input type="radio" name="m1q1" value="false"> Les utilisateurs reçoivent des droits temporaires sans contrôle</label><br>
+        <label><input type="radio" name="m1q1" value="false"> Le vol d’un mot de passe pour accéder à des données sensibles</label><br>
+        <label><input type="radio" name="m1q1" value="false"> La modification non autorisée d’un fichier financier</label>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle approche de sécurité suit le principe du <strong>moindre privilège</strong> ?</p>
+        <label><input type="radio" name="m1q2" value="true"> Les utilisateurs n’ont accès qu’aux ressources nécessaires à leurs fonctions</label><br>
+        <label><input type="radio" name="m1q2" value="false"> Tous les utilisateurs ont un accès complet pour simplifier la gestion</label><br>
+        <label><input type="radio" name="m1q2" value="false"> Les utilisateurs reçoivent des droits temporaires sans contrôle</label><br>
+        <label><input type="radio" name="m1q2" value="false"> Les administrateurs ont moins de privilèges que les utilisateurs normaux</label>
+    </div>
+
+    <!-- Bouton Vérifier -->
+    <button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>    
+    <div class="result"></div>
 </div>
-
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle approche de sécurité suit le principe du moindre privilège ?</p>
-<label><input type="radio" name="m1q2" value="true"> Les utilisateurs n’ont accès qu’aux ressources nécessaires à leurs fonctions</label>
-<label><input type="radio" name="m1q2" value="false"> Tous les utilisateurs ont un accès complet pour simplifier la gestion</label>
-<label><input type="radio" name="m1q2" value="false">Les utilisateurs reçoivent des droits temporaires sans contrôle</label>
-<label><input type="radio" name="m1q2" value="false"> Les administrateurs ont moins de privilèges que les utilisateurs normaux</label>
-
-<button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
- </div>
-
 <!-- MODULE 2 -->
 <div class="module">
     <h2>Module 2 : Menaces et attaques informatiques</h2>
@@ -351,28 +353,30 @@ footer{
     </p>
 
 <div class="qcm" data-group="g2">
-<h3>QCM Module 2 </h3>
+    <h3>QCM Module 2 – Menaces et attaques informatiques</h3>
 
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quel type de malware se propage automatiquement sur un réseau sans intervention humaine ?</p>
-<label><input type="radio" name="m2q1" value="true"> Un ver informatique</label>
-<label><input type="radio" name="m2q1" value="false">L’installation automatique des mises à jour supprime tous les risques</label>
-<label><input type="radio" name="m2q1" value="false"> Un cheval de Troie</label>
-<label><input type="radio" name="m2q1" value="false"> Un ransomware</label>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quel type de malware se propage automatiquement sur un réseau sans intervention humaine ?</p>
+        <label><input type="radio" name="m2q1" value="true"> Un ver informatique</label><br>
+        <label><input type="radio" name="m2q1" value="false"> L’installation automatique des mises à jour supprime tous les risques</label><br>
+        <label><input type="radio" name="m2q1" value="false"> Un cheval de Troie</label><br>
+        <label><input type="radio" name="m2q1" value="false"> Un ransomware</label>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle attaque repose sur la manipulation psychologique des utilisateurs pour obtenir des informations sensibles ?</p>
+        <label><input type="radio" name="m2q2" value="true"> L’ingénierie sociale</label><br>
+        <label><input type="radio" name="m2q2" value="false"> Les attaques informatiques ne concernent que les serveurs publics</label><br>
+        <label><input type="radio" name="m2q2" value="false"> L’attaque DDoS</label><br>
+        <label><input type="radio" name="m2q2" value="false"> L’injection SQL</label>
+    </div>
+
+    <!-- Bouton Vérifier -->
+    <button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
-
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle attaque repose sur la manipulation psychologique des utilisateurs pour obtenir des informations sensibles ?</p>
-<label><input type="radio" name="m2q2" value="true"> L’ingénierie sociale</label>
-<label><input type="radio" name="m2q2" value="false">Les attaques informatiques ne concernent que les serveurs publics</label>
-<label><input type="radio" name="m2q2" value="false"> L’attaque DDoS</label>
-<label><input type="radio" name="m2q2" value="false"> L’injection SQL</label>
-
-<button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
-  </div>
 <!-- MODULE 3 -->   
 <div class="module">
     <h2>Module 3 : Mesures de protection et bonnes pratiques</h2>
@@ -446,27 +450,29 @@ footer{
     </p>
 
 <div class="qcm" data-group="g3">
-<h3>QCM Module 3 </h3>
+    <h3>QCM Module 3 – Mesures de protection et bonnes pratiques</h3>
 
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quelle mesure réduit le plus efficacement le risque lié aux mots de passe compromis ?</p>
-<label><input type="radio" name="m3q1" value="true"> L’authentification multi-facteurs (MFA)</label>
-<label><input type="radio" name="m3q1" value="false"> La modification mensuelle des mots de passe</label>
-<label><input type="radio" name="m3q1" value="false">Le chiffrement remplace la gestion des accès</label>
-<label><input type="radio" name="m3q1" value="false"> L’utilisation d’un mot de passe unique pour chaque site</label>
-</div>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quelle mesure réduit le plus efficacement le risque lié aux mots de passe compromis ?</p>
+        <label><input type="radio" name="m3q1" value="true"> L’authentification multi-facteurs (MFA)</label><br>
+        <label><input type="radio" name="m3q1" value="false"> La modification mensuelle des mots de passe</label><br>
+        <label><input type="radio" name="m3q1" value="false"> Le chiffrement remplace la gestion des accès</label><br>
+        <label><input type="radio" name="m3q1" value="false"> L’utilisation d’un mot de passe unique pour chaque site</label>
+    </div>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Pourquoi est-il essentiel de sauvegarder régulièrement les données ?</p>
-<label><input type="radio" name="m3q2" value="true"> Pour restaurer rapidement les informations en cas d’incident ou d’attaque</label>
-<label><input type="radio" name="m3q2" value="false">Les sauvegardes empêchent toutes les attaques</label>
-<label><input type="radio" name="m3q2" value="false"> Pour réduire la consommation de bande passante</label>
-<label><input type="radio" name="m3q2" value="false"> Pour éviter d’utiliser des antivirus</label>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Pourquoi est-il essentiel de sauvegarder régulièrement les données ?</p>
+        <label><input type="radio" name="m3q2" value="true"> Pour restaurer rapidement les informations en cas d’incident ou d’attaque</label><br>
+        <label><input type="radio" name="m3q2" value="false"> Les sauvegardes empêchent toutes les attaques</label><br>
+        <label><input type="radio" name="m3q2" value="false"> Pour réduire la consommation de bande passante</label><br>
+        <label><input type="radio" name="m3q2" value="false"> Pour éviter d’utiliser des antivirus</label>
+    </div>
 
-<button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
+    <!-- Bouton Vérifier -->
+    <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 4 -->
 <div class="module"
@@ -553,24 +559,27 @@ footer{
     </p>
 
 <div class="qcm" data-group="g4">
-<h3>QCM Module 4 </h3>
+    <h3>QCM Module 4 – Sécurité des réseaux</h3>
 
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quel mécanisme isole différents segments du réseau pour limiter la propagation d’attaques ?</p>
-<label><input type="radio" name="m4q1" value="true"> La segmentation VLAN</label>
-<label><input type="radio" name="m4q1" value="false"> Le VPN</label>
-<label><input type="radio" name="m4q1" value="false"> L’authentification multi-facteurs</label>
-</div>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quel mécanisme isole différents segments du réseau pour limiter la propagation d’attaques ?</p>
+        <label><input type="radio" name="m4q1" value="true"> La segmentation VLAN</label><br>
+        <label><input type="radio" name="m4q1" value="false"> Le VPN</label><br>
+        <label><input type="radio" name="m4q1" value="false"> L’authentification multi-facteurs</label>
+    </div>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle solution permet de détecter et bloquer automatiquement des activités réseau suspectes ?</p>
-<label><input type="radio" name="m4q2" value="true"> IDS/IPS</label>
-<label><input type="radio" name="m4q2" value="false"> VPN</label>
-<label><input type="radio" name="m4q2" value="false"> Pare-feu statique</label>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle solution permet de détecter et bloquer automatiquement des activités réseau suspectes ?</p>
+        <label><input type="radio" name="m4q2" value="true"> IDS/IPS</label><br>
+        <label><input type="radio" name="m4q2" value="false"> VPN</label><br>
+        <label><input type="radio" name="m4q2" value="false"> Pare-feu statique</label>
+    </div>
 
-    
-<button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button><div class="result"></div>
-</div>
+    <!-- Bouton Vérifier -->
+    <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 5 -->
 <div class="module">
@@ -650,25 +659,27 @@ footer{
         protection des applications, sécurisation des systèmes et formation des utilisateurs.
     </p>
 <div class="qcm" data-group="g5">
-<h3>QCM Module 5 </h3>
+    <h3>QCM Module 5 – Sécurité applicative et cybersécurité des systèmes</h3>
 
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quelle pratique réduit le risque d’injection SQL dans une application web ?</p>
-<label><input type="radio" name="m5q1" value="true"> Valider et filtrer toutes les entrées utilisateurs</label>
-<label><input type="radio" name="m5q1" value="false"> Utiliser uniquement HTTPS</label>
-<label><input type="radio" name="m5q1" value="false"> Installer un antivirus sur le serveur</label>
-</div>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quelle pratique réduit le risque d’injection SQL dans une application web ?</p>
+        <label><input type="radio" name="m5q1" value="true"> Valider et filtrer toutes les entrées utilisateurs</label><br>
+        <label><input type="radio" name="m5q1" value="false"> Utiliser uniquement HTTPS</label><br>
+        <label><input type="radio" name="m5q1" value="false"> Installer un antivirus sur le serveur</label>
+    </div>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle mesure est essentielle pour sécuriser un système contre les malwares ?</p>
-<label><input type="radio" name="m5q2" value="true"> Maintenir les systèmes et logiciels à jour</label>
-<label><input type="radio" name="m5q2" value="false"> Augmenter la taille des disques durs</label>
-<label><input type="radio" name="m5q2" value="false"> Déconnecter les utilisateurs du réseau interne</label>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle mesure est essentielle pour sécuriser un système contre les malwares ?</p>
+        <label><input type="radio" name="m5q2" value="true"> Maintenir les systèmes et logiciels à jour</label><br>
+        <label><input type="radio" name="m5q2" value="false"> Augmenter la taille des disques durs</label><br>
+        <label><input type="radio" name="m5q2" value="false"> Déconnecter les utilisateurs du réseau interne</label>
+    </div>
 
-<button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
+    <!-- Bouton Vérifier -->
+    <button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 6 -->
 <div class="module">
@@ -768,27 +779,28 @@ footer{
     de défense multicouche adaptée aux environnements critiques tels que les banques,
     centres de données ou infrastructures industrielles.
 </p>
-
 <div class="qcm" data-group="g6">
-<h3>QCM Module 6 </h3>
+    <h3>QCM Module 6 – Cybersécurité avancée</h3>
 
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quelle technique permet de protéger la confidentialité des données même si un attaquant accède aux systèmes ?</p>
-<label><input type="radio" name="m6q1" value="true"> Le chiffrement avancé (AES, RSA)</label>
-<label><input type="radio" name="m6q1" value="false"> La segmentation VLAN</label>
-<label><input type="radio" name="m6q1" value="false"> L’authentification biométrique</label>
-</div>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quelle technique permet de protéger la confidentialité des données même si un attaquant accède aux systèmes ?</p>
+        <label><input type="radio" name="m6q1" value="true"> Le chiffrement avancé (AES, RSA)</label><br>
+        <label><input type="radio" name="m6q1" value="false"> La segmentation VLAN</label><br>
+        <label><input type="radio" name="m6q1" value="false"> L’authentification biométrique</label>
+    </div>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle solution permet de détecter des attaques persistantes ciblées (APT) sur un réseau ?</p>
-<label><input type="radio" name="m6q2" value="true"> Honeypots et systèmes SIEM</label>
-<label><input type="radio" name="m6q2" value="false"> VPN uniquement</label>
-<label><input type="radio" name="m6q2" value="false"> Antivirus classique</label>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle solution permet de détecter des attaques persistantes ciblées (APT) sur un réseau ?</p>
+        <label><input type="radio" name="m6q2" value="true"> Honeypots et systèmes SIEM</label><br>
+        <label><input type="radio" name="m6q2" value="false"> VPN uniquement</label><br>
+        <label><input type="radio" name="m6q2" value="false"> Antivirus classique</label>
+    </div>
 
-<button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
+    <!-- Bouton Vérifier -->
+    <button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 7 -->
 <div class="module">
@@ -833,23 +845,27 @@ footer{
         une approche proactive pour protéger leurs appareils et informations personnelles ou professionnelles.
     </p>
 <div class="qcm" data-group="g7">
-<h3>QCM –MODULES 7</h3>
+    <h3>QCM Module 7 – Sécurité Mobile & IoT</h3>
 
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quelle mesure réduit le plus efficacement le risque lié aux objets connectés vulnérables ?</p>
-<label><input type="radio" name="m7q1" value="true"> Mettre régulièrement à jour le firmware et les applications</label>
-<label><input type="radio" name="m7q1" value="false"> Désactiver le Wi-Fi sur tous les appareils</label>
-<label><input type="radio" name="m7q1" value="false"> Chiffrer uniquement les emails</label>
-</div>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quelle mesure réduit le plus efficacement le risque lié aux objets connectés vulnérables ?</p>
+        <label><input type="radio" name="m7q1" value="true"> Mettre régulièrement à jour le firmware et les applications</label><br>
+        <label><input type="radio" name="m7q1" value="false"> Désactiver le Wi-Fi sur tous les appareils</label><br>
+        <label><input type="radio" name="m7q1" value="false"> Chiffrer uniquement les emails</label>
+    </div>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle pratique sécurise les communications d’un appareil mobile sur un réseau public ?</p>
-<label><input type="radio" name="m7q2" value="true"> Utiliser un VPN pour chiffrer le trafic</label>
-<label><input type="radio" name="m7q2" value="false"> Désactiver le Bluetooth</label>
-<label><input type="radio" name="m7q2" value="false"> Supprimer toutes les applications sociales</label>
-<div class="result"></div>
-</div>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle pratique sécurise les communications d’un appareil mobile sur un réseau public ?</p>
+        <label><input type="radio" name="m7q2" value="true"> Utiliser un VPN pour chiffrer le trafic</label><br>
+        <label><input type="radio" name="m7q2" value="false"> Désactiver le Bluetooth</label><br>
+        <label><input type="radio" name="m7q2" value="false"> Supprimer toutes les applications sociales</label>
+    </div>
+
+    <!-- Bouton Vérifier -->
+    <button data-group="g7" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 8 -->
 <div class="module">
@@ -907,25 +923,27 @@ footer{
     </p>
 
 <div class="qcm" data-group="g8">
-<h3>QCM MODULES 8</h3>
+    <h3>QCM Module 8 – Sécurité Cloud</h3>
 
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quelle mesure réduit le risque d’accès non autorisé aux comptes Cloud ?</p>
-<label><input type="radio" name="m8q1" value="true"> L’authentification multi-facteurs (MFA)</label>
-<label><input type="radio" name="m8q1" value="false"> L’utilisation d’un antivirus sur le PC</label>
-<label><input type="radio" name="m8q1" value="false"> La segmentation VLAN</label>
-</div>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quelle mesure réduit le risque d’accès non autorisé aux comptes Cloud ?</p>
+        <label><input type="radio" name="m8q1" value="true"> L’authentification multi-facteurs (MFA)</label><br>
+        <label><input type="radio" name="m8q1" value="false"> L’utilisation d’un antivirus sur le PC</label><br>
+        <label><input type="radio" name="m8q1" value="false"> La segmentation VLAN</label>
+    </div>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quel processus garantit la continuité des services Cloud en cas d’incident ?</p>
-<label><input type="radio" name="m8q2" value="true"> Plans de reprise d’activité et de continuité (PRA/PCA)</label>
-<label><input type="radio" name="m8q2" value="false"> Chiffrement symétrique uniquement</label>
-<label><input type="radio" name="m8q2" value="false"> Tests d’intrusion ponctuels</label>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quel processus garantit la continuité des services Cloud en cas d’incident ?</p>
+        <label><input type="radio" name="m8q2" value="true"> Plans de reprise d’activité et de continuité (PRA/PCA)</label><br>
+        <label><input type="radio" name="m8q2" value="false"> Chiffrement symétrique uniquement</label><br>
+        <label><input type="radio" name="m8q2" value="false"> Tests d’intrusion ponctuels</label>
+    </div>
 
-<button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
+    <!-- Bouton Vérifier -->
+    <button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 9 -->
 <div class="module">
@@ -973,24 +991,27 @@ footer{
         et à réduire les risques liés aux cyberattaques ciblant les sites et services en ligne.
     </p>
 <div class="qcm" data-group="g9">
-<h3>QCM MODULE 9</h3>
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quelle attaque exploite une faille permettant d’injecter du code malveillant dans le navigateur de l’utilisateur ?</p>
-<label><input type="radio" name="m9q1" value="true"> Cross-Site Scripting (XSS)</label>
-<label><input type="radio" name="m9q1" value="false"> Injection SQL</label>
-<label><input type="radio" name="m9q1" value="false"> Déni de service (DoS)</label>
-</div>
+    <h3>QCM Module 9 – Sécurité Web</h3>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle pratique renforce la sécurité des sessions utilisateur sur une application web ?</p>
-<label><input type="radio" name="m9q2" value="true"> Gestion sécurisée des cookies et expiration des sessions</label>
-<label><input type="radio" name="m9q2" value="false"> Utilisation de mots de passe courts pour tous les utilisateurs</label>
-<label><input type="radio" name="m9q2" value="false"> Redirection automatique vers HTTP</label>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quelle attaque exploite une faille permettant d’injecter du code malveillant dans le navigateur de l’utilisateur ?</p>
+        <label><input type="radio" name="m9q1" value="true"> Cross-Site Scripting (XSS)</label><br>
+        <label><input type="radio" name="m9q1" value="false"> Injection SQL</label><br>
+        <label><input type="radio" name="m9q1" value="false"> Déni de service (DoS)</label>
+    </div>
 
-<button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle pratique renforce la sécurité des sessions utilisateur sur une application web ?</p>
+        <label><input type="radio" name="m9q2" value="true"> Gestion sécurisée des cookies et expiration des sessions</label><br>
+        <label><input type="radio" name="m9q2" value="false"> Utilisation de mots de passe courts pour tous les utilisateurs</label><br>
+        <label><input type="radio" name="m9q2" value="false"> Redirection automatique vers HTTP</label>
+    </div>
+
+    <!-- Bouton Vérifier -->
+    <button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 10 -->
 <div class="module">
@@ -1040,25 +1061,27 @@ footer{
     </p>
 
 <div class="qcm" data-group="g10">
-<h3>QCM MODULES 10</h3>
+    <h3>QCM Module 10 – Sécurité réseau avancée</h3>
 
-<!-- QCM difficile -->
-<div class="qcm">
-<p><strong>Question 1 :</strong> Quel outil permet de surveiller et bloquer automatiquement les comportements suspects sur le réseau ?</p>
-<label><input type="radio" name="m10q1" value="true"> IDS/IPS</label>
-<label><input type="radio" name="m10q1" value="false"> VPN</label>
-<label><input type="radio" name="m10q1" value="false"> Pare-feu statique</label>
-</div>
+    <!-- Question 1 -->
+    <div class="question">
+        <p><strong>Question 1 :</strong> Quel outil permet de surveiller et bloquer automatiquement les comportements suspects sur le réseau ?</p>
+        <label><input type="radio" name="m10q1" value="true"> IDS/IPS</label><br>
+        <label><input type="radio" name="m10q1" value="false"> VPN</label><br>
+        <label><input type="radio" name="m10q1" value="false"> Pare-feu statique</label>
+    </div>
 
-<div class="qcm">
-<p><strong>Question 2 :</strong> Quelle pratique limite la propagation des attaques dans un réseau interne ?</p>
-<label><input type="radio" name="m10q2" value="true"> Segmentation VLAN</label>
-<label><input type="radio" name="m10q2" value="false"> Installation d’antivirus sur le serveur uniquement</label>
-<label><input type="radio" name="m10q2" value="false"> Désactivation des mises à jour automatiques</label>
+    <!-- Question 2 -->
+    <div class="question">
+        <p><strong>Question 2 :</strong> Quelle pratique limite la propagation des attaques dans un réseau interne ?</p>
+        <label><input type="radio" name="m10q2" value="true"> Segmentation VLAN</label><br>
+        <label><input type="radio" name="m10q2" value="false"> Installation d’antivirus sur le serveur uniquement</label><br>
+        <label><input type="radio" name="m10q2" value="false"> Désactivation des mises à jour automatiques</label>
+    </div>
 
-<button data-group="g10" onclick="verifierGroupe(this)">Vérifier</button>    
-<div class="result"></div>
-</div>
+    <!-- Bouton Vérifier -->
+    <button data-group="g10" onclick="verifierGroupe(this)">Vérifier</button>
+    <div class="result"></div>
 </div>
 <!-- MODULE 11 -->    
 <div class="module">
