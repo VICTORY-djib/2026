@@ -1817,31 +1817,30 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
 
   <p>
     Les concepts clés :
-    <ul>
-      <li><strong>Cloud Networking :</strong> les ressources réseau sont hébergées dans le Cloud, offrant une accessibilité mondiale et une flexibilité.  
-        <strong>Exemple :</strong> une entreprise utilise des serveurs Cloud pour héberger ses applications et bases de données, accessibles depuis n’importe quel site ou utilisateur distant.
-      </li>
-      <li><strong>SDN (Software-Defined Networking) :</strong> réseau contrôlé par logiciel, séparant le plan de contrôle du plan de données pour faciliter la gestion.  
-        <strong>Exemple :</strong> modifier la topologie d’un réseau virtuel à distance sans toucher au matériel physique.
-      </li>
-      <li><strong>SD-WAN :</strong> technologie WAN définie par logiciel qui optimise le trafic sur plusieurs types de connexions (Internet, MPLS, LTE).  
-        <strong>Exemple :</strong> une entreprise avec plusieurs succursales réparties géographiquement utilise SD-WAN pour garantir la performance des applications critiques.
-      </li>
-      <li><strong>Sécurité dans le Cloud :</strong> chiffrement des données, VPN, segmentation et contrôle d’accès pour protéger les informations sensibles.
-      </li>
-    </ul>
   </p>
+  <ul>
+    <li><strong>Cloud Networking :</strong> les ressources réseau sont hébergées dans le Cloud, offrant une accessibilité mondiale et une flexibilité.  
+        <strong>Exemple :</strong> une entreprise utilise des serveurs Cloud pour héberger ses applications et bases de données, accessibles depuis n’importe quel site ou utilisateur distant.
+    </li>
+    <li><strong>SDN (Software-Defined Networking) :</strong> réseau contrôlé par logiciel, séparant le plan de contrôle du plan de données pour faciliter la gestion.  
+        <strong>Exemple :</strong> modifier la topologie d’un réseau virtuel à distance sans toucher au matériel physique.
+    </li>
+    <li><strong>SD-WAN :</strong> technologie WAN définie par logiciel qui optimise le trafic sur plusieurs types de connexions (Internet, MPLS, LTE).  
+        <strong>Exemple :</strong> une entreprise avec plusieurs succursales réparties géographiquement utilise SD-WAN pour garantir la performance des applications critiques.
+    </li>
+    <li><strong>Sécurité dans le Cloud :</strong> chiffrement des données, VPN, segmentation et contrôle d’accès pour protéger les informations sensibles.
+    </li>
+  </ul>
 
   <p>
     Les avantages des réseaux modernes et du Cloud :
-    <ul>
-      <li>Flexibilité et scalabilité pour répondre aux besoins changeants de l’entreprise.</li>
-      <li>Accès aux applications et données depuis n’importe où dans le monde.</li>
-      <li>Optimisation de la performance réseau grâce à SDN et SD-WAN.</li>
-      <li>Réduction des coûts d’infrastructure et de maintenance physique.
-      </li>
-    </ul>
   </p>
+  <ul>
+    <li>Flexibilité et scalabilité pour répondre aux besoins changeants de l’entreprise.</li>
+    <li>Accès aux applications et données depuis n’importe où dans le monde.</li>
+    <li>Optimisation de la performance réseau grâce à SDN et SD-WAN.</li>
+    <li>Réduction des coûts d’infrastructure et de maintenance physique.</li>
+  </ul>
 
   <p>
     <strong>Exemple concret :</strong> Une entreprise internationale utilise un Cloud privé pour héberger ses applications internes et un SD-WAN pour connecter ses bureaux partout dans le monde.  
@@ -1872,14 +1871,6 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
     <button data-group="g15" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
   </div>
-</div>
-    
-<div class="result"></div>
-
-<button data-group="g17" onclick="verifierGroupe(this)">
-    Vérifier
-</button>
-</div>
 </div>
 
 <!-- SCRIPT -->
@@ -1915,7 +1906,6 @@ function verifierGroupe(btn){
         let correct = true;
         let answered = true;
 
-        // Vérifie que chaque question a une réponse
         const questions = qcm.querySelectorAll('.question');
         questions.forEach(question => {
             const checked = question.querySelector('input[type="radio"]:checked');
@@ -1956,9 +1946,13 @@ function verifierGroupe(btn){
     btn.disabled = true;
 
     // 🔥 AFFICHER LE MODULE SUIVANT
-    const nextModule = document.getElementById("module1");
+    const currentModuleId = btn.closest(".module").id;
+    const nextModuleNumber = parseInt(currentModuleId.replace("module","")) + 1;
+    const nextModule = document.getElementById("module" + nextModuleNumber);
+
     if(nextModule){
         nextModule.style.display = "block";
         nextModule.scrollIntoView({ behavior: "smooth" });
     }
 }
+</script>
