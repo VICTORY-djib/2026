@@ -324,7 +324,7 @@ footer{
 
     <!-- Bouton Vérifier et div résultat corrigés -->
     <button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>
-    <div class="result"></div>
+<div class="module" id="module2" style="display:none;">
   </div>
 </div>
 
@@ -492,7 +492,7 @@ footer{
 </ul>
 
   <!-- QCM Module 2 -->
-  <div class="qcm" data-group="g2">
+ <div class="qcm" data-group="g2">
     <h3>QCM MODULE 2 – Modèles OSI et TCP/IP</h3>
 
     <div class="question">
@@ -516,7 +516,7 @@ footer{
     <div class="result"></div>
   </div>
 </div>    
-<div class="module">
+<div class="module" id="module3" style="display:none;">
   <h1>Module 3 – Adressage IP (IPv4 & IPv6)</h1>
 
 <!-- Section 1 -->
@@ -661,7 +661,7 @@ footer{
     <div class="result"></div>
 </div>
     </div>
- <div class="module">
+<div class="module" id="module4" style="display:none;">
       <h1>Module 4 – Adressage reseaux ET sous reseaux </h1>
 <!-- Section 1 -->
 <h2>1. Introduction</h2>
@@ -809,7 +809,7 @@ footer{
     <div class="result"></div>
 </div>
      </div>
-<div class="module">
+<div class="module" id="module5" style="display:none;">
   <h1>Module 5 – Commutation (Switching)</h1>
 
 <!-- Section 1 -->
@@ -914,7 +914,7 @@ footer{
     <div class="result"></div>
 </div>
     </div>
-<div class="module">
+<div class="module" id="module6" style="display:none;">
 <h1>Module 6 – Routage (Routing)</h1>
 <!-- Section 1 -->
 <h2>1. Introduction au routage</h2>
@@ -1044,7 +1044,7 @@ footer{
     <div class="result"></div>
 </div>
     </div>
-<div class="module">
+<div class="module" id="module7" style="display:none;">
 <h1>Module 7 – Réseaux sans fil (Wireless)</h1>
 
 <!-- Section 1 -->
@@ -1164,7 +1164,7 @@ footer{
     <div class="result"></div>
 </div>
     </div>
-<div class="module">
+<div class="module" id="module8" style="display:none;">
 <h1>Module 8 – Sécurité des réseaux 🔐</h1>
 
 <!-- Section 1 -->
@@ -1264,9 +1264,7 @@ footer{
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
-  <h2>Module 9 – Services réseau</h2>
-  
+<div class="module" id="module9" style="display:none;">
 <h1>Module 9 – Services réseau</h1>
 
 <!-- Section 1 -->
@@ -1355,7 +1353,7 @@ footer{
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
+<div class="module" id="module10" style="display:none;">
   <h2>Module 10 – Câblage et supports réseau</h2>
   
   <!-- Section 1 -->
@@ -1456,7 +1454,7 @@ footer{
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
+<div class="module" id="module11" style="display:none;">
  <h1>Module 11 – Administration et supervision réseau</h1>
 
 <!-- Section 1 -->
@@ -1604,7 +1602,7 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
+<div class="module" id="module12" style="display:none;">
   <h2>Module 12 – Virtualisation et réseaux virtuels</h2>
   
   <!-- Explications détaillées -->
@@ -1672,7 +1670,7 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
+<div class="module" id="module13" style="display:none;">
   <h2>Module 13 – Qualité de service (QoS)</h2>
   
   <!-- Explications détaillées -->
@@ -1739,7 +1737,7 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
+<div class="module" id="module14" style="display:none;">
   <h2>Module 14 – Réseaux d’entreprise</h2>
   
   <!-- Explications détaillées -->
@@ -1808,7 +1806,7 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
     <div class="result"></div>
   </div>
 </div>
-<div class="module">
+<div class="module" id="module15" style="display:none;">
   <h2>Module 15 – Bases du Cloud et réseaux modernes</h2>
   
   <!-- Explications détaillées -->
@@ -1915,13 +1913,14 @@ function verifierGroupe(btn){
         if(qcm.dataset.tentatives >= tentativesMax) return;
 
         let correct = true;
-        let answered = false;
+        let answered = true;
 
-        radios.forEach(radio => {
-            if(radio.checked){
-                answered = true;
-                if(radio.value !== "true") correct = false;
-            }
+        // Vérifie que chaque question a une réponse
+        const questions = qcm.querySelectorAll('.question');
+        questions.forEach(question => {
+            const checked = question.querySelector('input[type="radio"]:checked');
+            if(!checked) answered = false;
+            if(checked && checked.value !== "true") correct = false;
         });
 
         if(!answered){
@@ -1946,22 +1945,20 @@ function verifierGroupe(btn){
         if(correct){
             resultDiv.textContent = "Correct ✅";
             resultDiv.className = "result correct";
-            radios.forEach(r => r.disabled = true);
         } else {
-            const reste = tentativesMax - qcm.dataset.tentatives;
             resultDiv.textContent = "CORRECTION QCM";
             resultDiv.className = "result wrong";
-
-            if(qcm.dataset.tentatives >= tentativesMax){
-                radios.forEach(r => r.disabled = true);
-            }
         }
+
+        radios.forEach(r => r.disabled = true);
     });
 
-    const allDone = Array.from(qcms).every(qcm =>
-        qcm.dataset.tentatives >= tentativesMax
-    );
+    btn.disabled = true;
 
-    if(allDone) btn.disabled = true;
+    // 🔥 AFFICHER LE MODULE SUIVANT
+    const nextModule = document.getElementById("module1");
+    if(nextModule){
+        nextModule.style.display = "block";
+        nextModule.scrollIntoView({ behavior: "smooth" });
+    }
 }
-</script>
