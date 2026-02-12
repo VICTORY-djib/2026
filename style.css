@@ -13,14 +13,16 @@ body{
 
 /* ================= HEADER ================= */
 header{
-     position:fixed;
+    position:fixed;
     top:10px;
     left:50%;
     transform:translateX(-50%);
-    background:rgba(37, 99, 235, 0.75);   /* transparence */
+    background:rgba(37, 99, 235, 0.75);
     backdrop-filter: blur(14px);
-    padding:12px 24px;
-    border-radius:40px;
+    
+    padding:6px 22px;       /* plus court verticalement */
+    border-radius:30px;     /* légèrement moins arrondi */
+    
     border:1px solid rgba(255,255,255,0.25);
     box-shadow:0 8px 25px rgba(0,0,0,0.25);
     z-index:1000;
@@ -33,11 +35,11 @@ header nav{
 }
 
 header nav a{
-    color:black;
+    color:#001f3f;           /* bleu marine */
     text-decoration:none;
-    padding:9px 20px;
-    border-radius:22px;
-    font-size:14.5px;
+    padding:7px 18px;        /* boutons plus proportionnels au header */
+    border-radius:20px;
+    font-size:14px;          /* légèrement plus petit */
     font-weight:600;
     transition:0.3s;
 }
@@ -67,19 +69,20 @@ header nav a:hover{
 /* ================= HERO RIGHT ================= */
 .hero-right{
     max-width:500px;
-    color:white;
+    color:#001f3f;           /* bleu marine */
     text-align:center;
 }
 
 .hero-right h1{
     font-size:34px;
     margin-bottom:20px;
+    color:black;             /* titre noir */
 }
 
 .hero-right p{
     font-size:16px;
     line-height:1.7;
-    color:#cfd8ff;
+    color:#001f3f;           /* texte bleu marine */
 }
 
 /* ================= CARTE GMAIL ================= */
@@ -91,7 +94,7 @@ header nav a:hover{
     border-radius:20px;
     border:1px solid rgba(255,255,255,0.22);
     box-shadow:0 20px 45px rgba(0,0,0,0.45);
-    color:white;
+    color:#001f3f;           /* texte bleu marine */
     animation:fadeIn 0.6s ease;
 }
 
@@ -102,6 +105,7 @@ header nav a:hover{
     font-size:20px;
     font-weight:600;
     margin-bottom:16px;
+    color:#001f3f;           /* texte bleu marine */
 }
 
 .gmail-header img{
@@ -110,7 +114,7 @@ header nav a:hover{
 
 .gmail-card p{
     font-size:15px;
-    color:#dbe9ff;
+    color:#001f3f;           /* texte bleu marine */
     margin-bottom:22px;
     text-align:center;
 }
@@ -122,7 +126,7 @@ header nav a:hover{
     text-align:center;
     background:linear-gradient(135deg,#ea4335,#c5221f);
     border-radius:30px;
-    color:white;
+    color:#001f3f;           /* bleu marine */
     text-decoration:none;
     font-weight:600;
     transition:0.3s;
@@ -144,5 +148,10 @@ header nav a:hover{
     .hero{
         flex-direction:column;
         padding-top:120px;
+    }
+
+    header nav a{
+        padding:6px 14px;   /* boutons adaptés mobile */
+        font-size:13px;
     }
 }
