@@ -1505,6 +1505,11 @@ footer{
 </div>
 </div>
     </div>
+<script>
+(function(){
+emailjs.init("y9a97FNf44tMnrup");
+})();
+</script>
 <!-- SCRIPT -->
 <script>
 const tentativesMax = 1;
@@ -1536,13 +1541,13 @@ function verifierGroupe(btn){
         if(qcm.dataset.tentatives >= tentativesMax) return;
 
         let correct = true;
-        let answered = false;
+        let answered = true;
 
-        radios.forEach(radio => {
-            if(radio.checked){
-                answered = true;
-                if(radio.value !== "true") correct = false;
-            }
+        const questions = qcm.querySelectorAll('.question');
+        questions.forEach(question => {
+            const checked = question.querySelector('input[type="radio"]:checked');
+            if(!checked) answered = false;
+            if(checked && checked.value !== "true") correct = false;
         });
 
         if(!answered){
@@ -1567,22 +1572,24 @@ function verifierGroupe(btn){
         if(correct){
             resultDiv.textContent = "Correct ✅";
             resultDiv.className = "result correct";
-            radios.forEach(r => r.disabled = true);
         } else {
-            const reste = tentativesMax - qcm.dataset.tentatives;
             resultDiv.textContent = "CORRECTION QCM";
             resultDiv.className = "result wrong";
-
-            if(qcm.dataset.tentatives >= tentativesMax){
-                radios.forEach(r => r.disabled = true);
-            }
         }
+
+        radios.forEach(r => r.disabled = true);
     });
 
-    const allDone = Array.from(qcms).every(qcm =>
-        qcm.dataset.tentatives >= tentativesMax
-    );
+    btn.disabled = true;
 
-    if(allDone) btn.disabled = true;
+    // 🔥 AFFICHER LE MODULE SUIVANT
+    const currentModuleId = btn.closest(".module").id;
+    const nextModuleNumber = parseInt(currentModuleId.replace("module","")) + 1;
+    const nextModule = document.getElementById("module" + nextModuleNumber);
+
+    if(nextModule){
+        nextModule.style.display = "block";
+        nextModule.scrollIntoView({ behavior: "smooth" });
+    }
 }
 </script>
