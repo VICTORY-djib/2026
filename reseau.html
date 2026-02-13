@@ -302,24 +302,45 @@ footer{
     <li>Avantages et inconvénients des réseaux pour la performance et la sécurité.</li>
 </ul>
   <!-- QCM Module 1 -->
-  <div class="qcm" data-group="g1">
-    <h3>QCM MODULE 1 – Introduction aux réseaux informatiques</h3>
+<div class="question">
+  <p><strong>Question 1 :</strong> Quelle est la principale différence entre un réseau LAN et un WAN ?</p>
+  <label><input type="radio" name="m1q1" value="false"> Le LAN utilise uniquement la fibre optique</label>
+  <label><input type="radio" name="m1q1" value="true"> Le LAN couvre une zone géographique limitée contrairement au WAN</label>
+  <label><input type="radio" name="m1q1" value="false"> Le WAN est plus rapide que le LAN dans tous les cas</label>
+  <label><input type="radio" name="m1q1" value="false"> Le LAN fonctionne uniquement sans fil</label>
+</div>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Qu’est-ce qu’un réseau informatique ?</p>
-      <label><input type="radio" name="m1q1" value="true"> Un ensemble d’ordinateurs et équipements interconnectés pour partager des ressources</label>
-      <label><input type="radio" name="m1q1" value="false"> Un seul ordinateur connecté à Internet</label>
-      <label><input type="radio" name="m1q1" value="false"> Un logiciel de traitement de texte</label>
-      <label><input type="radio" name="m1q1" value="false"> Un type de processeur pour serveurs</label>
-    </div>
+<div class="question">
+  <p><strong>Question 2 :</strong> Quel équipement est principalement utilisé pour connecter plusieurs réseaux entre eux ?</p>
+  <label><input type="radio" name="m1q2" value="false"> Switch</label>
+  <label><input type="radio" name="m1q2" value="false"> Hub</label>
+  <label><input type="radio" name="m1q2" value="true"> Routeur</label>
+  <label><input type="radio" name="m1q2" value="false"> Carte réseau</label>
+</div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quels sont les types de réseaux les plus courants ?</p>
-      <label><input type="radio" name="m1q2" value="true"> LAN, MAN, WAN</label>
-      <label><input type="radio" name="m1q2" value="false"> HTTP, FTP, SMTP</label>
-      <label><input type="radio" name="m1q2" value="false"> SSD, HDD, RAM</label>
-      <label><input type="radio" name="m1q2" value="false"> IPv4, IPv6, MAC</label>
-    </div>
+<div class="question">
+  <p><strong>Question 3 :</strong> Quel modèle de référence divise la communication réseau en 7 couches ?</p>
+  <label><input type="radio" name="m1q3" value="false"> Modèle TCP/IP</label>
+  <label><input type="radio" name="m1q3" value="true"> Modèle OSI</label>
+  <label><input type="radio" name="m1q3" value="false"> Modèle HTTP</label>
+  <label><input type="radio" name="m1q3" value="false"> Modèle Ethernet</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 4 :</strong> Quelle couche du modèle OSI est responsable de l’adressage logique (IP) ?</p>
+  <label><input type="radio" name="m1q4" value="false"> Couche physique</label>
+  <label><input type="radio" name="m1q4" value="false"> Couche liaison de données</label>
+  <label><input type="radio" name="m1q4" value="true"> Couche réseau</label>
+  <label><input type="radio" name="m1q4" value="false"> Couche présentation</label>
+</div>
+
+<div class="question">
+  <p><strong>Question 5 :</strong> Quel protocole est utilisé pour attribuer automatiquement une adresse IP à un appareil ?</p>
+  <label><input type="radio" name="m1q5" value="false"> DNS</label>
+  <label><input type="radio" name="m1q5" value="true"> DHCP</label>
+  <label><input type="radio" name="m1q5" value="false"> FTP</label>
+  <label><input type="radio" name="m1q5" value="false"> ARP</label>
+</div>
 
     <!-- Bouton Vérifier et div résultat corrigés -->
     <button data-group="g1" onclick="verifierGroupe(this)">Vérifier</button>
@@ -491,24 +512,48 @@ footer{
 </ul>
 
   <!-- QCM Module 2 -->
- <div class="qcm" data-group="g2">
-    <h3>QCM MODULE 2 – Modèles OSI et TCP/IP</h3>
+<div class="qcm" data-group="g2">
+  <h3>QCM MODULE 2 – Protocoles et Modèle OSI</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Combien de couches comporte le modèle OSI ?</p>
-      <label><input type="radio" name="m2q1" value="true"> 7</label>
-      <label><input type="radio" name="m2q1" value="false"> 4</label>
-      <label><input type="radio" name="m2q1" value="false"> 5</label>
-      <label><input type="radio" name="m2q1" value="false"> 6</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Combien de couches contient le modèle OSI ?</p>
+    <label><input type="radio" name="m2q1" value="false"> 4</label>
+    <label><input type="radio" name="m2q1" value="true"> 7</label>
+    <label><input type="radio" name="m2q1" value="false"> 5</label>
+    <label><input type="radio" name="m2q1" value="false"> 6</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quelle couche du modèle TCP/IP correspond à la couche réseau du modèle OSI ?</p>
-      <label><input type="radio" name="m2q2" value="true"> Internet</label>
-      <label><input type="radio" name="m2q2" value="false"> Transport</label>
-      <label><input type="radio" name="m2q2" value="false"> Application</label>
-      <label><input type="radio" name="m2q2" value="false"> Accès réseau</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quelle couche du modèle OSI gère le transfert des données sous forme de bits ?</p>
+    <label><input type="radio" name="m2q2" value="true"> Couche Physique</label>
+    <label><input type="radio" name="m2q2" value="false"> Couche Transport</label>
+    <label><input type="radio" name="m2q2" value="false"> Couche Session</label>
+    <label><input type="radio" name="m2q2" value="false"> Couche Application</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel protocole garantit la fiabilité de la transmission des données ?</p>
+    <label><input type="radio" name="m2q3" value="true"> TCP</label>
+    <label><input type="radio" name="m2q3" value="false"> UDP</label>
+    <label><input type="radio" name="m2q3" value="false"> ICMP</label>
+    <label><input type="radio" name="m2q3" value="false"> ARP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quelle est la principale différence entre TCP et UDP ?</p>
+    <label><input type="radio" name="m2q4" value="false"> UDP est plus sécurisé que TCP</label>
+    <label><input type="radio" name="m2q4" value="true"> TCP est fiable et orienté connexion, UDP est rapide mais non fiable</label>
+    <label><input type="radio" name="m2q4" value="false"> TCP fonctionne uniquement en LAN</label>
+    <label><input type="radio" name="m2q4" value="false"> UDP utilise 7 couches</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quel protocole est utilisé pour traduire un nom de domaine en adresse IP ?</p>
+    <label><input type="radio" name="m2q5" value="false"> HTTP</label>
+    <label><input type="radio" name="m2q5" value="true"> DNS</label>
+    <label><input type="radio" name="m2q5" value="false"> FTP</label>
+    <label><input type="radio" name="m2q5" value="false"> SMTP</label>
+  </div>
 
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g2" onclick="verifierGroupe(this)">Vérifier</button>
@@ -634,28 +679,50 @@ footer{
     <li>Exemples concrets permettent de planifier et configurer des réseaux d’entreprise.</li>
 </ul>
 
-  <!-- QCM Module 3 -->
-<div class="qcm" data-group="g3">
-    <h1>Module 3 – Adressage IP</h1>
+ <div class="qcm" data-group="g3">
+  <h3>QCM MODULE 3 – Adressage IP (IPv4 et IPv6)</h3>
 
-    <!-- Question 1 -->
-    <div class="question">
-        <p><strong>Question 1 :</strong> Combien de bits utilise IPv4 pour représenter une adresse ?</p>
-        <label><input type="radio" name="m3q1" value="true"> 32 bits</label>
-        <label><input type="radio" name="m3q1" value="false"> 128 bits</label>
-        <label><input type="radio" name="m3q1" value="false"> 64 bits</label>
-        <label><input type="radio" name="m3q1" value="false"> 16 bits</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Combien de bits contient une adresse IPv4 ?</p>
+    <label><input type="radio" name="m3q1" value="false"> 16 bits</label>
+    <label><input type="radio" name="m3q1" value="true"> 32 bits</label>
+    <label><input type="radio" name="m3q1" value="false"> 64 bits</label>
+    <label><input type="radio" name="m3q1" value="false"> 128 bits</label>
+  </div>
 
-    <!-- Question 2 -->
-    <div class="question">
-        <p><strong>Question 2 :</strong> Une adresse IP 192.168.1.0/24 peut contenir combien d’hôtes utilisables ?</p>
-        <label><input type="radio" name="m3q4" value="true"> 254</label>
-        <label><input type="radio" name="m3q4" value="false"> 256</label>
-        <label><input type="radio" name="m3q4" value="false"> 128</label>
-        <label><input type="radio" name="m3q4" value="false"> 255</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quelle notation est utilisée pour indiquer le masque de sous-réseau en IPv4 ?</p>
+    <label><input type="radio" name="m3q2" value="true"> CIDR (ex: /24)</label>
+    <label><input type="radio" name="m3q2" value="false"> Hexadécimale</label>
+    <label><input type="radio" name="m3q2" value="false"> Décimale ponctuée uniquement</label>
+    <label><input type="radio" name="m3q2" value="false"> Binaire uniquement</label>
+  </div>
 
+  <div class="question">
+    <p><strong>Question 3 :</strong> Combien de bits contient une adresse IPv6 ?</p>
+    <label><input type="radio" name="m3q3" value="false"> 32 bits</label>
+    <label><input type="radio" name="m3q3" value="false"> 64 bits</label>
+    <label><input type="radio" name="m3q3" value="true"> 128 bits</label>
+    <label><input type="radio" name="m3q3" value="false"> 256 bits</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quelle est la principale différence entre IPv4 et IPv6 ?</p>
+    <label><input type="radio" name="m3q4" value="false"> IPv4 est plus sécurisé que IPv6</label>
+    <label><input type="radio" name="m3q4" value="true"> IPv6 a un espace d’adressage beaucoup plus grand que IPv4</label>
+    <label><input type="radio" name="m3q4" value="false"> IPv4 ne peut pas utiliser de masque de sous-réseau</label>
+    <label><input type="radio" name="m3q4" value="false"> IPv6 utilise uniquement le protocole UDP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quelle adresse IPv4 est réservée pour le réseau local (loopback) ?</p>
+    <label><input type="radio" name="m3q5" value="true"> 127.0.0.1</label>
+    <label><input type="radio" name="m3q5" value="false"> 192.168.0.1</label>
+    <label><input type="radio" name="m3q5" value="false"> 10.0.0.1</label>
+    <label><input type="radio" name="m3q5" value="false"> 255.255.255.0</label>
+  </div>
+
+</div>
     <button data-group="g3" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
 </div>
@@ -773,35 +840,48 @@ footer{
     <li>Exemples concrets de conversion binaire aident à planifier et déployer un réseau efficace.</li>
 </ul>
      
-    <div class="qcm" data-group="g4">
-    <h1>Questions – Module 4 : Adressage</h1>
+   <div class="qcm" data-group="g5">
+  <h3>QCM MODULE 4 – Adressage réseau et sous-réseaux</h3>
 
-    <!-- Question 1 -->
-    <div class="question">
-        <p><strong>Question 1 :</strong> Quel est l’équivalent binaire de l’octet décimal 192 ?</p>
-        <label><input type="radio" name="m4q1" value="true"> 11000000</label>
-        <label><input type="radio" name="m4q1" value="false"> 10101010</label>
-        <label><input type="radio" name="m4q1" value="false"> 11110000</label>
-        <label><input type="radio" name="m4q1" value="false"> 10000000</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quelle partie d’une adresse IPv4 identifie le réseau ?</p>
+    <label><input type="radio" name="m4q1" value="true"> Les bits correspondant au masque de réseau</label>
+    <label><input type="radio" name="m4q1" value="false"> Les bits correspondant à l’hôte</label>
+    <label><input type="radio" name="m4q1" value="false"> Les bits de l’adresse broadcast</label>
+    <label><input type="radio" name="m4q1" value="false"> Tous les bits de l’adresse IP</label>
+  </div>
 
-    <!-- Question 2 -->
-    <div class="question">
-        <p><strong>Question 2 :</strong> Quelle est la représentation binaire du masque 255.255.255.0 ?</p>
-        <label><input type="radio" name="m4q2" value="true"> 11111111.11111111.11111111.00000000</label>
-        <label><input type="radio" name="m4q2" value="false"> 11111111.00000000.00000000.00000000</label>
-        <label><input type="radio" name="m4q2" value="false"> 11111111.11111111.00000000.00000000</label>
-        <label><input type="radio" name="m4q2" value="false"> 00000000.11111111.11111111.11111111</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Si un réseau utilise le masque /24, combien d’adresses IP sont disponibles pour les hôtes ?</p>
+    <label><input type="radio" name="m4q2" value="false"> 256</label>
+    <label><input type="radio" name="m4q2" value="true"> 254</label>
+    <label><input type="radio" name="m4q2" value="false"> 255</label>
+    <label><input type="radio" name="m4q2" value="false"> 128</label>
+  </div>
 
-    <!-- Question 3 -->
-    <div class="question">
-        <p><strong>Question 3 :</strong> Quel est l’objectif principal du subnetting ?</p>
-        <label><input type="radio" name="m4q3" value="true"> Diviser un réseau en sous-réseaux plus petits</label>
-        <label><input type="radio" name="m4q3" value="false"> Créer des adresses MAC</label>
-        <label><input type="radio" name="m4q3" value="false"> Augmenter la vitesse d’Internet</label>
-        <label><input type="radio" name="m4q3" value="false"> Chiffrer les paquets IP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quelle est l’adresse de broadcast du réseau 192.168.10.0/26 ?</p>
+    <label><input type="radio" name="m4q3" value="false"> 192.168.10.64</label>
+    <label><input type="radio" name="m4q3" value="true"> 192.168.10.63</label>
+    <label><input type="radio" name="m4q3" value="false"> 192.168.10.127</label>
+    <label><input type="radio" name="m4q3" value="false"> 192.168.10.1</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Combien de sous-réseaux peut-on créer avec un masque /26 sur un réseau /24 ?</p>
+    <label><input type="radio" name="m4q4" value="true"> 4</label>
+    <label><input type="radio" name="m4q4" value="false"> 2</label>
+    <label><input type="radio" name="m4q4" value="false"> 8</label>
+    <label><input type="radio" name="m4q4" value="false"> 16</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quelle plage d’adresses est réservée aux hôtes dans le sous-réseau 10.0.0.0/30 ?</p>
+    <label><input type="radio" name="m4q5" value="false"> 10.0.0.0 – 10.0.0.3</label>
+    <label><input type="radio" name="m4q5" value="true"> 10.0.0.1 – 10.0.0.2</label>
+    <label><input type="radio" name="m4q5" value="false"> 10.0.0.0 – 10.0.0.1</label>
+    <label><input type="radio" name="m4q5" value="false"> 10.0.0.2 – 10.0.0.3</label>
+  </div>
 
     <!-- Bouton Vérifier -->
     <button data-group="g4" onclick="verifierGroupe(this)">Vérifier</button>
@@ -888,27 +968,48 @@ footer{
     <li>Le MAC Learning optimise la transmission, et le flooding est temporaire pour les adresses inconnues.</li>
 </ul>
  <!-- QCM Module 5 -->
-<div class="qcm" data-group="g5">
-    <h1>Questions – Module 5 : Commutation (Switching)</h1>
+<div class="qcm" data-group="g7">
+  <h3>QCM MODULE 5 – Commutation et réseau local</h3>
 
-    <!-- Question 1 -->
-    <div class="question">
-        <p><strong>Question 1 :</strong> Quelle est la principale différence entre un switch et un hub ?</p>
-        <label><input type="radio" name="m5q1" value="false"> Un switch fonctionne uniquement sur les réseaux sans fil.</label>
-        <label><input type="radio" name="m5q1" value="true"> Un switch envoie les trames uniquement au port correspondant à l’adresse MAC de destination.</label>
-        <label><input type="radio" name="m5q1" value="false"> Un hub est plus rapide qu’un switch pour transmettre les données.</label>
-        <label><input type="radio" name="m5q1" value="false"> Un hub ne peut pas connecter plusieurs périphériques.</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quelle est la fonction principale d’un switch dans un réseau LAN ?</p>
+    <label><input type="radio" name="m5q1" value="true"> Transmettre les trames uniquement vers le port correspondant à l’adresse MAC de destination</label>
+    <label><input type="radio" name="m5q1" value="false"> Envoyer les paquets à tous les ordinateurs du réseau</label>
+    <label><input type="radio" name="m5q1" value="false"> Attribuer automatiquement les adresses IP</label>
+    <label><input type="radio" name="m5q1" value="false"> Crypter les données du réseau</label>
+  </div>
 
-    <!-- Question 2 -->
-    <div class="question">
-        <p><strong>Question 2 :</strong> Qu’est-ce qu’un VLAN ?</p>
-        <label><input type="radio" name="m5q2" value="false"> Une connexion Internet sans fil sécurisée.</label>
-        <label><input type="radio" name="m5q2" value="true"> Un réseau logique isolé au sein d’un switch physique permettant de segmenter le trafic.</label>
-        <label><input type="radio" name="m5q2" value="false"> Un protocole de routage pour WAN.</label>
-        <label><input type="radio" name="m5q2" value="false"> Une adresse IP privée pour un réseau local.</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Qu’est-ce qu’une table MAC dans un switch ?</p>
+    <label><input type="radio" name="m5q2" value="true"> Une table qui associe chaque adresse MAC à un port spécifique du switch</label>
+    <label><input type="radio" name="m5q2" value="false"> Une liste des adresses IP du réseau</label>
+    <label><input type="radio" name="m5q2" value="false"> Une table des VLAN configurés uniquement</label>
+    <label><input type="radio" name="m5q2" value="false"> Un registre des utilisateurs connectés au réseau</label>
+  </div>
 
+  <div class="question">
+    <p><strong>Question 3 :</strong> Que fait un switch lorsqu’il reçoit une trame avec une adresse MAC inconnue ?</p>
+    <label><input type="radio" name="m5q3" value="true"> Il diffuse la trame sur tous les ports sauf celui d’origine</label>
+    <label><input type="radio" name="m5q3" value="false"> Il la supprime immédiatement</label>
+    <label><input type="radio" name="m5q3" value="false"> Il envoie un message au routeur</label>
+    <label><input type="radio" name="m5q3" value="false"> Il change l’adresse MAC de destination</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel type de réseau peut être segmenté en VLANs pour améliorer la sécurité et les performances ?</p>
+    <label><input type="radio" name="m5q4" value="true"> Réseau local (LAN)</label>
+    <label><input type="radio" name="m5q4" value="false"> WAN uniquement</label>
+    <label><input type="radio" name="m5q4" value="false"> Internet public</label>
+    <label><input type="radio" name="m5q4" value="false"> VPN</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quelle méthode permet de réduire les boucles réseau dans un LAN avec plusieurs switches ?</p>
+    <label><input type="radio" name="m5q5" value="true"> STP (Spanning Tree Protocol)</label>
+    <label><input type="radio" name="m5q5" value="false"> DHCP</label>
+    <label><input type="radio" name="m5q5" value="false"> ARP</label>
+    <label><input type="radio" name="m5q5" value="false"> ICMP</label>
+  </div>
     <button data-group="g5" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
 </div>
@@ -1019,25 +1120,48 @@ footer{
 
   <!-- QCM Module 6 -->
 <div class="qcm" data-group="g6">
-    <h1>Questions – Module 6 : Routage (Routing)</h1>
+  <h3>QCM MODULE 6 – Introduction à la cybersécurité</h3>
 
-    <!-- Question 1 -->
-    <div class="question">
-        <p><strong>Question 1 :</strong> Quelle est la différence principale entre le routage statique et le routage dynamique ?</p>
-        <label><input type="radio" name="m6q1" value="true"> Le routage statique est configuré manuellement, le routage dynamique calcule automatiquement les chemins.</label>
-        <label><input type="radio" name="m6q1" value="false"> Le routage statique utilise toujours OSPF, le routage dynamique utilise toujours RIP.</label>
-        <label><input type="radio" name="m6q1" value="false"> Le routage statique est pour IPv6 uniquement.</label>
-        <label><input type="radio" name="m6q1" value="false"> Le routage dynamique nécessite un hub central.</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Qu’est-ce que la cybersécurité ?</p>
+    <label><input type="radio" name="m6q1" value="true"> L’ensemble des pratiques, outils et méthodes pour protéger les systèmes, réseaux et données</label>
+    <label><input type="radio" name="m6q1" value="false"> L’utilisation d’Internet pour envoyer des emails</label>
+    <label><input type="radio" name="m6q1" value="false"> Un logiciel antivirus uniquement</label>
+    <label><input type="radio" name="m6q1" value="false"> La création de réseaux LAN</label>
+  </div>
 
-    <!-- Question 2 -->
-    <div class="question">
-        <p><strong>Question 2 :</strong> Quel protocole est basé sur le nombre de sauts (hop count) pour déterminer le chemin le plus court ?</p>
-        <label><input type="radio" name="m6q2" value="true"> RIP (Routing Information Protocol)</label>
-        <label><input type="radio" name="m6q2" value="false"> OSPF</label>
-        <label><input type="radio" name="m6q2" value="false"> EIGRP</label>
-        <label><input type="radio" name="m6q2" value="false"> BGP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel est l’objectif principal de la cybersécurité ?</p>
+    <label><input type="radio" name="m6q2" value="true"> Assurer la confidentialité, l’intégrité et la disponibilité des informations</label>
+    <label><input type="radio" name="m6q2" value="false"> Augmenter la vitesse d’Internet</label>
+    <label><input type="radio" name="m6q2" value="false"> Installer des câbles réseau</label>
+    <label><input type="radio" name="m6q2" value="false"> Créer des adresses IP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel type de menace correspond à un logiciel qui se propage et endommage les fichiers ?</p>
+    <label><input type="radio" name="m6q3" value="true"> Virus</label>
+    <label><input type="radio" name="m6q3" value="false"> Routeur</label>
+    <label><input type="radio" name="m6q3" value="false"> Switch</label>
+    <label><input type="radio" name="m6q3" value="false"> Firewall</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel type d’attaque consiste à tromper un utilisateur pour obtenir ses informations confidentielles ?</p>
+    <label><input type="radio" name="m6q4" value="true"> Phishing (hameçonnage)</label>
+    <label><input type="radio" name="m6q4" value="false"> DDoS</label>
+    <label><input type="radio" name="m6q4" value="false"> Malware</label>
+    <label><input type="radio" name="m6q4" value="false"> VPN</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quel dispositif permet de filtrer le trafic réseau pour protéger un réseau local ?</p>
+    <label><input type="radio" name="m6q5" value="true"> Firewall (pare-feu)</label>
+    <label><input type="radio" name="m6q5" value="false"> Switch</label>
+    <label><input type="radio" name="m6q5" value="false"> Hub</label>
+    <label><input type="radio" name="m6q5" value="false"> Modem</label>
+  </div>
+
 
     <button data-group="g6" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
@@ -1138,26 +1262,48 @@ footer{
     <li>Le SSID identifie le réseau et doit être configuré correctement pour la sécurité.</li>
 </ul>
 <!-- QCM Module -->
-  <div class="qcm" data-group="g7">
-    <h1>Questions – Module 7 : Réseaux sans fil (Wi-Fi)</h1>
+<div class="qcm" data-group="g7-wifi">
+  <h3>QCM MODULE 7 – Réseau sans fil (Wi-Fi / WLAN)</h3>
 
-    <!-- Question 1 -->
-    <div class="question">
-        <p><strong>Question 1 :</strong> Quelle norme Wi-Fi offre la vitesse théorique la plus élevée et est adaptée aux environnements très denses ?</p>
-        <label><input type="radio" name="m7q1" value="false"> 802.11n</label>
-        <label><input type="radio" name="m7q1" value="false"> 802.11ac</label>
-        <label><input type="radio" name="m7q1" value="true"> 802.11ax (Wi-Fi 6)</label>
-        <label><input type="radio" name="m7q1" value="false"> 802.11b</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quelle norme Wi-Fi est la plus récente et la plus rapide ?</p>
+    <label><input type="radio" name="m7wifiq1" value="false"> 802.11n</label>
+    <label><input type="radio" name="m7wifiq1" value="false"> 802.11ac</label>
+    <label><input type="radio" name="m7wifiq1" value="true"> 802.11ax (Wi-Fi 6)</label>
+    <label><input type="radio" name="m7wifiq1" value="false"> 802.11g</label>
+  </div>
 
-    <!-- Question 2 -->
-    <div class="question">
-        <p><strong>Question 2 :</strong> Quelle méthode de sécurité Wi-Fi est actuellement la plus recommandée pour un réseau domestique ou d’entreprise ?</p>
-        <label><input type="radio" name="m7q2" value="false"> WEP</label>
-        <label><input type="radio" name="m7q2" value="false"> WPA</label>
-        <label><input type="radio" name="m7q2" value="true"> WPA2 / WPA3</label>
-        <label><input type="radio" name="m7q2" value="false"> Aucun chiffrement</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel dispositif permet de connecter plusieurs appareils à un réseau sans fil ?</p>
+    <label><input type="radio" name="m7wifiq2" value="true"> Point d’accès (Access Point)</label>
+    <label><input type="radio" name="m7wifiq2" value="false"> Routeur uniquement</label>
+    <label><input type="radio" name="m7wifiq2" value="false"> Switch</label>
+    <label><input type="radio" name="m7wifiq2" value="false"> Hub</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quelle méthode de sécurité Wi-Fi est recommandée aujourd’hui ?</p>
+    <label><input type="radio" name="m7wifiq3" value="false"> WEP</label>
+    <label><input type="radio" name="m7wifiq3" value="false"> WPA</label>
+    <label><input type="radio" name="m7wifiq3" value="true"> WPA2 / WPA3</label>
+    <label><input type="radio" name="m7wifiq3" value="false"> Aucun chiffrement</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quelle fréquence Wi-Fi offre une meilleure portée mais une vitesse inférieure ?</p>
+    <label><input type="radio" name="m7wifiq4" value="true"> 2,4 GHz</label>
+    <label><input type="radio" name="m7wifiq4" value="false"> 5 GHz</label>
+    <label><input type="radio" name="m7wifiq4" value="false"> 6 GHz</label>
+    <label><input type="radio" name="m7wifiq4" value="false"> 60 GHz</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quelle technologie permet d’étendre un réseau Wi-Fi sur une grande zone sans fil ?</p>
+    <label><input type="radio" name="m7wifiq5" value="true"> Répéteur / Mesh Wi-Fi</label>
+    <label><input type="radio" name="m7wifiq5" value="false"> Switch</label>
+    <label><input type="radio" name="m7wifiq5" value="false"> Routeur uniquement</label>
+    <label><input type="radio" name="m7wifiq5" value="false"> VPN</label>
+  </div>
 
     <button data-group="g7" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
@@ -1238,26 +1384,49 @@ footer{
     <li>Segmentation et DMZ augmentent la sécurité des infrastructures.</li>
     <li>La surveillance et la prévention proactive sont essentielles pour protéger les données.</li>
 </ul>
-  <!-- QCM Module 8 -->
-  <div class="qcm" data-group="g8">
-    <h3>QCM MODULE 8 – Sécurité des réseaux 🔐</h3>
+ <div class="qcm" data-group="g8-security">
+  <h3>QCM MODULE 8 – Sécurité des réseaux</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel dispositif contrôle le trafic entrant et sortant selon des règles définies ?</p>
-      <label><input type="radio" name="m8q1" value="true"> Firewall</label>
-      <label><input type="radio" name="m8q1" value="false"> VPN</label>
-      <label><input type="radio" name="m8q1" value="false"> ARP</label>
-      <label><input type="radio" name="m8q1" value="false"> DHCP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quel dispositif est utilisé pour filtrer le trafic réseau et protéger un réseau interne ?</p>
+    <label><input type="radio" name="m8secq1" value="true"> Firewall (pare-feu)</label>
+    <label><input type="radio" name="m8secq1" value="false"> Switch</label>
+    <label><input type="radio" name="m8secq1" value="false"> Hub</label>
+    <label><input type="radio" name="m8secq1" value="false"> Point d’accès</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel protocole permet de sécuriser l’accès à distance au réseau d’une entreprise ?</p>
-      <label><input type="radio" name="m8q2" value="true"> VPN</label>
-      <label><input type="radio" name="m8q2" value="false"> TCP</label>
-      <label><input type="radio" name="m8q2" value="false"> RIP</label>
-      <label><input type="radio" name="m8q2" value="false"> STP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel type d’attaque consiste à saturer un serveur ou un réseau avec un grand nombre de requêtes ?</p>
+    <label><input type="radio" name="m8secq2" value="true"> DDoS (Distributed Denial of Service)</label>
+    <label><input type="radio" name="m8secq2" value="false"> Phishing</label>
+    <label><input type="radio" name="m8secq2" value="false"> Sniffing</label>
+    <label><input type="radio" name="m8secq2" value="false"> Spoofing</label>
+  </div>
 
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel protocole permet de créer un tunnel sécurisé pour accéder à un réseau privé via Internet ?</p>
+    <label><input type="radio" name="m8secq3" value="true"> VPN (Virtual Private Network)</label>
+    <label><input type="radio" name="m8secq3" value="false"> DHCP</label>
+    <label><input type="radio" name="m8secq3" value="false"> FTP</label>
+    <label><input type="radio" name="m8secq3" value="false"> HTTP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel outil permet de détecter les intrusions et activités suspectes sur un réseau ?</p>
+    <label><input type="radio" name="m8secq4" value="true"> IDS / IPS (Intrusion Detection/Prevention System)</label>
+    <label><input type="radio" name="m8secq4" value="false"> Switch manageable</label>
+    <label><input type="radio" name="m8secq4" value="false"> Routeur standard</label>
+    <label><input type="radio" name="m8secq4" value="false"> Point d’accès Wi-Fi</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quelle méthode améliore la sécurité d’un réseau Wi-Fi domestique ?</p>
+    <label><input type="radio" name="m8secq5" value="true"> WPA2 / WPA3 et mot de passe fort</label>
+    <label><input type="radio" name="m8secq5" value="false"> WEP uniquement</label>
+    <label><input type="radio" name="m8secq5" value="false"> SSID ouvert</label>
+    <label><input type="radio" name="m8secq5" value="false"> Pas de chiffrement</label>
+  </div>
+    
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g8" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
@@ -1329,25 +1498,47 @@ footer{
 </ul>
   <!-- QCM Module 9 -->
   <div class="qcm" data-group="g9">
-    <h3>QCM MODULE 9 – Services réseau</h3>
+  <h3>QCM MODULE 9 – Services réseau</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel service traduit les noms de domaine en adresses IP ?</p>
-      <label><input type="radio" name="m9q1" value="true"> DNS</label>
-      <label><input type="radio" name="m9q1" value="false"> DHCP</label>
-      <label><input type="radio" name="m9q1" value="false"> FTP</label>
-      <label><input type="radio" name="m9q1" value="false"> SMTP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quel service réseau permet de traduire un nom de domaine en adresse IP ?</p>
+    <label><input type="radio" name="m9q1" value="true"> DNS (Domain Name System)</label>
+    <label><input type="radio" name="m9q1" value="false"> DHCP</label>
+    <label><input type="radio" name="m9q1" value="false"> FTP</label>
+    <label><input type="radio" name="m9q1" value="false"> HTTP</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel protocole est utilisé pour transférer des fichiers entre un client et un serveur ?</p>
-      <label><input type="radio" name="m9q2" value="true"> FTP</label>
-      <label><input type="radio" name="m9q2" value="false"> DNS</label>
-      <label><input type="radio" name="m9q2" value="false"> HTTP</label>
-      <label><input type="radio" name="m9q2" value="false"> SMTP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel service attribue automatiquement une adresse IP à un appareil ?</p>
+    <label><input type="radio" name="m9q2" value="true"> DHCP (Dynamic Host Configuration Protocol)</label>
+    <label><input type="radio" name="m9q2" value="false"> DNS</label>
+    <label><input type="radio" name="m9q2" value="false"> FTP</label>
+    <label><input type="radio" name="m9q2" value="false"> SMTP</label>
+  </div>
 
-    <!-- Bouton Vérifier relié uniquement à ce module -->
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel service est utilisé pour transférer des fichiers entre un client et un serveur ?</p>
+    <label><input type="radio" name="m9q3" value="true"> FTP (File Transfer Protocol)</label>
+    <label><input type="radio" name="m9q3" value="false"> HTTP</label>
+    <label><input type="radio" name="m9q3" value="false"> DHCP</label>
+    <label><input type="radio" name="m9q3" value="false"> DNS</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel service est utilisé pour envoyer des emails entre serveurs ?</p>
+    <label><input type="radio" name="m9q4" value="true"> SMTP (Simple Mail Transfer Protocol)</label>
+    <label><input type="radio" name="m9q4" value="false"> HTTP</label>
+    <label><input type="radio" name="m9q4" value="false"> DNS</label>
+    <label><input type="radio" name="m9q4" value="false"> DHCP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quel service permet d’accéder à une page web depuis un navigateur ?</p>
+    <label><input type="radio" name="m9q5" value="true"> HTTP / HTTPS</label>
+    <label><input type="radio" name="m9q5" value="false"> FTP</label>
+    <label><input type="radio" name="m9q5" value="false"> SMTP</label>
+    <label><input type="radio" name="m9q5" value="false"> DHCP</label>
+  </div>
     <button data-group="g9" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
   </div>
@@ -1429,24 +1620,48 @@ footer{
 </ul>
 
   <!-- QCM Module 10 -->
-  <div class="qcm" data-group="g10">
-    <h3>QCM MODULE 10 – Câblage et supports réseau</h3>
+ <div class="qcm" data-group="g10">
+  <h3>QCM MODULE 10 – Câblage et supports réseau</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel type de câble est recommandé pour des débits supérieurs à 10 Gbps sur courte distance ?</p>
-      <label><input type="radio" name="m10q1" value="true"> Cat6a ou Cat7</label>
-      <label><input type="radio" name="m10q1" value="false"> Cat5</label>
-      <label><input type="radio" name="m10q1" value="false"> Fibre multimode uniquement</label>
-      <label><input type="radio" name="m10q1" value="false"> Bluetooth</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quel type de câble est le plus utilisé pour les réseaux Ethernet locaux ?</p>
+    <label><input type="radio" name="m10q1" value="true"> Câble cuivre UTP/STP (Cat5e, Cat6)</label>
+    <label><input type="radio" name="m10q1" value="false"> Fibre optique multimode</label>
+    <label><input type="radio" name="m10q1" value="false"> Coaxial</label>
+    <label><input type="radio" name="m10q1" value="false"> Câble HDMI</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel support est utilisé pour transmettre des données sur de longues distances avec un haut débit ?</p>
-      <label><input type="radio" name="m10q2" value="true"> Fibre optique</label>
-      <label><input type="radio" name="m10q2" value="false"> Cat5e</label>
-      <label><input type="radio" name="m10q2" value="false"> Wi-Fi 2,4 GHz</label>
-      <label><input type="radio" name="m10q2" value="false"> RJ45</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel type de support permet de transmettre des données sur de longues distances avec une faible perte de signal ?</p>
+    <label><input type="radio" name="m10q2" value="true"> Fibre optique</label>
+    <label><input type="radio" name="m10q2" value="false"> Câble UTP</label>
+    <label><input type="radio" name="m10q2" value="false"> Coaxial</label>
+    <label><input type="radio" name="m10q2" value="false"> Wi-Fi</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel type de câble utilise des paires torsadées pour réduire les interférences électromagnétiques ?</p>
+    <label><input type="radio" name="m10q3" value="true"> UTP / STP</label>
+    <label><input type="radio" name="m10q3" value="false"> Fibre optique</label>
+    <label><input type="radio" name="m10q3" value="false"> Coaxial</label>
+    <label><input type="radio" name="m10q3" value="false"> HDMI</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel connecteur est généralement utilisé pour les câbles Ethernet ?</p>
+    <label><input type="radio" name="m10q4" value="true"> RJ45</label>
+    <label><input type="radio" name="m10q4" value="false"> RJ11</label>
+    <label><input type="radio" name="m10q4" value="false"> SC</label>
+    <label><input type="radio" name="m10q4" value="false"> LC</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quel support est insensible aux interférences électromagnétiques et offre une très grande vitesse de transmission ?</p>
+    <label><input type="radio" name="m10q5" value="true"> Fibre optique</label>
+    <label><input type="radio" name="m10q5" value="false"> Câble UTP</label>
+    <label><input type="radio" name="m10q5" value="false"> Coaxial</label>
+    <label><input type="radio" name="m10q5" value="false"> Wi-Fi</label>
+  </div>
 
        <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g10" onclick="verifierGroupe(this)">Vérifier</button>
@@ -1578,23 +1793,47 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
 </ul>
   <!-- QCM Module 11 -->
   <div class="qcm" data-group="g11">
-    <h3>QCM MODULE 11 – Administration et supervision réseau</h3>
+  <h3>QCM MODULE 11 – Administration et supervision réseau</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel protocole permet de collecter des informations sur les équipements réseau et de générer des alertes ?</p>
-      <label><input type="radio" name="m11q1" value="true"> SNMP</label>
-      <label><input type="radio" name="m11q1" value="false"> HTTP</label>
-      <label><input type="radio" name="m11q1" value="false"> FTP</label>
-      <label><input type="radio" name="m11q1" value="false"> SMTP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quel est l’objectif principal de l’administration réseau ?</p>
+    <label><input type="radio" name="m11q1" value="true"> Assurer le bon fonctionnement, la sécurité et la disponibilité du réseau</label>
+    <label><input type="radio" name="m11q1" value="false"> Installer uniquement les câbles réseau</label>
+    <label><input type="radio" name="m11q1" value="false"> Créer des sites web</label>
+    <label><input type="radio" name="m11q1" value="false"> Envoyer des emails aux utilisateurs</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel est l’objectif principal de la supervision réseau ?</p>
-      <label><input type="radio" name="m11q2" value="true"> Détecter et résoudre rapidement les problèmes</label>
-      <label><input type="radio" name="m11q2" value="false"> Augmenter automatiquement la vitesse d’Internet</label>
-      <label><input type="radio" name="m11q2" value="false"> Installer les ordinateurs</label>
-      <label><input type="radio" name="m11q2" value="false"> Configurer les imprimantes seulement</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel outil est utilisé pour surveiller en temps réel le trafic et la performance d’un réseau ?</p>
+    <label><input type="radio" name="m11q2" value="true"> SNMP (Simple Network Management Protocol)</label>
+    <label><input type="radio" name="m11q2" value="false"> FTP</label>
+    <label><input type="radio" name="m11q2" value="false"> HTTP</label>
+    <label><input type="radio" name="m11q2" value="false"> SMTP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel protocole permet d’envoyer des alertes sur les anomalies réseau ?</p>
+    <label><input type="radio" name="m11q3" value="true"> SNMP traps</label>
+    <label><input type="radio" name="m11q3" value="false"> DHCP</label>
+    <label><input type="radio" name="m11q3" value="false"> ICMP ping</label>
+    <label><input type="radio" name="m11q3" value="false"> HTTP GET</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel type de surveillance permet de détecter les défaillances et anomalies sur les équipements réseau ?</p>
+    <label><input type="radio" name="m11q4" value="true"> Supervision proactive</label>
+    <label><input type="radio" name="m11q4" value="false"> Supervision manuelle uniquement</label>
+    <label><input type="radio" name="m11q4" value="false"> Installation de switch</label>
+    <label><input type="radio" name="m11q4" value="false"> Configuration DHCP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quelle pratique est essentielle pour maintenir un réseau sécurisé et performant ?</p>
+    <label><input type="radio" name="m11q5" value="true"> Mise à jour régulière des équipements et analyse des journaux</label>
+    <label><input type="radio" name="m11q5" value="false"> Changer uniquement les câbles réseau</label>
+    <label><input type="radio" name="m11q5" value="false"> Ignorer les alertes SNMP</label>
+    <label><input type="radio" name="m11q5" value="false"> Utiliser seulement des VLAN</label>
+  </div>
 
        <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g11" onclick="verifierGroupe(this)">Vérifier</button>
@@ -1646,24 +1885,47 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
 
   <!-- QCM Module 12 -->
   <div class="qcm" data-group="g12">
-    <h3>QCM MODULE 12 – Virtualisation et réseaux virtuels</h3>
+  <h3>QCM MODULE 12 – Virtualisation et réseau virtuel</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel outil permet de créer un réseau isolé pour plusieurs machines virtuelles sur un même hôte ?</p>
-      <label><input type="radio" name="m12q1" value="true"> Virtual Switch</label>
-      <label><input type="radio" name="m12q1" value="false"> DHCP</label>
-      <label><input type="radio" name="m12q1" value="false"> BGP</label>
-      <label><input type="radio" name="m12q1" value="false"> STP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Qu’est-ce que la virtualisation ?</p>
+    <label><input type="radio" name="m12q1" value="true"> La création de versions virtuelles de serveurs, systèmes ou réseaux sur un seul matériel physique</label>
+    <label><input type="radio" name="m12q1" value="false"> L’installation de câbles réseau supplémentaires</label>
+    <label><input type="radio" name="m12q1" value="false"> La configuration d’un firewall</label>
+    <label><input type="radio" name="m12q1" value="false"> La création d’un site web</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel protocole permet à un utilisateur distant de se connecter de manière sécurisée au réseau de l’entreprise ?</p>
-      <label><input type="radio" name="m12q2" value="true"> VPN</label>
-      <label><input type="radio" name="m12q2" value="false"> RIP</label>
-      <label><input type="radio" name="m12q2" value="false"> FTP</label>
-      <label><input type="radio" name="m12q2" value="false"> ICMP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel logiciel permet de créer et gérer des machines virtuelles ?</p>
+    <label><input type="radio" name="m12q2" value="true"> Hyperviseur (ex : VMware, VirtualBox)</label>
+    <label><input type="radio" name="m12q2" value="false"> Switch manageable</label>
+    <label><input type="radio" name="m12q2" value="false"> Routeur</label>
+    <label><input type="radio" name="m12q2" value="false"> Point d’accès Wi-Fi</label>
+  </div>
 
+  <div class="question">
+    <p><strong>Question 3 :</strong> Qu’est-ce qu’un réseau virtuel (VLAN ou vSwitch) ?</p>
+    <label><input type="radio" name="m12q3" value="true"> Un réseau logique créé à l’intérieur d’un réseau physique pour segmenter ou isoler le trafic</label>
+    <label><input type="radio" name="m12q3" value="false"> Un câble Ethernet spécial</label>
+    <label><input type="radio" name="m12q3" value="false"> Une adresse IP statique uniquement</label>
+    <label><input type="radio" name="m12q3" value="false"> Un protocole de routage</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel est l’avantage principal d’utiliser des réseaux virtuels ?</p>
+    <label><input type="radio" name="m12q4" value="true"> Isolation et segmentation du trafic sans modifier le réseau physique</label>
+    <label><input type="radio" name="m12q4" value="false"> Augmenter la vitesse de l’Internet mondial</label>
+    <label><input type="radio" name="m12q4" value="false"> Remplacer le besoin de firewall</label>
+    <label><input type="radio" name="m12q4" value="false"> Installer des serveurs physiques supplémentaires</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quelle technologie permet de créer des serveurs virtuels sur un seul serveur physique ?</p>
+    <label><input type="radio" name="m12q5" value="true"> Virtualisation serveur avec hyperviseur</label>
+    <label><input type="radio" name="m12q5" value="false"> Fibre optique</label>
+    <label><input type="radio" name="m12q5" value="false"> VPN</label>
+    <label><input type="radio" name="m12q5" value="false"> Switch VLAN</label>
+  </div>
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g12" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
@@ -1712,25 +1974,49 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
   </p>
 
   <!-- QCM Module 13 -->
-  <div class="qcm" data-group="g13">
-    <h3>QCM MODULE 13 – Qualité de service (QoS)</h3>
+<div class="qcm" data-group="g13-qos">
+  <h3>QCM MODULE 13 – Qualité de service (QoS)</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel est l’objectif principal de la QoS ?</p>
-      <label><input type="radio" name="m13q1" value="true"> Prioriser le trafic pour garantir des performances optimales</label>
-      <label><input type="radio" name="m13q1" value="false"> Installer des câbles réseau</label>
-      <label><input type="radio" name="m13q1" value="false"> Créer des VLAN</label>
-      <label><input type="radio" name="m13q1" value="false"> Attribuer des adresses IP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Qu’est-ce que la Qualité de service (QoS) dans un réseau ?</p>
+    <label><input type="radio" name="m13qosq1" value="true"> Un ensemble de techniques pour prioriser certains types de trafic et garantir les performances</label>
+    <label><input type="radio" name="m13qosq1" value="false"> Une méthode pour augmenter la vitesse Internet de tous les utilisateurs de façon égale</label>
+    <label><input type="radio" name="m13qosq1" value="false"> Une technologie pour crypter les données réseau</label>
+    <label><input type="radio" name="m13qosq1" value="false"> Un type de câble réseau</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel type de trafic doit être priorisé pour éviter la latence et les interruptions ?</p>
-      <label><input type="radio" name="m13q2" value="true"> Voix et vidéo en temps réel</label>
-      <label><input type="radio" name="m13q2" value="false"> Téléchargements de fichiers</label>
-      <label><input type="radio" name="m13q2" value="false"> Emails internes</label>
-      <label><input type="radio" name="m13q2" value="false"> Impressions réseau</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quel type de trafic est généralement priorisé avec QoS ?</p>
+    <label><input type="radio" name="m13qosq2" value="true"> Voix (VoIP) et vidéo en temps réel</label>
+    <label><input type="radio" name="m13qosq2" value="false"> Emails uniquement</label>
+    <label><input type="radio" name="m13qosq2" value="false"> Transferts FTP uniquement</label>
+    <label><input type="radio" name="m13qosq2" value="false"> Pages web statiques uniquement</label>
+  </div>
 
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel mécanisme QoS permet de garantir une bande passante minimale pour certaines applications ?</p>
+    <label><input type="radio" name="m13qosq3" value="true"> Réservation de ressources (Traffic Shaping / Policing)</label>
+    <label><input type="radio" name="m13qosq3" value="false"> NAT</label>
+    <label><input type="radio" name="m13qosq3" value="false"> DHCP</label>
+    <label><input type="radio" name="m13qosq3" value="false"> VLAN tagging</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quelle métrique QoS mesure le délai de transmission d’un paquet ?</p>
+    <label><input type="radio" name="m13qosq4" value="true"> Latence</label>
+    <label><input type="radio" name="m13qosq4" value="false"> Jitter</label>
+    <label><input type="radio" name="m13qosq4" value="false"> Perte de paquets</label>
+    <label><input type="radio" name="m13qosq4" value="false"> Bande passante</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quel mécanisme QoS permet de réduire la variation de délai (jitter) pour les flux en temps réel ?</p>
+    <label><input type="radio" name="m13qosq5" value="true"> Buffering / mise en mémoire tampon</label>
+    <label><input type="radio" name="m13qosq5" value="false"> NAT</label>
+    <label><input type="radio" name="m13qosq5" value="false"> VLAN</label>
+    <label><input type="radio" name="m13qosq5" value="false"> DHCP</label>
+  </div>
+    
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g13" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
@@ -1781,25 +2067,48 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
   </p>
 
   <!-- QCM Module 14 -->
-  <div class="qcm" data-group="g14">
-    <h3>QCM MODULE 14 – Réseaux d’entreprise</h3>
+ <div class="qcm" data-group="g14">
+  <h3>QCM MODULE 14 – Réseau d’entreprise</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quel élément permet de garantir la continuité des services en cas de panne ?</p>
-      <label><input type="radio" name="m14q1" value="true"> Redondance</label>
-      <label><input type="radio" name="m14q1" value="false"> DHCP</label>
-      <label><input type="radio" name="m14q1" value="false"> FTP</label>
-      <label><input type="radio" name="m14q1" value="false"> VLAN</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Quel équipement est essentiel pour interconnecter plusieurs départements d’une entreprise ?</p>
+    <label><input type="radio" name="m14q1" value="true"> Switch manageable et routeur</label>
+    <label><input type="radio" name="m14q1" value="false"> Hub simple</label>
+    <label><input type="radio" name="m14q1" value="false"> Modem ADSL domestique</label>
+    <label><input type="radio" name="m14q1" value="false"> Point d’accès Wi-Fi uniquement</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quelle pratique améliore la sécurité dans un réseau d’entreprise ?</p>
-      <label><input type="radio" name="m14q2" value="true"> Segmentation VLAN et firewalls</label>
-      <label><input type="radio" name="m14q2" value="false"> Installer plus de câbles</label>
-      <label><input type="radio" name="m14q2" value="false"> Ajouter des imprimantes réseau</label>
-      <label><input type="radio" name="m14q2" value="false"> Utiliser uniquement des switches non managés</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quelle topologie réseau est la plus courante dans les entreprises modernes ?</p>
+    <label><input type="radio" name="m14q2" value="true"> Topologie en étoile</label>
+    <label><input type="radio" name="m14q2" value="false"> Topologie en bus uniquement</label>
+    <label><input type="radio" name="m14q2" value="false"> Topologie en anneau uniquement</label>
+    <label><input type="radio" name="m14q2" value="false"> Topologie maillée exclusivement pour tous</label>
+  </div>
 
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel protocole est souvent utilisé pour gérer les VLAN et la segmentation des réseaux d’entreprise ?</p>
+    <label><input type="radio" name="m14q3" value="true"> 802.1Q</label>
+    <label><input type="radio" name="m14q3" value="false"> DHCP</label>
+    <label><input type="radio" name="m14q3" value="false"> FTP</label>
+    <label><input type="radio" name="m14q3" value="false"> SMTP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quelle pratique améliore la sécurité d’un réseau d’entreprise ?</p>
+    <label><input type="radio" name="m14q4" value="true"> Firewall, VPN, segmentation VLAN et surveillance continue</label>
+    <label><input type="radio" name="m14q4" value="false"> Utiliser uniquement des mots de passe simples</label>
+    <label><input type="radio" name="m14q4" value="false"> Connecter tous les utilisateurs sur le même VLAN sans restriction</label>
+    <label><input type="radio" name="m14q4" value="false"> Ne pas mettre à jour les équipements réseau</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quel avantage offre l’utilisation de VLAN dans un réseau d’entreprise ?</p>
+    <label><input type="radio" name="m14q5" value="true"> Isolation du trafic, meilleure sécurité et gestion simplifiée</label>
+    <label><input type="radio" name="m14q5" value="false"> Augmentation automatique de la vitesse Internet</label>
+    <label><input type="radio" name="m14q5" value="false"> Suppression du besoin de firewall</label>
+    <label><input type="radio" name="m14q5" value="false"> Remplacement du routeur</label>
+  </div>
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g14" onclick="verifierGroupe(this)">Vérifier</button>
     <div class="result"></div>
@@ -1847,24 +2156,48 @@ La <strong>QoS</strong> permet de prioriser certains types de trafic :
   </p>
 
   <!-- QCM Module 15 -->
-  <div class="qcm" data-group="g15">
-    <h3>QCM MODULE 15 – Bases du Cloud et réseaux modernes</h3>
+    <div class="qcm" data-group="g15">
+  <h3>QCM MODULE 15 – Bases du Cloud et réseaux modernes</h3>
 
-    <div class="question">
-      <p><strong>Question 1 :</strong> Quelle technologie permet de contrôler le réseau via logiciel en séparant le plan de contrôle du plan de données ?</p>
-      <label><input type="radio" name="m15q1" value="true"> SDN</label>
-      <label><input type="radio" name="m15q1" value="false"> VLAN</label>
-      <label><input type="radio" name="m15q1" value="false"> DHCP</label>
-      <label><input type="radio" name="m15q1" value="false"> FTP</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 1 :</strong> Qu’est-ce que le Cloud computing ?</p>
+    <label><input type="radio" name="m15q1" value="true"> Fournir des ressources informatiques (serveurs, stockage, applications) via Internet</label>
+    <label><input type="radio" name="m15q1" value="false"> Installer uniquement des câbles réseau</label>
+    <label><input type="radio" name="m15q1" value="false"> Créer des VLAN dans un LAN</label>
+    <label><input type="radio" name="m15q1" value="false"> Configurer un firewall domestique</label>
+  </div>
 
-    <div class="question">
-      <p><strong>Question 2 :</strong> Quel avantage principal offre le Cloud aux entreprises ?</p>
-      <label><input type="radio" name="m15q2" value="true"> Accès aux applications et données depuis n’importe où</label>
-      <label><input type="radio" name="m15q2" value="false"> Installer uniquement des câbles RJ45</label>
-      <label><input type="radio" name="m15q2" value="false"> Configurer des switches manuellement</label>
-      <label><input type="radio" name="m15q2" value="false"> Supprimer les firewalls</label>
-    </div>
+  <div class="question">
+    <p><strong>Question 2 :</strong> Quels sont les principaux modèles de services cloud ?</p>
+    <label><input type="radio" name="m15q2" value="true"> IaaS, PaaS, SaaS</label>
+    <label><input type="radio" name="m15q2" value="false"> LAN, WAN, WLAN</label>
+    <label><input type="radio" name="m15q2" value="false"> DNS, DHCP, VPN</label>
+    <label><input type="radio" name="m15q2" value="false"> HTTP, FTP, SMTP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 3 :</strong> Quel service cloud permet de créer des applications sans gérer l’infrastructure sous-jacente ?</p>
+    <label><input type="radio" name="m15q3" value="true"> PaaS (Platform as a Service)</label>
+    <label><input type="radio" name="m15q3" value="false"> IaaS</label>
+    <label><input type="radio" name="m15q3" value="false"> SaaS</label>
+    <label><input type="radio" name="m15q3" value="false"> VPN</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 4 :</strong> Quel service cloud fournit des applications prêtes à l’emploi accessibles via Internet ?</p>
+    <label><input type="radio" name="m15q4" value="true"> SaaS (Software as a Service)</label>
+    <label><input type="radio" name="m15q4" value="false"> IaaS</label>
+    <label><input type="radio" name="m15q4" value="false"> PaaS</label>
+    <label><input type="radio" name="m15q4" value="false"> DHCP</label>
+  </div>
+
+  <div class="question">
+    <p><strong>Question 5 :</strong> Quel est un avantage majeur des réseaux modernes intégrant le Cloud ?</p>
+    <label><input type="radio" name="m15q5" value="true"> Flexibilité, scalabilité et accès distant sécurisé</label>
+    <label><input type="radio" name="m15q5" value="false"> Nécessité d’acheter plus de câbles Ethernet</label>
+    <label><input type="radio" name="m15q5" value="false"> Supprime tous les besoins de firewall</label>
+    <label><input type="radio" name="m15q5" value="false"> Remplace le routage physique</label>
+  </div>
 
     <!-- Bouton Vérifier relié uniquement à ce module -->
     <button data-group="g15" onclick="verifierGroupe(this)">Vérifier</button>
