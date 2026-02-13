@@ -51,7 +51,7 @@ header nav a:hover{
 .hero{
     height:100vh;
     width:100vw;
-    background:url("actuel.PNG.jpeg") center/cover no-repeat;
+    background:url("act.com.jpeg") center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:space-around;
