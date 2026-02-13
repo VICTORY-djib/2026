@@ -3,122 +3,152 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    min-height:100vh;
     background:linear-gradient(to right,#0b6fc2,#00aaff);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
 /* ================= HEADER ================= */
 header{
-    width:100%;
     position:fixed;
-    top:0;
-    left:0;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
-    padding:15px 0;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(37, 99, 235, 0.75);
+    backdrop-filter: blur(14px);
+    padding:6px 22px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,0.25);
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
     z-index:1000;
+    transition:all 0.3s ease;
 }
 
-nav{
+header nav{
     display:flex;
-    justify-content:center;
-    gap:40px;
+    gap:12px;
 }
 
-nav a{
+header nav a{
+    color:#001f3f;
     text-decoration:none;
-    color:white;
-    font-weight:bold;
-    font-size:15px;
+    padding:7px 18px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
     transition:0.3s;
 }
 
-nav a:hover{
-    color:#ffd700;
-    transform:scale(1.05);
+header nav a:hover{
+    background:rgba(255,255,255,0.25);
+    transform:translateY(-2px);
 }
 
-/* ================= HERO SECTION ================= */
+/* ================= HERO ================= */
 .hero{
-    width:100%;
-    min-height:100vh;
+    height:100vh;
+    width:100vw;
+    background:url("actuel.PNG.jpeg") center/cover no-repeat;
     display:flex;
-    justify-content:center;
     align-items:center;
-    padding-top:120px;
+    justify-content:space-around;
+    padding-top:100px;
 }
 
-/* ================= GMAIL CARD ================= */
+/* ================= HERO LEFT ================= */
 .hero-left{
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-.gmail-card{
-    width:350px;
-    padding:30px;
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,0.2);
-    box-shadow:0 20px 45px rgba(0,0,0,0.4);
-    color:white;
+/* ================= HERO RIGHT ================= */
+.hero-right{
+    max-width:500px;
+    color:#001f3f;
     text-align:center;
-    animation:fadeIn 1.5s ease;
+    background:rgba(255,255,255,0.15);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.hero-right h1{
+    font-size:34px;
+    margin-bottom:20px;
+    color:black;
+}
+
+.hero-right p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* ================= CARTE GMAIL ================= */
+.gmail-card{
+    width:340px;
+    padding:26px;
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(16px);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.22);
+    box-shadow:0 20px 45px rgba(0,0,0,0.45);
+    color:white;
+    animation:fadeIn 0.6s ease;
+    transition:0.3s;
+}
+
+.gmail-card:hover{
+    transform:translateY(-5px);
 }
 
 .gmail-header{
     display:flex;
-    justify-content:center;
     align-items:center;
-    gap:10px;
-    margin-bottom:20px;
+    gap:14px;
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:16px;
 }
 
 .gmail-header img{
-    width:35px;
-}
-
-.gmail-header span{
-    font-size:20px;
-    font-weight:bold;
+    width:36px;
 }
 
 .gmail-card p{
-    margin-bottom:20px;
     font-size:15px;
+    color:#dbe9ff;
+    margin-bottom:22px;
+    text-align:center;
 }
 
 .gmail-btn{
-    display:inline-block;
-    padding:12px 20px;
-    background:white;
-    color:#0b6fc2;
+    display:block;
+    width:100%;
+    padding:13px 0;
+    text-align:center;
+    background:linear-gradient(135deg,#ea4335,#c5221f);
+    border-radius:30px;
+    color:white;
     text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+    font-weight:600;
     transition:0.3s;
 }
 
 .gmail-btn:hover{
-    background:#ffd700;
-    color:black;
-    transform:scale(1.05);
+    transform:translateY(-3px);
+    box-shadow:0 18px 35px rgba(234,67,53,0.55);
 }
 
 /* ================= INTRO SECTION ================= */
 .intro{
     width:80%;
     max-width:900px;
-    margin:60px auto;
+    margin:80px auto;
     padding:40px;
     background:rgba(255,255,255,0.15);
     backdrop-filter:blur(12px);
@@ -142,11 +172,11 @@ nav a:hover{
 /* ================= ANIMATION ================= */
 @keyframes fadeIn{
     from{
-        opacity:0;
-        transform:translateY(20px);
+        opacity:0; 
+        transform:translateY(15px);
     }
     to{
-        opacity:1;
+        opacity:1; 
         transform:translateY(0);
     }
 }
@@ -154,25 +184,28 @@ nav a:hover{
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
 
-    nav{
+    header nav{
         flex-direction:column;
-        gap:15px;
+        align-items:center;
+    }
+
+    .hero{
+        flex-direction:column;
+        padding-top:140px;
+        gap:30px;
+        text-align:center;
     }
 
     .gmail-card{
         width:90%;
     }
 
+    .hero-right{
+        width:90%;
+    }
+
     .intro{
         width:90%;
         padding:25px;
-    }
-
-    .intro h1{
-        font-size:22px;
-    }
-
-    .intro p{
-        font-size:14px;
     }
 }
