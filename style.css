@@ -19,8 +19,8 @@ header{
     transform:translateX(-50%);
     background:rgba(37, 99, 235, 0.75);
     backdrop-filter: blur(14px);
-    padding:6px 22px;        /* header plus court */
-    border-radius:30px;      /* moins arrondi */
+    padding:6px 22px;        
+    border-radius:30px;      
     border:1px solid rgba(255,255,255,0.25);
     box-shadow:0 8px 25px rgba(0,0,0,0.25);
     z-index:1000;
@@ -33,9 +33,9 @@ header nav{
 }
 
 header nav a{
-    color:#001f3f;          /* bleu marine */
+    color:#001f3f;          
     text-decoration:none;
-    padding:7px 18px;       /* boutons proportionnels */
+    padding:7px 18px;       
     border-radius:20px;
     font-size:14px;
     font-weight:600;
@@ -43,7 +43,7 @@ header nav a{
 }
 
 header nav a:hover{
-    background:rgba(255,255,255,0.25);  /* "white" = blanc */
+    background:rgba(255,255,255,0.25);  
     transform:translateY(-2px);
 }
 
@@ -54,35 +54,19 @@ header nav a:hover{
     background:url("actuel.PNG.jpeg") center/cover no-repeat;
     display:flex;
     align-items:center;
-    justify-content:space-around;
+    justify-content:center; /* carte Gmail centrée */
+    flex-wrap:wrap;
+    padding-top:60px;
 }
 
-/* ================= HERO LEFT ================= */
-.hero-left{
+/* ================= HERO RIGHT (Carte Gmail) ================= */
+.hero-right{
     display:flex;
     justify-content:center;
     align-items:center;
-}
-
-/* ================= HERO RIGHT ================= */
-.hero-right{
-    max-width:500px;
-    color:#001f3f;           /* bleu marine */
-    text-align:center;
-}
-
-.hero-right h1{
-    font-size:34px;
     margin-bottom:20px;
-    color:black;             /* titre noir */
 }
 
-.hero-right p{
-    font-size:16px;
-    line-height:1.7;
-    color:#001f3f;           /* texte bleu marine */
-}
-/* ================= CARTE GMAIL ================= */
 .gmail-card{
     width:340px;
     padding:26px;
@@ -144,5 +128,10 @@ header nav a:hover{
     .hero{
         flex-direction:column;
         padding-top:120px;
+    }
+
+    .hero-right{
+        max-width:90%;
+        margin-bottom:30px;
     }
 }
