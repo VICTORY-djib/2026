@@ -9,7 +9,6 @@
 body{
     background:linear-gradient(to right,#0b6fc2,#00aaff);
     min-height:100vh;
-    overflow-x:hidden;
 }
 
 /* ================= HEADER ================= */
@@ -20,8 +19,8 @@ header{
     transform:translateX(-50%);
     background:rgba(37, 99, 235, 0.75);
     backdrop-filter: blur(14px);
-    padding:6px 22px;
-    border-radius:30px;
+    padding:6px 22px;        /* header plus court */
+    border-radius:30px;      /* moins arrondi */
     border:1px solid rgba(255,255,255,0.25);
     box-shadow:0 8px 25px rgba(0,0,0,0.25);
     z-index:1000;
@@ -34,9 +33,9 @@ header nav{
 }
 
 header nav a{
-    color:#001f3f;
+    color:#001f3f;          /* bleu marine */
     text-decoration:none;
-    padding:7px 18px;
+    padding:7px 18px;       /* boutons proportionnels */
     border-radius:20px;
     font-size:14px;
     font-weight:600;
@@ -44,7 +43,7 @@ header nav a{
 }
 
 header nav a:hover{
-    background:rgba(255,255,255,0.25);
+    background:rgba(255,255,255,0.25);  /* "white" = blanc */
     transform:translateY(-2px);
 }
 
@@ -56,7 +55,6 @@ header nav a:hover{
     display:flex;
     align-items:center;
     justify-content:space-around;
-    padding-top:100px;
 }
 
 /* ================= HERO LEFT ================= */
@@ -69,25 +67,21 @@ header nav a:hover{
 /* ================= HERO RIGHT ================= */
 .hero-right{
     max-width:500px;
-    color:#001f3f;
+    color:#001f3f;           /* bleu marine */
     text-align:center;
-    background:rgba(255,255,255,0.15);
-    padding:25px;
-    border-radius:20px;
-    backdrop-filter:blur(10px);
 }
 
 .hero-right h1{
     font-size:34px;
     margin-bottom:20px;
-    color:black;
+    color:black;             /* titre noir */
 }
 
 .hero-right p{
     font-size:16px;
     line-height:1.7;
+    color:#001f3f;           /* texte bleu marine */
 }
-
 /* ================= CARTE GMAIL ================= */
 .gmail-card{
     width:340px;
@@ -99,11 +93,6 @@ header nav a:hover{
     box-shadow:0 20px 45px rgba(0,0,0,0.45);
     color:white;
     animation:fadeIn 0.6s ease;
-    transition:0.3s;
-}
-
-.gmail-card:hover{
-    transform:translateY(-5px);
 }
 
 .gmail-header{
@@ -144,68 +133,16 @@ header nav a:hover{
     box-shadow:0 18px 35px rgba(234,67,53,0.55);
 }
 
-/* ================= INTRO SECTION ================= */
-.intro{
-    width:80%;
-    max-width:900px;
-    margin:80px auto;
-    padding:40px;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(12px);
-    border-radius:20px;
-    color:white;
-    text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
-}
-
-.intro h1{
-    margin-bottom:25px;
-    font-size:28px;
-}
-
-.intro p{
-    margin-bottom:20px;
-    line-height:1.7;
-    font-size:16px;
-}
-
 /* ================= ANIMATION ================= */
 @keyframes fadeIn{
-    from{
-        opacity:0; 
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1; 
-        transform:translateY(0);
-    }
+    from{opacity:0; transform:translateY(15px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
-
-    header nav{
-        flex-direction:column;
-        align-items:center;
-    }
-
     .hero{
         flex-direction:column;
-        padding-top:140px;
-        gap:30px;
-        text-align:center;
-    }
-
-    .gmail-card{
-        width:90%;
-    }
-
-    .hero-right{
-        width:90%;
-    }
-
-    .intro{
-        width:90%;
-        padding:25px;
+        padding-top:120px;
     }
 }
