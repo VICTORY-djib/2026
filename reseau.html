@@ -181,127 +181,208 @@ footer{
 
 <main>
 
-<div class="module" id="module1" style="display:block;">
- <h1>Module 1 – Introduction aux réseaux informatiques</h1>
+<!-- Section 8 -->
+<h2>8. Explication détaillée du fonctionnement d’un réseau</h2>
 
-<!-- Section 1 -->
-<h2>1. Définition d’un réseau informatique</h2>
-<p>Un <strong>réseau informatique</strong> est un ensemble d’ordinateurs, serveurs et périphériques interconnectés afin de <strong>partager des informations, des ressources et communiquer efficacement</strong>. C’est la base de toute infrastructure informatique moderne.</p>
-<p>Fonctions principales :</p>
+<h3>8.1 Architecture complète d’un réseau d’entreprise</h3>
+
+<pre>
+                    INTERNET
+                        |
+                  [ Fournisseur ISP ]
+                        |
+                    [ Routeur ]
+                        |
+                    [ Firewall ]
+                        |
+                     [ Switch ]
+          _____________|_____________
+         |             |             |
+      [PC1]         [PC2]        [Serveur]
+                                          |
+                                   [Base de données]
+</pre>
+
+<p>
+<strong>Détail du fonctionnement :</strong><br><br>
+
+• <strong>Fournisseur ISP :</strong> C’est l’opérateur Internet qui fournit la connexion (ex : fibre optique).<br><br>
+
+• <strong>Routeur :</strong>
+Il permet :
+- La connexion entre le réseau local et Internet.
+- La traduction d’adresses (NAT).
+- Le routage des paquets vers d’autres réseaux.<br><br>
+
+• <strong>Firewall (Pare-feu) :</strong>
+- Filtre le trafic entrant et sortant.
+- Bloque les attaques.
+- Autorise seulement les connexions sécurisées.<br><br>
+
+• <strong>Switch :</strong>
+- Connecte tous les appareils internes.
+- Analyse les adresses MAC.
+- Envoie les données uniquement vers le bon destinataire.<br><br>
+
+• <strong>Serveur :</strong>
+- Héberge les fichiers.
+- Gère les comptes utilisateurs.
+- Peut héberger des applications ou bases de données.<br><br>
+
+• <strong>Postes clients :</strong>
+Ordinateurs utilisés par les employés pour accéder aux ressources.
+</p>
+
+<hr>
+
+<h3>8.2 Comment circulent les données dans un réseau ?</h3>
+
+<pre>
+PC A  --->  Switch  --->  Routeur  --->  INTERNET
+                                      |
+                                 Serveur Web
+</pre>
+
+<p>
+Lorsqu’un utilisateur ouvre un site web :
+</p>
+
 <ul>
-    <li>Échanges rapides et sécurisés de fichiers, documents et bases de données.</li>
-    <li>Partage de périphériques tels que imprimantes, scanners et serveurs de stockage.</li>
-    <li>Communication interne via emails, messageries instantanées et applications collaboratives.</li>
-    <li>Accès à Internet et à des services distants comme le cloud ou les applications web.</li>
+<li>1️⃣ L’utilisateur tape l’adresse du site.</li>
+<li>2️⃣ La requête est transformée en <strong>paquets de données</strong>.</li>
+<li>3️⃣ Le switch identifie la destination locale ou externe.</li>
+<li>4️⃣ Le routeur envoie la requête vers Internet.</li>
+<li>5️⃣ Le serveur web répond avec les données.</li>
+<li>6️⃣ Les paquets reviennent et sont reconstitués.</li>
 </ul>
-<p><strong>Exemple :</strong> Dans une entreprise, les ordinateurs des employés sont connectés à un réseau interne (LAN) permettant à chacun d’imprimer, partager des fichiers ou accéder aux mêmes bases de données.</p>
 
-<!-- Section 2 -->
-<h2>2. Rôle des réseaux</h2>
-<p>Les réseaux remplissent plusieurs fonctions essentielles :</p>
-<ul>
-    <li><strong>Communication :</strong> Les utilisateurs et systèmes peuvent échanger des données rapidement et de manière fiable.</li>
-    <li><strong>Partage de ressources :</strong> Les imprimantes, serveurs et logiciels peuvent être utilisés simultanément par plusieurs utilisateurs.</li>
-    <li><strong>Gestion centralisée :</strong> Les données sont stockées sur des serveurs centraux, facilitant sauvegardes et mises à jour.</li>
-    <li><strong>Sécurité :</strong> Contrôle d’accès aux ressources et protection contre les intrusions.</li>
-    <li><strong>Support de services essentiels :</strong> Applications cloud, VoIP, messagerie, visioconférences et collaboration à distance.</li>
-</ul>
-<p><strong>Exemple :</strong> Une société peut utiliser un serveur central pour stocker tous les documents administratifs, accessibles seulement aux employés autorisés.</p>
+<p>
+Chaque paquet contient :
+- Adresse IP source
+- Adresse IP destination
+- Numéro de séquence
+- Données
+</p>
 
-<!-- Section 3 -->
-<h2>3. Types de réseaux</h2>
-<p>Les réseaux sont classés selon leur portée géographique :</p>
-<table border="1" cellpadding="5" cellspacing="0">
-    <tr>
-        <th>Type de réseau</th>
-        <th>Portée</th>
-        <th>Exemple</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>LAN (Local Area Network)</td>
-        <td>Bâtiment ou bureau</td>
-        <td>Réseau interne d’entreprise ou école</td>
-        <td>Réseau limité à une zone restreinte. Rapide et sécurisé pour les échanges internes.</td>
-    </tr>
-    <tr>
-        <td>MAN (Metropolitan Area Network)</td>
-        <td>Ville ou campus</td>
-        <td>Campus universitaire multi-bâtiments</td>
-        <td>Connecte plusieurs LAN sur un site plus large, souvent via fibres optiques ou lignes spécialisées.</td>
-    </tr>
-    <tr>
-        <td>WAN (Wide Area Network)</td>
-        <td>Pays ou continents</td>
-        <td>Internet ou réseau multi-sites d’entreprise</td>
-        <td>Réseau étendu reliant des sites distants via Internet ou liaisons spécialisées, souvent avec VPN pour la sécurité.</td>
-    </tr>
+<hr>
+
+<h3>8.3 Explication détaillée des topologies</h3>
+
+<h4>Topologie en étoile (La plus utilisée)</h4>
+
+<pre>
+        PC1
+         |
+PC2 --- Switch --- PC3
+         |
+        PC4
+</pre>
+
+<p>
+<strong>Analyse technique :</strong>
+- Architecture centralisée.
+- Gestion simple.
+- Haute performance.
+- Si le switch tombe en panne → tout le réseau est affecté.
+</p>
+
+<h4>Topologie maillée (Réseaux critiques)</h4>
+
+<pre>
+PC1 ----- PC2
+ |  \       /  |
+ |   \     /   |
+PC3 ----- PC4
+</pre>
+
+<p>
+<strong>Analyse technique :</strong>
+- Plusieurs chemins possibles.
+- Tolérance aux pannes élevée.
+- Utilisée dans les data centers.
+- Coût élevé.
+</p>
+
+<hr>
+
+<h3>8.4 Comparaison technique LAN vs WAN</h3>
+
+<table border="1" cellpadding="6" cellspacing="0">
+<tr>
+<th>Critère</th>
+<th>LAN</th>
+<th>WAN</th>
+</tr>
+
+<tr>
+<td>Vitesse</td>
+<td>Très rapide (1Gbps ou plus)</td>
+<td>Plus lente (dépend du fournisseur)</td>
+</tr>
+
+<tr>
+<td>Distance</td>
+<td>Courte</td>
+<td>Longue distance</td>
+</tr>
+
+<tr>
+<td>Latence</td>
+<td>Faible</td>
+<td>Plus élevée</td>
+</tr>
+
+<tr>
+<td>Sécurité</td>
+<td>Contrôlée localement</td>
+<td>Nécessite VPN</td>
+</tr>
 </table>
 
-<!-- Section 4 -->
-<h2>4. Topologies réseau</h2>
-<p>La <strong>topologie</strong> décrit la façon dont les périphériques sont connectés :</p>
+<hr>
+
+<h3>8.5 Réseau filaire vs sans fil (Analyse technique)</h3>
+
+<pre>
+FILAIRE:
+PC --- RJ45 --- Switch --- Serveur
+
+SANS FIL:
+PC ))))) Routeur Wi-Fi (((( Smartphone
+</pre>
+
+<p>
+<strong>Filaire :</strong>
+- Transmission électrique.
+- Très stable.
+- Idéal pour serveurs et entreprises.<br><br>
+
+<strong>Sans fil :</strong>
+- Transmission par ondes radio.
+- Sensible aux interférences.
+- Plus flexible et mobile.
+</p>
+
+<hr>
+
+<h2>9. Importance stratégique des réseaux</h2>
+
+<p>
+Aujourd’hui, aucun secteur ne fonctionne sans réseau :
+</p>
+
 <ul>
-    <li><strong>Étoile :</strong> Tous les périphériques connectés à un point central (switch ou hub). <em>Exemple :</em> tous les ordinateurs d’un bureau connectés au switch principal. Avantages : gestion simple, isolation facile des pannes. Inconvénients : dépend du point central.</li>
-    <li><strong>Bus :</strong> Tous les périphériques connectés sur un câble principal. <em>Exemple :</em> ancien réseau utilisant câble coaxial unique. Avantages : faible coût. Inconvénients : collisions fréquentes, panne du câble affecte tout le réseau.</li>
-    <li><strong>Anneau :</strong> Les périphériques forment une boucle. <em>Exemple :</em> réseaux industriels ou certaines topologies token ring. Avantages : flux organisé, moins de collisions. Inconvénients : panne d’un appareil peut interrompre le réseau.</li>
-    <li><strong>Maillé :</strong> Chaque périphérique est connecté à plusieurs autres. <em>Exemple :</em> data centers et réseaux critiques. Avantages : tolérance aux pannes, haute fiabilité. Inconvénients : coûteux et complexe.</li>
+<li>Banques → Transactions sécurisées</li>
+<li>Hôpitaux → Dossiers médicaux</li>
+<li>Entreprises → Gestion centralisée</li>
+<li>Éducation → Plateformes e-learning</li>
+<li>Cloud → Stockage distant</li>
 </ul>
 
-<!-- Section 5 -->
-<h2>5. Réseau filaire vs sans fil</h2>
-<p>Comparaison :</p>
-<table border="1" cellpadding="5" cellspacing="0">
-    <tr>
-        <th>Critère</th>
-        <th>Filaire</th>
-        <th>Sans fil</th>
-    </tr>
-    <tr>
-        <td>Connexion</td>
-        <td>Ethernet, câbles RJ45</td>
-        <td>Wi-Fi, radiofréquence</td>
-    </tr>
-    <tr>
-        <td>Vitesse</td>
-        <td>Stable et rapide</td>
-        <td>Variable selon distance, obstacles et interférences</td>
-    </tr>
-    <tr>
-        <td>Sécurité</td>
-        <td>Physiquement sécurisée</td>
-        <td>Nécessite cryptage WPA2/WPA3 pour protection</td>
-    </tr>
-    <tr>
-        <td>Mobilité</td>
-        <td>Limitée par câbles</td>
-        <td>Permet déplacements et flexibilité</td>
-    </tr>
-    <tr>
-        <td>Coût</td>
-        <td>Installation initiale plus coûteuse mais durable</td>
-        <td>Moins cher à installer, peut nécessiter répéteurs ou points d’accès supplémentaires</td>
-    </tr>
-</table>
-
-<!-- Section 6 -->
-<h2>6. Avantages et inconvénients des réseaux</h2>
-<ul>
-    <li><strong>Avantages :</strong> partage des ressources, communication rapide, centralisation des données, accès à distance, collaboration efficace.</li>
-    <li><strong>Inconvénients :</strong> coût d’installation, nécessité de sécuriser le réseau, maintenance et dépannage, dépendance aux équipements.</li>
-</ul>
-
-<!-- Section 7 -->
-<h2>7. Résumé et points clés</h2>
-<p>Points essentiels à retenir :</p>
-<ul>
-    <li>Les réseaux permettent le partage d’informations et de ressources dans une organisation.</li>
-    <li>Types de réseaux : LAN, MAN, WAN selon la portée et les besoins.</li>
-    <li>Topologies réseau : étoile, bus, anneau, maillé, avec avantages et limites.</li>
-    <li>Différences filaire vs sans fil : vitesse, sécurité, mobilité et coût.</li>
-    <li>Avantages et inconvénients des réseaux pour la performance et la sécurité.</li>
-</ul>
-
+<p>
+Les réseaux sont la base du numérique moderne.
+Sans eux, Internet, les emails, le cloud et les services en ligne n’existeraient pas.
+</p>
   <!-- QCM Module 1 -->
   <div class="qcm" data-group="g1">
     <h3>QCM MODULE 1 – Introduction aux réseaux informatiques</h3>
